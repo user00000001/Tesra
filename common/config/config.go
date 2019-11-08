@@ -49,13 +49,13 @@ const (
 	CONSENSUS_TYPE_VBFT = "vbft"
 
 	DEFAULT_LOG_LEVEL                       = log.InfoLog
-	DEFAULT_MAX_LOG_SIZE                    = 100 //MByte
-	DEFAULT_NODE_PORT                       = uint(20338)
-	DEFAULT_CONSENSUS_PORT                  = uint(20339)
-	DEFAULT_RPC_PORT                        = uint(20336)
-	DEFAULT_RPC_LOCAL_PORT                  = uint(20337)
-	DEFAULT_REST_PORT                       = uint(20334)
-	DEFAULT_WS_PORT                         = uint(20335)
+	DEFAULT_MAX_LOG_SIZE                    = 100         //MByte
+	DEFAULT_NODE_PORT                       = uint(25766) //uint(20338)
+	DEFAULT_CONSENSUS_PORT                  = uint(25767) //uint(20339)
+	DEFAULT_RPC_PORT                        = uint(25768) //uint(20336)
+	DEFAULT_RPC_LOCAL_PORT                  = uint(25769) //uint(20337)
+	DEFAULT_REST_PORT                       = uint(25770) //uint(20334)
+	DEFAULT_WS_PORT                         = uint(25771) //uint(20335)
 	DEFAULT_REST_MAX_CONN                   = uint(1024)
 	DEFAULT_MAX_CONN_IN_BOUND               = uint(1024)
 	DEFAULT_MAX_CONN_OUT_BOUND              = uint(1024)
@@ -139,10 +139,10 @@ func GetNetworkName(id uint32) string {
 
 var PolarisConfig = &GenesisConfig{
 	SeedList: []string{
-		"polaris1.ont.io:20338",
-		"polaris2.ont.io:20338",
-		"polaris3.ont.io:20338",
-		"polaris4.ont.io:20338"},
+		"polaris1.ont.io:28802",
+		"polaris2.ont.io:28802",
+		"polaris3.ont.io:28802",
+		"polaris4.ont.io:28802"},
 	ConsensusType: CONSENSUS_TYPE_VBFT,
 	VBFT: &VBFTConfig{
 		N:                    7,
@@ -208,11 +208,11 @@ var PolarisConfig = &GenesisConfig{
 
 var MainNetConfig = &GenesisConfig{
 	SeedList: []string{
-		"seed1.ont.io:20338",
-		"seed2.ont.io:20338",
-		"seed3.ont.io:20338",
-		"seed4.ont.io:20338",
-		"seed5.ont.io:20338"},
+		"121.41.17.61:25766",  //"seed1.ont.io:28802",
+		"121.41.18.5:25766",   //"seed2.ont.io:28802",
+		"52.184.29.110:25766", //"seed3.ont.io:28802",
+		"52.229.166.46:25766", //"seed4.ont.io:28802",
+		"52.229.166.6:25766"}, //"seed5.ont.io:28802"},
 	ConsensusType: CONSENSUS_TYPE_VBFT,
 	VBFT: &VBFTConfig{
 		N:                    7,
@@ -230,38 +230,38 @@ var MainNetConfig = &GenesisConfig{
 		Peers: []*VBFTPeerStakeInfo{
 			{
 				Index:      1,
-				PeerPubkey: "03348c8fe64e1defb408676b6e320038bd2e592c802e27c3d7e88e68270076c2f7",
-				Address:    "AZavFr7sQ4em2NmqWDjLMY34tHMQzATWgx",
+				PeerPubkey: "021161b96ff1a96a8b69b1c60aa52fa55106864eab7df50ba58b82e34d7802fd82",
+				Address:    "AT23zgpwoJYpghKP7ipZ2MQPJSxmJCnoQV",
 			},
 			{
 				Index:      2,
-				PeerPubkey: "03afd920a3b4ce2e7175a32c0d092153d1a11ef5e0dcc14e71c85101b95518d5d7",
-				Address:    "AM9jHMV7xY4HWH2dWmzyxrtnbi6ErNt7oL",
+				PeerPubkey: "026b376d44487141899f119e6d2fae02d4b33c23e19f8855e556159ed3e3a017d1",
+				Address:    "ANw2GfUeGz6arNDMknh2CYBa7rvC9TSWTn",
 			},
 			{
 				Index:      3,
-				PeerPubkey: "03e818b65a66d983a99497e06c6552ee5067229e85ba1cec60c5477dc3d568ed43",
-				Address:    "ATECwFPNRZFydFR1yUjb6RTLfVcKGKWRmp",
+				PeerPubkey: "03878ce19d35d9b797beedd7a84604952357b1817e6b6be9c8c22edff4a2e33c8c",
+				Address:    "AZN9hFWCusgKTsaRK9XGREoooJ4AExLL5a",
 			},
 			{
 				Index:      4,
-				PeerPubkey: "02375e44e500f9cfe8bd2f4afa4a016a8a902567996c919b9d1ce4f5d4f930f145",
-				Address:    "AKMxTuHQtt5YspXNPwkQNP5ZY66c4LY5BR",
+				PeerPubkey: "023663af6f6c32179bcecf4c7db10e7d277c382ccbd511b295217e747ab102a6b0",
+				Address:    "AZiKEXEzP58MPZKdfSVcPo5vSwYLYMtjKB",
 			},
 			{
 				Index:      5,
-				PeerPubkey: "03af040c09af5e06cf966f73fc99e8f4372f1510fe6e4376824452a99b85695a9c",
-				Address:    "AT4fXp36Ui22Lbh5ZJUCRBFDJ7axkLyUFM",
+				PeerPubkey: "037cca170a02c4fc7f76f3bf7e890195246f71838740201f4145fd8258c42607ec",
+				Address:    "AVdpLbbwwXJs4W9cqysEg77UoVLam48nNa",
 			},
 			{
 				Index:      6,
-				PeerPubkey: "034ee2a4368e999fc7c04e7e3a9073162d47712382f1690d6a67e7e1c475cd0ff3",
-				Address:    "ANLRokqieUtrUMave66FcNy2cxV7Whf4UN",
+				PeerPubkey: "039cb756e732905c33a94d40985c032a0ab6eff10864ee0c7a70c89af396e4d5aa",
+				Address:    "AGdSfKcNrV9PaQXLwgGDXQYf5PJurDS88T",
 			},
 			{
 				Index:      7,
-				PeerPubkey: "0327f9e0fb3b894027c52caf3d31d9ac5f676d3cf892c933ac107ed7447fb6e65b",
-				Address:    "AVRD9QmkYNq8n8DXc9AqpZnUEYhjg1aq5L",
+				PeerPubkey: "03c06468262e97f310767a4b3af36ba695d616df41461eb3be84cae49939b67df4",
+				Address:    "ALuWnv6ivFeTXvbEh7toQNuVsjRT4oKTVM",
 			},
 		},
 	},
