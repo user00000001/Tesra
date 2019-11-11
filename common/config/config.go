@@ -137,6 +137,78 @@ func GetNetworkName(id uint32) string {
 	return fmt.Sprintf("%d", id)
 }
 
+// var PolarisConfig = &GenesisConfig{
+// 	SeedList: []string{
+// 		"10.0.1.100:25766",
+// 		"10.0.1.101:25766",
+// 		"10.0.1.102:25766",
+// 		"10.0.1.103:25766",
+// 		"10.0.1.104:25766",
+// 		"10.0.1.105:25766",
+// 		"10.0.1.106:25766"},
+// 	ConsensusType: CONSENSUS_TYPE_VBFT,
+// 	VBFT: &VBFTConfig{
+// 		N:                    7,
+// 		C:                    2,
+// 		K:                    7,
+// 		L:                    112,
+// 		BlockMsgDelay:        10000,
+// 		HashMsgDelay:         10000,
+// 		PeerHandshakeTimeout: 10,
+// 		MaxBlockChangeView:   3000,
+// 		AdminOntID:           "did:ont:AMAx993nE6NEqZjwBssUfopxnnvTdob9ij",
+// 		MinInitStake:         10000,
+// 		VrfValue:             "1c9810aa9822e511d5804a9c4db9dd08497c31087b0daafa34d768a3253441fa20515e2f30f81741102af0ca3cefc4818fef16adb825fbaa8cad78647f3afb590e",
+// 		VrfProof:             "c57741f934042cb8d8b087b44b161db56fc3ffd4ffb675d36cd09f83935be853d8729f3f5298d12d6fd28d45dde515a4b9d7f67682d182ba5118abf451ff1988",
+// 		Peers: []*VBFTPeerStakeInfo{
+// 			{
+// 				Index:      1,
+// 				PeerPubkey: "03c5e12f54e1104ce5fb9a10c32850776864b03e6bc2ff2285efbb1abb9d9ba36a",
+// 				Address:    "AXKnGhh9WyoB1G5aXHDdzgSq4Zv3CJRNNs",
+// 				InitPos:    10000,
+// 			},
+// 			{
+// 				Index:      2,
+// 				PeerPubkey: "031dadf8fa327b9cc4c03bb8796d32c7048695b574cf37d7d4d30c6647958cddc9",
+// 				Address:    "AbLD3PEEg8ohKX2QP5YUoA8hj4hgnaKH5d",
+// 				InitPos:    20000,
+// 			},
+// 			{
+// 				Index:      3,
+// 				PeerPubkey: "0247cecfbdfb75ed9da031196dde8579d3f0df3f13fca05a82ab708c43b1fa9b5b",
+// 				Address:    "AQ31oFNS9HYtXYk4tAzajrZYCRQQRBBzcr",
+// 				InitPos:    30000,
+// 			},
+// 			{
+// 				Index:      4,
+// 				PeerPubkey: "020a3da2aa5a5ccead145088e60a2897ebf1834a01445ff71fc6dc651b9a078709",
+// 				Address:    "AboGDWUUkP2J6msQh9GhXgPvupdbzmkE2G",
+// 				InitPos:    40000,
+// 			},
+// 			{
+// 				Index:      5,
+// 				PeerPubkey: "02cb0af023e79618fefa1dcc75cce869f67a31c1e316b5b2d6fd98e58984befdec",
+// 				Address:    "Ab6YW8QKuVD3FVi3sUL1vu5fd2ge2KLVjC",
+// 				InitPos:    30000,
+// 			},
+// 			{
+// 				Index:      6,
+// 				PeerPubkey: "027e910e3ae3605307d25617a2cf5b04605d7d7d0e6ad87a92fc8437fe9186e9fc",
+// 				Address:    "ATErqzubJQxVtbHBVJJUfAahtqDmqt8Nkc",
+// 				InitPos:    20000,
+// 			},
+// 			{
+// 				Index:      7,
+// 				PeerPubkey: "02d7c46aaa3badb0f0f36434c6c6c5b823e11266c6d0febd63e0fb097d3eb7d5ac",
+// 				Address:    "Aafm5VJy8eiquJ7cthfvw2fPxsrwjT2Ucq",
+// 				InitPos:    10000,
+// 			},
+// 		},
+// 	},
+// 	DBFT: &DBFTConfig{},
+// 	SOLO: &SOLOConfig{},
+// }
+
 var PolarisConfig = &GenesisConfig{
 	SeedList: []string{
 		"polaris1.ont.io:28802",
@@ -232,36 +304,43 @@ var MainNetConfig = &GenesisConfig{
 				Index:      1,
 				PeerPubkey: "021161b96ff1a96a8b69b1c60aa52fa55106864eab7df50ba58b82e34d7802fd82",
 				Address:    "AT23zgpwoJYpghKP7ipZ2MQPJSxmJCnoQV",
+				InitPos:    10000,
 			},
 			{
 				Index:      2,
 				PeerPubkey: "026b376d44487141899f119e6d2fae02d4b33c23e19f8855e556159ed3e3a017d1",
 				Address:    "ANw2GfUeGz6arNDMknh2CYBa7rvC9TSWTn",
+				InitPos:    20000,
 			},
 			{
 				Index:      3,
 				PeerPubkey: "03878ce19d35d9b797beedd7a84604952357b1817e6b6be9c8c22edff4a2e33c8c",
 				Address:    "AZN9hFWCusgKTsaRK9XGREoooJ4AExLL5a",
+				InitPos:    30000,
 			},
 			{
 				Index:      4,
 				PeerPubkey: "023663af6f6c32179bcecf4c7db10e7d277c382ccbd511b295217e747ab102a6b0",
 				Address:    "AZiKEXEzP58MPZKdfSVcPo5vSwYLYMtjKB",
+				InitPos:    40000,
 			},
 			{
 				Index:      5,
 				PeerPubkey: "037cca170a02c4fc7f76f3bf7e890195246f71838740201f4145fd8258c42607ec",
 				Address:    "AVdpLbbwwXJs4W9cqysEg77UoVLam48nNa",
+				InitPos:    30000,
 			},
 			{
 				Index:      6,
 				PeerPubkey: "039cb756e732905c33a94d40985c032a0ab6eff10864ee0c7a70c89af396e4d5aa",
 				Address:    "AGdSfKcNrV9PaQXLwgGDXQYf5PJurDS88T",
+				InitPos:    20000,
 			},
 			{
 				Index:      7,
 				PeerPubkey: "03c06468262e97f310767a4b3af36ba695d616df41461eb3be84cae49939b67df4",
 				Address:    "ALuWnv6ivFeTXvbEh7toQNuVsjRT4oKTVM",
+				InitPos:    10000,
 			},
 		},
 	},
