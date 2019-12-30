@@ -1,5 +1,5 @@
 
-<h1 align="center">Ontology </h1>
+<h1 align="center">Tesranode </h1>
 <h4 align="center">Version 1.8.0 </h4>
 
 [![GoDoc](https://godoc.org/github.com/TesraSupernet/Tesra?status.svg)](https://godoc.org/github.com/TesraSupernet/Tesra)
@@ -9,21 +9,21 @@
 
 [English](README.md) | 中文
 
-欢迎来到Ontology的源码库！
+欢迎来到Tesranode的源码库！
 
-Ontology致力于创建一个组件化、可自由配置、跨链支持、高性能、横向可扩展的区块链底层基础设施。 让部署及调用去中心化应用变得更加非常简单。
+Tesranode致力于创建一个组件化、可自由配置、跨链支持、高性能、横向可扩展的区块链底层基础设施。 让部署及调用去中心化应用变得更加非常简单。
 
-Ontology MainNet 已经在2018年6月30日成功上线。<br>
+Tesranode MainNet 已经在2018年6月30日成功上线。<br>
 但很多新的功能还处于快速的开发过程中，master分支的代码可能是不稳定的，稳定的版本可以在[releases](https://github.com/TesraSupernet/Tesra/releases)中下载。
 
-公开的主网和测试网都可以在下面找到，也非常欢迎及希望能有更多的开发者加入到Ontology中来。
+公开的主网和测试网都可以在下面找到，也非常欢迎及希望能有更多的开发者加入到Tesranode中来。
 
 * [特性](#特性)
 * [构建开发环境](#构建开发环境)
-* [获取ontology](#获取ontology)
+* [获取tesranode](#获取tesranode)
     * [从release获取](#从release获取)
     * [从源码获取](#从源码获取)
-* [运行ontology](#运行ontology)
+* [运行tesranode](#运行tesranode)
     * [主网同步节点](#主网同步节点)
     * [公开测试网Polaris同步节点](#公开测试网polaris同步节点)
     * [测试模式](#测试模式)
@@ -50,21 +50,21 @@ Ontology MainNet 已经在2018年6月30日成功上线。<br>
 * 快速的区块生成时间
 
 ## 构建开发环境
-成功编译ontology需要以下准备：
+成功编译tesranode需要以下准备：
 
 * Golang版本在1.11及以上
 * 安装第三方包管理工具glide
 * 正确的Go语言开发环境
 * Golang所支持的操作系统
 
-## 获取ontology
+## 获取tesranode
 
 ### 从release获取
-- 你可以通过命令 ` curl https://dev.ont.io/ontology_install | sh ` 获取最新的ontology版本
+- 你可以通过命令 ` curl https://dev.ont.io/tesranode_install | sh ` 获取最新的tesranode版本
 - 你也可以从[下载页面](https://github.com/TesraSupernet/Tesra/releases)获取.
 
 ### 从源码获取
-克隆ontology仓库到 **$GOPATH/src/github.com/ontio** 目录
+克隆tesranode仓库到 **$GOPATH/src/github.com/ontio** 目录
 
 ```shell
 $ git clone https://github.com/TesraSupernet/Tesra.git
@@ -96,36 +96,36 @@ $ make all
 
 成功编译后会生成两个可以执行程序
 
-* `ontology`: 节点程序/以命令行方式提供的节点控制程序
+* `tesranode`: 节点程序/以命令行方式提供的节点控制程序
 * `tools/sigsvr`: (可选)签名服务 - sigsvr是一个签名服务的server以满足一些特殊的需求。详细的文档可以在[这里](./docs/specifications/sigsvr_CN.md)参考
 
-## 运行ontology
+## 运行tesranode
 
 ### 主网同步节点
 
-直接启动Ontology
+直接启动Tesranode
 
    ```
-	./ontology
+	./tesranode
    ```
 然后你可以连接上主网了。
 
 ### 公开测试网Polaris同步节点
 
-直接启动Ontology
+直接启动Tesranode
 
    ```
-	./ontology --networkid 2
+	./tesranode --networkid 2
    ```
 然后你可以连接上公共测试网了。
 
 ### 测试模式
 
 在单机上创建一个目录，在目录下存放以下文件：
-- 节点程序`ontology`
-- 钱包文件`wallet.dat` （注：`wallet.dat`可通过`./ontology account add -d`生成）
+- 节点程序`tesranode`
+- 钱包文件`wallet.dat` （注：`wallet.dat`可通过`./tesranode account add -d`生成）
 
-使用命令 `$ ./ontology --testmode` 即可启动单机版的测试网络。
+使用命令 `$ ./tesranode --testmode` 即可启动单机版的测试网络。
 
 单机配置的例子如下：
 - 目录结构
@@ -133,7 +133,7 @@ $ make all
     ```shell
     $ tree
     └── node
-        ├── ontology
+        ├── tesranode
         └── wallet.dat
     ```
 
@@ -143,17 +143,17 @@ $ make all
 
 1. 编译docker镜像
 
-    - 在下载好的源码根目录下，运行`make docker`命令，这将编译好ontology的docker镜像
+    - 在下载好的源码根目录下，运行`make docker`命令，这将编译好tesranode的docker镜像
 
-2. 运行ontology镜像
+2. 运行tesranode镜像
 
-    - 使用命令`docker run TesraSupernet/Tesra`运行ontology；
+    - 使用命令`docker run TesraSupernet/Tesra`运行tesranode；
 
     - 如果需要使镜像运行时接受交互式键盘输入，则使用`docker run -ti TesraSupernet/Tesra`命令启动镜像即可；
 
     - 如果需要保留镜像每次运行时的数据，可以参考docker的数据持久化功能（例如 valume）；
 
-    - 如果需要使用ontology参数，则在`docker run TesraSupernet/Tesra`后面直接加参数即可，例如`docker run TesraSupernet/Tesra --networkid 2`，具体的ontology命令
+    - 如果需要使用tesranode参数，则在`docker run TesraSupernet/Tesra`后面直接加参数即可，例如`docker run TesraSupernet/Tesra --networkid 2`，具体的tesranode命令
     行参数可以参考[这里](./docs/specifications/cli_user_guide_CN.md)。
 
 ## 使用示例
@@ -163,7 +163,7 @@ $ make all
       from参数可以不指定，如果不指定则使用默认账户。
 
 ```shell
-  ./ontology asset transfer  --from=ARVVxBPGySL56CvSSWfjRVVyZYpNZ7zp48 --to=AaCe8nVkMRABnp5YgEjYZ9E5KYCxks2uce --amount=10
+  ./tesranode asset transfer  --from=ARVVxBPGySL56CvSSWfjRVVyZYpNZ7zp48 --to=AaCe8nVkMRABnp5YgEjYZ9E5KYCxks2uce --amount=10
 ```
 
 执行完后会输出：
@@ -181,7 +181,7 @@ Transfer ONT
 如果需要转ONG，可以使用参数 -- asset = ong。注意，ONT最少单位是1，而ONG则有9位小数点。
 
 ```shell
-./ontology asset transfer --from=ARVVxBPGySL56CvSSWfjRVVyZYpNZ7zp48 --to=ARVVxBPGySL56CvSSWfjRVVyZYpNZ7zp48 --amount=95.479777254 --asset=ong
+./tesranode asset transfer --from=ARVVxBPGySL56CvSSWfjRVVyZYpNZ7zp48 --to=ARVVxBPGySL56CvSSWfjRVVyZYpNZ7zp48 --amount=95.479777254 --asset=ong
 ```
 执行完后会输出：
 
@@ -193,22 +193,22 @@ Transfer ONG
   TxHash:e4245d83607e6644c360b6007045017b5c5d89d9f0f5a9c3b37801018f789cc3
 ```
 
-注意，Ontology cli中，所有用到账户的地址的地方，都支持账户索引和账户标签。账户索引是账户在钱包中的序号，从1开始。标签是可以在创建账户的时候指定一个唯一的别名。如：
+注意，Tesranode cli中，所有用到账户的地址的地方，都支持账户索引和账户标签。账户索引是账户在钱包中的序号，从1开始。标签是可以在创建账户的时候指定一个唯一的别名。如：
 
 ```shell
-./ontology asset transfer --from=1 --to=2 --amount=10
+./tesranode asset transfer --from=1 --to=2 --amount=10
 ```
 
 ### 查询转账结果示例
 
 ```shell
-./ontology info status <TxHash>
+./tesranode info status <TxHash>
 ```
 
 如：
 
 ```shell
-./ontology info status e4245d83607e6644c360b6007045017b5c5d89d9f0f5a9c3b37801018f789cc3
+./tesranode info status e4245d83607e6644c360b6007045017b5c5d89d9f0f5a9c3b37801018f789cc3
 ```
 
 查询结果：
@@ -235,17 +235,17 @@ Transaction states:
 ### 查询账户余额示例
 
 ```shell
-./ontology asset balance <address|index|label>
+./tesranode asset balance <address|index|label>
 ```
 如：
 
 ```shell
-./ontology asset balance ARVVxBPGySL56CvSSWfjRVVyZYpNZ7zp48
+./tesranode asset balance ARVVxBPGySL56CvSSWfjRVVyZYpNZ7zp48
 ```
 或者
 
 ```shell
-./ontology asset balance 1
+./tesranode asset balance 1
 ```
 查询结果：
 ```shell
@@ -259,7 +259,7 @@ BalanceOf:ARVVxBPGySL56CvSSWfjRVVyZYpNZ7zp48
 ## 贡献代码
 
 请您以签过名的commit发送pull request请求，我们期待您的加入！
-您也可以通过邮件的方式发送你的代码到开发者邮件列表，欢迎加入Ontology邮件列表和开发者论坛。
+您也可以通过邮件的方式发送你的代码到开发者邮件列表，欢迎加入Tesranode邮件列表和开发者论坛。
 
 另外，在您想为本项目贡献代码时请提供详细的提交信息，格式参考如下：
 
@@ -294,4 +294,4 @@ BalanceOf:ARVVxBPGySL56CvSSWfjRVVyZYpNZ7zp48
 
 ## 许可证
 
-Ontology遵守GNU Lesser General Public License, 版本3.0。 详细信息请查看项目根目录下的LICENSE文件。
+Tesranode遵守GNU Lesser General Public License, 版本3.0。 详细信息请查看项目根目录下的LICENSE文件。

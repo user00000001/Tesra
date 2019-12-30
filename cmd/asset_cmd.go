@@ -1,19 +1,19 @@
 /*
- * Copyright (C) 2018 The ontology Authors
- * This file is part of The ontology library.
+ * Copyright (C) 2019 The TesraSupernet Authors
+ * This file is part of The TesraSupernet library.
  *
- * The ontology is free software: you can redistribute it and/or modify
+ * The TesraSupernet is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Lesser General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
  *
- * The ontology is distributed in the hope that it will be useful,
+ * The TesraSupernet is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Lesser General Public License for more details.
  *
  * You should have received a copy of the GNU Lesser General Public License
- * along with The ontology.  If not, see <http://www.gnu.org/licenses/>.
+ * along with The TesraSupernet.  If not, see <http://www.gnu.org/licenses/>.
  */
 
 package cmd
@@ -217,7 +217,7 @@ func transfer(ctx *cli.Context) error {
 	PrintInfoMsg("  Amount:%s", amountStr)
 	PrintInfoMsg("  TxHash:%s", txHash)
 	PrintInfoMsg("\nTip:")
-	PrintInfoMsg("  Using './ontology info status %s' to query transaction status.", txHash)
+	PrintInfoMsg("  Using './tesranode info status %s' to query transaction status.", txHash)
 	return nil
 }
 
@@ -359,7 +359,7 @@ func approve(ctx *cli.Context) error {
 	PrintInfoMsg("  Amount:%s", amountStr)
 	PrintInfoMsg("  TxHash:%s", txHash)
 	PrintInfoMsg("\nTip:")
-	PrintInfoMsg("  Using './ontology info status %s' to query transaction status.", txHash)
+	PrintInfoMsg("  Using './tesranode info status %s' to query transaction status.", txHash)
 	return nil
 }
 
@@ -457,7 +457,7 @@ func transferFrom(ctx *cli.Context) error {
 	PrintInfoMsg("  Amount:%s", amountStr)
 	PrintInfoMsg("  TxHash:%s", txHash)
 	PrintInfoMsg("\nTip:")
-	PrintInfoMsg("  Using './ontology info status %s' to query transaction status.", txHash)
+	PrintInfoMsg("  Using './tesranode info status %s' to query transaction status.", txHash)
 	return nil
 }
 
@@ -541,6 +541,6 @@ func withdrawOng(ctx *cli.Context) error {
 	PrintInfoMsg("  Amount:%s", utils.FormatOng(amount))
 	PrintInfoMsg("  TxHash:%s", txHash)
 	PrintInfoMsg("\nTip:")
-	PrintInfoMsg("  Using './ontology info status %s' to query transaction status.", txHash)
+	PrintInfoMsg("  Using './tesranode info status %s' to query transaction status.", txHash)
 	return nil
 }

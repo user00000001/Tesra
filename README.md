@@ -1,5 +1,5 @@
 
-<h1 align="center">Ontology</h1>
+<h1 align="center">Tesranode</h1>
 <h4 align="center">Version 1.8.0</h4>
 
 [![GoDoc](https://godoc.org/github.com/TesraSupernet/Tesra?status.svg)](https://godoc.org/github.com/TesraSupernet/Tesra)
@@ -9,20 +9,20 @@
 
 English | [中文](README_CN.md)
 
-Welcome to the official Go implementation of the [Ontology](https://ont.io) blockchain!
+Welcome to the official Go implementation of the [Tesranode](https://ont.io) blockchain!
 
-Ontology is a high-performance public blockchain project and distributed trust collaboration platform. It is highly customizable and suitable for all kinds of business requirements. The Ontology MainNet was launched on June 30th, 2018.
+Tesranode is a high-performance public blockchain project and distributed trust collaboration platform. It is highly customizable and suitable for all kinds of business requirements. The Tesranode MainNet was launched on June 30th, 2018.
 
-As a public blockchain project, Ontology is currently maintained by both the Ontology core tech team and community members who can all support you in development. There are many available tools for use for development - SDKs, the SmartX IDE, Ontology blockchain explorer and more.
+As a public blockchain project, Tesranode is currently maintained by both the Tesranode core tech team and community members who can all support you in development. There are many available tools for use for development - SDKs, the SmartX IDE, Tesranode blockchain explorer and more.
 
 New features are still being rapidly developed, therefore the master branch may be unstable. Stable versions can be found in the [releases section](https://github.com/TesraSupernet/Tesra/releases).
 
 - [Features](#features)
 - [Build Development Environment](#build-development-environment)
-- [Download Ontology](#download-ontology)
+- [Download Tesranode](#download-tesranode)
     - [Download Release](#download-release)
     - [Build from Source Code](#build-from-source-code)
-- [Run Ontology](#run-ontology)
+- [Run Tesranode](#run-tesranode)
     - [MainNet Sync Node](#mainnet-sync-node)
     - [TestNet Sync Node](#testnet-sync-node)
     - [Local PrivateNet](#local-privatenet)
@@ -47,23 +47,23 @@ New features are still being rapidly developed, therefore the master branch may 
 
 
 ## Build Development Environment
-The requirements to build Ontology are:
+The requirements to build Tesranode are:
 
 - [Golang](https://golang.org/doc/install) version 1.11 or later
 - [Glide](https://glide.sh) (a third party package management tool for Golang)
 
-## Download Ontology
+## Download Tesranode
 
 ### Download Release
-You can download a stable compiled version of the Ontology node software by either:
+You can download a stable compiled version of the Tesranode node software by either:
 
-- Downloading the latest Ontology binary file with `curl https://dev.ont.io/ontology_install | sh`.
+- Downloading the latest Tesranode binary file with `curl https://dev.ont.io/tesranode_install | sh`.
 - Downloading a specific version from the [release section](https://github.com/TesraSupernet/Tesra/releases).
 
 ### Build from Source Code
-Alternatively, you can build the Ontology application directly from the source code. Note that the code in the `master` branch may not be stable.
+Alternatively, you can build the Tesranode application directly from the source code. Note that the code in the `master` branch may not be stable.
 
-1) Clone the Ontology repository into the appropriate `$GOPATH/src/github.com/ontio` directory:
+1) Clone the Tesranode repository into the appropriate `$GOPATH/src/github.com/ontio` directory:
 
 ```
 $ git clone https://github.com/TesraSupernet/Tesra.git
@@ -95,110 +95,110 @@ $ make all
 
 After building the source code successfully, you should see two executable programs:
 
-- `ontology`: The primary Ontology node application and CLI.
-- `tools/sigsvr`: The Ontology Signature Server, `sigsvr` - an RPC server for signing transactions. Detailed documentation can be found [here](https://github.com/ontio/documentation/blob/master/docs/pages/doc_en/Ontology/sigsvr_en.md).
+- `tesranode`: The primary Tesranode node application and CLI.
+- `tools/sigsvr`: The Tesranode Signature Server, `sigsvr` - an RPC server for signing transactions. Detailed documentation can be found [here](https://github.com/ontio/documentation/blob/master/docs/pages/doc_en/Tesranode/sigsvr_en.md).
 
-## Run Ontology
+## Run Tesranode
 
-The Ontology CLI can run nodes for the MainNet, TestNet and local PrivateNet. Check out the [Ontology CLI user guide](https://github.com/TesraSupernet/Tesra/blob/master/docs/specifications/cli_user_guide.md) for a full list of commands.
+The Tesranode CLI can run nodes for the MainNet, TestNet and local PrivateNet. Check out the [Tesranode CLI user guide](https://github.com/TesraSupernet/Tesra/blob/master/docs/specifications/cli_user_guide.md) for a full list of commands.
 
 ### MainNet Sync Node
 
-You can run an Ontology MainNet node built from the source code with:
+You can run an Tesranode MainNet node built from the source code with:
 
  ``` shell
-./ontology
+./tesranode
  ```
 
  To run it with a macOS release build:
 
  ``` shell
- ./ontology-darwin-amd64
+ ./tesranode-darwin-amd64
  ```
 
  To run it with a Windows release build:
 
  ``` shell
- start ontology-windows-amd64.exe
+ start tesranode-windows-amd64.exe
  ```
 
 ### TestNet Sync Node
 
-You can run an Ontology TestNet node built from the source code with:
+You can run an Tesranode TestNet node built from the source code with:
 
  ``` shell
-./ontology --networkid 2
+./tesranode --networkid 2
  ```
 
  To run it with a macOS release build:
 
  ``` shell
- ./ontology-darwin-amd64 --networkid 2
+ ./tesranode-darwin-amd64 --networkid 2
  ```
 
  To run it with a Windows release build:
 
  ``` shell
- start ontology-windows-amd64.exe --networkid 2
+ start tesranode-windows-amd64.exe --networkid 2
  ```
 
 ### Local PrivateNet
 
-The Ontology CLI allows you to run a local PrivateNet on your computer. Before you can run the PrivateNet you will need to create a wallet file. A wallet file named `wallet.dat` can be generated by running
+The Tesranode CLI allows you to run a local PrivateNet on your computer. Before you can run the PrivateNet you will need to create a wallet file. A wallet file named `wallet.dat` can be generated by running
 
 ``` shell
-./ontology account add -d
+./tesranode account add -d
 ```
 
 To start the PrivateNet built from the source code with:
 
 ``` shell
-./ontology --testmode
+./tesranode --testmode
 ```
 
 Here's an example of the directory structure
 
 ``` shell
 $ tree
-└── ontology
-    ├── ontology
+└── tesranode
+    ├── tesranode
     └── wallet.dat
 ```
 
 To run it with a macOS release build:
 
 ``` shell
-./ontology-darwin-amd64 --testmode
+./tesranode-darwin-amd64 --testmode
 ```
 
 To run it with a Windows release build:
 
 ``` shell
-start ontology-windows-amd64.exe --testmode
+start tesranode-windows-amd64.exe --testmode
 ```
 
 ### Run with Docker
 
-You can run the Ontology node software with Docker.
+You can run the Tesranode node software with Docker.
 
 1. Setup Docker on your computer
   - You will need the latest version of [Docker Desktop](https://www.docker.com/products/docker-desktop).
 
 2. Make a Docker image
-  - In the root directory of the source code, run `make docker` to make an Ontology image.
+  - In the root directory of the source code, run `make docker` to make an Tesranode image.
 
-3. Run the Ontology image
-  - Run the command `docker run TesraSupernet/Tesra` to start Ontology
-  - Run the command `docker run -ti TesraSupernet/Tesra` to start Ontology and allow interactive keyboard input
+3. Run the Tesranode image
+  - Run the command `docker run TesraSupernet/Tesra` to start Tesranode
+  - Run the command `docker run -ti TesraSupernet/Tesra` to start Tesranode and allow interactive keyboard input
   - If you need to keep the data generated by the image, refer to Docker's data persistence function
-  - You can add arguments to the Ontology command, such as with `docker run TesraSupernet/Tesra --networkid 2`.
+  - You can add arguments to the Tesranode command, such as with `docker run TesraSupernet/Tesra --networkid 2`.
 
 ## Examples
 
 ### ONT transfer sample
  -- from: transfer from； -- to: transfer to； -- amount: ONT amount；
 ```shell
- ./ontology asset transfer  --from=ARVVxBPGySL56CvSSWfjRVVyZYpNZ7zp48 --to=AaCe8nVkMRABnp5YgEjYZ9E5KYCxks2uce --amount=10
+ ./tesranode asset transfer  --from=ARVVxBPGySL56CvSSWfjRVVyZYpNZ7zp48 --to=AaCe8nVkMRABnp5YgEjYZ9E5KYCxks2uce --amount=10
 ```
 If the asset transfer is successful, the result will display as follows:
 
@@ -214,10 +214,10 @@ Due to block time, the transfer transaction will not be executed before the bloc
 
 If you want to transfer ONG, just add --asset=ong flag.
 
-Note that ONT is an integer and has no decimals, whereas ONG has 9 decimals. For detailed info please read [Everything you need to know about ONG](https://medium.com/ontologynetwork/everything-you-need-to-know-about-ong-582ed216b870).
+Note that ONT is an integer and has no decimals, whereas ONG has 9 decimals. For detailed info please read [Everything you need to know about ONG](https://medium.com/tesranodenetwork/everything-you-need-to-know-about-ong-582ed216b870).
 
 ```shell
-./ontology asset transfer --from=ARVVxBPGySL56CvSSWfjRVVyZYpNZ7zp48 --to=ARVVxBPGySL56CvSSWfjRVVyZYpNZ7zp48 --amount=95.479777254 --asset=ong
+./tesranode asset transfer --from=ARVVxBPGySL56CvSSWfjRVVyZYpNZ7zp48 --to=ARVVxBPGySL56CvSSWfjRVVyZYpNZ7zp48 --amount=95.479777254 --asset=ong
 ```
 If transfer of the asset succeeds, the result will display as follows:
 
@@ -232,19 +232,19 @@ Transfer ONG
 Please note, when you use the address of an account, you can use the index or label of the account instead. Index is the sequence number of a particular account in the wallet. The index starts from 1, and the label is the unique alias of an account in the wallet.
 
 ```shell
-./ontology asset transfer --from=1 --to=2 --amount=10
+./tesranode asset transfer --from=1 --to=2 --amount=10
 ```
 
 ### Query transfer status sample
 
 ```shell
-./ontology info status <TxHash>
+./tesranode info status <TxHash>
 ```
 
 For Example:
 
 ```shell
-./ontology info status 10dede8b57ce0b272b4d51ab282aaf0988a4005e980d25bd49685005cc76ba7f
+./tesranode info status 10dede8b57ce0b272b4d51ab282aaf0988a4005e980d25bd49685005cc76ba7f
 ```
 
 Result:
@@ -259,19 +259,19 @@ Amount:10
 ### Query account balance sample
 
 ```shell
-./ontology asset balance <address|index|label>
+./tesranode asset balance <address|index|label>
 ```
 
 For Example:
 
 ```shell
-./ontology asset balance ARVVxBPGySL56CvSSWfjRVVyZYpNZ7zp48
+./tesranode asset balance ARVVxBPGySL56CvSSWfjRVVyZYpNZ7zp48
 ```
 
 or
 
 ```shell
-./ontology asset balance 1
+./tesranode asset balance 1
 ```
 Result:
 ```shell
@@ -284,10 +284,10 @@ For further examples, please refer to the [CLI User Guide](https://ontio.github.
 
 ## Contributions
 
-Contributors to Ontology are very welcome! Before beginning, please take a look at our [contributing guidelines](CONTRIBUTING.md). You can open an issue by [clicking here](https://github.com/TesraSupernet/Tesra/issues/new).
+Contributors to Tesranode are very welcome! Before beginning, please take a look at our [contributing guidelines](CONTRIBUTING.md). You can open an issue by [clicking here](https://github.com/TesraSupernet/Tesra/issues/new).
 
-If you have any issues getting setup, open an issue or reach out in the [Ontology Discord](https://discordapp.com/invite/4TQujHj).
+If you have any issues getting setup, open an issue or reach out in the [Tesranode Discord](https://discordapp.com/invite/4TQujHj).
 
 ## License
 
-The Ontology source code is available under the [LGPL-3.0](LICENSE) license.
+The Tesranode source code is available under the [LGPL-3.0](LICENSE) license.

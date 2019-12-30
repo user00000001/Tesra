@@ -1,13 +1,13 @@
 ---
 name: Bug report
-about: Create a report to help us improve ontology
+about: Create a report to help us improve tesranode
 
 ---
 
 Please answer these questions before submitting your issue. Thanks!
 
 
-#### What version of ontology are you using (`ontology --version`)?
+#### What version of tesranode are you using (`tesranode --version`)?
 
 
 #### Does this issue reproduce with the latest release?

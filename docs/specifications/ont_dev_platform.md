@@ -15,11 +15,11 @@
  ![avatar](azure_image/explorer.png)
  
 ## ONG acquisition mode ：
-* ./ontology account list -v (View your wallet address,for example:ATcB3KHaC28dGgVPwU3DYUuXf5iBo1TLug)
-* ./ontology asset transfer --from 1 --to 1 --asset=ont --amount=10000(Transfer your account to yourself)
-* ./ontology asset unboundong 1(View the number of ong that can be transferred )
-* ./ontology asset withdrawong 1(extract ong )
-* ./ontology asset balance 1(Check the ong in your wallet. succeed)
+* ./tesranode account list -v (View your wallet address,for example:ATcB3KHaC28dGgVPwU3DYUuXf5iBo1TLug)
+* ./tesranode asset transfer --from 1 --to 1 --asset=ont --amount=10000(Transfer your account to yourself)
+* ./tesranode asset unboundong 1(View the number of ong that can be transferred )
+* ./tesranode asset withdrawong 1(extract ong )
+* ./tesranode asset balance 1(Check the ong in your wallet. succeed)
 
 ## Software infomation
 ### 1.mysql
@@ -29,7 +29,7 @@
 * database:explorer
 * operation :systemctl start/stop/restart mysqld
 
-### 2.ontology
+### 2.tesranode
 * path:/data/gopath/test
 * operation:cd /data/gopath/test && ./start.sh
 * Log:/data/gopath/test/Log

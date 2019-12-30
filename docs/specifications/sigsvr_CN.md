@@ -1,10 +1,10 @@
-# Ontology 签名服务器使用说明
+# Tesranode 签名服务器使用说明
 
 [[English](sigsvr.md)|中文]
 
-Ontology签名服务器sigsvr是一个用于对交易进行签名的rpc服务器。
+Tesranode签名服务器sigsvr是一个用于对交易进行签名的rpc服务器。
 
-* [Ontology 签名服务器使用说明](#ontology-签名服务器使用说明)
+* [Tesranode 签名服务器使用说明](#tesranode-签名服务器使用说明)
 	* [1、签名服务启动](#1-签名服务启动)
 		* [1.1 签名服务启动参数：](#11-签名服务启动参数)
 		* [1.2 导入钱包账户](#12-导入钱包账户)

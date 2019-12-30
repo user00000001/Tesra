@@ -416,7 +416,7 @@ send transaction.
 
 #### Parameter instruction
 
-Hex: Serialized signed transactions constructed in the program into hexadecimal strings. Building the parameter,please refer to NewNativeInvokeTransaction in ontology-go-sdk/rpc.go
+Hex: Serialized signed transactions constructed in the program into hexadecimal strings. Building the parameter,please refer to NewNativeInvokeTransaction in tesrasdk/rpc.go
 
 PreExec : set 1 if want prepare exec smartcontract
 
@@ -605,9 +605,9 @@ Response:
         "NeedStorage": true,
         "Name": "ONT",
         "CodeVersion": "1.0",
-        "Author": "Ontology Team",
+        "Author": "Tesranode Team",
         "Email": "contact@ont.io",
-        "Description": "Ontology Network ONT Token"
+        "Description": "Tesranode Network ONT Token"
     }
 }
 ```

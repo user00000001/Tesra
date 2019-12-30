@@ -1,4 +1,4 @@
-# Ontology Websocket API
+# Tesranode Websocket API
 
 [English](websocket_api.md)|中文
 
@@ -8,7 +8,7 @@
 
 ## 介绍
 
-本文档是Ontology的websocket接口文档，详细定义了各个接口所需的参数与返回值。
+本文档是Tesranode的websocket接口文档，详细定义了各个接口所需的参数与返回值。
 
 ### 响应参数定义
 
@@ -34,7 +34,7 @@
 | [getblockheight](#7-getblockheight) |  | 得到当前网络上的区块高度 |
 | [getblockhash](#8-getblockhash) | height | 根据高度得到对应区块的哈希 |
 | [gettransaction](#9-gettransaction) | hash,[raw] | 通过交易哈希得到该交易的信息 |
-| [sendrawtransaction](#10-sendrawtransaction) | data,[PreExec] | 向ontology网络发送交易, 如果 preExec=1，则交易为预执行 |
+| [sendrawtransaction](#10-sendrawtransaction) | data,[PreExec] | 向tesranode网络发送交易, 如果 preExec=1，则交易为预执行 |
 | [getstorage](#11-getstorage) | hash,key | 通过合约地址哈希和键得到对应的值 |
 | [getbalance](#12-getbalance) | address | 得到该地址的账户的余额 |
 | [getcontract](#13-getcontract) | hash | 根据合约地址哈希得到合约信息 |
@@ -440,7 +440,7 @@ raw：可选参数，默认值为零，不设置时为默认值。当值为1时�
 
 ### 10. sendrawtransaction
 
-向ontology网络发送交易。
+向tesranode网络发送交易。
 
 如果 preExec=1，则交易为预执行。
 
@@ -456,7 +456,7 @@ raw：可选参数，默认值为零，不设置时为默认值。当值为1时�
     "Data":"80000001195876cb34364dc38b730077156c6bc3a7fc570044a66fbfeeea56f71327e8ab0000029b7cffdaa674beae0f930ebe6085af9093e5fe56b34a5c220ccdcf6efc336fc500c65eaf440000000f9a23e06f74cf86b8827a9108ec2e0f89ad956c9b7cffdaa674beae0f930ebe6085af9093e5fe56b34a5c220ccdcf6efc336fc50092e14b5e00000030aab52ad93f6ce17ca07fa88fc191828c58cb71014140915467ecd359684b2dc358024ca750609591aa731a0b309c7fb3cab5cd0836ad3992aa0a24da431f43b68883ea5651d548feb6bd3c8e16376e6e426f91f84c58232103322f35c7819267e721335948d385fae5be66e7ba8c748ac15467dcca0693692dac"
 }
 ```
-可以使用ontology-go-sdk生成十六进制数据，参考这个[例子](rpc_api_CN.md#8-sendrawtransaction)
+可以使用tesrasdk生成十六进制数据，参考这个[例子](rpc_api_CN.md#8-sendrawtransaction)
 
 #### Response Example:
 ```
@@ -561,9 +561,9 @@ raw：可选参数，默认值为零，不设置时为默认值。当值为1时�
         "NeedStorage": true,
         "Name": "ONT",
         "CodeVersion": "1.0",
-        "Author": "Ontology Team",
+        "Author": "Tesranode Team",
         "Email": "contact@ont.io",
-        "Description": "Ontology Network ONT Token"
+        "Description": "Tesranode Network ONT Token"
     }
 }
 ```

@@ -83,7 +83,7 @@
 | [getrawtransaction](#6-getrawtransaction) | transactionhash | 通过交易哈希得到交易详情 |  |
 | [sendrawtransaction](#7-sendrawtransaction) | hex,preExec | 向网络中发送交易 | 发送的数据为签过名的交易序列化后的十六进制字符串 |
 | [getstorage](#8-getstorage) | script_hash, key |根据合约地址和存储的键，得到对应的值 |  |
-| [getversion](#9-getversion) |  | 得到运行的ontology版本 |  |
+| [getversion](#9-getversion) |  | 得到运行的tesranode版本 |  |
 | [getcontractstate](#10-getcontractstate) | script_hash,[verbose] | 根据合约地址，得到合约信息 |  |
 | [getmempooltxcount](#11-getmempooltxcount) |         | 查询内存中的交易的数量 |  |
 | [getmempooltxstate](#12-getmempooltxstate) | tx_hash | 查询内存中的交易的状态 |  |
@@ -418,7 +418,7 @@ Response:
 
 #### 参数定义
 
-Hex: 签名后的交易序列化成的十六进数据。可以参考ontology-go-sdk/rpc.go中的NewNativeInvokeTransaction方法生成。
+Hex: 签名后的交易序列化成的十六进数据。可以参考tesrasdk/rpc.go中的NewNativeInvokeTransaction方法生成。
 
 PreExec : 值设置为1则表示此交易为预执行。
 
@@ -542,7 +542,7 @@ Response:
 
 #### 9. getversion
 
-得到运行的ontology版本。
+得到运行的tesranode版本。
 
 #### Example
 
@@ -606,9 +606,9 @@ Response:
         "NeedStorage": true,
         "Name": "ONT",
         "CodeVersion": "1.0",
-        "Author": "Ontology Team",
+        "Author": "Tesranode Team",
         "Email": "contact@ont.io",
-        "Description": "Ontology Network ONT Token"
+        "Description": "Tesranode Network ONT Token"
     }
 }
 ```

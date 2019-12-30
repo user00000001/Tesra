@@ -1,19 +1,19 @@
 /*
- * Copyright (C) 2018 The ontology Authors
- * This file is part of The ontology library.
+ * Copyright (C) 2019 The TesraSupernet Authors
+ * This file is part of The TesraSupernet library.
  *
- * The ontology is free software: you can redistribute it and/or modify
+ * The TesraSupernet is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Lesser General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
  *
- * The ontology is distributed in the hope that it will be useful,
+ * The TesraSupernet is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Lesser General Public License for more details.
  *
  * You should have received a copy of the GNU Lesser General Public License
- * along with The ontology.  If not, see <http://www.gnu.org/licenses/>.
+ * along with The TesraSupernet.  If not, see <http://www.gnu.org/licenses/>.
  */
 
 package cmd
@@ -44,7 +44,7 @@ var (
 			{
 				Action:    deployContract,
 				Name:      "deploy",
-				Usage:     "Deploy a smart contract to ontology",
+				Usage:     "Deploy a smart contract to tesranode",
 				ArgsUsage: " ",
 				Flags: []cli.Flag{
 					utils.RPCPortFlag,
@@ -66,7 +66,7 @@ var (
 				Action: invokeContract,
 				Name:   "invoke",
 				Usage:  "Invoke smart contract",
-				ArgsUsage: `Ontology contract support bytearray(need encode to hex string), string, integer, boolean parameter type.
+				ArgsUsage: `tesranode contract support bytearray(need encode to hex string), string, integer, boolean parameter type.
 
   Parameter 
      Contract parameters separate with comma ',' to split params. and must add type prefix to params.
@@ -186,7 +186,7 @@ func deployContract(ctx *cli.Context) error {
 	PrintInfoMsg("  Contract Address:%s", address.ToHexString())
 	PrintInfoMsg("  TxHash:%s", txHash)
 	PrintInfoMsg("\nTip:")
-	PrintInfoMsg("  Using './ontology info status %s' to query transaction status.", txHash)
+	PrintInfoMsg("  Using './tesranode info status %s' to query transaction status.", txHash)
 	return nil
 }
 
@@ -278,7 +278,7 @@ func invokeCodeContract(ctx *cli.Context) error {
 
 	PrintInfoMsg("TxHash:%s", txHash)
 	PrintInfoMsg("\nTip:")
-	PrintInfoMsg("  Using './ontology info status %s' to query transaction status.", txHash)
+	PrintInfoMsg("  Using './tesranode info status %s' to query transaction status.", txHash)
 	return nil
 }
 
@@ -377,6 +377,6 @@ func invokeContract(ctx *cli.Context) error {
 
 	PrintInfoMsg("  TxHash:%s", txHash)
 	PrintInfoMsg("\nTips:")
-	PrintInfoMsg("  Using './ontology info status %s' to query transaction status.", txHash)
+	PrintInfoMsg("  Using './tesranode info status %s' to query transaction status.", txHash)
 	return nil
 }

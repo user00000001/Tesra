@@ -1,4 +1,4 @@
-# Ontology Restful API
+# Tesranode Restful API
 
 [English](restful_api.md)|中文
 
@@ -8,7 +8,7 @@
 
 ## 介绍
 
-本文档是Ontology的REST接口文档，详细定义了各个接口所需的参数与返回值。
+本文档是Tesranode的REST接口文档，详细定义了各个接口所需的参数与返回值。
 
 ### 响应参数定义
 
@@ -44,7 +44,7 @@
 | [get_mempooltxcount](#18-get_mempooltxcount) | GET /api/v1/mempool/txcount | 得到内存中的交易的数量 |
 | [get_mempooltxstate](#19-get_mempooltxstate) | GET /api/v1/mempool/txstate/:hash | 通过交易哈希得到内存中该交易的状态 |
 | [get_version](#20-get_version) |  GET /api/v1/version | 得到版本信息 |
-| [post_raw_tx](#21-post_raw_tx) | post /api/v1/transaction?preExec=0 | 向ontology网络发送交易 |
+| [post_raw_tx](#21-post_raw_tx) | post /api/v1/transaction?preExec=0 | 向tesranode网络发送交易 |
 | [get_networkid](#22-get_networkid) |  GET /api/v1/networkid | 得到network id |
 | [get_grantong](#23-get_grantong) |  GET /api/v1/grantong/:addr | 得到grant ong |
 
@@ -460,9 +460,9 @@ curl -i http://server:port/api/v1/contract/0100000000000000000000000000000000000
         "NeedStorage": true,
         "Name": "ONT",
         "CodeVersion": "1.0",
-        "Author": "Ontology Team",
+        "Author": "Tesranode Team",
         "Email": "contact@ont.io",
-        "Description": "Ontology Network ONT Token"
+        "Description": "Tesranode Network ONT Token"
     }
 }
 ```
@@ -785,7 +785,7 @@ curl -i http://localhost:20334/api/v1/version
 
 ### 21 post_raw_tx
 
-向ontology网络发送交易。
+向tesranode网络发送交易。
 
 如果 preExec=1，则交易为预执行。
 
@@ -810,7 +810,7 @@ curl  -H "Content-Type: application/json"  -X POST -d '{"Action":"sendrawtransac
     "Data":"80000001195876cb34364dc38b730077156c6bc3a7fc570044a66fbfeeea56f71327e8ab0000029b7cffdaa674beae0f930ebe6085af9093e5fe56b34a5c220ccdcf6efc336fc500c65eaf440000000f9a23e06f74cf86b8827a9108ec2e0f89ad956c9b7cffdaa674beae0f930ebe6085af9093e5fe56b34a5c220ccdcf6efc336fc50092e14b5e00000030aab52ad93f6ce17ca07fa88fc191828c58cb71014140915467ecd359684b2dc358024ca750609591aa731a0b309c7fb3cab5cd0836ad3992aa0a24da431f43b68883ea5651d548feb6bd3c8e16376e6e426f91f84c58232103322f35c7819267e721335948d385fae5be66e7ba8c748ac15467dcca0693692dac"
 }
 ```
-可以使用ontology-go-sdk生成十六进制数据，参考这个[例子](rpc_api_CN.md#8-sendrawtransaction)
+可以使用tesrasdk生成十六进制数据，参考这个[例子](rpc_api_CN.md#8-sendrawtransaction)
 
 #### Response
 ```

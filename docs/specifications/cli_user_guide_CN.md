@@ -1,13 +1,13 @@
-# Ontology cli 使用说明
+# Tesranode cli 使用说明
 
 [[English](cli_user_guide.md)|中文]
 
-Ontology cli 是Ontology命令行客户端，用于启动和管理Ontology节点，管理钱包账户，发送交易以及部署和调用智能合约等。
+Tesranode cli 是Tesranode命令行客户端，用于启动和管理Tesranode节点，管理钱包账户，发送交易以及部署和调用智能合约等。
 
-* [Ontology cli 使用说明](#ontology-cli-使用说明)
-	* [1、启动和管理Ontology节点](#1-启动和管理ontology节点)
+* [Tesranode cli 使用说明](#tesranode-cli-使用说明)
+	* [1、启动和管理Tesranode节点](#1-启动和管理tesranode节点)
 		* [1.1 启动参数](#11-启动参数)
-			* [1.1.1 Ontology 系统参数](#111-ontology-系统参数)
+			* [1.1.1 Tesranode 系统参数](#111-tesranode-系统参数)
 			* [1.1.2 账户参数](#112-账户参数)
 			* [1.1.3 共识参数](#113-共识参数)
 			* [1.1.4 P2P网络参数](#114-p2p网络参数)
@@ -80,29 +80,29 @@ Ontology cli 是Ontology命令行客户端，用于启动和管理Ontology节点
 		* [11.1 发送交易](#111-发送交易)
 	* [12、查看交易信息](#12-查看交易信息)
 
-## 1、启动和管理Ontology节点
+## 1、启动和管理Tesranode节点
 
-Ontology cli有很多启动参数，用于配置很管理Ontology节点的一些行为。如果不带任何参数启动Ontology cli时，默认会作为一个同步节点接入Ontology的主网。
+Tesranode cli有很多启动参数，用于配置很管理Tesranode节点的一些行为。如果不带任何参数启动Tesranode cli时，默认会作为一个同步节点接入Tesranode的主网。
 
 ```
-./ontology
+./tesranode
 ```
-使用./ontology -help 可以查看到Ontology cli节点支持的所有启动参数。
+使用./tesranode -help 可以查看到Tesranode cli节点支持的所有启动参数。
 
 ### 1.1 启动参数
 
-以下是Ontology cli 支持的命令行参数：
+以下是Tesranode cli 支持的命令行参数：
 
-#### 1.1.1 Ontology 系统参数
+#### 1.1.1 Tesranode 系统参数
 
 --config
-config 参数用于指定当前Ontology节点创世区块配置文件的路径。如果不指定，将使用Ontology主网的创世块配置。注意，同一个网络所有节点的创世区块配置必须一致，否则会因为区块数据不兼容导致无法启动节点或同步区块数据。
+config 参数用于指定当前Tesranode节点创世区块配置文件的路径。如果不指定，将使用Tesranode主网的创世块配置。注意，同一个网络所有节点的创世区块配置必须一致，否则会因为区块数据不兼容导致无法启动节点或同步区块数据。
 
 --loglevel
-loglevel 参数用于设置Ontology输出的日志级别。Ontology支持从0:Trace 1:Debug 2:Info 3:Warn 4:Error 5:Fatal 6:MaxLevel 的7级日志，日志等级由低到高，输出的日志量由多到少。默认值是2，即只输出info级及其之上级别的日志。
+loglevel 参数用于设置Tesranode输出的日志级别。Tesranode支持从0:Trace 1:Debug 2:Info 3:Warn 4:Error 5:Fatal 6:MaxLevel 的7级日志，日志等级由低到高，输出的日志量由多到少。默认值是2，即只输出info级及其之上级别的日志。
 
 --disable-event-log
-disable-event-log 参数用于关闭智能合约执行时输出的event log，以提升节点交易执行性能。Ontology 节点默认会开启智能合约执行时的event log输出功能。
+disable-event-log 参数用于关闭智能合约执行时输出的event log，以提升节点交易执行性能。Tesranode 节点默认会开启智能合约执行时的event log输出功能。
 
 --data-dir
 data-dir 参数用于指定区块数据的存放目录。默认值为"./Chain"。
@@ -110,13 +110,13 @@ data-dir 参数用于指定区块数据的存放目录。默认值为"./Chain"�
 #### 1.1.2 账户参数
 
 --wallet, -w
-wallet 参数用于指定Ontology节点启动时的钱包文件路径。默认值为"./wallet.dat"。
+wallet 参数用于指定Tesranode节点启动时的钱包文件路径。默认值为"./wallet.dat"。
 
 --account, -a
 account 参数用于指定Ontlogy节点启动时的账户地址。不填则使用钱包默认账户。
 
 --password, -p
-password 参数用于指定Ontology节点启动的账户密码。因为在命令行中输入的账户密码会被保存在系统的日志中，容易造成密码泄露，因此在生产环境中建议不要使用该参数。
+password 参数用于指定Tesranode节点启动的账户密码。因为在命令行中输入的账户密码会被保存在系统的日志中，容易造成密码泄露，因此在生产环境中建议不要使用该参数。
 
 #### 1.1.3 共识参数
 
@@ -146,7 +146,7 @@ httpinfo-port 参数用于指定查看节点信息的http server端口。默认�
 #### 1.1.5 RPC 服务器参数
 
 --disable-rpc
-disable-rpc 参数用于关闭rpc服务器。Ontology节点在启动时会默认启动rpc服务器。
+disable-rpc 参数用于关闭rpc服务器。Tesranode节点在启动时会默认启动rpc服务器。
 
 --rpcport
 rpcport 参数用指定rpc服务器绑定的端口号。默认值为20336。
@@ -187,24 +187,24 @@ gasprice 参数用于设定当前节点交易池接受交易的最低gasprice，
 gaslimit 参数用于设置当前节点交易池接受交易的最低gaslimit，低于这个gaslimit的交易将被丢弃。默认值为20000。
 
 --disable-tx-pool-pre-exec
-disable-tx-pool-pre-exec 参数用于关闭交易池中对来自网络的交易预执行校验。Ontology节点在启动时交易池默认打开预执行。
+disable-tx-pool-pre-exec 参数用于关闭交易池中对来自网络的交易预执行校验。Tesranode节点在启动时交易池默认打开预执行。
 
 --disable-sync-verify-tx
 disable-sync-verify-tx 参数用于关闭rpc、restful、websocket中同步验证交易
 
 --disable-broadcast-net-tx
-disable-broadcast-net-tx 参数用于关闭交易池广播来自网络的交易。Ontology节点在启动时交易池默认打开广播来自网络的交易功能的。
+disable-broadcast-net-tx 参数用于关闭交易池广播来自网络的交易。Tesranode节点在启动时交易池默认打开广播来自网络的交易功能的。
 
 ### 1.2 节点部署
 
 #### 1.2.1 主网记账节点部署
 
-按照角色不同，节点可以分为记账节点和同步节点，记账节点参与网络共识，而同步节点只同步记账节点生成的区块。由于Ontology默认是不启动共识模块的，因此部署记账节点需要通过--enable-consensus命令行参数开启共识。此外，Ontology节点默认会启动Rpc服务器，同时会输出智能合约输出的Event Log，因此如果没有特殊要求，可以使用--disable-rpc和--disable-event-log命令行参数关闭rpc和eventlog模块。
+按照角色不同，节点可以分为记账节点和同步节点，记账节点参与网络共识，而同步节点只同步记账节点生成的区块。由于Tesranode默认是不启动共识模块的，因此部署记账节点需要通过--enable-consensus命令行参数开启共识。此外，Tesranode节点默认会启动Rpc服务器，同时会输出智能合约输出的Event Log，因此如果没有特殊要求，可以使用--disable-rpc和--disable-event-log命令行参数关闭rpc和eventlog模块。
 
 推荐记账节点启动参数：
 
 ```
-./ontology --enable-consensus --disable-rpc --disable-event-log
+./tesranode --enable-consensus --disable-rpc --disable-event-log
 ```
  - `enable-consensus` 是用来开启节点共识
  - `disable-rpc` 是处于节点安全考虑关闭rpc服务
@@ -217,7 +217,7 @@ disable-broadcast-net-tx 参数用于关闭交易池广播来自网络的交易�
 由于同步节点只同步记账节点生成的区块，并不参与网络共识。
 
 ```
-./ontology
+./tesranode
 ```
 如果节点没有使用默认的创世块配置文件，可以通过--config参数指定。同时由于没有启动共识模块，因此不需要钱包。
 
@@ -226,15 +226,15 @@ disable-broadcast-net-tx 参数用于关闭交易池广播来自网络的交易�
 可以直接通过以下命令连接测试网
 
 ```
-./ontology --networkid 2
+./tesranode --networkid 2
 ```
 
 #### 1.2.4 本地测试网部署
 
-Ontology支持单节点网络部署，用于开发测试环境搭建。启动单节点测试网络只需要加上--testmode参数即可。
+Tesranode支持单节点网络部署，用于开发测试环境搭建。启动单节点测试网络只需要加上--testmode参数即可。
 
 ```
-./ontology --testmode
+./tesranode --testmode
 ```
 如果节点没有使用默认的创世块配置文件和钱包账户，可以通过--config参数和--wallet、--account参数指定。
 同时，如果记账节点需要修改交易池默认的最低gas price和gas limit，可以通过--gasprice和--gaslimit参数来设定。
@@ -244,11 +244,11 @@ Ontology支持单节点网络部署，用于开发测试环境搭建。启动单
 ## 2、钱包管理
 
 钱包管理命令可以用来添加、查看、修改、删除、导入账户等功能。
-使用 ./ontology account --help 命令可以查看钱包管理命令的帮助信息。
+使用 ./tesranode account --help 命令可以查看钱包管理命令的帮助信息。
 
 ### 2.1 添加账户
 
-Ontology支持多种加密算法，包括ECDSA、SM2以及ED25519。
+Tesranode支持多种加密算法，包括ECDSA、SM2以及ED25519。
 
 在使用ECDSA加密算法时，可以支持多种密钥曲线，如：P-224、P-256、P-384、P-521；此外，在使用ECDSA加密算法时，还可以指定该密钥的签名方案，如：SHA224withECDSA、SHA256withECDSA、SHA384withECDSA、SHA512withEdDSA、SHA3-224withECDSA、SHA3-256withECDSA、SHA3-384withECDSA、SHA3-512withECDSA、RIPEMD160withECDSA。
 
@@ -258,7 +258,7 @@ Ontology支持多种加密算法，包括ECDSA、SM2以及ED25519。
 
 **默认账户**
 
-每个钱包都一个默认账户，一般情况下是第一个添加的账户。默认账户不能被删除，可以通过./ontology account set 命令来修改默认账户。
+每个钱包都一个默认账户，一般情况下是第一个添加的账户。默认账户不能被删除，可以通过./tesranode account set 命令来修改默认账户。
 
 #### 2.1.1 添加账户参数
 
@@ -289,35 +289,35 @@ ontid参数用来创建ONT ID，而不是普通账户。
 **添加账户**
 
 ```
-./ontology account add --default
+./tesranode account add --default
 ```
 
-通过 ./ontology account add --help 可以查看帮助信息。
+通过 ./tesranode account add --help 可以查看帮助信息。
 
 ### 2.2 查看账户
 
 使用命令：
 
 ```
-./ontology account list
+./tesranode account list
 ```
 可以查看当前钱包中的所有账户信息。比如：
 
 ```
-$ ./ontology account list
+$ ./tesranode account list
 Index:1    Address:TA587BCw7HFwuUuzY1wg2HXCN7cHBPaXSe  Label: (default)
 Index:2    Address:TA5gYXCSiUq9ejGCa54M3yoj9kfMv3ir4j  Label:
 ```
 其中，Index 为账户在钱包中的索引，索引从1开始，Addres 为账户地址，Label 为账户的标签，default表示当前账户是默认账户。
-在Ontology cli中，可以通过Index、Address或非空的Label来查找账户。
+在Tesranode cli中，可以通过Index、Address或非空的Label来查找账户。
 
 使用--v 可以查看账户的详细信息。
-通过 ./ontology account list --help 可以查看帮助信息。
+通过 ./tesranode account list --help 可以查看帮助信息。
 
 ### 2.3 修改账户
 
 使用修改账户命令可以修改账户的标签，重新设置默认账户，修改账户密码，如果账户是ECDSA加密算法的密钥，还可以修改密钥的签名方案。
-通过 ./ontology account set --help 可以查看帮助信息。
+通过 ./tesranode account set --help 可以查看帮助信息。
 
 #### 2.3.1 修改账户参数
 
@@ -339,30 +339,30 @@ signature-scheme参数用于修改账户签名方案。如果账户使用的是E
 **设置默认账户**
 
 ```
-./ontology account set --d <address|index|label>
+./tesranode account set --d <address|index|label>
 ```
 **修改账户标签**
 
 ```
-./ontology account set --label=XXX <address|index|label>
+./tesranode account set --label=XXX <address|index|label>
 ```
 **修改账户密码**
 
 ```
-./ontology account set --changepasswd <address|index|label>
+./tesranode account set --changepasswd <address|index|label>
 ```
 
 **修改ECDSA密钥签名方案**
 
 ```
-./ontology account set --s=SHA256withECDSA <address|index|label>
+./tesranode account set --s=SHA256withECDSA <address|index|label>
 ```
 ### 2.4 删除账户
 
 对于钱包中不需要的账户，可以删除。删除账户后无法恢复，所以请谨慎操作。注意：默认账户无法被删除。
 
 ```
-/ontology account del <address|index|label>
+/tesranode account del <address|index|label>
 ```
 ### 2.5 导入账户
 
@@ -377,12 +377,12 @@ wallet参数指定当前钱包路径，用于接收导入钱包的账户。
 source参数指定被导入的钱包路径
 
 ```
-./ontology account import -s=./source_wallet.dat
+./tesranode account import -s=./source_wallet.dat
 ```
 
 #### 2.5.2 通过WIF导入账户
 获得WIF并把WIF存入key.txt文件，并通过以下命令导入
-ontology account import --wif --source key.txt
+tesranode account import --wif --source key.txt
 
 ## 3、资产管理
 
@@ -391,7 +391,7 @@ ontology account import --wif --source key.txt
 ### 3.1 查看账户余额
 
 ```
-./ontology asset balance <address|index|label>
+./tesranode asset balance <address|index|label>
 ```
 ### 3.2 ONT/ONG转账
 
@@ -424,7 +424,7 @@ amount参数指定转账金额。注意：由于ONT的精度是1，因此如果�
 **转账**
 
 ```
-./ontology asset transfer --from=<address|index|label> --to=<address|index|label> --amount=XXX --asset=ont
+./tesranode asset transfer --from=<address|index|label> --to=<address|index|label> --amount=XXX --asset=ont
 ```
 
 ### 3.3 授权转账
@@ -456,7 +456,7 @@ amount参数指定授权转账金额。注意：由于ONT的精度是1，因此�
 **授权转账**
 
 ```
-./ontology asset approve --from=<address|index|label> --to=<address|index|label> --amount=XXX --asset=ont
+./tesranode asset approve --from=<address|index|label> --to=<address|index|label> --amount=XXX --asset=ont
 ```
 
 ### 3.4 查看授权转帐余额
@@ -480,7 +480,7 @@ to参数指定授权转入账户地址。
 **查看授权转帐余额**
 
 ```
-./ontology asset allowance --from=<address|index|label> --to=<address|index|label>
+./tesranode asset allowance --from=<address|index|label> --to=<address|index|label>
 ```
 
 ### 3.5 从授权账户中转账
@@ -515,7 +515,7 @@ amount参数指定转账金额，转账金额不能大于授权转账余额，�
 **从授权账户中转账**
 
 ```
-./ontology asset transferfrom --from=<address|index|label> --to=<address|index|label> --sender=<address|index|label> --amount=XXX
+./tesranode asset transferfrom --from=<address|index|label> --to=<address|index|label> --sender=<address|index|label> --amount=XXX
 ```
 
 ### 3.6 查看未解绑的ONG余额
@@ -523,7 +523,7 @@ amount参数指定转账金额，转账金额不能大于授权转账余额，�
 ONG采用定时解绑策略解除绑定在ONT上的ONG。使用如下命令可以查看到当前账户未解绑的ONG余额。
 
 ```
-./ontology asset unboundong <address|index|label>
+./tesranode asset unboundong <address|index|label>
 ```
 ### 3.7 提取解绑的ONG
 
@@ -542,30 +542,30 @@ gaslimit参数指定转账交易的gas limit。交易的gas limit不能小于接
 
 **提取解绑的ONG**
 ```
-./ontology asset withdrawong <address|index|label>
+./tesranode asset withdrawong <address|index|label>
 ```
 ## 4、查询信息
 
-查询信息命令可以查询区块、交易以及交易执行等信息。使用./ontology info block --help 命令可以查看帮助信息。
+查询信息命令可以查询区块、交易以及交易执行等信息。使用./tesranode info block --help 命令可以查看帮助信息。
 
 ### 4.1 查询区块信息
 
 ```
-./ontology info block <height|blockHash>
+./tesranode info block <height|blockHash>
 ```
 可以通过区块高度或者区块Hash 查询区块信息。
 
 ### 4.2 查询交易信息
 
 ```
-./ontology info tx <TxHash>
+./tesranode info tx <TxHash>
 ```
 可以通过交易Hash查询交易信息。
 
 ### 4.3 查询交易执行信息
 
 ```
-./ontology info status <TxHash>
+./tesranode info status <TxHash>
 ```
 可以通过交易Hash查询交易的执行信息，返回示例如下：
 
@@ -635,12 +635,12 @@ emial参数指定智能合约的联系人电子邮件。
 desc参数可以指定智能合约的描述信息。
 
 --prepare, -p
-prepare参数用于预部署合约, 预部署不会把合约部署到Ontology上， 也不会消耗人任何ONG。通过预部署合约，用户可以知道当前合约部署所需要消耗的gas limit。
+prepare参数用于预部署合约, 预部署不会把合约部署到Tesranode上， 也不会消耗人任何ONG。通过预部署合约，用户可以知道当前合约部署所需要消耗的gas limit。
 
 **智能合约部署**
 
 ```
-./ontology contract deploy --name=xxx --code=xxx --author=xxx --desc=xxx --email=xxx --needstore --gaslimit=100000000
+./tesranode contract deploy --name=xxx --code=xxx --author=xxx --desc=xxx --email=xxx --needstore --gaslimit=100000000
 ```
 
 部署后会返回部署交易的TxHash以及合约地址，如：
@@ -651,7 +651,7 @@ Deploy contract:
   TxHash:99d719f51837acfa48f9cd2a21983fb993bc8d5a763b497802f7b872be2338fe
 ```
 
-可以通过 ./ontology info status <TxHash> 命令查询合约执行状态。如果返回错误如：UNKNOWN TRANSACTION时，表示交易没有落帐，有可能交易还在交易池中排队等待被打包，也有可能表示交易因为gaslimit或者时gasprice设置过低，导致交易被拒绝。
+可以通过 ./tesranode info status <TxHash> 命令查询合约执行状态。如果返回错误如：UNKNOWN TRANSACTION时，表示交易没有落帐，有可能交易还在交易池中排队等待被打包，也有可能表示交易因为gaslimit或者时gasprice设置过低，导致交易被拒绝。
 
 如果返回的执行状态State等于0，表示交易执行失败，如果State等于1，表示交易执行成功，合约被成功部署。如：
 
@@ -671,7 +671,7 @@ Contract Address为根据合约Code生成的合约地址。
 
 NeoVM智能合约参数类型支持array、bytearray、string、int以及bool类型。其中array表示对象数组，数组元素可以是NeoVM支持的任意数量、任意类型的值；bytearray表示字节数组，输入时需要将byte数组用十六进制编码成字符串，如 []byte("HelloWorld") 编码成：48656c6c6f576f726c64；string表示字符串字面值；int表示整数，由于NeoVM虚拟机不支持浮点数值，因此需要将浮点数转换成整数；bool表示布尔型变量，用true，false表示。
 
-在Ontology cli中，使用前缀法构造输入参数，参数前使用类型标识标注类型，如字符串参数表示为 string:hello; 整数参数表示为 int:10; 布尔类型参数表示为 bool:true等。多个参数使用","分隔。对象数组array类型用"[ ]"表示数组元素范围，如 [int:10,string:hello,bool:true]。
+在Tesranode cli中，使用前缀法构造输入参数，参数前使用类型标识标注类型，如字符串参数表示为 string:hello; 整数参数表示为 int:10; 布尔类型参数表示为 bool:true等。多个参数使用","分隔。对象数组array类型用"[ ]"表示数组元素范围，如 [int:10,string:hello,bool:true]。
 
 输入参数示例：
 
@@ -708,7 +708,7 @@ return参数用于配合--prepare参数使用，在预执行时通过--return参
 **智能合约预执行**
 
 ```
-./ontology contract invoke --address=XXX --params=XXX --return=XXX --p
+./tesranode contract invoke --address=XXX --params=XXX --return=XXX --p
 ```
 返回示例：
 
@@ -720,7 +720,7 @@ Return:0
 **智能合约执行**
 
 ```
-./ontology contract invoke --address=XXX --params=XXX --gaslimit=XXX
+./tesranode contract invoke --address=XXX --params=XXX --gaslimit=XXX
 ```
 
 智能合约在执行之前，可以通过预执行，试算出当前执行所需要的gas limit，以避免ONG余额不足导致执行失败。
@@ -752,19 +752,19 @@ code参数指定可执行的智能合约代码路径。
 #### 5.3.2 直接执行智能合约字节码
 
 ```
-./ontology contract invokeCode --code=XXX --gaslimit=XXX
+./tesranode contract invokeCode --code=XXX --gaslimit=XXX
 ```
 
 ## 6、区块导入导出
 
-Ontology Cli支持导出本地节点的区块数据到一个压缩文件中，生成的压缩文件可以再导入其它Ontology节点中。出于安全考虑，导入的区块数据文件请确保是从可信的来源获取的。
+Tesranode Cli支持导出本地节点的区块数据到一个压缩文件中，生成的压缩文件可以再导入其它Tesranode节点中。出于安全考虑，导入的区块数据文件请确保是从可信的来源获取的。
 
 ### 6.1 导出区块
 
 #### 6.1.1 导出区块参数
 
 --rpcport
-rpcport 参数用于指定Ontology节点的rpc端口号，默认值为20336。
+rpcport 参数用于指定Tesranode节点的rpc端口号，默认值为20336。
 
 --exportfile
 exportfile 参数指定导出的文件路径。默认值为：./OntBlocks.dat
@@ -781,7 +781,7 @@ speed 参数指定导出速度。分别用h表示high，m表示middle，l表示l
 区块导出
 
 ```
-./ontology export
+./tesranode export
 ```
 
 ### 6.2 导入区块
@@ -792,7 +792,7 @@ speed 参数指定导出速度。分别用h表示high，m表示middle，l表示l
 data-dir 参数用于指定区块数据存储目录
 
 --config
-config 参数用于指定当前Ontology节点创世区块配置文件的路径。如果不指定，将使用Ontolog主网的创世块配置。
+config 参数用于指定当前Tesranode节点创世区块配置文件的路径。如果不指定，将使用Ontolog主网的创世块配置。
 
 --disable-event-log
 disable-event-log 参数用于关闭导入区块时生成合约日志功能。
@@ -809,12 +809,12 @@ importfile 参数用于指定导入文件的路径。默认值为"./OntBlocks.da
 导入区块
 
 ```
-./ontology import --importfile=./OntBlocks.dat
+./tesranode import --importfile=./OntBlocks.dat
 ```
 
 ## 7、构造交易
 
-构造交易命令用于构造各种交易的交易内容，如转账交易，授权转账交易等，构造出来的交易在发送到Ontology上之前，还需要用户的私钥签名。
+构造交易命令用于构造各种交易的交易内容，如转账交易，授权转账交易等，构造出来的交易在发送到Tesranode上之前，还需要用户的私钥签名。
 
 ### 7.1 构造转账交易
 
@@ -845,7 +845,7 @@ amount参数用于设定转账金额。浮点类型，如果0.001个ong
 wallet 钱包路径。wallet参数用于解析账户的索引或者标签。如果账户使用的都是地址，则不需要此参数。
 
 ```
-./ontology buildtx transfer --from=ARVVxBPGySL56CvSSWfjRVVyZYpNZ7zp48 --to=AaCe8nVkMRABnp5YgEjYZ9E5KYCxks2uce --amount=10
+./tesranode buildtx transfer --from=ARVVxBPGySL56CvSSWfjRVVyZYpNZ7zp48 --to=AaCe8nVkMRABnp5YgEjYZ9E5KYCxks2uce --amount=10
 ```
 
 返回如下：
@@ -884,7 +884,7 @@ amount参数用于设定转账金额。浮点类型，如果0.001个ong
 wallet 钱包路径。wallet参数用于解析账户的索引或者标签。如果账户使用的都是地址，则不需要此参数。
 
 ```
-./ontology buildtx approve  --from=ARVVxBPGySL56CvSSWfjRVVyZYpNZ7zp48 --to=AaCe8nVkMRABnp5YgEjYZ9E5KYCxks2uce --amount=10
+./tesranode buildtx approve  --from=ARVVxBPGySL56CvSSWfjRVVyZYpNZ7zp48 --to=AaCe8nVkMRABnp5YgEjYZ9E5KYCxks2uce --amount=10
 ```
 返回如下：
 
@@ -925,7 +925,7 @@ amount参数用于设定转账金额。浮点类型，如0.001个ong
 wallet 钱包路径。wallet参数用于解析账户的索引或者标签。如果账户使用的都是地址，则不需要此参数。
 
 ```
-./ontology buildtx transferfrom --sender=AMFrW7hrSRw1Azz6hQohni8BdStZDvectW --from=Aaxjf7utmjSstmTD1LjtYfhZ3CoWaxC7Tt --to=AMFrW7hrSRw1Azz6hQohni8BdStZDvectW --amount=10
+./tesranode buildtx transferfrom --sender=AMFrW7hrSRw1Azz6hQohni8BdStZDvectW --from=Aaxjf7utmjSstmTD1LjtYfhZ3CoWaxC7Tt --to=AMFrW7hrSRw1Azz6hQohni8BdStZDvectW --amount=10
 ```
 
 返回如下：
@@ -960,7 +960,7 @@ wallet 钱包路径。wallet参数用于解析账户的索引或者标签。如�
 rpcport 参数用于设置RPC服务器的端口号。默认值为20336。
 
 ```
-./ontology buildtx withdrawong ARVVxBPGySL56CvSSWfjRVVyZYpNZ7zp48
+./tesranode buildtx withdrawong ARVVxBPGySL56CvSSWfjRVVyZYpNZ7zp48
 ```
 
 返回如下：
@@ -986,7 +986,7 @@ wallet 参数用于指定钱包路径。
 account 参数用于指定签名账户，如果不设置，使用钱包默认账户。
 
 --send
-send 参数用于指定，交易签名后是否直接发送到Ontology网络上。
+send 参数用于指定，交易签名后是否直接发送到Tesranode网络上。
 
 --prepare
 prepare 参数用于指定，交易签名后是否本地预执行交易。
@@ -996,7 +996,7 @@ rpcport 参数用于指定RPC服务器端口号。默认值为20336。
 
 
 ```
-./ontology sigtx --account=ARVVxBPGySL56CvSSWfjRVVyZYpNZ7zp48 00d11b56875bf401000000000000204e0000000000006a987e044e01e3b71f9bb60df57ab0458215ef0f8e00c66b6a146a987e044e01e3b71f9bb60df57ab0458215ef0fc86a140000000000000000000000000000000000000001c86a146a987e044e01e3b71f9bb60df57ab0458215ef0fc86a071f57ad26643f08c86c0c7472616e7366657246726f6d1400000000000000000000000000000000000000020068164f6e746f6c6f67792e4e61746976652e496e766f6b650000
+./tesranode sigtx --account=ARVVxBPGySL56CvSSWfjRVVyZYpNZ7zp48 00d11b56875bf401000000000000204e0000000000006a987e044e01e3b71f9bb60df57ab0458215ef0f8e00c66b6a146a987e044e01e3b71f9bb60df57ab0458215ef0fc86a140000000000000000000000000000000000000001c86a146a987e044e01e3b71f9bb60df57ab0458215ef0fc86a071f57ad26643f08c86c0c7472616e7366657246726f6d1400000000000000000000000000000000000000020068164f6e746f6c6f67792e4e61746976652e496e766f6b650000
 ```
 
 返回如下：
@@ -1016,7 +1016,7 @@ pubkey 参数用于指定多重签名的公钥列表，公钥之间用逗号','�
 账户公钥可以通过命令：
 
 ```
-./ontology account list -v
+./tesranode account list -v
 ```
 查看。
 
@@ -1026,7 +1026,7 @@ pubkey 参数用于指定多重签名的公钥列表，公钥之间用逗号','�
 m 参数用于指定所以的最少签名数。默认值为1。
 
 ```
-./ontology multisigaddr --pubkey=03c0c30f11c7fc1396e8595bf2e339d553d728ea6f21ae831e8ab704ca14fe8a56,02b2b9fb60a0add9ef6715ffbac8bc7e81cb47cd06c157c19e6a858859c0158231 -m=1
+./tesranode multisigaddr --pubkey=03c0c30f11c7fc1396e8595bf2e339d553d728ea6f21ae831e8ab704ca14fe8a56,02b2b9fb60a0add9ef6715ffbac8bc7e81cb47cd06c157c19e6a858859c0158231 -m=1
 ```
 返回如下：
 
@@ -1057,7 +1057,7 @@ pubkey 参数用于指定多重签名的公钥列表，公钥之间用逗号','�
 m 参数用于指定所以的最少签名数。默认值为1。
 
 --send
-send 参数用于指定，交易签名后是否直接发送到Ontology网络上。
+send 参数用于指定，交易签名后是否直接发送到Tesranode网络上。
 
 --prepare
 prepare 参数用于指定，交易签名后是否本地预执行交易。
@@ -1067,7 +1067,7 @@ rpcport 参数用于指定RPC服务器端口号。默认值为20336。
 
 
 ```
-./ontology multisigtx --account=ARVVxBPGySL56CvSSWfjRVVyZYpNZ7zp48 --pubkey=03c0c30f11c7fc1396e8595bf2e339d553d728ea6f21ae831e8ab704ca14fe8a56,02b2b9fb60a0add9ef6715ffbac8bc7e81cb47cd06c157c19e6a858859c0158231 -m=1 00d1045f875bf401000000000000204e000000000000f47d92d27d02b93d21f8af16c9f05a99d128dd5a6e00c66b6a14f47d92d27d02b93d21f8af16c9f05a99d128dd5ac86a14ca216237583e7c32ba82ca352ecc30782f5a902dc86a5ac86c51c1087472616e736665721400000000000000000000000000000000000000010068164f6e746f6c6f67792e4e61746976652e496e766f6b650000
+./tesranode multisigtx --account=ARVVxBPGySL56CvSSWfjRVVyZYpNZ7zp48 --pubkey=03c0c30f11c7fc1396e8595bf2e339d553d728ea6f21ae831e8ab704ca14fe8a56,02b2b9fb60a0add9ef6715ffbac8bc7e81cb47cd06c157c19e6a858859c0158231 -m=1 00d1045f875bf401000000000000204e000000000000f47d92d27d02b93d21f8af16c9f05a99d128dd5a6e00c66b6a14f47d92d27d02b93d21f8af16c9f05a99d128dd5ac86a14ca216237583e7c32ba82ca352ecc30782f5a902dc86a5ac86c51c1087472616e736665721400000000000000000000000000000000000000010068164f6e746f6c6f67792e4e61746976652e496e766f6b650000
 ```
 
 返回如下：
@@ -1079,7 +1079,7 @@ RawTx after multi signed:
 
 ## 11、发送交易
 
-用户签好名后的交易可以通过发送交易命令提交到Ontology网络上。
+用户签好名后的交易可以通过发送交易命令提交到Tesranode网络上。
 
 ### 11.1 发送交易参数
 
@@ -1087,10 +1087,10 @@ RawTx after multi signed:
 rpcport 参数用于设置RPC服务器的端口号。
 
 --prepare
-prepare 参数用于指定是否本地预执行该交易。预执行在本地执行，不会把交易发送到Ontology网路上，也不会提交到账户中。
+prepare 参数用于指定是否本地预执行该交易。预执行在本地执行，不会把交易发送到Tesranode网路上，也不会提交到账户中。
 
 ```
-./ontology sendtx 00d17c61875bf401000000000000204e0000000000006a987e044e01e3b71f9bb60df57ab0458215ef0f6e00c66b6a146a987e044e01e3b71f9bb60df57ab0458215ef0fc86a14ca216237583e7c32ba82ca352ecc30782f5a902dc86a5ac86c51c1087472616e736665721400000000000000000000000000000000000000010068164f6e746f6c6f67792e4e61746976652e496e766f6b65000141409f32f1fd170d174959da26cb9df8f4a15049d255ed3953d92870d5739c4e8b8158ec3bde1e9ae9b4d9621b09311b5e49ed91dcbc64d3b5f74cf011eaa616c403232103c0c30f11c7fc1396e8595bf2e339d553d728ea6f21ae831e8ab704ca14fe8a56ac
+./tesranode sendtx 00d17c61875bf401000000000000204e0000000000006a987e044e01e3b71f9bb60df57ab0458215ef0f6e00c66b6a146a987e044e01e3b71f9bb60df57ab0458215ef0fc86a14ca216237583e7c32ba82ca352ecc30782f5a902dc86a5ac86c51c1087472616e736665721400000000000000000000000000000000000000010068164f6e746f6c6f67792e4e61746976652e496e766f6b65000141409f32f1fd170d174959da26cb9df8f4a15049d255ed3953d92870d5739c4e8b8158ec3bde1e9ae9b4d9621b09311b5e49ed91dcbc64d3b5f74cf011eaa616c403232103c0c30f11c7fc1396e8595bf2e339d553d728ea6f21ae831e8ab704ca14fe8a56ac
 ```
 
 返回如下：
@@ -1099,7 +1099,7 @@ prepare 参数用于指定是否本地预执行该交易。预执行在本地执
   TxHash:f8ea91da985af249e808913b6398150079cdfb02273146e4eb69c43947a42db2
 
 Tip:
-  Using './ontology info status f8ea91da985af249e808913b6398150079cdfb02273146e4eb69c43947a42db2' to query transaction status.
+  Using './tesranode info status f8ea91da985af249e808913b6398150079cdfb02273146e4eb69c43947a42db2' to query transaction status.
 ```
 
 如果是预执行返回如下：
@@ -1117,7 +1117,7 @@ Result:01
 如:
 
 ```
-./ontology showtx 00d1045f875bf401000000000000204e000000000000f47d92d27d02b93d21f8af16c9f05a99d128dd5a6e00c66b6a14f47d92d27d02b93d21f8af16c9f05a99d128dd5ac86a14ca216237583e7c32ba82ca352ecc30782f5a902dc86a5ac86c51c1087472616e736665721400000000000000000000000000000000000000010068164f6e746f6c6f67792e4e61746976652e496e766f6b65000141409dd2a46277f96566b9e9b4fc354be90b61776c58125cfbf36e770b1b1d50a16febad4bfadfc966fa575e90acf3b8308d7a0f637260b31321cb7ef6f741364d0e47512102b2b9fb60a0add9ef6715ffbac8bc7e81cb47cd06c157c19e6a858859c01582312103c0c30f11c7fc1396e8595bf2e339d553d728ea6f21ae831e8ab704ca14fe8a5652ae
+./tesranode showtx 00d1045f875bf401000000000000204e000000000000f47d92d27d02b93d21f8af16c9f05a99d128dd5a6e00c66b6a14f47d92d27d02b93d21f8af16c9f05a99d128dd5ac86a14ca216237583e7c32ba82ca352ecc30782f5a902dc86a5ac86c51c1087472616e736665721400000000000000000000000000000000000000010068164f6e746f6c6f67792e4e61746976652e496e766f6b65000141409dd2a46277f96566b9e9b4fc354be90b61776c58125cfbf36e770b1b1d50a16febad4bfadfc966fa575e90acf3b8308d7a0f637260b31321cb7ef6f741364d0e47512102b2b9fb60a0add9ef6715ffbac8bc7e81cb47cd06c157c19e6a858859c01582312103c0c30f11c7fc1396e8595bf2e339d553d728ea6f21ae831e8ab704ca14fe8a5652ae
 ```
 返回如下：
 

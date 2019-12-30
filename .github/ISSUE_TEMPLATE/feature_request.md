@@ -1,6 +1,6 @@
 ---
 name: Feature request
-about: Suggest an idea for ontology
+about: Suggest an idea for tesranode
 
 ---
 

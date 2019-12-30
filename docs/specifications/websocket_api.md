@@ -1,4 +1,4 @@
-# Ontology Websocket API
+# Tesranode Websocket API
 
 English|[中文](websocket_api_CN.md)
 
@@ -8,7 +8,7 @@ English|[中文](websocket_api_CN.md)
 
 ## Introduction
 
-This document describes the Websocket api format for the ws/wss used in the Onchain Ontology.
+This document describes the Websocket api format for the ws/wss used in the Onchain Tesranode.
 
 ### Response parameters description
 
@@ -451,7 +451,7 @@ Send transaction. Set PreExec=1 if want prepare exec smart contract.
 }
 ```
 
-You can use the ontology-go-sdk to generate hex code, reference to [example](rpc_api.md#8-sendrawtransaction)
+You can use the tesrasdk to generate hex code, reference to [example](rpc_api.md#8-sendrawtransaction)
 
 #### Response Example:
 ```
@@ -556,9 +556,9 @@ According to the contract address hash, query the contract information.
         "NeedStorage": true,
         "Name": "ONT",
         "CodeVersion": "1.0",
-        "Author": "Ontology Team",
+        "Author": "Tesranode Team",
         "Email": "contact@ont.io",
-        "Description": "Ontology Network ONT Token"
+        "Description": "Tesranode Network ONT Token"
     }
 }
 ```

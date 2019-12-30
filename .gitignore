@@ -23,7 +23,6 @@ Chain/*
 Chain
 /config/*
 nodectl
-ontology
 wallet.dat
 cscope*
 *.exe
@@ -38,3 +37,4 @@ peers.recent
 main
 go.sum
 tesranode
+.vscode

@@ -33,4 +33,4 @@ Feel free to submit issues and enhancement requests [here](https://github.com/Te
 
 Duplicate questions will be closed.
 
-Any unrelated comments or questions can be asked in the [Ontology Discord](https://discordapp.com/invite/4TQujHj).
+Any unrelated comments or questions can be asked in the [Tesranode Discord](https://discordapp.com/invite/4TQujHj).

@@ -1,4 +1,4 @@
-# Ontology Restful API
+# Tesranode Restful API
 
 English|[中文](restful_api_CN.md)
 
@@ -8,7 +8,7 @@ English|[中文](restful_api_CN.md)
 
 ## Introduction
 
-This document describes the restful api format for the http/https used in the Onchain Ontology.
+This document describes the restful api format for the http/https used in the Onchain Tesranode.
 
 ### Response parameters description
 
@@ -43,8 +43,8 @@ This document describes the restful api format for the http/https used in the On
 | [get_unboundong](#17-get_unboundong) | GET /api/v1/unboundong/:addr | return the number of unbound ong of given address |
 | [get_mempooltxcount](#18-get_mempooltxcount) | GET /api/v1/mempool/txcount | return the number of transaction locate in memory |
 | [get_mempooltxstate](#19-get_mempooltxstate) | GET /api/v1/mempool/txstate/:hash | return the state of transaction locate in memory |
-| [get_version](#20-get_version) |  GET /api/v1/version | return the version of ontology |
-| [post_raw_tx](#21-post_raw_tx) | post /api/v1/transaction?preExec=0 | send transaction to ontology network |
+| [get_version](#20-get_version) |  GET /api/v1/version | return the version of tesranode |
+| [post_raw_tx](#21-post_raw_tx) | post /api/v1/transaction?preExec=0 | send transaction to tesranode network |
 | [get_networkid](#22-get_networkid) |  GET /api/v1/networkid | return the networkid |
 | [get_grantong](#23-get_grantong) |  GET /api/v1/grantong/:addr | get grant ong |
 
@@ -461,9 +461,9 @@ curl -i http://server:port/api/v1/contract/0100000000000000000000000000000000000
         "NeedStorage": true,
         "Name": "ONT",
         "CodeVersion": "1.0",
-        "Author": "Ontology Team",
+        "Author": "Tesranode Team",
         "Email": "contact@ont.io",
-        "Description": "Ontology Network ONT Token"
+        "Description": "Tesranode Network ONT Token"
     }
 }
 ```
@@ -811,7 +811,7 @@ curl  -H "Content-Type: application/json"  -X POST -d '{"Action":"sendrawtransac
     "Data":"80000001195876cb34364dc38b730077156c6bc3a7fc570044a66fbfeeea56f71327e8ab0000029b7cffdaa674beae0f930ebe6085af9093e5fe56b34a5c220ccdcf6efc336fc500c65eaf440000000f9a23e06f74cf86b8827a9108ec2e0f89ad956c9b7cffdaa674beae0f930ebe6085af9093e5fe56b34a5c220ccdcf6efc336fc50092e14b5e00000030aab52ad93f6ce17ca07fa88fc191828c58cb71014140915467ecd359684b2dc358024ca750609591aa731a0b309c7fb3cab5cd0836ad3992aa0a24da431f43b68883ea5651d548feb6bd3c8e16376e6e426f91f84c58232103322f35c7819267e721335948d385fae5be66e7ba8c748ac15467dcca0693692dac"
 }
 ```
-You can use the ontology-go-sdk to generate hex code, reference to [example](rpc_api.md#8-sendrawtransaction)
+You can use the tesrasdk to generate hex code, reference to [example](rpc_api.md#8-sendrawtransaction)
 
 #### Response
 ```

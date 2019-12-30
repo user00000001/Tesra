@@ -3,7 +3,7 @@
 * [Contract Method](#contract-method)
 
 ## Introduction
-This document describes the global parameter manager native contract used in the ontology network.
+This document describes the global parameter manager native contract used in the tesranode network.
 
 ## Contract Method
 

@@ -1,19 +1,19 @@
 /*
- * Copyright (C) 2018 The ontology Authors
- * This file is part of The ontology library.
+ * Copyright (C) 2019 The TesraSupernet Authors
+ * This file is part of The TesraSupernet library.
  *
- * The ontology is free software: you can redistribute it and/or modify
+ * The TesraSupernet is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Lesser General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
  *
- * The ontology is distributed in the hope that it will be useful,
+ * The TesraSupernet is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Lesser General Public License for more details.
  *
  * You should have received a copy of the GNU Lesser General Public License
- * along with The ontology.  If not, see <http://www.gnu.org/licenses/>.
+ * along with The TesraSupernet.  If not, see <http://www.gnu.org/licenses/>.
  */
 
 package main
@@ -28,10 +28,6 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/ethereum/go-ethereum/common/fdlimit"
-	"github.com/TesraSupernet/tesracrypto/keypair"
-	"github.com/TesraSupernet/tesraevent/actor"
-	alog "github.com/TesraSupernet/tesraevent/log"
 	"github.com/TesraSupernet/Tesra/account"
 	"github.com/TesraSupernet/Tesra/cmd"
 	cmdcom "github.com/TesraSupernet/Tesra/cmd/common"
@@ -58,6 +54,10 @@ import (
 	"github.com/TesraSupernet/Tesra/txnpool/proc"
 	"github.com/TesraSupernet/Tesra/validator/stateful"
 	"github.com/TesraSupernet/Tesra/validator/stateless"
+	"github.com/TesraSupernet/tesracrypto/keypair"
+	"github.com/TesraSupernet/tesraevent/actor"
+	alog "github.com/TesraSupernet/tesraevent/log"
+	"github.com/ethereum/go-ethereum/common/fdlimit"
 	"github.com/urfave/cli"
 )
 
@@ -143,7 +143,7 @@ func main() {
 func startOntology(ctx *cli.Context) {
 	initLog(ctx)
 
-	log.Infof("ontology version %s", config.Version)
+	log.Infof("tesranode version %s", config.Version)
 
 	setMaxOpenFiles()
 
@@ -210,7 +210,7 @@ func initLog(ctx *cli.Context) {
 }
 
 func initConfig(ctx *cli.Context) (*config.OntologyConfig, error) {
-	//init ontology config from cli
+	//init tesranode config from cli
 	cfg, err := cmd.SetOntologyConfig(ctx)
 	if err != nil {
 		return nil, err
@@ -450,7 +450,7 @@ func waitToExit(db *ledger.Ledger) {
 	signal.Notify(sc, syscall.SIGINT, syscall.SIGTERM, syscall.SIGHUP)
 	go func() {
 		for sig := range sc {
-			log.Infof("Ontology received exit signal: %v.", sig.String())
+			log.Infof("Tesranode received exit signal: %v.", sig.String())
 			log.Infof("closing ledger...")
 			db.Close()
 			close(exit)
