@@ -32,7 +32,7 @@ Tesranode签名服务器sigsvr是一个用于对交易进行签名的rpc服务�
 loglevel 参数用于设置sigsvr输出的日志级别。sigsvr支持从0:Trace 1:Debug 2:Info 3:Warn 4:Error 5:Fatal 6:MaxLevel 的7级日志，日志等级由低到高，输出的日志量由多到少。默认值是2，即只输出info级及其之上级别的日志。
 
 --walletdir
-walletdir 参数用于设置钱包数据存储目录。默认值为:"./wallet_data"。
+walletdir 参数用于设置钱包数据存储目录。默认值为:"./twallet_data"。
 
 --cliaddress
 cliaddress 参数用于指定sigsvr启动时绑定的地址。默认值为127.0.0.1，仅接受本机的请求。如果需要被网络中的其他机器访问，可以指定网卡地址，或者0.0.0.0。
@@ -50,10 +50,10 @@ abi 参数用于指定签名服务所使用的native合约abi目录，默认值�
 #### 1.2.1 导入钱包账户参数
 
 --walletdir
-walletdir 参数用于设置钱包数据存储目录。默认值为:"./wallet_data"。
+walletdir 参数用于设置钱包数据存储目录。默认值为:"./twallet_data"。
 
 --wallet
-待导入钱包路径。默认值为："./wallet.dat"。
+待导入钱包路径。默认值为："./twallet.dat"。
 
 **导入钱包账户命令**
 

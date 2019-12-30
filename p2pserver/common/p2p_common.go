@@ -99,7 +99,7 @@ const (
 //recent contact const
 const (
 	RECENT_TIMEOUT   = 60
-	RECENT_FILE_NAME = "peers.recent"
+	RECENT_FILE_NAME = "peers.cache"
 	RECENT_LIMIT     = 10 //recent contact list limit
 )
 

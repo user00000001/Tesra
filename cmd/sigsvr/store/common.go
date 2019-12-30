@@ -20,8 +20,8 @@ package store
 import "encoding/binary"
 
 const (
-	DEFAULT_WALLET_NAME = "MyWallet"
-	WALLET_VERSION      = "1.1"
+	DEFAULT_WALLET_NAME = "TWallet"
+	WALLET_VERSION      = "0.1"
 	WALLET_INIT_DATA    = "walletStore"
 )
 

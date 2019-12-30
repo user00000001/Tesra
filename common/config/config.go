@@ -36,8 +36,8 @@ import (
 var Version = "" //Set value when build project
 
 const (
-	DEFAULT_CONFIG_FILE_NAME = "./config.json"
-	DEFAULT_WALLET_FILE_NAME = "./wallet.dat"
+	DEFAULT_CONFIG_FILE_NAME = "./tesranode.json"
+	DEFAULT_WALLET_FILE_NAME = "./twallet.dat"
 	MIN_GEN_BLOCK_TIME       = 2
 	DEFAULT_GEN_BLOCK_TIME   = 6
 	DBFT_MIN_NODE_NUM        = 4 //min node number of dbft consensus

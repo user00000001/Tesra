@@ -32,7 +32,7 @@ Tesranode Signature Server - sigsvr is a rpc server for signing transactions.
 The loglevel parameter is used to set the log level for the sigsvr output. Sigsvr supports 7 different log levels - 0:Trace 1:Debug 2:Info 3:Warn 4:Error 5:Fatal 6:MaxLevel. The log level is from low to high, and the output log volume is from high to low. The default value is 2, which means that only output logs at the info level or higher level.
 
 --walletdir
-walletdir parameter specifies the directory for wallet data. The default value is "./wallet_data".
+walletdir parameter specifies the directory for wallet data. The default value is "./twallet_data".
 
 --cliaddress
 The cliaddress parameter specifies which address is bound。The default value is 127.0.0.1, means only local machine's request can be accessed。If sigsvr need be accessed by other machine, please use local network address or 0.0.0.0。
@@ -50,10 +50,10 @@ Before startup sigsvr, should import wallet account.
 #### 1.2.1 Import wallet account parameters
 
 --walletdir
-walletdir parameter specifies the directory for wallet data. The default value is "./wallet_data".
+walletdir parameter specifies the directory for wallet data. The default value is "./twallet_data".
 
 --wallet
-wallet parameter specifies the path of wallet to import. The default value is "./wallet.dat".
+wallet parameter specifies the path of wallet to import. The default value is "./twallet.dat".
 
 **Import wallet account**
 

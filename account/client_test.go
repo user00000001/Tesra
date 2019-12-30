@@ -29,7 +29,7 @@ import (
 
 var (
 	testWallet     Client
-	testWalletPath = "./wallet_test.dat"
+	testWalletPath = "./twallet_test.dat"
 	testPasswd     = []byte("123456")
 )
 

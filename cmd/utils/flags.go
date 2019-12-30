@@ -30,7 +30,7 @@ const (
 	DEFAULT_EXPORT_FILE   = "./TstBlocks.dat"
 	DEFAULT_ABI_PATH      = "./abi"
 	DEFAULT_EXPORT_HEIGHT = 0
-	DEFAULT_WALLET_PATH   = "./wallet_data"
+	DEFAULT_WALLET_PATH   = "./twallet_data"
 )
 
 var (

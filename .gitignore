@@ -24,6 +24,9 @@ Chain
 /config/*
 nodectl
 wallet.dat
+wallet_data
+twallet.dat
+twallet_data
 cscope*
 *.exe
 **/*.log
@@ -32,8 +35,10 @@ neosnapshot/*
 glide.lock
 *.iml
 docker/payload
+tesranode.json
 config.json
-peers.recent
+peers.cache
+peers.current
 main
 go.sum
 tesranode

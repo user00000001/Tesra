@@ -21,14 +21,14 @@ package handlers
 import (
 	"encoding/hex"
 	"encoding/json"
-	"github.com/TesraSupernet/tesracrypto/keypair"
-	"github.com/TesraSupernet/tesracrypto/signature"
 	"github.com/TesraSupernet/Tesra/account"
 	clisvrcom "github.com/TesraSupernet/Tesra/cmd/sigsvr/common"
 	"github.com/TesraSupernet/Tesra/cmd/sigsvr/store"
 	"github.com/TesraSupernet/Tesra/cmd/utils"
 	"github.com/TesraSupernet/Tesra/common"
 	"github.com/TesraSupernet/Tesra/common/log"
+	"github.com/TesraSupernet/tesracrypto/keypair"
+	"github.com/TesraSupernet/tesracrypto/signature"
 	"github.com/stretchr/testify/assert"
 	"os"
 	"testing"
@@ -36,8 +36,8 @@ import (
 
 var (
 	pwd                 = []byte("123456")
-	testWalletPath      = "wallet.tmp.dat"
-	testWalletStorePath = "wallet_data_tmp"
+	testWalletPath      = "twallet.tmp.dat"
+	testWalletStorePath = "twallet_data_tmp"
 	testWallet          account.Client
 )
 

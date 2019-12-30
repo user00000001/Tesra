@@ -25,8 +25,8 @@ import (
 	"io/ioutil"
 	"os"
 
-	"github.com/TesraSupernet/tesracrypto/keypair"
 	"github.com/TesraSupernet/Tesra/common"
+	"github.com/TesraSupernet/tesracrypto/keypair"
 )
 
 /** AccountData - for wallet read and save, no crypto object included **/
@@ -77,8 +77,8 @@ type WalletData struct {
 
 func NewWalletData() *WalletData {
 	return &WalletData{
-		Name:       "MyWallet",
-		Version:    "1.1",
+		Name:       "TWallet",
+		Version:    "0.1",
 		Scrypt:     keypair.GetScryptParameters(),
 		Identities: nil,
 		Extra:      "",
