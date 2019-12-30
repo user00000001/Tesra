@@ -34,7 +34,7 @@ const (
 )
 
 var (
-	//Ontology setting
+	//Tesra setting
 	ConfigFlag = cli.StringFlag{
 		Name:  "config",
 		Usage: "Genesis block config `<file>`. If doesn't specifies, use main net config as default.",
@@ -196,11 +196,11 @@ var (
 	AccountPassFlag = cli.StringFlag{
 		Name:   "password,p",
 		Hidden: true,
-		Usage:  "Account `<password>` when Ontology node starts.",
+		Usage:  "Account `<password>` when Tesra node starts.",
 	}
 	AccountAddressFlag = cli.StringFlag{
 		Name:  "account,a",
-		Usage: "Account `<address>` when the Ontology node starts. If not specific, using default account instead",
+		Usage: "Account `<address>` when the Tesra node starts. If not specific, using default account instead",
 	}
 	AccountDefaultFlag = cli.BoolFlag{
 		Name:  "default,d",
@@ -398,7 +398,7 @@ var (
 	}
 	SendTxFlag = cli.BoolFlag{
 		Name:  "send,s",
-		Usage: "Send raw transaction to Ontology",
+		Usage: "Send raw transaction to Tesra",
 	}
 	ForceSendTxFlag = cli.BoolFlag{
 		Name:  "force,f",

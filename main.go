@@ -63,10 +63,10 @@ import (
 
 func setupAPP() *cli.App {
 	app := cli.NewApp()
-	app.Usage = "Ontology CLI"
+	app.Usage = "TesraNode"
 	app.Action = startOntology
 	app.Version = config.Version
-	app.Copyright = "Copyright in 2018 The Ontology Authors"
+	app.Copyright = "Copyright in 2018 The Tesra  Authors"
 	app.Commands = []cli.Command{
 		cmd.AccountCommand,
 		cmd.InfoCommand,
