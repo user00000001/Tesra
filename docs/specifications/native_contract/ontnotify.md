@@ -1,4 +1,4 @@
-# Ont contract
+# Tst contract
 
 common event format is as follows, including txhash, state, gasConsumed and notify, each native contract method have different notifies.
 
@@ -20,7 +20,7 @@ common event format is as follows, including txhash, state, gasConsumed and noti
   "State":1,
   "GasConsumed":10000000,
   "Notify":[
-    //notify of ont transfer
+    //notify of tst transfer
     {
       "ContractAddress": "0100000000000000000000000000000000000000", //ont contract address
       "States":[
@@ -55,7 +55,7 @@ common event format is as follows, including txhash, state, gasConsumed and noti
   "State":1,
   "GasConsumed":10000000,
   "Notify":[
-    //notify of ont transfer
+    //notify of tst transfer
     {
       "ContractAddress": "0100000000000000000000000000000000000000", //ont contract address
       "States":[

@@ -1,6 +1,6 @@
 
 <h1 align="center">Tesranode </h1>
-<h4 align="center">Version 0.0.1 </h4>
+<h4 align="center">Version 0.0.1b </h4>
 
 [![GoDoc](https://godoc.org/github.com/TesraSupernet/Tesra?status.svg)](https://godoc.org/github.com/TesraSupernet/Tesra)
 [![Go Report Card](https://goreportcard.com/badge/github.com/TesraSupernet/Tesra)](https://goreportcard.com/report/github.com/TesraSupernet/Tesra)
@@ -62,40 +62,25 @@ Tesranode MainNet[测试版] 已经在2019年12月31日成功上线。<br>
 - 你可以从[下载页面](https://github.com/TesraSupernet/Tesra/releases)获取.
 
 ### 从源码获取
-克隆tesranode仓库到 **$GOPATH/src/github.com/TesraSupernet** 目录
+克隆tesranode仓库到 **非$GOPATH** 目录
 
 ```shell
 $ git clone https://github.com/TesraSupernet/Tesra.git
 ```
-或者
-```shell
-$ go get github.com/TesraSupernet/Tesra
-```
-
-用第三方包管理工具glide拉取依赖库
-
-````shell
-$ cd $GOPATH/src/github.com/TesraSupernet/Tesra
-$ glide install
-````
-
-如果项目有新的第三方依赖包，使用glide更新依赖库
-
-````shell
-$ cd $GOPATH/src/github.com/TesraSupernet/Tesra
-$ glide update
-````
 
 用make编译源码
 
 ```shell
-$ make all
+$ cd Tesra && make all
+```
+或者 go 命令
+```shell
+$ cd Tesra && go build -o tesranode main.go
 ```
 
-成功编译后会生成两个可以执行程序
+成功编译后会生成一个可以执行程序
 
 * `tesranode`: 节点程序/以命令行方式提供的节点控制程序
-* `tools/sigsvr`: (可选)签名服务 - sigsvr是一个签名服务的server以满足一些特殊的需求。详细的文档可以在[这里](./docs/specifications/sigsvr_CN.md)参考
 
 ## 运行tesranode
 
@@ -134,25 +119,6 @@ $ make all
         ├── tesranode
         └── wallet.dat
     ```
-
-### 使用docker运行
-
-请确保机器上已安装有docker环境。
-
-1. 编译docker镜像
-
-    - 在下载好的源码根目录下，运行`make docker`命令，这将编译好tesranode的docker镜像
-
-2. 运行tesranode镜像
-
-    - 使用命令`docker run TesraSupernet/Tesra`运行tesranode；
-
-    - 如果需要使镜像运行时接受交互式键盘输入，则使用`docker run -ti TesraSupernet/Tesra`命令启动镜像即可；
-
-    - 如果需要保留镜像每次运行时的数据，可以参考docker的数据持久化功能（例如 valume）；
-
-    - 如果需要使用tesranode参数，则在`docker run TesraSupernet/Tesra`后面直接加参数即可，例如`docker run TesraSupernet/Tesra --networkid 2`，具体的tesranode命令
-    行参数可以参考[这里](./docs/specifications/cli_user_guide_CN.md)。
 
 ## 使用示例
 

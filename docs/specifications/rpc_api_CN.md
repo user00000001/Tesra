@@ -96,7 +96,7 @@
 | [getunboundong](#19-getunboundong) | address | 返回该账户未提取的ong |  |
 | [getblocktxsbyheight](#20-getblocktxsbyheight) | height | 返回该高度对应的区块落账的交易的哈希 |  |
 | [getnetworkid](#21-getnetworkid) |  | 获取 network id |  |
-| [getgrantong](#22-getgrantong) |  | 获取 grant ong |  |
+| [getgrantong](#22-getgrantong) |  | 获取 grant tsg |  |
 
 ### 1. getbestblockhash
 
@@ -851,8 +851,8 @@ Response:
    "id":1,
    "jsonrpc":"2.0",
    "result":{
-        "ont": "2500",
-        "ong": "0"
+        "tst": "2500",
+        "tsg": "0"
        }
 }
 ```
@@ -950,7 +950,7 @@ Response:
 
 #### 参数定义
 
-asset: "ont"或者"ong"
+asset: "tst"或者"tsg"
 
 from: 转出账户base58地址
 
@@ -964,7 +964,7 @@ Request:
 {
   "jsonrpc": "2.0",
   "method": "getallowance",
-  "params": ["ont","from address","to address"],
+  "params": ["tst","from address","to address"],
   "id": 1
 }
 ```

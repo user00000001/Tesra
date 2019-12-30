@@ -27,7 +27,7 @@ import (
 	"github.com/TesraSupernet/Tesra/core/payload"
 	"github.com/TesraSupernet/Tesra/core/types"
 	"github.com/TesraSupernet/Tesra/core/utils"
-	"github.com/TesraSupernet/Tesra/smartcontract/service/native/ont"
+	"github.com/TesraSupernet/Tesra/smartcontract/service/native/tst"
 	nutils "github.com/TesraSupernet/Tesra/smartcontract/service/native/utils"
 	"github.com/stretchr/testify/assert"
 	"testing"
@@ -372,7 +372,7 @@ func transferTx(from, to common.Address, amount uint64) (*types.Transaction, err
 		Value: amount,
 	})
 	var cversion byte
-	return invokeSmartContractTx(0, 30000, cversion, nutils.OntContractAddress, "transfer", []interface{}{sts})
+	return invokeSmartContractTx(0, 30000, cversion, nutils.TstContractAddress, "transfer", []interface{}{sts})
 }
 
 func invokeSmartContractTx(gasPrice,

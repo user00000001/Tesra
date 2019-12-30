@@ -34,7 +34,7 @@ import (
 
 const (
 	SCHEME = "did"
-	METHOD = "ont"
+	METHOD = "tst"
 	VER    = 0x41
 )
 

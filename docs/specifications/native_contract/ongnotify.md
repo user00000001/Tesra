@@ -1,4 +1,4 @@
-# Ong contract
+#Tsg contract
 
 common event format is as follows, including txhash, state, gasConsumed and notify, each native contract method have different notifies.
 
@@ -20,7 +20,7 @@ common event format is as follows, including txhash, state, gasConsumed and noti
   "State":1,
   "GasConsumed":10000000,
   "Notify":[
-    //notify of ong transfer
+    //notify of tsg transfer
     {
       "ContractAddress": "0200000000000000000000000000000000000000", //ong contract address
       "States":[
@@ -55,7 +55,7 @@ common event format is as follows, including txhash, state, gasConsumed and noti
   "State":1,
   "GasConsumed":10000000,
   "Notify":[
-    //notify of ong transfer
+    //notify of tsg transfer
     {
       "ContractAddress": "0200000000000000000000000000000000000000", //ong contract address
       "States":[

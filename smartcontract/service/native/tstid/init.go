@@ -15,7 +15,7 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with The TesraSupernet.  If not, see <http://www.gnu.org/licenses/>.
  */
-package ontid
+package tstid
 
 import (
 	"github.com/TesraSupernet/Tesra/smartcontract/service/native"
@@ -23,7 +23,7 @@ import (
 )
 
 func Init() {
-	native.Contracts[utils.OntIDContractAddress] = RegisterIDContract
+	native.Contracts[utils.TstIDContractAddress] = RegisterIDContract
 }
 
 func RegisterIDContract(srvc *native.NativeService) {

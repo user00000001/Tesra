@@ -25,12 +25,12 @@ import (
 )
 
 func updateNativeSCAddr(hash common.Address) common.Address {
-	if hash == utils.OntContractAddress {
-		hash = common.AddressFromVmCode(utils.OntContractAddress[:])
-	} else if hash == utils.OngContractAddress {
-		hash = common.AddressFromVmCode(utils.OngContractAddress[:])
-	} else if hash == utils.OntIDContractAddress {
-		hash = common.AddressFromVmCode(utils.OntIDContractAddress[:])
+	if hash == utils.TstContractAddress {
+		hash = common.AddressFromVmCode(utils.TstContractAddress[:])
+	} else if hash == utils.TsgContractAddress {
+		hash = common.AddressFromVmCode(utils.TsgContractAddress[:])
+	} else if hash == utils.TstIDContractAddress {
+		hash = common.AddressFromVmCode(utils.TstIDContractAddress[:])
 	} else if hash == utils.ParamContractAddress {
 		hash = common.AddressFromVmCode(utils.ParamContractAddress[:])
 	} else if hash == utils.AuthContractAddress {

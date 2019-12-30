@@ -29,16 +29,16 @@ import (
 
 /* **********************************************   */
 type InitContractAdminParam struct {
-	AdminOntID []byte
+	AdminTstID []byte
 }
 
 func (this *InitContractAdminParam) Serialization(sink *common.ZeroCopySink) {
-	sink.WriteVarBytes(this.AdminOntID)
+	sink.WriteVarBytes(this.AdminTstID)
 }
 
 func (this *InitContractAdminParam) Deserialization(source *common.ZeroCopySource) error {
 	var irregular, eof bool
-	this.AdminOntID, _, irregular, eof = source.NextVarBytes()
+	this.AdminTstID, _, irregular, eof = source.NextVarBytes()
 	if irregular {
 		return common.ErrIrregularData
 	}
@@ -51,13 +51,13 @@ func (this *InitContractAdminParam) Deserialization(source *common.ZeroCopySourc
 /* **********************************************   */
 type TransferParam struct {
 	ContractAddr  common.Address
-	NewAdminOntID []byte
+	NewAdminTstID []byte
 	KeyNo         uint64
 }
 
 func (this *TransferParam) Serialization(sink *common.ZeroCopySink) {
 	serializeAddress(sink, this.ContractAddr)
-	sink.WriteVarBytes(this.NewAdminOntID)
+	sink.WriteVarBytes(this.NewAdminTstID)
 	utils.EncodeVarUint(sink, this.KeyNo)
 }
 
@@ -67,7 +67,7 @@ func (this *TransferParam) Deserialization(source *common.ZeroCopySource) error 
 		return err
 	}
 	var irregular, eof bool
-	if this.NewAdminOntID, _, irregular, eof = source.NextVarBytes(); irregular || eof {
+	if this.NewAdminTstID, _, irregular, eof = source.NextVarBytes(); irregular || eof {
 		return fmt.Errorf("irregular:%v, eof:%v", irregular, eof)
 	}
 	if this.KeyNo, err = utils.DecodeVarUint(source); err != nil {
@@ -79,7 +79,7 @@ func (this *TransferParam) Deserialization(source *common.ZeroCopySource) error 
 /* **********************************************   */
 type FuncsToRoleParam struct {
 	ContractAddr common.Address
-	AdminOntID   []byte
+	AdminTstID   []byte
 	Role         []byte
 	FuncNames    []string
 	KeyNo        uint64
@@ -87,7 +87,7 @@ type FuncsToRoleParam struct {
 
 func (this *FuncsToRoleParam) Serialization(sink *common.ZeroCopySink) {
 	utils.EncodeAddress(sink, this.ContractAddr)
-	sink.WriteVarBytes(this.AdminOntID)
+	sink.WriteVarBytes(this.AdminTstID)
 	sink.WriteVarBytes(this.Role)
 	utils.EncodeVarUint(sink, uint64(len(this.FuncNames)))
 	for _, fn := range this.FuncNames {
@@ -104,8 +104,8 @@ func (this *FuncsToRoleParam) Deserialization(source *common.ZeroCopySource) err
 	if this.ContractAddr, err = utils.DecodeAddress(source); err != nil {
 		return err
 	}
-	if this.AdminOntID, err = utils.DecodeVarBytes(source); err != nil {
-		return fmt.Errorf("AdminOntID Deserialization error: %s", err)
+	if this.AdminTstID, err = utils.DecodeVarBytes(source); err != nil {
+		return fmt.Errorf("AdminTstID Deserialization error: %s", err)
 	}
 	if this.Role, err = utils.DecodeVarBytes(source); err != nil {
 		return fmt.Errorf("Role Deserialization error: %s", err)
@@ -127,17 +127,17 @@ func (this *FuncsToRoleParam) Deserialization(source *common.ZeroCopySource) err
 	return nil
 }
 
-type OntIDsToRoleParam struct {
+type TstIDsToRoleParam struct {
 	ContractAddr common.Address
-	AdminOntID   []byte
+	AdminTstID   []byte
 	Role         []byte
 	Persons      [][]byte
 	KeyNo        uint64
 }
 
-func (this *OntIDsToRoleParam) Serialization(sink *common.ZeroCopySink) {
+func (this *TstIDsToRoleParam) Serialization(sink *common.ZeroCopySink) {
 	serializeAddress(sink, this.ContractAddr)
-	sink.WriteVarBytes(this.AdminOntID)
+	sink.WriteVarBytes(this.AdminTstID)
 	sink.WriteVarBytes(this.Role)
 
 	utils.EncodeVarUint(sink, uint64(len(this.Persons)))
@@ -147,14 +147,14 @@ func (this *OntIDsToRoleParam) Serialization(sink *common.ZeroCopySink) {
 	utils.EncodeVarUint(sink, this.KeyNo)
 }
 
-func (this *OntIDsToRoleParam) Deserialization(source *common.ZeroCopySource) error {
+func (this *TstIDsToRoleParam) Deserialization(source *common.ZeroCopySource) error {
 	var err error
 	var pLen uint64
 	if this.ContractAddr, err = utils.DecodeAddress(source); err != nil {
 		return err
 	}
-	if this.AdminOntID, err = utils.DecodeVarBytes(source); err != nil {
-		return fmt.Errorf("AdminOntID Deserialization error: %s", err)
+	if this.AdminTstID, err = utils.DecodeVarBytes(source); err != nil {
+		return fmt.Errorf("AdminTstID Deserialization error: %s", err)
 	}
 	if this.Role, err = utils.DecodeVarBytes(source); err != nil {
 		return fmt.Errorf("Role Deserialization error: %s", err)

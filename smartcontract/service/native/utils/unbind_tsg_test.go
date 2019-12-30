@@ -26,10 +26,10 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-func TestCalcUnbindOng(t *testing.T) {
-	assert.Equal(t, CalcUnbindOng(1, 0, 1), uint64(GENERATION_AMOUNT[0]))
-	assert.Equal(t, CalcUnbindOng(1, 0, TIME_INTERVAL), GENERATION_AMOUNT[0]*uint64(TIME_INTERVAL))
-	assert.Equal(t, CalcUnbindOng(1, 0, TIME_INTERVAL+1),
+func TestCalcUnbindTsg(t *testing.T) {
+	assert.Equal(t, CalcUnbindTsg(1, 0, 1), uint64(GENERATION_AMOUNT[0]))
+	assert.Equal(t, CalcUnbindTsg(1, 0, TIME_INTERVAL), GENERATION_AMOUNT[0]*uint64(TIME_INTERVAL))
+	assert.Equal(t, CalcUnbindTsg(1, 0, TIME_INTERVAL+1),
 		GENERATION_AMOUNT[1]+GENERATION_AMOUNT[0]*uint64(TIME_INTERVAL))
 }
 
@@ -41,23 +41,23 @@ func TestCumulative(t *testing.T) {
 		tend := tstart + rand.Uint32()
 		tmid := uint32((uint64(tstart) + uint64(tend)) / 2)
 
-		total := CalcUnbindOng(1, tstart, tend)
-		total2 := CalcUnbindOng(1, tstart, tmid) + CalcUnbindOng(1, tmid, tend)
+		total := CalcUnbindTsg(1, tstart, tend)
+		total2 := CalcUnbindTsg(1, tstart, tmid) + CalcUnbindTsg(1, tmid, tend)
 		assert.Equal(t, total, total2)
 	}
 }
 
 // test 1 balance will get ONT_TOTAL_SUPPLY eventually
 func TestTotalONG(t *testing.T) {
-	assert.Equal(t, CalcUnbindOng(1, 0, constants.UNBOUND_DEADLINE),
+	assert.Equal(t, CalcUnbindTsg(1, 0, constants.UNBOUND_DEADLINE),
 		constants.ONT_TOTAL_SUPPLY)
 
-	assert.Equal(t, CalcUnbindOng(1, 0, TIME_INTERVAL*18),
+	assert.Equal(t, CalcUnbindTsg(1, 0, TIME_INTERVAL*18),
 		constants.ONT_TOTAL_SUPPLY)
 
-	assert.Equal(t, CalcUnbindOng(1, 0, TIME_INTERVAL*108),
+	assert.Equal(t, CalcUnbindTsg(1, 0, TIME_INTERVAL*108),
 		constants.ONT_TOTAL_SUPPLY)
 
-	assert.Equal(t, CalcUnbindOng(1, 0, ^uint32(0)),
+	assert.Equal(t, CalcUnbindTsg(1, 0, ^uint32(0)),
 		constants.ONT_TOTAL_SUPPLY)
 }

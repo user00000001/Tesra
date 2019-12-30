@@ -26,9 +26,9 @@ import (
 	"github.com/TesraSupernet/Tesra/smartcontract/service/native/auth"
 	params "github.com/TesraSupernet/Tesra/smartcontract/service/native/global_params"
 	"github.com/TesraSupernet/Tesra/smartcontract/service/native/governance"
-	"github.com/TesraSupernet/Tesra/smartcontract/service/native/ong"
-	"github.com/TesraSupernet/Tesra/smartcontract/service/native/ont"
-	"github.com/TesraSupernet/Tesra/smartcontract/service/native/ontid"
+	tsg "github.com/TesraSupernet/Tesra/smartcontract/service/native/tsg"
+	tst "github.com/TesraSupernet/Tesra/smartcontract/service/native/tst"
+	tstid "github.com/TesraSupernet/Tesra/smartcontract/service/native/tstid"
 	"github.com/TesraSupernet/Tesra/smartcontract/service/native/utils"
 	"github.com/TesraSupernet/Tesra/smartcontract/service/neovm"
 	vm "github.com/TesraSupernet/Tesra/vm/neovm"
@@ -39,10 +39,10 @@ var (
 )
 
 func init() {
-	ong.InitOng()
-	ont.InitOnt()
+	tsg.InitTsg()
+	tst.InitTst()
 	params.InitGlobalParams()
-	ontid.Init()
+	tstid.Init()
 	auth.Init()
 	governance.InitGovernance()
 }

@@ -275,7 +275,7 @@ http://localhost:20000/cli
 {
 	"gas_price":XXX,  //gasprice
 	"gas_limit":XXX,  //gaslimit
-	"asset":"ont",    //asset: ont or ong
+	"asset":"tst",    //asset: tst or ong
 	"from":"XXX",     //付款账户
 	"to":"XXX",       //收款地址
 	"amount":"XXX"      //转账金额。注意，由于ong的精度是9，应该在进行ong转账时，需要在实际的转账金额上乘以1000000000。
@@ -301,7 +301,7 @@ http://localhost:20000/cli
     "params":{
     	"gas_price":0,
     	"gas_limit":20000,
-    	"asset":"ont",
+    	"asset":"tst",
     	"from":"ATACcJPZ8eECdWS4ashaMdqzhywpRTq3oN",
     	"to":"AeoBhZtS8AmGp3Zt4LxvCqhdU4eSGiK44M",
     	"amount":"10"
@@ -336,7 +336,7 @@ sigtransfertx方法默认使用签名账户作为手续费支付方，如果需�
     "params":{
     	"gas_price":0,
     	"gas_limit":20000,
-    	"asset":"ont",
+    	"asset":"tst",
     	"from":"ATACcJPZ8eECdWS4ashaMdqzhywpRTq3oN",
     	"to":"AeoBhZtS8AmGp3Zt4LxvCqhdU4eSGiK44M",
     	"amount":"10",

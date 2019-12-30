@@ -24,7 +24,6 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/TesraSupernet/tesracrypto/keypair"
 	"github.com/TesraSupernet/Tesra/common"
 	"github.com/TesraSupernet/Tesra/common/config"
 	"github.com/TesraSupernet/Tesra/common/constants"
@@ -34,9 +33,10 @@ import (
 	"github.com/TesraSupernet/Tesra/core/utils"
 	"github.com/TesraSupernet/Tesra/smartcontract/service/native/global_params"
 	"github.com/TesraSupernet/Tesra/smartcontract/service/native/governance"
-	"github.com/TesraSupernet/Tesra/smartcontract/service/native/ont"
+	tst "github.com/TesraSupernet/Tesra/smartcontract/service/native/tst"
 	nutils "github.com/TesraSupernet/Tesra/smartcontract/service/native/utils"
 	"github.com/TesraSupernet/Tesra/smartcontract/service/neovm"
+	"github.com/TesraSupernet/tesracrypto/keypair"
 )
 
 const (
@@ -98,7 +98,7 @@ func BuildGenesisBlock(defaultBookkeeper []keypair.PublicKey, genesisConfig *con
 	ont := newGoverningToken()
 	ong := newUtilityToken()
 	param := newParamContract()
-	oid := deployOntIDContract()
+	oid := deployTstIDContract()
 	auth := deployAuthContract()
 	govConfigTx := newGovConfigTx()
 
@@ -122,7 +122,7 @@ func BuildGenesisBlock(defaultBookkeeper []keypair.PublicKey, genesisConfig *con
 }
 
 func newGoverningToken() *types.Transaction {
-	mutable, err := utils.NewDeployTransaction(nutils.OntContractAddress[:], "TST", "v0.0.1",
+	mutable, err := utils.NewDeployTransaction(nutils.TstContractAddress[:], "TST", "v0.0.1",
 		"Tesra Supernet", "service@tesra.io", "Tesra Supernet TST Token：We are building a global AI computing network", payload.NEOVM_TYPE)
 	if err != nil {
 		panic("[NewDeployTransaction] construct genesis governing token transaction error ")
@@ -135,7 +135,7 @@ func newGoverningToken() *types.Transaction {
 }
 
 func newUtilityToken() *types.Transaction {
-	mutable, err := utils.NewDeployTransaction(nutils.OngContractAddress[:], "TSG", "v0.0.1",
+	mutable, err := utils.NewDeployTransaction(nutils.TsgContractAddress[:], "TSG", "v0.0.1",
 		"Tesra Supernet", "service@tesra.io", "Tesra Supernet TSG Token：We are building a global AI computing network", payload.NEOVM_TYPE)
 	if err != nil {
 		panic("[NewDeployTransaction] construct genesis governing token transaction error ")
@@ -187,8 +187,8 @@ func deployAuthContract() *types.Transaction {
 	return tx
 }
 
-func deployOntIDContract() *types.Transaction {
-	mutable, err := utils.NewDeployTransaction(nutils.OntIDContractAddress[:], "TID", "v0.0.1",
+func deployTstIDContract() *types.Transaction {
+	mutable, err := utils.NewDeployTransaction(nutils.TstIDContractAddress[:], "TID", "v0.0.1",
 		"Tesra Supernet", "service@tesra.io", "Tesra Supernet TST ID", payload.NEOVM_TYPE)
 	if err != nil {
 		panic("[NewDeployTransaction] construct genesis governing token transaction error ")
@@ -227,7 +227,7 @@ func newGoverningInit() *types.Transaction {
 		nutils.EncodeVarUint(args, part.value)
 	}
 
-	mutable := utils.BuildNativeTransaction(nutils.OntContractAddress, ont.INIT_NAME, args.Bytes())
+	mutable := utils.BuildNativeTransaction(nutils.TstContractAddress, tst.INIT_NAME, args.Bytes())
 	tx, err := mutable.IntoImmutable()
 	if err != nil {
 		panic("construct genesis governing token transaction error ")
@@ -236,7 +236,7 @@ func newGoverningInit() *types.Transaction {
 }
 
 func newUtilityInit() *types.Transaction {
-	mutable := utils.BuildNativeTransaction(nutils.OngContractAddress, ont.INIT_NAME, []byte{})
+	mutable := utils.BuildNativeTransaction(nutils.TsgContractAddress, tst.INIT_NAME, []byte{})
 	tx, err := mutable.IntoImmutable()
 	if err != nil {
 		panic("construct genesis utility token transaction error ")

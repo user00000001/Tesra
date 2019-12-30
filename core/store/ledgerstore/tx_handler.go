@@ -37,7 +37,7 @@ import (
 	"github.com/TesraSupernet/Tesra/smartcontract/event"
 	"github.com/TesraSupernet/Tesra/smartcontract/service/native/global_params"
 	ninit "github.com/TesraSupernet/Tesra/smartcontract/service/native/init"
-	"github.com/TesraSupernet/Tesra/smartcontract/service/native/ont"
+	tst "github.com/TesraSupernet/Tesra/smartcontract/service/native/tst"
 	"github.com/TesraSupernet/Tesra/smartcontract/service/native/utils"
 	"github.com/TesraSupernet/Tesra/smartcontract/service/neovm"
 	"github.com/TesraSupernet/Tesra/smartcontract/service/wasmvm"
@@ -265,11 +265,11 @@ func SaveNotify(eventStore scommon.EventStore, txHash common.Uint256, notify *ev
 }
 
 func genNativeTransferCode(from, to common.Address, value uint64) []byte {
-	transfer := &ont.Transfers{States: []ont.State{{From: from, To: to, Value: value}}}
+	transfer := &tst.Transfers{States: []tst.State{{From: from, To: to, Value: value}}}
 	return common.SerializeToBytes(transfer)
 }
 
-// check whether payer ong balance sufficient
+// check whether payer tsg balance sufficient
 func isBalanceSufficient(payer common.Address, cache *storage.CacheDB, config *smartcontract.Config, store store.LedgerStore, gas uint64) (uint64, error) {
 	balance, err := getBalanceFromNative(config, cache, store, payer)
 	if err != nil {
@@ -294,7 +294,7 @@ func chargeCostGas(payer common.Address, gas uint64, config *smartcontract.Confi
 	}
 
 	service, _ := sc.NewNativeService()
-	_, err := service.NativeCall(utils.OngContractAddress, "transfer", params)
+	_, err := service.NativeCall(utils.TsgContractAddress, "transfer", params)
 	if err != nil {
 		return nil, err
 	}
@@ -350,7 +350,7 @@ func getBalanceFromNative(config *smartcontract.Config, cache *storage.CacheDB, 
 	}
 
 	service, _ := sc.NewNativeService()
-	result, err := service.NativeCall(utils.OngContractAddress, ont.BALANCEOF_NAME, bf.Bytes())
+	result, err := service.NativeCall(utils.TsgContractAddress, tst.BALANCEOF_NAME, bf.Bytes())
 	if err != nil {
 		return 0, err
 	}

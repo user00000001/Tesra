@@ -45,12 +45,12 @@ This document describes the Websocket api format for the ws/wss used in the Onch
 | [getsessioncount](#18-getsessioncount) |  | return gas price |
 | [getgasprice](#19-getgasprice) |  | return the state of transaction locate in memory |
 | [getallowance](#20-getallowance) | asset, from, to | return the allowance from transfer-from accout to transfer-to account |
-| [getunboundong](#21-getunboundong) | address | get unbound ong of this address |
+| [getunboundong](#21-getunboundong) | address | get unbound tsg of this address |
 | [getmempooltxstate](#22-getmempooltxstate) | hash | query the transaction state in the memory pool |
 | [getmempooltxcount](#23-getmempooltxcount) |  | query the transaction count in the memory pool |
 | [getversion](#24-getversion) |  | get the version information of the node |
 | [getnetworkid](#25-getnetworkid) |  | get the network id |
-| [getgrantong](#26-getgrantong) |  | get grant ong |
+| [getgrantong](#26-getgrantong) |  | get grant tsg |
 
 ###  1. heartbeat
 If don't send heartbeat, the session expire after 5min.
@@ -521,8 +521,8 @@ Return the balance of base58 account address.
     "Desc": "SUCCESS",
     "Error": 0,
     "Result": {
-        "ont": "2500",
-        "ong": "0"
+        "tst": "2500",
+        "tsg": "0"
     },
     "Version": "1.0.0"
 }
@@ -792,7 +792,7 @@ Get allowance.
 {
     "Action": "getallowance",
     "Id":12345, //optional
-    "Asset": "ont",
+    "Asset": "tst",
     "From" :  "A9yD14Nj9j7xAB4dbGeiX9h8unkKHxuWwb",
     "To"   :  "AA4WVfUB1ipHL8s3PRSYgeV1HhAU3KcKTq",
     "Version": "1.0.0"

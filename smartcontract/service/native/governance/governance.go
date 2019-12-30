@@ -60,7 +60,7 @@ const (
 	WHITE_NODE                       = "whiteNode"
 	QUIT_NODE                        = "quitNode"
 	WITHDRAW                         = "withdraw"
-	WITHDRAW_ONG                     = "withdrawOng"
+	WITHDRAW_ONG                     = "withdrawTsg"
 	WITHDRAW_FEE                     = "withdrawFee"
 	COMMIT_DPOS                      = "commitDpos"
 	UPDATE_CONFIG                    = "updateConfig"
@@ -130,7 +130,7 @@ func RegisterGovernanceContract(native *native.NativeService) {
 	native.Register(UNAUTHORIZE_FOR_PEER, UnAuthorizeForPeer)
 	native.Register(WITHDRAW, Withdraw)
 	native.Register(QUIT_NODE, QuitNode)
-	native.Register(WITHDRAW_ONG, WithdrawOng)
+	native.Register(WITHDRAW_ONG, WithdrawTsg)
 	native.Register(CHANGE_MAX_AUTHORIZATION, ChangeMaxAuthorization)
 	native.Register(SET_PEER_COST, SetPeerCost)
 	native.Register(WITHDRAW_FEE, WithdrawFee)
@@ -296,8 +296,8 @@ func InitConfig(native *native.NativeService) ([]byte, error) {
 		return utils.BYTE_FALSE, fmt.Errorf("putSplitCurve, put splitCurve error: %v", err)
 	}
 
-	//init admin OntID
-	err = appCallInitContractAdmin(native, []byte(configuration.AdminOntID))
+	//init admin TstID
+	err = appCallInitContractAdmin(native, []byte(configuration.AdminTstID))
 	if err != nil {
 		return utils.BYTE_FALSE, fmt.Errorf("appCallInitContractAdmin error: %v", err)
 	}
@@ -308,7 +308,7 @@ func InitConfig(native *native.NativeService) ([]byte, error) {
 //Register a candidate node, used by users.
 //Users can register a candidate node with a authorized ontid.
 //Candidate node can be authorized and become consensus node according to their pos.
-//Candidate node can get ong bonus according to their pos.
+//Candidate node can get tsg bonus according to their pos.
 func RegisterCandidate(native *native.NativeService) ([]byte, error) {
 	err := registerCandidate(native, "transfer")
 	if err != nil {
@@ -318,9 +318,9 @@ func RegisterCandidate(native *native.NativeService) ([]byte, error) {
 }
 
 //Register a candidate node, used by contracts.
-//Contracts can register a candidate node with a authorized ontid after approving ont to governance contract before invoke this function.
+//Contracts can register a candidate node with a authorized ontid after approving tst to governance contract before invoke this function.
 //Candidate node can be authorized and become consensus node according to their pos.
-//Candidate node can get ong bonus according to their pos.
+//Candidate node can get tsg bonus according to their pos.
 func RegisterCandidateTransferFrom(native *native.NativeService) ([]byte, error) {
 	err := registerCandidate(native, "transferFrom")
 	if err != nil {
@@ -392,7 +392,7 @@ func UnRegisterCandidate(native *native.NativeService) ([]byte, error) {
 }
 
 //Approve a registered candidate node
-//Only approved candidate node can participate in consensus selection and get ong bonus.
+//Only approved candidate node can participate in consensus selection and get tsg bonus.
 func ApproveCandidate(native *native.NativeService) ([]byte, error) {
 	params := new(ApproveCandidateParam)
 	if err := params.Deserialization(common.NewZeroCopySource(native.Input)); err != nil {
@@ -522,7 +522,7 @@ func ApproveCandidate(native *native.NativeService) ([]byte, error) {
 }
 
 //Reject a registered candidate node, remove node from pool and unfreeze deposit ont
-//Only approved candidate node can participate in consensus selection and get ong bonus.
+//Only approved candidate node can participate in consensus selection and get tsg bonus.
 func RejectCandidate(native *native.NativeService) ([]byte, error) {
 	params := new(RejectCandidateParam)
 	if err := params.Deserialization(common.NewZeroCopySource(native.Input)); err != nil {
@@ -953,9 +953,9 @@ func Withdraw(native *native.NativeService) ([]byte, error) {
 	}
 
 	//ont transfer
-	err = appCallTransferOnt(native, utils.GovernanceContractAddress, address, total)
+	err = appCallTransferTst(native, utils.GovernanceContractAddress, address, total)
 	if err != nil {
-		return utils.BYTE_FALSE, fmt.Errorf("appCallTransferOnt, ont transfer error: %v", err)
+		return utils.BYTE_FALSE, fmt.Errorf("appCallTransferTst, tst transfer error: %v", err)
 	}
 
 	//update total stake
@@ -1252,8 +1252,8 @@ func TransferPenalty(native *native.NativeService) ([]byte, error) {
 }
 
 //Withdraw unbounded ONG according to deposit ONT in this governance contract
-func WithdrawOng(native *native.NativeService) ([]byte, error) {
-	params := new(WithdrawOngParam)
+func WithdrawTsg(native *native.NativeService) ([]byte, error) {
+	params := new(WithdrawTsgParam)
 	if err := params.Deserialization(common.NewZeroCopySource(native.Input)); err != nil {
 		return utils.BYTE_FALSE, fmt.Errorf("deserialize, deserialize transferPenaltyParam error: %v", err)
 	}
@@ -1262,13 +1262,13 @@ func WithdrawOng(native *native.NativeService) ([]byte, error) {
 	//check witness
 	err := utils.ValidateOwner(native, params.Address)
 	if err != nil {
-		return utils.BYTE_FALSE, fmt.Errorf("withdrawOng, checkWitness error: %v", err)
+		return utils.BYTE_FALSE, fmt.Errorf("withdrawTsg, checkWitness error: %v", err)
 	}
 
-	// ont transfer to trigger unboundong
-	err = appCallTransferOnt(native, utils.GovernanceContractAddress, utils.GovernanceContractAddress, 1)
+	// tst transfer to trigger unboundong
+	err = appCallTransferTst(native, utils.GovernanceContractAddress, utils.GovernanceContractAddress, 1)
 	if err != nil {
-		return utils.BYTE_FALSE, fmt.Errorf("appCallTransferOnt, ont transfer error: %v", err)
+		return utils.BYTE_FALSE, fmt.Errorf("appCallTransferTst, tst transfer error: %v", err)
 	}
 
 	totalStake, err := getTotalStake(native, contract, params.Address)
@@ -1279,10 +1279,10 @@ func WithdrawOng(native *native.NativeService) ([]byte, error) {
 	preTimeOffset := totalStake.TimeOffset
 	timeOffset := native.Time - constants.GENESIS_BLOCK_TIMESTAMP
 
-	amount := utils.CalcUnbindOng(totalStake.Stake, preTimeOffset, timeOffset)
-	err = appCallTransferFromOng(native, utils.GovernanceContractAddress, utils.OntContractAddress, totalStake.Address, amount)
+	amount := utils.CalcUnbindTsg(totalStake.Stake, preTimeOffset, timeOffset)
+	err = appCallTransferFromTsg(native, utils.GovernanceContractAddress, utils.TstContractAddress, totalStake.Address, amount)
 	if err != nil {
-		return utils.BYTE_FALSE, fmt.Errorf("appCallTransferFromOng, transfer from ong error: %v", err)
+		return utils.BYTE_FALSE, fmt.Errorf("appCallTransferFromTsg, transfer from tsg error: %v", err)
 	}
 
 	totalStake.TimeOffset = timeOffset
@@ -1294,7 +1294,7 @@ func WithdrawOng(native *native.NativeService) ([]byte, error) {
 	return utils.BYTE_TRUE, nil
 }
 
-//Change the status if node can receive authorization from ont holders
+//Change the status if node can receive authorization from tst holders
 func ChangeMaxAuthorization(native *native.NativeService) ([]byte, error) {
 	if native.Height < NEW_VERSION_BLOCK {
 		return utils.BYTE_FALSE, fmt.Errorf("block num is not reached for this func")
@@ -1433,9 +1433,9 @@ func WithdrawFee(native *native.NativeService) ([]byte, error) {
 	fee := splitFeeAddress.Amount
 
 	//ong transfer
-	err = appCallTransferOng(native, utils.GovernanceContractAddress, params.Address, fee)
+	err = appCallTransferTsg(native, utils.GovernanceContractAddress, params.Address, fee)
 	if err != nil {
-		return utils.BYTE_FALSE, fmt.Errorf("appCallTransferOng, ong transfer error: %v", err)
+		return utils.BYTE_FALSE, fmt.Errorf("appCallTransferTsg, tsg transfer error: %v", err)
 	}
 
 	//delete from splitFeeAddress
@@ -1510,9 +1510,9 @@ func AddInitPos(native *native.NativeService) ([]byte, error) {
 	}
 
 	//ont transfer
-	err = appCallTransferOnt(native, params.Address, utils.GovernanceContractAddress, uint64(params.Pos))
+	err = appCallTransferTst(native, params.Address, utils.GovernanceContractAddress, uint64(params.Pos))
 	if err != nil {
-		return utils.BYTE_FALSE, fmt.Errorf("appCallTransferOnt, ont transfer error: %v", err)
+		return utils.BYTE_FALSE, fmt.Errorf("appCallTransferTst, tst transfer error: %v", err)
 	}
 
 	//update total stake

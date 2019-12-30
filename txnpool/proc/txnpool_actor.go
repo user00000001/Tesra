@@ -62,7 +62,7 @@ func NewVerifyRspActor(s *TXPoolServer) *VerifyRspActor {
 
 // isBalanceEnough checks if the tranactor has enough to cover gas cost
 func isBalanceEnough(address common.Address, gas uint64) bool {
-	balance, err := hComm.GetContractBalance(0, utils.OngContractAddress, address)
+	balance, err := hComm.GetContractBalance(0, utils. TsgContractAddress, address)
 	if err != nil {
 		log.Debugf("failed to get contract balance %s err %v",
 			address.ToHexString(), err)

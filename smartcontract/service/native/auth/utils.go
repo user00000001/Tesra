@@ -56,9 +56,9 @@ func getContractAdmin(native *native.NativeService, contractAddr common.Address)
 	return item.Value, nil
 }
 
-func putContractAdmin(native *native.NativeService, contractAddr common.Address, adminOntID []byte) error {
+func putContractAdmin(native *native.NativeService, contractAddr common.Address, adminTstID []byte) error {
 	key := concatContractAdminKey(native, contractAddr)
-	utils.PutBytes(native, key, adminOntID)
+	utils.PutBytes(native, key, adminTstID)
 	return nil
 }
 
@@ -97,7 +97,7 @@ func putRoleFunc(native *native.NativeService, contractAddr common.Address, role
 }
 
 //type(this.contractAddr.RoleP.ontID) = roleTokens
-func concatOntIDTokenKey(native *native.NativeService, contractAddr common.Address, ontID []byte) []byte {
+func concatTstIDTokenKey(native *native.NativeService, contractAddr common.Address, ontID []byte) []byte {
 	this := native.ContextRef.CurrentContext().ContractAddress
 	tokenKey := append(this[:], contractAddr[:]...)
 	tokenKey = append(tokenKey, PreRoleToken...)
@@ -106,8 +106,8 @@ func concatOntIDTokenKey(native *native.NativeService, contractAddr common.Addre
 	return tokenKey
 }
 
-func getOntIDToken(native *native.NativeService, contractAddr common.Address, ontID []byte) (*roleTokens, error) {
-	key := concatOntIDTokenKey(native, contractAddr, ontID)
+func getTstIDToken(native *native.NativeService, contractAddr common.Address, ontID []byte) (*roleTokens, error) {
+	key := concatTstIDTokenKey(native, contractAddr, ontID)
 	item, err := utils.GetStorageItem(native, key)
 	if err != nil {
 		return nil, err
@@ -124,8 +124,8 @@ func getOntIDToken(native *native.NativeService, contractAddr common.Address, on
 	return rT, nil
 }
 
-func putOntIDToken(native *native.NativeService, contractAddr common.Address, ontID []byte, tokens *roleTokens) error {
-	key := concatOntIDTokenKey(native, contractAddr, ontID)
+func putTstIDToken(native *native.NativeService, contractAddr common.Address, ontID []byte, tokens *roleTokens) error {
+	key := concatTstIDTokenKey(native, contractAddr, ontID)
 	utils.PutBytes(native, key, common.SerializeToBytes(tokens))
 	return nil
 }

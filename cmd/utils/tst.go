@@ -23,8 +23,13 @@ import (
 	"encoding/hex"
 	"encoding/json"
 	"fmt"
-	"github.com/TesraSupernet/tesracrypto/keypair"
-	sig "github.com/TesraSupernet/tesracrypto/signature"
+	"io"
+	"math/rand"
+	"sort"
+	"strconv"
+	"strings"
+	"time"
+
 	"github.com/TesraSupernet/Tesra/account"
 	"github.com/TesraSupernet/Tesra/common"
 	"github.com/TesraSupernet/Tesra/common/constants"
@@ -35,15 +40,11 @@ import (
 	cutils "github.com/TesraSupernet/Tesra/core/utils"
 	httpcom "github.com/TesraSupernet/Tesra/http/base/common"
 	rpccommon "github.com/TesraSupernet/Tesra/http/base/common"
-	"github.com/TesraSupernet/Tesra/smartcontract/service/native/ont"
+	tst "github.com/TesraSupernet/Tesra/smartcontract/service/native/tst"
 	"github.com/TesraSupernet/Tesra/smartcontract/service/native/utils"
 	cstates "github.com/TesraSupernet/Tesra/smartcontract/states"
-	"io"
-	"math/rand"
-	"sort"
-	"strconv"
-	"strings"
-	"time"
+	"github.com/TesraSupernet/tesracrypto/keypair"
+	sig "github.com/TesraSupernet/tesracrypto/signature"
 )
 
 const (
@@ -54,8 +55,8 @@ const (
 	CONTRACT_TRANSFER_FROM = "transferFrom"
 	CONTRACT_APPROVE       = "approve"
 
-	ASSET_ONT = "ont"
-	ASSET_ONG = "ong"
+	ASSET_ONT = "tst"
+	ASSET_ONG = "tsg"
 )
 
 func init() {
@@ -87,10 +88,10 @@ func GetAccountBalance(address, asset string) (uint64, error) {
 	}
 	var balance uint64
 	switch strings.ToLower(asset) {
-	case "ont":
-		balance, err = strconv.ParseUint(balances.Ont, 10, 64)
-	case "ong":
-		balance, err = strconv.ParseUint(balances.Ong, 10, 64)
+	case "tst":
+		balance, err = strconv.ParseUint(balances.Tst, 10, 64)
+	case "tsg":
+		balance, err = strconv.ParseUint(balances.Tsg, 10, 64)
 	default:
 		return 0, fmt.Errorf("unsupport asset:%s", asset)
 	}
@@ -184,7 +185,7 @@ func ApproveTx(gasPrice, gasLimit uint64, asset string, from, to string, amount 
 	if err != nil {
 		return nil, fmt.Errorf("To address:%s invalid:%s", to, err)
 	}
-	var state = &ont.State{
+	var state = &tst.State{
 		From:  fromAddr,
 		To:    toAddr,
 		Value: amount,
@@ -194,10 +195,10 @@ func ApproveTx(gasPrice, gasLimit uint64, asset string, from, to string, amount 
 	switch strings.ToLower(asset) {
 	case ASSET_ONT:
 		version = VERSION_CONTRACT_ONT
-		contractAddr = utils.OntContractAddress
+		contractAddr = utils.TstContractAddress
 	case ASSET_ONG:
 		version = VERSION_CONTRACT_ONG
-		contractAddr = utils.OngContractAddress
+		contractAddr = utils.TsgContractAddress
 	default:
 		return nil, fmt.Errorf("Unsupport asset:%s", asset)
 	}
@@ -218,8 +219,8 @@ func TransferTx(gasPrice, gasLimit uint64, asset, from, to string, amount uint64
 	if err != nil {
 		return nil, fmt.Errorf("to address:%s invalid:%s", to, err)
 	}
-	var sts []*ont.State
-	sts = append(sts, &ont.State{
+	var sts []*tst.State
+	sts = append(sts, &tst.State{
 		From:  fromAddr,
 		To:    toAddr,
 		Value: amount,
@@ -229,10 +230,10 @@ func TransferTx(gasPrice, gasLimit uint64, asset, from, to string, amount uint64
 	switch strings.ToLower(asset) {
 	case ASSET_ONT:
 		version = VERSION_CONTRACT_ONT
-		contractAddr = utils.OntContractAddress
+		contractAddr = utils.TstContractAddress
 	case ASSET_ONG:
 		version = VERSION_CONTRACT_ONG
-		contractAddr = utils.OngContractAddress
+		contractAddr = utils.TsgContractAddress
 	default:
 		return nil, fmt.Errorf("unsupport asset:%s", asset)
 	}
@@ -257,7 +258,7 @@ func TransferFromTx(gasPrice, gasLimit uint64, asset, sender, from, to string, a
 	if err != nil {
 		return nil, fmt.Errorf("to address:%s invalid:%s", to, err)
 	}
-	transferFrom := &ont.TransferFrom{
+	transferFrom := &tst.TransferFrom{
 		Sender: senderAddr,
 		From:   fromAddr,
 		To:     toAddr,
@@ -268,10 +269,10 @@ func TransferFromTx(gasPrice, gasLimit uint64, asset, sender, from, to string, a
 	switch strings.ToLower(asset) {
 	case ASSET_ONT:
 		version = VERSION_CONTRACT_ONT
-		contractAddr = utils.OntContractAddress
+		contractAddr = utils.TstContractAddress
 	case ASSET_ONG:
 		version = VERSION_CONTRACT_ONG
-		contractAddr = utils.OngContractAddress
+		contractAddr = utils.TsgContractAddress
 	default:
 		return nil, fmt.Errorf("unsupport asset:%s", asset)
 	}

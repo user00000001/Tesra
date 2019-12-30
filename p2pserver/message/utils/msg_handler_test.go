@@ -588,7 +588,7 @@ func TestNotFoundHandle(t *testing.T) {
 
 // TestTransactionHandle tests Function TransactionHandle handling a transaction message
 func TestTransactionHandle(t *testing.T) {
-	code := []byte("ont")
+	code := []byte("tst")
 	invokeCodePayload := &payload.InvokeCode{
 		Code: code,
 	}

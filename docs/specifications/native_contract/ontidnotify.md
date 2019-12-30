@@ -1,4 +1,4 @@
-# Ontid contract
+# Tstid contract
 
 common event format is as follows, including txhash, state, gasConsumed and notify, each native contract method have different notifies.
 

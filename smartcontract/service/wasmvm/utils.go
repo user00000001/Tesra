@@ -40,7 +40,7 @@ func ReadWasmMemory(proc *exec.Process, ptr uint32, len uint32) ([]byte, error) 
 	return keybytes, nil
 }
 
-func checkOntoWasm(m *wasm.Module) error {
+func checkTstoWasm(m *wasm.Module) error {
 	if m.Start != nil {
 		return errors.New("[Validate] start section is not allowed.")
 	}
@@ -92,7 +92,7 @@ func ReadWasmModule(Code []byte, verify bool) (*exec.CompiledModule, error) {
 	}
 
 	if verify {
-		err = checkOntoWasm(m)
+		err = checkTstoWasm(m)
 		if err != nil {
 			return nil, err
 		}

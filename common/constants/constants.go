@@ -28,7 +28,7 @@ var (
 	GENESIS_BLOCK_TIMESTAMP = uint32(time.Date(2019, time.December, 30, 0, 0, 0, 0, time.UTC).Unix())
 )
 
-// ont constants
+// tst constants
 const (
 	ONT_NAME         = "ONT Token"
 	ONT_SYMBOL       = "ONT"
@@ -36,7 +36,7 @@ const (
 	ONT_TOTAL_SUPPLY = uint64(1000000000)
 )
 
-// ong constants
+// tsg constants
 const (
 	ONG_NAME         = "ONG Token"
 	ONG_SYMBOL       = "ONG"

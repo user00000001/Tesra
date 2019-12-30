@@ -505,7 +505,7 @@ func GetAllowance(cmd map[string]interface{}) map[string]interface{} {
 }
 
 //get unbound ong
-func GetUnboundOng(cmd map[string]interface{}) map[string]interface{} {
+func GetUnboundTsg(cmd map[string]interface{}) map[string]interface{} {
 	resp := ResponsePack(berr.SUCCESS)
 	toAddrStr, ok := cmd["Addr"].(string)
 	if !ok {
@@ -515,18 +515,18 @@ func GetUnboundOng(cmd map[string]interface{}) map[string]interface{} {
 	if err != nil {
 		return ResponsePack(berr.INVALID_PARAMS)
 	}
-	fromAddr := utils.OntContractAddress
-	rsp, err := bcomn.GetAllowance("ong", fromAddr, toAddr)
+	fromAddr := utils.TstContractAddress
+	rsp, err := bcomn.GetAllowance("tsg", fromAddr, toAddr)
 	if err != nil {
 		return ResponsePack(berr.INVALID_PARAMS)
 	}
-	bcomn.GetGrantOng(toAddr)
+	bcomn.GetGrantTsg(toAddr)
 	resp["Result"] = rsp
 	return resp
 }
 
 //get grant ong
-func GetGrantOng(cmd map[string]interface{}) map[string]interface{} {
+func GetGrantTsg(cmd map[string]interface{}) map[string]interface{} {
 	resp := ResponsePack(berr.SUCCESS)
 	toAddrStr, ok := cmd["Addr"].(string)
 	if !ok {
@@ -536,7 +536,7 @@ func GetGrantOng(cmd map[string]interface{}) map[string]interface{} {
 	if err != nil {
 		return ResponsePack(berr.INVALID_PARAMS)
 	}
-	rsp, err := bcomn.GetGrantOng(toAddr)
+	rsp, err := bcomn.GetGrantTsg(toAddr)
 	if err != nil {
 		return ResponsePack(berr.INTERNAL_ERROR)
 	}

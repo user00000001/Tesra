@@ -693,15 +693,15 @@ func (this *TransferPenaltyParam) Deserialization(source *common.ZeroCopySource)
 	return nil
 }
 
-type WithdrawOngParam struct {
+type WithdrawTsgParam struct {
 	Address common.Address
 }
 
-func (this *WithdrawOngParam) Serialization(sink *common.ZeroCopySink) {
+func (this *WithdrawTsgParam) Serialization(sink *common.ZeroCopySink) {
 	sink.WriteVarBytes(this.Address[:])
 }
 
-func (this *WithdrawOngParam) Deserialization(source *common.ZeroCopySource) error {
+func (this *WithdrawTsgParam) Deserialization(source *common.ZeroCopySource) error {
 	address, err := utils.DecodeAddress(source)
 	if err != nil {
 		return fmt.Errorf("utils.ReadAddress, deserialize address error: %v", err)

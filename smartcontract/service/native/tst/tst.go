@@ -16,7 +16,7 @@
  * along with The TesraSupernet.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package ont
+package tst
 
 import (
 	"fmt"
@@ -35,24 +35,24 @@ const (
 	APPROVE_FLAG  byte = 2
 )
 
-func InitOnt() {
-	native.Contracts[utils.OntContractAddress] = RegisterOntContract
+func InitTst() {
+	native.Contracts[utils.TstContractAddress] = RegisterTstContract
 }
 
-func RegisterOntContract(native *native.NativeService) {
-	native.Register(INIT_NAME, OntInit)
-	native.Register(TRANSFER_NAME, OntTransfer)
-	native.Register(APPROVE_NAME, OntApprove)
-	native.Register(TRANSFERFROM_NAME, OntTransferFrom)
-	native.Register(NAME_NAME, OntName)
-	native.Register(SYMBOL_NAME, OntSymbol)
-	native.Register(DECIMALS_NAME, OntDecimals)
-	native.Register(TOTALSUPPLY_NAME, OntTotalSupply)
-	native.Register(BALANCEOF_NAME, OntBalanceOf)
-	native.Register(ALLOWANCE_NAME, OntAllowance)
+func RegisterTstContract(native *native.NativeService) {
+	native.Register(INIT_NAME, TstInit)
+	native.Register(TRANSFER_NAME, TstTransfer)
+	native.Register(APPROVE_NAME, TstApprove)
+	native.Register(TRANSFERFROM_NAME, TstTransferFrom)
+	native.Register(NAME_NAME, TstName)
+	native.Register(SYMBOL_NAME, TstSymbol)
+	native.Register(DECIMALS_NAME, TstDecimals)
+	native.Register(TOTALSUPPLY_NAME, TstTotalSupply)
+	native.Register(BALANCEOF_NAME, TstBalanceOf)
+	native.Register(ALLOWANCE_NAME, TstAllowance)
 }
 
-func OntInit(native *native.NativeService) ([]byte, error) {
+func TstInit(native *native.NativeService) ([]byte, error) {
 	contract := native.ContextRef.CurrentContext().ContractAddress
 	amount, err := utils.GetStorageUInt64(native, GenTotalSupplyKey(contract))
 	if err != nil {
@@ -60,7 +60,7 @@ func OntInit(native *native.NativeService) ([]byte, error) {
 	}
 
 	if amount > 0 {
-		return utils.BYTE_FALSE, errors.NewErr("Init ont has been completed!")
+		return utils.BYTE_FALSE, errors.NewErr("Init tst has been completed!")
 	}
 
 	distribute := make(map[common.Address]uint64)
@@ -109,7 +109,7 @@ func OntInit(native *native.NativeService) ([]byte, error) {
 	return utils.BYTE_TRUE, nil
 }
 
-func OntTransfer(native *native.NativeService) ([]byte, error) {
+func TstTransfer(native *native.NativeService) ([]byte, error) {
 	var transfers Transfers
 	source := common.NewZeroCopySource(native.Input)
 	if err := transfers.Deserialization(source); err != nil {
@@ -121,18 +121,18 @@ func OntTransfer(native *native.NativeService) ([]byte, error) {
 			continue
 		}
 		if v.Value > constants.ONT_TOTAL_SUPPLY {
-			return utils.BYTE_FALSE, fmt.Errorf("transfer ont amount:%d over totalSupply:%d", v.Value, constants.ONT_TOTAL_SUPPLY)
+			return utils.BYTE_FALSE, fmt.Errorf("transfer tst amount:%d over totalSupply:%d", v.Value, constants.ONT_TOTAL_SUPPLY)
 		}
 		fromBalance, toBalance, err := Transfer(native, contract, &v)
 		if err != nil {
 			return utils.BYTE_FALSE, err
 		}
 
-		if err := grantOng(native, contract, v.From, fromBalance); err != nil {
+		if err := grantTsg(native, contract, v.From, fromBalance); err != nil {
 			return utils.BYTE_FALSE, err
 		}
 
-		if err := grantOng(native, contract, v.To, toBalance); err != nil {
+		if err := grantTsg(native, contract, v.To, toBalance); err != nil {
 			return utils.BYTE_FALSE, err
 		}
 
@@ -141,41 +141,41 @@ func OntTransfer(native *native.NativeService) ([]byte, error) {
 	return utils.BYTE_TRUE, nil
 }
 
-func OntTransferFrom(native *native.NativeService) ([]byte, error) {
+func TstTransferFrom(native *native.NativeService) ([]byte, error) {
 	var state TransferFrom
 	source := common.NewZeroCopySource(native.Input)
 	if err := state.Deserialization(source); err != nil {
-		return utils.BYTE_FALSE, errors.NewDetailErr(err, errors.ErrNoCode, "[OntTransferFrom] State deserialize error!")
+		return utils.BYTE_FALSE, errors.NewDetailErr(err, errors.ErrNoCode, "[TstTransferFrom] State deserialize error!")
 	}
 	if state.Value == 0 {
 		return utils.BYTE_FALSE, nil
 	}
 	if state.Value > constants.ONT_TOTAL_SUPPLY {
-		return utils.BYTE_FALSE, fmt.Errorf("transferFrom ont amount:%d over totalSupply:%d", state.Value, constants.ONT_TOTAL_SUPPLY)
+		return utils.BYTE_FALSE, fmt.Errorf("transferFrom tst amount:%d over totalSupply:%d", state.Value, constants.ONT_TOTAL_SUPPLY)
 	}
 	contract := native.ContextRef.CurrentContext().ContractAddress
 	fromBalance, toBalance, err := TransferedFrom(native, contract, &state)
 	if err != nil {
 		return utils.BYTE_FALSE, err
 	}
-	if err := grantOng(native, contract, state.From, fromBalance); err != nil {
+	if err := grantTsg(native, contract, state.From, fromBalance); err != nil {
 		return utils.BYTE_FALSE, err
 	}
-	if err := grantOng(native, contract, state.To, toBalance); err != nil {
+	if err := grantTsg(native, contract, state.To, toBalance); err != nil {
 		return utils.BYTE_FALSE, err
 	}
 	AddNotifications(native, contract, &State{From: state.From, To: state.To, Value: state.Value})
 	return utils.BYTE_TRUE, nil
 }
 
-func OntApprove(native *native.NativeService) ([]byte, error) {
+func TstApprove(native *native.NativeService) ([]byte, error) {
 	var state State
 	source := common.NewZeroCopySource(native.Input)
 	if err := state.Deserialization(source); err != nil {
-		return utils.BYTE_FALSE, errors.NewDetailErr(err, errors.ErrNoCode, "[OngApprove] state deserialize error!")
+		return utils.BYTE_FALSE, errors.NewDetailErr(err, errors.ErrNoCode, "[TsgApprove] state deserialize error!")
 	}
 	if state.Value > constants.ONT_TOTAL_SUPPLY {
-		return utils.BYTE_FALSE, fmt.Errorf("approve ont amount:%d over totalSupply:%d", state.Value, constants.ONT_TOTAL_SUPPLY)
+		return utils.BYTE_FALSE, fmt.Errorf("approve tst amount:%d over totalSupply:%d", state.Value, constants.ONT_TOTAL_SUPPLY)
 	}
 	if native.ContextRef.CheckWitness(state.From) == false {
 		return utils.BYTE_FALSE, errors.NewErr("authentication failed!")
@@ -185,32 +185,32 @@ func OntApprove(native *native.NativeService) ([]byte, error) {
 	return utils.BYTE_TRUE, nil
 }
 
-func OntName(native *native.NativeService) ([]byte, error) {
+func TstName(native *native.NativeService) ([]byte, error) {
 	return []byte(constants.ONT_NAME), nil
 }
 
-func OntDecimals(native *native.NativeService) ([]byte, error) {
+func TstDecimals(native *native.NativeService) ([]byte, error) {
 	return common.BigIntToNeoBytes(big.NewInt(int64(constants.ONT_DECIMALS))), nil
 }
 
-func OntSymbol(native *native.NativeService) ([]byte, error) {
+func TstSymbol(native *native.NativeService) ([]byte, error) {
 	return []byte(constants.ONT_SYMBOL), nil
 }
 
-func OntTotalSupply(native *native.NativeService) ([]byte, error) {
+func TstTotalSupply(native *native.NativeService) ([]byte, error) {
 	contract := native.ContextRef.CurrentContext().ContractAddress
 	amount, err := utils.GetStorageUInt64(native, GenTotalSupplyKey(contract))
 	if err != nil {
-		return utils.BYTE_FALSE, errors.NewDetailErr(err, errors.ErrNoCode, "[OntTotalSupply] get totalSupply error!")
+		return utils.BYTE_FALSE, errors.NewDetailErr(err, errors.ErrNoCode, "[TstTotalSupply] get totalSupply error!")
 	}
 	return common.BigIntToNeoBytes(big.NewInt(int64(amount))), nil
 }
 
-func OntBalanceOf(native *native.NativeService) ([]byte, error) {
+func TstBalanceOf(native *native.NativeService) ([]byte, error) {
 	return GetBalanceValue(native, TRANSFER_FLAG)
 }
 
-func OntAllowance(native *native.NativeService) ([]byte, error) {
+func TstAllowance(native *native.NativeService) ([]byte, error) {
 	return GetBalanceValue(native, APPROVE_FLAG)
 }
 
@@ -238,7 +238,7 @@ func GetBalanceValue(native *native.NativeService, flag byte) ([]byte, error) {
 	return common.BigIntToNeoBytes(big.NewInt(int64(amount))), nil
 }
 
-func grantOng(native *native.NativeService, contract, address common.Address, balance uint64) error {
+func grantTsg(native *native.NativeService, contract, address common.Address, balance uint64) error {
 	startOffset, err := getUnboundOffset(native, contract, address)
 	if err != nil {
 		return err
@@ -248,7 +248,7 @@ func grantOng(native *native.NativeService, contract, address common.Address, ba
 	}
 	endOffset := native.Time - constants.GENESIS_BLOCK_TIMESTAMP
 	if endOffset < startOffset {
-		errstr := fmt.Sprintf("grant Ong error: wrong timestamp endOffset: %d < startOffset: %d", endOffset, startOffset)
+		errstr := fmt.Sprintf("grantTsg error: wrong timestamp endOffset: %d < startOffset: %d", endOffset, startOffset)
 		log.Error(errstr)
 		return errors.NewErr(errstr)
 	} else if endOffset == startOffset {
@@ -256,14 +256,14 @@ func grantOng(native *native.NativeService, contract, address common.Address, ba
 	}
 
 	if balance != 0 {
-		value := utils.CalcUnbindOng(balance, startOffset, endOffset)
+		value := utils.CalcUnbindTsg(balance, startOffset, endOffset)
 
-		args, err := getApproveArgs(native, contract, utils.OngContractAddress, address, value)
+		args, err := getApproveArgs(native, contract, utils.TsgContractAddress, address, value)
 		if err != nil {
 			return err
 		}
 
-		if _, err := native.NativeCall(utils.OngContractAddress, "approve", args); err != nil {
+		if _, err := native.NativeCall(utils.TsgContractAddress, "approve", args); err != nil {
 			return err
 		}
 	}

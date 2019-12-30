@@ -40,13 +40,13 @@ This document describes the restful api format for the http/https used in the On
 | [get_merkle_proof](#14-get_merkle_proof) | GET /api/v1/merkleproof/:hash| return merkle proof of the transaction |
 | [get_gasprice](#15-get_gasprice) | GET /api/v1/gasprice| return gas price |
 | [get_allowance](#16-get_allowance) | GET /api/v1/allowance/:asset/:from/:to | return the allowance from transfer-from accout to transfer-to account |
-| [get_unboundong](#17-get_unboundong) | GET /api/v1/unboundong/:addr | return the number of unbound ong of given address |
+| [get_unboundong](#17-get_unboundong) | GET /api/v1/unboundong/:addr | return the number of unbound tsg of given address |
 | [get_mempooltxcount](#18-get_mempooltxcount) | GET /api/v1/mempool/txcount | return the number of transaction locate in memory |
 | [get_mempooltxstate](#19-get_mempooltxstate) | GET /api/v1/mempool/txstate/:hash | return the state of transaction locate in memory |
 | [get_version](#20-get_version) |  GET /api/v1/version | return the version of tesranode |
 | [post_raw_tx](#21-post_raw_tx) | post /api/v1/transaction?preExec=0 | send transaction to tesranode network |
 | [get_networkid](#22-get_networkid) |  GET /api/v1/networkid | return the networkid |
-| [get_grantong](#23-get_grantong) |  GET /api/v1/grantong/:addr | get grant ong |
+| [get_grantong](#23-get_grantong) |  GET /api/v1/grantong/:addr | get grant tsg |
 
 ### 1 get_conn_count
 
@@ -426,8 +426,8 @@ curl -i http://localhost:20334/api/v1/balance/TA5uYzLU2vBvvfCMxyV2sdzc9kPqJzGZWq
     "Desc": "SUCCESS",
     "Error": 0,
     "Result": {
-        "ont": "2500",
-        "ong": "0"
+        "tst": "2500",
+        "tsg": "0"
     },
     "Version": "1.0.0"
 }

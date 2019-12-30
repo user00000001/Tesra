@@ -34,8 +34,8 @@ import (
 	"github.com/TesraSupernet/Tesra/core/store/leveldbstore"
 	"github.com/TesraSupernet/Tesra/core/store/overlaydb"
 	"github.com/TesraSupernet/Tesra/merkle"
-	"github.com/TesraSupernet/Tesra/smartcontract/service/native/ontid"
-	"github.com/TesraSupernet/Tesra/smartcontract/service/native/utils"
+	tstid "github.com/TesraSupernet/Tesra/smartcontract/service/native/tstid"
+	utils "github.com/TesraSupernet/Tesra/smartcontract/service/native/utils"
 )
 
 var (
@@ -416,14 +416,14 @@ func (self *StateStore) Close() error {
 func (self *StateStore) CheckStorage() error {
 	db := self.store
 
-	prefix := append([]byte{byte(scom.ST_STORAGE)}, utils.OntIDContractAddress[:]...) //prefix of new storage key
-	flag := append(prefix, ontid.FIELD_VERSION)
+	prefix := append([]byte{byte(scom.ST_STORAGE)}, utils.TstIDContractAddress[:]...) //prefix of new storage key
+	flag := append(prefix, tstid.FIELD_VERSION)
 	val, err := db.Get(flag)
 	if err == nil {
 		item := &states.StorageItem{}
 		source := common.NewZeroCopySource(val)
 		err := item.Deserialization(source)
-		if err == nil && item.Value[0] == ontid.FLAG_VERSION {
+		if err == nil && item.Value[0] == tstid.FLAG_VERSION {
 			return nil
 		} else if err == nil {
 			return errors.New("check ontid storage: invalid version flag")
@@ -448,7 +448,7 @@ func (self *StateStore) CheckStorage() error {
 	}
 
 	tag := states.StorageItem{}
-	tag.Value = []byte{ontid.FLAG_VERSION}
+	tag.Value = []byte{tstid.FLAG_VERSION}
 	buf := common.NewZeroCopySink(nil)
 	tag.Serialization(buf)
 	db.BatchPut(flag, buf.Bytes())

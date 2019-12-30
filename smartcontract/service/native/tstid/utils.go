@@ -14,7 +14,7 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with The TesraSupernet.  If not, see <http://www.gnu.org/licenses/>.
  */
-package ontid
+package tstid
 
 import (
 	"encoding/hex"
@@ -65,13 +65,13 @@ func encodeID(id []byte) ([]byte, error) {
 		return nil, errors.New("encode ONT ID error: invalid ID length")
 	}
 	//enc := []byte{byte(length)}
-	enc := append(utils.OntIDContractAddress[:], byte(length))
+	enc := append(utils.TstIDContractAddress[:], byte(length))
 	enc = append(enc, id...)
 	return enc, nil
 }
 
 func decodeID(data []byte) ([]byte, error) {
-	prefix := len(utils.OntIDContractAddress)
+	prefix := len(utils.TstIDContractAddress)
 	size := len(data)
 	if size < prefix || size != int(data[prefix])+1+prefix {
 		return nil, errors.New("decode ONT ID error: invalid data length")

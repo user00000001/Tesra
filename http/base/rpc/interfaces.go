@@ -543,8 +543,8 @@ func GetGasPrice(params []interface{}) map[string]interface{} {
 	return responseSuccess(result)
 }
 
-// get unbound ong of address
-func GetUnboundOng(params []interface{}) map[string]interface{} {
+// get unbound tsg of address
+func GetUnboundTsg(params []interface{}) map[string]interface{} {
 	if len(params) < 1 {
 		return responsePack(berr.INVALID_PARAMS, "")
 	}
@@ -556,16 +556,16 @@ func GetUnboundOng(params []interface{}) map[string]interface{} {
 	if err != nil {
 		return responsePack(berr.INVALID_PARAMS, "")
 	}
-	fromAddr := utils.OntContractAddress
-	rsp, err := bcomn.GetAllowance("ong", fromAddr, toAddr)
+	fromAddr := utils.TstContractAddress
+	rsp, err := bcomn.GetAllowance("tsg", fromAddr, toAddr)
 	if err != nil {
 		return responsePack(berr.INVALID_PARAMS, "")
 	}
 	return responseSuccess(rsp)
 }
 
-// get grant ong of address
-func GetGrantOng(params []interface{}) map[string]interface{} {
+// get grant tsg of address
+func GetGrantTsg(params []interface{}) map[string]interface{} {
 	if len(params) < 1 {
 		return responsePack(berr.INVALID_PARAMS, "")
 	}
@@ -577,7 +577,7 @@ func GetGrantOng(params []interface{}) map[string]interface{} {
 	if err != nil {
 		return responsePack(berr.INVALID_PARAMS, "")
 	}
-	rsp, err := bcomn.GetGrantOng(toAddr)
+	rsp, err := bcomn.GetGrantTsg(toAddr)
 	if err != nil {
 		return responsePack(berr.INTERNAL_ERROR, "")
 	}

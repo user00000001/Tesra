@@ -65,29 +65,29 @@ func ParseAssetAmount(rawAmount string, precision byte) uint64 {
 	return amount
 }
 
-func FormatOng(amount uint64) string {
+func FormatTsg(amount uint64) string {
 	return FormatAssetAmount(amount, PRECISION_ONG)
 }
 
-func ParseOng(rawAmount string) uint64 {
+func ParseTsg(rawAmount string) uint64 {
 	return ParseAssetAmount(rawAmount, PRECISION_ONG)
 }
 
-func FormatOnt(amount uint64) string {
+func FormatTst(amount uint64) string {
 	return FormatAssetAmount(amount, PRECISION_ONT)
 }
 
-func ParseOnt(rawAmount string) uint64 {
+func ParseTst(rawAmount string) uint64 {
 	return ParseAssetAmount(rawAmount, PRECISION_ONT)
 }
 
 func CheckAssetAmount(asset string, amount uint64) error {
 	switch strings.ToLower(asset) {
-	case "ont":
+	case "tst":
 		if amount > constants.ONT_TOTAL_SUPPLY {
 			return fmt.Errorf("amount:%d larger than ONT total supply:%d", amount, constants.ONT_TOTAL_SUPPLY)
 		}
-	case "ong":
+	case "tsg":
 		if amount > constants.ONG_TOTAL_SUPPLY {
 			return fmt.Errorf("amount:%d larger than ONG total supply:%d", amount, constants.ONG_TOTAL_SUPPLY)
 		}

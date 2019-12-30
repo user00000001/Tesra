@@ -15,7 +15,7 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with The TesraSupernet.  If not, see <http://www.gnu.org/licenses/>.
  */
-package ontid
+package tstid
 
 import (
 	"bytes"
@@ -95,7 +95,7 @@ func groupCmp(a, b *Group) error {
 		case []byte:
 			mb, ok := b.Members[i].([]byte)
 			if !ok {
-				return fmt.Errorf("m%d: type error, ont id expected", i)
+				return fmt.Errorf("m%d: type error, tst id expected", i)
 			}
 			if !bytes.Equal(ma, mb) {
 				return fmt.Errorf("m%d: mismatched id", i)

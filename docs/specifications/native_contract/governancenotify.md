@@ -31,7 +31,7 @@ common event format is as follows, including txhash, state, gasConsumed and noti
         true //status
       ]
     },
-    //notify of ont transfer
+    //notify of tst transfer
     {
       "ContractAddress": "0100000000000000000000000000000000000000", //ont contract address
       "States":[
@@ -41,7 +41,7 @@ common event format is as follows, including txhash, state, gasConsumed and noti
         100 //transfer amount
       ]
     },
-    //notify of ong transfer
+    //notify of tsg transfer
     {
       "ContractAddress": "0200000000000000000000000000000000000000", //ong contract address
       "States":[
@@ -117,7 +117,7 @@ common event format is as follows, including txhash, state, gasConsumed and noti
 
 #### AuthorizeForPeer
 
-* Usage: Authorize ont to a candidate node
+* Usage: Authorize tst to a candidate node
 
 * Event and notify:
 ```
@@ -126,7 +126,7 @@ common event format is as follows, including txhash, state, gasConsumed and noti
   "State":1,
   "GasConsumed":10000000,
   "Notify":[
-    //notify of ont transfer
+    //notify of tst transfer
     {
       "ContractAddress":"0100000000000000000000000000000000000000", //ont contract address
       "State":[
@@ -136,14 +136,14 @@ common event format is as follows, including txhash, state, gasConsumed and noti
         10000000 //transfer amount
       ]
     },
-    //unbounded ong transfer
+    //unbounded tsg transfer
     {
       "ContractAddress": "0200000000000000000000000000000000000000", //ong contract address
       "States":[
         "transfer", // method name
         "AFmseVrdL9f9oyCzZefL9tG6UbvhUMqNMV", //ont contract address
         "AbPRaepcpBAFHz9zCj4619qch4Aq5hJARA", //invoker address
-        10000000 //unbounded ong amount
+        10000000 //unbounded tsg amount
       ]
     },
     //notify of gas fee transfer
@@ -162,7 +162,7 @@ common event format is as follows, including txhash, state, gasConsumed and noti
 
 #### UnAuthorizeForPeer
 
-* Usage: Cancel the authorize ont to a candidate node
+* Usage: Cancel the authorize tst to a candidate node
 
 * Event and notify:
 ```
@@ -196,7 +196,7 @@ common event format is as follows, including txhash, state, gasConsumed and noti
   "State":1,
   "GasConsumed":10000000,
   "Notify":[
-    //notify of ont transfer
+    //notify of tst transfer
     {
       "ContractAddress": "0100000000000000000000000000000000000000", //ong contract address
       "States":[
@@ -206,14 +206,14 @@ common event format is as follows, including txhash, state, gasConsumed and noti
         10000000 // withdraw amount
       ]
     },
-    //unbounded ong transfer
+    //unbounded tsg transfer
     {
       "ContractAddress": "0200000000000000000000000000000000000000", //ong contract address
       "States":[
         "transfer", // method name
         "AFmseVrdL9f9oyCzZefL9tG6UbvhUMqNMV", //ont contract address
         "AbPRaepcpBAFHz9zCj4619qch4Aq5hJARA", //invoker address
-        10000000 //unbounded ong amount
+        10000000 //unbounded tsg amount
       ]
     },
     //notify of gas fee transfer
@@ -230,7 +230,7 @@ common event format is as follows, including txhash, state, gasConsumed and noti
 }
 ```
 
-#### WithdrawOng
+#### WithdrawTsg
 
 * Usage: Withdraw unbounded ong
 
@@ -241,7 +241,7 @@ common event format is as follows, including txhash, state, gasConsumed and noti
   "State":1,
   "GasConsumed":10000000,
   "Notify":[
-    //notify of ont transfer to trigger unbounded ong
+    //notify of tst transfer to trigger unbounded ong
     {
       "ContractAddress": "0100000000000000000000000000000000000000",
       "States":[
@@ -251,14 +251,14 @@ common event format is as follows, including txhash, state, gasConsumed and noti
         1 //fixed amount
       ]
     },
-    //unbounded ong transfer
+    //unbounded tsg transfer
     {
       "ContractAddress": "0200000000000000000000000000000000000000", //ong contract address
       "States":[
         "transfer", // method name
         "AFmseVrdL9f9oyCzZefL9tG6UbvhUMqNMV", //ont contract address
         "AbPRaepcpBAFHz9zCj4619qch4Aq5hJARA", //invoker address
-        10000000 //unbounded ong amount
+        10000000 //unbounded tsg amount
       ]
     },
     //notify of gas fee transfer
@@ -286,7 +286,7 @@ common event format is as follows, including txhash, state, gasConsumed and noti
   "State":1,
   "GasConsumed":10000000,
   "Notify":[
-    //notify of ont transfer
+    //notify of tst transfer
     {
       "ContractAddress": "0100000000000000000000000000000000000000", //ont contract address
       "States":[
@@ -296,14 +296,14 @@ common event format is as follows, including txhash, state, gasConsumed and noti
         1000 //add init pos amount
       ]
     },
-    //unbounded ong transfer
+    //unbounded tsg transfer
     {
       "ContractAddress": "0200000000000000000000000000000000000000", //ong contract address
       "States":[
         "transfer", // method name
         "AFmseVrdL9f9oyCzZefL9tG6UbvhUMqNMV", //ont contract address
         "AbPRaepcpBAFHz9zCj4619qch4Aq5hJARA", //invoker address
-        10000000 //unbounded ong amount
+        10000000 //unbounded tsg amount
       ]
     },
     //notify of gas fee transfer

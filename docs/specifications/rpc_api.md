@@ -93,10 +93,10 @@ There are some description of parameter used in rpc:
 | [getmerkleproof](#16-getmerkleproof) | tx_hash | return merkle proof |  |
 | [getgasprice](#17-getgasprice) |  | return gasprice |  |
 | [getallowance](#18-getallowance) | asset, from, to | return the allowance from transfer-from accout to transfer-to account |  |
-| [getunboundong](#19-getunboundong) | address | return unbound ong |  |
+| [getunboundong](#19-getunboundong) | address | return unbound tsg |  |
 | [getblocktxsbyheight](#20-getblocktxsbyheight) | height | return transaction hashes |  |
 | [getnetworkid](#21-getnetworkid) |  | Get the network id |  |
-| [getgrantong](#22-getgrantong) |  | Get grant ong |  |
+| [getgrantong](#22-getgrantong) |  | Get grant tsg |  |
 
 ### 1. getbestblockhash
 
@@ -852,8 +852,8 @@ Response:
    "id":1,
    "jsonrpc":"2.0",
    "result":{
-        "ont": "2500",
-        "ong": "0"
+        "tst": "2500",
+        "tsg": "0"
        }
 }
 ```
@@ -958,7 +958,7 @@ Request:
 {
   "jsonrpc": "2.0",
   "method": "getallowance",
-  "params": ["ont","from address","to address"],
+  "params": ["tst","from address","to address"],
   "id": 1
 }
 ```

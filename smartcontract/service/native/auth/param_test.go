@@ -37,7 +37,7 @@ var (
 var (
 	funcs           = []string{"foo1", "foo2"}
 	role            = "role"
-	OntContractAddr = utils.OntContractAddress
+	TstContractAddr = utils.TstContractAddress
 )
 
 func init() {
@@ -52,7 +52,7 @@ func init() {
 }
 func TestSerialization_Init(t *testing.T) {
 	param := &InitContractAdminParam{
-		AdminOntID: admin,
+		AdminTstID: admin,
 	}
 	sink := common.NewZeroCopySink(nil)
 	param.Serialization(sink)
@@ -64,15 +64,15 @@ func TestSerialization_Init(t *testing.T) {
 		t.Fatal(err)
 	}
 
-	if bytes.Compare(param.AdminOntID, param2.AdminOntID) != 0 {
+	if bytes.Compare(param.AdminTstID, param2.AdminTstID) != 0 {
 		t.Fatalf("failed")
 	}
 }
 
 func TestSerialization_Transfer(t *testing.T) {
 	param := &TransferParam{
-		ContractAddr:  OntContractAddr,
-		NewAdminOntID: newAdmin,
+		ContractAddr:  TstContractAddr,
+		NewAdminTstID: newAdmin,
 	}
 	sink := common.NewZeroCopySink(nil)
 	param.Serialization(sink)
@@ -88,8 +88,8 @@ func TestSerialization_Transfer(t *testing.T) {
 
 func TestSerialization_AssignFuncs(t *testing.T) {
 	param := &FuncsToRoleParam{
-		ContractAddr: OntContractAddr,
-		AdminOntID:   admin,
+		ContractAddr: TstContractAddr,
+		AdminTstID:   admin,
 		Role:         []byte("role"),
 		FuncNames:    funcs,
 	}
@@ -105,17 +105,17 @@ func TestSerialization_AssignFuncs(t *testing.T) {
 	assert.Equal(t, param, param2)
 }
 
-func TestSerialization_AssignOntIDs(t *testing.T) {
-	param := &OntIDsToRoleParam{
-		ContractAddr: OntContractAddr,
-		AdminOntID:   admin,
+func TestSerialization_AssignTstIDs(t *testing.T) {
+	param := &TstIDsToRoleParam{
+		ContractAddr: TstContractAddr,
+		AdminTstID:   admin,
 		Role:         []byte(role),
 		Persons:      [][]byte{[]byte{0x03, 0x04, 0x05, 0x06}, []byte{0x07, 0x08, 0x09, 0x0a}},
 	}
 	bf := common.NewZeroCopySink(nil)
 	param.Serialization(bf)
 	rd := common.NewZeroCopySource(bf.Bytes())
-	param2 := new(OntIDsToRoleParam)
+	param2 := new(TstIDsToRoleParam)
 	if err := param2.Deserialization(rd); err != nil {
 		t.Fatal(err)
 	}
@@ -125,7 +125,7 @@ func TestSerialization_AssignOntIDs(t *testing.T) {
 
 func TestSerialization_Delegate(t *testing.T) {
 	param := &DelegateParam{
-		ContractAddr: OntContractAddr,
+		ContractAddr: TstContractAddr,
 		From:         p1,
 		To:           p2,
 		Role:         []byte(role),
@@ -144,7 +144,7 @@ func TestSerialization_Delegate(t *testing.T) {
 
 func TestSerialization_Withdraw(t *testing.T) {
 	param := &WithdrawParam{
-		ContractAddr: OntContractAddr,
+		ContractAddr: TstContractAddr,
 		Initiator:    p1,
 		Delegate:     p2,
 		Role:         []byte(role),
@@ -161,7 +161,7 @@ func TestSerialization_Withdraw(t *testing.T) {
 
 func TestSerialization_VerifyToken(t *testing.T) {
 	param := &VerifyTokenParam{
-		ContractAddr: OntContractAddr,
+		ContractAddr: TstContractAddr,
 		Caller:       p1,
 		Fn:           "foo1",
 	}

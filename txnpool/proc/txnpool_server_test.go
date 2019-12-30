@@ -41,7 +41,7 @@ var (
 func init() {
 	topic = "TXN"
 
-	code := []byte("ont")
+	code := []byte("tst")
 
 	invokeCodePayload := &payload.InvokeCode{
 		Code: code,

@@ -23,7 +23,6 @@ import (
 	"bytes"
 	"encoding/hex"
 	"fmt"
-	"github.com/TesraSupernet/tesracrypto/keypair"
 	"github.com/TesraSupernet/Tesra/common"
 	"github.com/TesraSupernet/Tesra/common/constants"
 	"github.com/TesraSupernet/Tesra/common/log"
@@ -34,10 +33,11 @@ import (
 	ontErrors "github.com/TesraSupernet/Tesra/errors"
 	bactor "github.com/TesraSupernet/Tesra/http/base/actor"
 	"github.com/TesraSupernet/Tesra/smartcontract/event"
-	"github.com/TesraSupernet/Tesra/smartcontract/service/native/ont"
+	tst "github.com/TesraSupernet/Tesra/smartcontract/service/native/tst"
 	"github.com/TesraSupernet/Tesra/smartcontract/service/native/utils"
 	cstate "github.com/TesraSupernet/Tesra/smartcontract/states"
 	"github.com/TesraSupernet/Tesra/vm/neovm"
+	"github.com/TesraSupernet/tesracrypto/keypair"
 	"io"
 	"strings"
 	"time"
@@ -47,8 +47,8 @@ const MAX_SEARCH_HEIGHT uint32 = 100
 const MAX_REQUEST_BODY_SIZE = 1 << 20
 
 type BalanceOfRsp struct {
-	Ont string `json:"ont"`
-	Ong string `json:"ong"`
+	Tst string `json:"tst"`
+	Tsg string `json:"tsg"`
 }
 
 type MerkleProof struct {
@@ -279,23 +279,23 @@ func GetBlockInfo(block *types.Block) BlockInfo {
 }
 
 func GetBalance(address common.Address) (*BalanceOfRsp, error) {
-	ont, err := GetContractBalance(0, utils.OntContractAddress, address)
+	ont, err := GetContractBalance(0, utils.TstContractAddress, address)
 	if err != nil {
-		return nil, fmt.Errorf("get ont balance error:%s", err)
+		return nil, fmt.Errorf("get tst balance error:%s", err)
 	}
-	ong, err := GetContractBalance(0, utils.OngContractAddress, address)
+	ong, err := GetContractBalance(0, utils.TsgContractAddress, address)
 	if err != nil {
-		return nil, fmt.Errorf("get ont balance error:%s", err)
+		return nil, fmt.Errorf("get tst balance error:%s", err)
 	}
 	return &BalanceOfRsp{
-		Ont: fmt.Sprintf("%d", ont),
-		Ong: fmt.Sprintf("%d", ong),
+		Tst: fmt.Sprintf("%d", ont),
+		Tsg: fmt.Sprintf("%d", ong),
 	}, nil
 }
 
-func GetGrantOng(addr common.Address) (string, error) {
-	key := append([]byte(ont.UNBOUND_TIME_OFFSET), addr[:]...)
-	value, err := ledger.DefLedger.GetStorageItem(utils.OntContractAddress, key)
+func GetGrantTsg(addr common.Address) (string, error) {
+	key := append([]byte(tst.UNBOUND_TIME_OFFSET), addr[:]...)
+	value, err := ledger.DefLedger.GetStorageItem(utils.TstContractAddress, key)
 	if err != nil {
 		value = []byte{0, 0, 0, 0}
 	}
@@ -304,21 +304,21 @@ func GetGrantOng(addr common.Address) (string, error) {
 	if eof {
 		return fmt.Sprintf("%v", 0), io.ErrUnexpectedEOF
 	}
-	ont, err := GetContractBalance(0, utils.OntContractAddress, addr)
+	ont, err := GetContractBalance(0, utils.TstContractAddress, addr)
 	if err != nil {
 		return fmt.Sprintf("%v", 0), err
 	}
-	boundong := utils.CalcUnbindOng(ont, v, uint32(time.Now().Unix())-constants.GENESIS_BLOCK_TIMESTAMP)
+	boundong := utils.CalcUnbindTsg(ont, v, uint32(time.Now().Unix())-constants.GENESIS_BLOCK_TIMESTAMP)
 	return fmt.Sprintf("%v", boundong), nil
 }
 
 func GetAllowance(asset string, from, to common.Address) (string, error) {
 	var contractAddr common.Address
 	switch strings.ToLower(asset) {
-	case "ont":
-		contractAddr = utils.OntContractAddress
-	case "ong":
-		contractAddr = utils.OngContractAddress
+	case "tst":
+		contractAddr = utils.TstContractAddress
+	case "tsg":
+		contractAddr = utils.TsgContractAddress
 	default:
 		return "", fmt.Errorf("unsupport asset")
 	}

@@ -50,7 +50,7 @@
 | [getmempooltxcount](#23-getmempooltxcount) |  | 得到内存中的交易的数量 |
 | [getversion](#24-getversion) |  | 得到版本信息 |
 | [getnetworkid](#25-getnetworkid) |  | 得到network id |
-| [getgrantong](#26-getgrantong) |  | 得到grant ong |
+| [getgrantong](#26-getgrantong) |  | 得到grant tsg |
 
 ###  1. heartbeat
 
@@ -526,8 +526,8 @@ raw：可选参数，默认值为零，不设置时为默认值。当值为1时�
     "Desc": "SUCCESS",
     "Error": 0,
     "Result": {
-        "ont": "2500",
-        "ong": "0"
+        "tst": "2500",
+        "tsg": "0"
     },
     "Version": "1.0.0"
 }
@@ -796,7 +796,7 @@ raw：可选参数，默认值为零，不设置时为默认值。当值为1时�
 {
     "Action": "getallowance",
     "Id":12345, //optional
-    "Asset": "ont",
+    "Asset": "tst",
     "From" :  "A9yD14Nj9j7xAB4dbGeiX9h8unkKHxuWwb",
     "To"   :  "AA4WVfUB1ipHL8s3PRSYgeV1HhAU3KcKTq",
     "Version": "1.0.0"

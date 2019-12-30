@@ -281,10 +281,10 @@ Request parameters:
 {
     "gas_price":XXX,  //gasprice
     "gas_limit":XXX,  //gaslimit
-    "asset":"ont",    //asset: ont or ong
+    "asset":"tst",    //asset: tst or ong
     "from":"XXX",     //Payment account
     "to":"XXX",       //Receipt address
-    "amount":"XXX"    //transfer amount. Note that since the precision of ong is 9, it is necessary to multiply the actual transfer amount by 1000000000 when making ong transfer.
+    "amount":"XXX"    //transfer amount. Note that since the precision of tsg is 9, it is necessary to multiply the actual transfer amount by 1000000000 when making tsg transfer.
 }
 ```
 Response result:
@@ -307,7 +307,7 @@ Request:
     "params":{
     	"gas_price":0,
     	"gas_limit":20000,
-    	"asset":"ont",
+    	"asset":"tst",
     	"from":"ATACcJPZ8eECdWS4ashaMdqzhywpRTq3oN",
     	"to":"AeoBhZtS8AmGp3Zt4LxvCqhdU4eSGiK44M",
     	"amount":"10"
@@ -337,11 +337,11 @@ Examples:
 {
     "gas_price":XXX,  //gasprice
     "gas_limit":XXX,  //gaslimit
-    "asset":"ont",    //asset: ont or ong
+    "asset":"tst",    //asset: tst or ong
     "from":"XXX",     //Payment account
     "to":"XXX",       //Receipt address
     "payer":"XXX",    //The fee payer's account address
-    "amount":XXX      //transfer amount. Note that since the precision of ong is 9, it is necessary to multiply the actual transfer amount by 1000000000 when making ong transfer.
+    "amount":XXX      //transfer amount. Note that since the precision of tsg is 9, it is necessary to multiply the actual transfer amount by 1000000000 when making tsg transfer.
 }
 ```
 
@@ -453,7 +453,7 @@ Examples:
 			"ARVVxBPGySL56CvSSWfjRVVyZYpNZ7zp48",	//withdraw address
 			"AFmseVrdL9f9oyCzZefL9tG6UbvhUMqNMV",   //ONT contract address (in base58 style)
 			"ARVVxBPGySL56CvSSWfjRVVyZYpNZ7zp48",  //ONG accept address. Note that accept address  can different with withdraw address
-			"310860000000000"												//withdraw ong amount. Note that ONG has 9 decimals
+			"310860000000000"												//withdraw tsg amount. Note that ONG has 9 decimals
 		]
 	}
 }

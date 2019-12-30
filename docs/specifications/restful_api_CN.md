@@ -46,7 +46,7 @@
 | [get_version](#20-get_version) |  GET /api/v1/version | 得到版本信息 |
 | [post_raw_tx](#21-post_raw_tx) | post /api/v1/transaction?preExec=0 | 向tesranode网络发送交易 |
 | [get_networkid](#22-get_networkid) |  GET /api/v1/networkid | 得到network id |
-| [get_grantong](#23-get_grantong) |  GET /api/v1/grantong/:addr | 得到grant ong |
+| [get_grantong](#23-get_grantong) |  GET /api/v1/grantong/:addr | 得到grant tsg |
 
 ### 1 get_conn_count
 
@@ -425,8 +425,8 @@ curl -i http://localhost:20334/api/v1/balance/TA5uYzLU2vBvvfCMxyV2sdzc9kPqJzGZWq
     "Desc": "SUCCESS",
     "Error": 0,
     "Result": {
-        "ont": "2500",
-        "ong": "0"
+        "tst": "2500",
+        "tsg": "0"
     },
     "Version": "1.0.0"
 }

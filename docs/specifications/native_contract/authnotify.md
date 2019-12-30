@@ -112,7 +112,7 @@ common event format is as follows, including txhash, state, gasConsumed and noti
 }
 ```
 
-#### AssignOntIDsToRole
+#### AssignTstIDsToRole
 
 * Usage: Assign a role to a certain ontid
 
@@ -127,7 +127,7 @@ common event format is as follows, including txhash, state, gasConsumed and noti
     {
       "ContractAddress": "0600000000000000000000000000000000000000", //contract address of authentication contract
       "States":[
-        "assignOntIDsToRole", //method name
+        "assignTstIDsToRole", //method name
         "ea1e2adf8c19f5a7e877860264ebf326e8c3aa5a", //contract address of contract which want to achieve authentication control
         true //status
       ]

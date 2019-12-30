@@ -319,7 +319,7 @@ type PenaltyStake struct { //table record penalty stake of peer
 	InitPos      uint64 //initPos penalty
 	AuthorizePos uint64 //authorize pos penalty
 	TimeOffset   uint32 //time used for calculate unbound ong
-	Amount       uint64 //unbound ong that this penalty unbounded
+	Amount       uint64 //unbound tsg that this penalty unbounded
 }
 
 func (this *PenaltyStake) Serialization(sink *common.ZeroCopySink) {
@@ -440,7 +440,7 @@ func (this *PeerAttributes) Deserialization(source *common.ZeroCopySource) error
 	return nil
 }
 
-type SplitFeeAddress struct { //table record each address's ong motivation
+type SplitFeeAddress struct { //table record each address's tsg motivation
 	Address common.Address
 	Amount  uint64
 }

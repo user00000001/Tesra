@@ -38,9 +38,9 @@ var AssetCommand = cli.Command{
 		{
 			Action:      transfer,
 			Name:        "transfer",
-			Usage:       "Transfer ont or ong to another account",
+			Usage:       "Transfer tst or tsg to another account",
 			ArgsUsage:   " ",
-			Description: "Transfer ont or ong to another account. If from address does not specified, using default account",
+			Description: "Transfer tst or tsg to another account. If from address does not specified, using default account",
 			Flags: []cli.Flag{
 				utils.RPCPortFlag,
 				utils.TransactionGasPriceFlag,
@@ -90,7 +90,7 @@ var AssetCommand = cli.Command{
 		{
 			Action:    getBalance,
 			Name:      "balance",
-			Usage:     "Show balance of ont and ong of specified account",
+			Usage:     "Show balance of tst and tsg of specified account",
 			ArgsUsage: "<address|label|index>",
 			Flags: []cli.Flag{
 				utils.RPCPortFlag,
@@ -100,7 +100,7 @@ var AssetCommand = cli.Command{
 		{
 			Action: getAllowance,
 			Name:   "allowance",
-			Usage:  "Show approve balance of ont or ong of specified account",
+			Usage:  "Show approve balance of tst or tsg of specified account",
 			Flags: []cli.Flag{
 				utils.RPCPortFlag,
 				utils.ApproveAssetFlag,
@@ -110,7 +110,7 @@ var AssetCommand = cli.Command{
 			},
 		},
 		{
-			Action:    unboundOng,
+			Action:    unboundTsg,
 			Name:      "unboundong",
 			Usage:     "Show the balance of unbound ONG",
 			ArgsUsage: "<address|label|index>",
@@ -120,7 +120,7 @@ var AssetCommand = cli.Command{
 			},
 		},
 		{
-			Action:    withdrawOng,
+			Action:    withdrawTsg,
 			Name:      "withdrawong",
 			Usage:     "Withdraw ONG",
 			ArgsUsage: "<address|label|index>",
@@ -162,12 +162,12 @@ func transfer(ctx *cli.Context) error {
 	var amount uint64
 	amountStr := ctx.String(utils.TransactionAmountFlag.Name)
 	switch strings.ToLower(asset) {
-	case "ont":
-		amount = utils.ParseOnt(amountStr)
-		amountStr = utils.FormatOnt(amount)
-	case "ong":
-		amount = utils.ParseOng(amountStr)
-		amountStr = utils.FormatOng(amount)
+	case "tst":
+		amount = utils.ParseTst(amountStr)
+		amountStr = utils.FormatTst(amount)
+	case "tsg":
+		amount = utils.ParseTsg(amountStr)
+		amountStr = utils.FormatTsg(amount)
 	default:
 		return fmt.Errorf("unsupport asset:%s", asset)
 	}
@@ -239,13 +239,13 @@ func getBalance(ctx *cli.Context) error {
 		return err
 	}
 
-	ong, err := strconv.ParseUint(balance.Ong, 10, 64)
+	ong, err := strconv.ParseUint(balance.Tsg, 10, 64)
 	if err != nil {
 		return err
 	}
 	PrintInfoMsg("BalanceOf:%s", accAddr)
-	PrintInfoMsg("  ONT:%s", balance.Ont)
-	PrintInfoMsg("  ONG:%s", utils.FormatOng(ong))
+	PrintInfoMsg("  ONT:%s", balance.Tst)
+	PrintInfoMsg("  ONG:%s", utils.FormatTsg(ong))
 	return nil
 }
 
@@ -275,13 +275,13 @@ func getAllowance(ctx *cli.Context) error {
 		return err
 	}
 	switch strings.ToLower(asset) {
-	case "ont":
-	case "ong":
+	case "tst":
+	case "tsg":
 		balance, err := strconv.ParseUint(balanceStr, 10, 64)
 		if err != nil {
 			return err
 		}
-		balanceStr = utils.FormatOng(balance)
+		balanceStr = utils.FormatTsg(balance)
 	default:
 		return fmt.Errorf("unsupport asset:%s", asset)
 	}
@@ -316,12 +316,12 @@ func approve(ctx *cli.Context) error {
 	}
 	var amount uint64
 	switch strings.ToLower(asset) {
-	case "ont":
-		amount = utils.ParseOnt(amountStr)
-		amountStr = utils.FormatOnt(amount)
-	case "ong":
-		amount = utils.ParseOng(amountStr)
-		amountStr = utils.FormatOng(amount)
+	case "tst":
+		amount = utils.ParseTst(amountStr)
+		amountStr = utils.FormatTst(amount)
+	case "tsg":
+		amount = utils.ParseTsg(amountStr)
+		amountStr = utils.FormatTsg(amount)
 	default:
 		return fmt.Errorf("unsupport asset:%s", asset)
 	}
@@ -405,12 +405,12 @@ func transferFrom(ctx *cli.Context) error {
 
 	var amount uint64
 	switch strings.ToLower(asset) {
-	case "ont":
-		amount = utils.ParseOnt(amountStr)
-		amountStr = utils.FormatOnt(amount)
-	case "ong":
-		amount = utils.ParseOng(amountStr)
-		amountStr = utils.FormatOng(amount)
+	case "tst":
+		amount = utils.ParseTst(amountStr)
+		amountStr = utils.FormatTst(amount)
+	case "tsg":
+		amount = utils.ParseTsg(amountStr)
+		amountStr = utils.FormatTsg(amount)
 	default:
 		return fmt.Errorf("unsupport asset:%s", asset)
 	}
@@ -461,7 +461,7 @@ func transferFrom(ctx *cli.Context) error {
 	return nil
 }
 
-func unboundOng(ctx *cli.Context) error {
+func unboundTsg(ctx *cli.Context) error {
 	SetRpcPort(ctx)
 	if ctx.NArg() < 1 {
 		PrintErrorMsg("Missing account argument.")
@@ -473,8 +473,8 @@ func unboundOng(ctx *cli.Context) error {
 	if err != nil {
 		return err
 	}
-	fromAddr := nutils.OntContractAddress.ToBase58()
-	balanceStr, err := utils.GetAllowance("ong", fromAddr, accAddr)
+	fromAddr := nutils.TstContractAddress.ToBase58()
+	balanceStr, err := utils.GetAllowance("tsg", fromAddr, accAddr)
 	if err != nil {
 		return err
 	}
@@ -482,14 +482,14 @@ func unboundOng(ctx *cli.Context) error {
 	if err != nil {
 		return err
 	}
-	balanceStr = utils.FormatOng(balance)
+	balanceStr = utils.FormatTsg(balance)
 	PrintInfoMsg("Unbound ONG:")
 	PrintInfoMsg("  Account:%s", accAddr)
 	PrintInfoMsg("  ONG:%s", balanceStr)
 	return nil
 }
 
-func withdrawOng(ctx *cli.Context) error {
+func withdrawTsg(ctx *cli.Context) error {
 	SetRpcPort(ctx)
 	if ctx.NArg() < 1 {
 		PrintErrorMsg("Missing account argument.")
@@ -501,8 +501,8 @@ func withdrawOng(ctx *cli.Context) error {
 	if err != nil {
 		return err
 	}
-	fromAddr := nutils.OntContractAddress.ToBase58()
-	balance, err := utils.GetAllowance("ong", fromAddr, accAddr)
+	fromAddr := nutils.TstContractAddress.ToBase58()
+	balance, err := utils.GetAllowance("tsg", fromAddr, accAddr)
 	if err != nil {
 		return err
 	}
@@ -531,14 +531,14 @@ func withdrawOng(ctx *cli.Context) error {
 		gasPrice = 0
 	}
 
-	txHash, err := utils.TransferFrom(gasPrice, gasLimit, signer, "ong", accAddr, fromAddr, accAddr, amount)
+	txHash, err := utils.TransferFrom(gasPrice, gasLimit, signer, "tsg", accAddr, fromAddr, accAddr, amount)
 	if err != nil {
 		return err
 	}
 
 	PrintInfoMsg("Withdraw ONG:")
 	PrintInfoMsg("  Account:%s", accAddr)
-	PrintInfoMsg("  Amount:%s", utils.FormatOng(amount))
+	PrintInfoMsg("  Amount:%s", utils.FormatTsg(amount))
 	PrintInfoMsg("  TxHash:%s", txHash)
 	PrintInfoMsg("\nTip:")
 	PrintInfoMsg("  Using './tesranode info status %s' to query transaction status.", txHash)

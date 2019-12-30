@@ -56,7 +56,7 @@ func TestSigMutilRawTransaction(t *testing.T) {
 		t.Errorf("TestSigMutilRawTransaction AddressFromMultiPubKeys error:%s", err)
 		return
 	}
-	tx, err := utils.TransferTx(0, 0, "ont", fromAddr.ToBase58(), acc1.Address, 10)
+	tx, err := utils.TransferTx(0, 0, "tst", fromAddr.ToBase58(), acc1.Address, 10)
 	if err != nil {
 		t.Errorf("TransferTx error:%s", err)
 		return

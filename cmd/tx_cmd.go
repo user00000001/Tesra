@@ -21,7 +21,7 @@ import (
 	"encoding/hex"
 	"fmt"
 	cmdcom "github.com/TesraSupernet/Tesra/cmd/common"
-	"github.com/TesraSupernet/Tesra/cmd/utils"
+	utils "github.com/TesraSupernet/Tesra/cmd/utils"
 	"github.com/TesraSupernet/Tesra/common"
 	nutils "github.com/TesraSupernet/Tesra/smartcontract/service/native/utils"
 	"github.com/urfave/cli"
@@ -202,12 +202,12 @@ func transferTx(ctx *cli.Context) error {
 	var amount uint64
 	amountStr := ctx.String(utils.TransactionAmountFlag.Name)
 	switch strings.ToLower(asset) {
-	case "ont":
-		amount = utils.ParseOnt(amountStr)
-		amountStr = utils.FormatOnt(amount)
-	case "ong":
-		amount = utils.ParseOng(amountStr)
-		amountStr = utils.FormatOng(amount)
+	case "tst":
+		amount = utils.ParseTst(amountStr)
+		amountStr = utils.FormatTst(amount)
+	case "tsg":
+		amount = utils.ParseTsg(amountStr)
+		amountStr = utils.FormatTsg(amount)
 	default:
 		return fmt.Errorf("unsupport asset:%s", asset)
 	}
@@ -274,12 +274,12 @@ func approveTx(ctx *cli.Context) error {
 
 	var amount uint64
 	switch strings.ToLower(asset) {
-	case "ont":
-		amount = utils.ParseOnt(amountStr)
-		amountStr = utils.FormatOnt(amount)
-	case "ong":
-		amount = utils.ParseOng(amountStr)
-		amountStr = utils.FormatOng(amount)
+	case "tst":
+		amount = utils.ParseTst(amountStr)
+		amountStr = utils.FormatTst(amount)
+	case "tsg":
+		amount = utils.ParseTsg(amountStr)
+		amountStr = utils.FormatTsg(amount)
 	default:
 		return fmt.Errorf("unsupport asset:%s", asset)
 	}
@@ -360,12 +360,12 @@ func transferFromTx(ctx *cli.Context) error {
 
 	var amount uint64
 	switch strings.ToLower(asset) {
-	case "ont":
-		amount = utils.ParseOnt(amountStr)
-		amountStr = utils.FormatOnt(amount)
-	case "ong":
-		amount = utils.ParseOng(amountStr)
-		amountStr = utils.FormatOng(amount)
+	case "tst":
+		amount = utils.ParseTst(amountStr)
+		amountStr = utils.FormatTst(amount)
+	case "tsg":
+		amount = utils.ParseTsg(amountStr)
+		amountStr = utils.FormatTsg(amount)
 	default:
 		return fmt.Errorf("unsupport asset:%s", asset)
 	}
@@ -408,12 +408,12 @@ func withdrawONGTx(ctx *cli.Context) error {
 		return err
 	}
 
-	fromAddr := nutils.OntContractAddress.ToBase58()
+	fromAddr := nutils.TstContractAddress.ToBase58()
 
 	var amount uint64
 	amountStr := ctx.String(utils.GetFlagName(utils.TransferFromAmountFlag))
 	if amountStr == "" {
-		balance, err := utils.GetAllowance("ong", fromAddr, accAddr)
+		balance, err := utils.GetAllowance("tsg", fromAddr, accAddr)
 		if err != nil {
 			return err
 		}
@@ -424,13 +424,13 @@ func withdrawONGTx(ctx *cli.Context) error {
 		if amount <= 0 {
 			return fmt.Errorf("haven't unbound ong")
 		}
-		amountStr = utils.FormatOng(amount)
+		amountStr = utils.FormatTsg(amount)
 	} else {
-		amount = utils.ParseOng(amountStr)
+		amount = utils.ParseTsg(amountStr)
 		if amount <= 0 {
 			return fmt.Errorf("haven't unbound ong")
 		}
-		amountStr = utils.FormatOng(amount)
+		amountStr = utils.FormatTsg(amount)
 	}
 
 	var payer common.Address
@@ -465,7 +465,7 @@ func withdrawONGTx(ctx *cli.Context) error {
 	PrintInfoMsg("Withdraw account:%s", accAddr)
 	PrintInfoMsg("Receive account:%s", receiveAddr)
 	PrintInfoMsg("Withdraw ONG amount:%v", amount)
-	mutTx, err := utils.TransferFromTx(gasPrice, gasLimit, "ong", accAddr, fromAddr, receiveAddr, amount)
+	mutTx, err := utils.TransferFromTx(gasPrice, gasLimit, "tsg", accAddr, fromAddr, receiveAddr, amount)
 	if err != nil {
 		return err
 	}

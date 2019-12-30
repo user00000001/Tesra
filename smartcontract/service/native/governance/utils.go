@@ -23,7 +23,6 @@ import (
 	"encoding/hex"
 	"fmt"
 
-	"github.com/TesraSupernet/tesracrypto/vrf"
 	"github.com/TesraSupernet/Tesra/common"
 	"github.com/TesraSupernet/Tesra/common/config"
 	"github.com/TesraSupernet/Tesra/common/serialization"
@@ -31,8 +30,9 @@ import (
 	cstates "github.com/TesraSupernet/Tesra/core/states"
 	"github.com/TesraSupernet/Tesra/smartcontract/service/native"
 	"github.com/TesraSupernet/Tesra/smartcontract/service/native/auth"
-	"github.com/TesraSupernet/Tesra/smartcontract/service/native/ont"
+	"github.com/TesraSupernet/Tesra/smartcontract/service/native/tst"
 	"github.com/TesraSupernet/Tesra/smartcontract/service/native/utils"
+	"github.com/TesraSupernet/tesracrypto/vrf"
 )
 
 func GetPeerPoolMap(native *native.NativeService, contract common.Address, view uint32) (*PeerPoolMap, error) {
@@ -112,30 +112,30 @@ func GetView(native *native.NativeService, contract common.Address) (uint32, err
 	return governanceView.View, nil
 }
 
-func appCallTransferOnt(native *native.NativeService, from common.Address, to common.Address, amount uint64) error {
-	err := appCallTransfer(native, utils.OntContractAddress, from, to, amount)
+func appCallTransferTst(native *native.NativeService, from common.Address, to common.Address, amount uint64) error {
+	err := appCallTransfer(native, utils.TstContractAddress, from, to, amount)
 	if err != nil {
-		return fmt.Errorf("appCallTransferOnt, appCallTransfer error: %v", err)
+		return fmt.Errorf("appCallTransferTst, appCallTransfer error: %v", err)
 	}
 	return nil
 }
 
-func appCallTransferOng(native *native.NativeService, from common.Address, to common.Address, amount uint64) error {
-	err := appCallTransfer(native, utils.OngContractAddress, from, to, amount)
+func appCallTransferTsg(native *native.NativeService, from common.Address, to common.Address, amount uint64) error {
+	err := appCallTransfer(native, utils.TsgContractAddress, from, to, amount)
 	if err != nil {
-		return fmt.Errorf("appCallTransferOng, appCallTransfer error: %v", err)
+		return fmt.Errorf("appCallTransferTsg, appCallTransfer error: %v", err)
 	}
 	return nil
 }
 
 func appCallTransfer(native *native.NativeService, contract common.Address, from common.Address, to common.Address, amount uint64) error {
-	var sts []ont.State
-	sts = append(sts, ont.State{
+	var sts []tst.State
+	sts = append(sts, tst.State{
 		From:  from,
 		To:    to,
 		Value: amount,
 	})
-	transfers := ont.Transfers{
+	transfers := tst.Transfers{
 		States: sts,
 	}
 
@@ -145,24 +145,24 @@ func appCallTransfer(native *native.NativeService, contract common.Address, from
 	return nil
 }
 
-func appCallTransferFromOnt(native *native.NativeService, sender common.Address, from common.Address, to common.Address, amount uint64) error {
-	err := appCallTransferFrom(native, utils.OntContractAddress, sender, from, to, amount)
+func appCallTransferFromTst(native *native.NativeService, sender common.Address, from common.Address, to common.Address, amount uint64) error {
+	err := appCallTransferFrom(native, utils.TstContractAddress, sender, from, to, amount)
 	if err != nil {
-		return fmt.Errorf("appCallTransferFromOnt, appCallTransferFrom error: %v", err)
+		return fmt.Errorf("appCallTransferFromTst, appCallTransferFrom error: %v", err)
 	}
 	return nil
 }
 
-func appCallTransferFromOng(native *native.NativeService, sender common.Address, from common.Address, to common.Address, amount uint64) error {
-	err := appCallTransferFrom(native, utils.OngContractAddress, sender, from, to, amount)
+func appCallTransferFromTsg(native *native.NativeService, sender common.Address, from common.Address, to common.Address, amount uint64) error {
+	err := appCallTransferFrom(native, utils.TsgContractAddress, sender, from, to, amount)
 	if err != nil {
-		return fmt.Errorf("appCallTransferFromOng, appCallTransferFrom error: %v", err)
+		return fmt.Errorf("appCallTransferFromTsg, appCallTransferFrom error: %v", err)
 	}
 	return nil
 }
 
 func appCallTransferFrom(native *native.NativeService, contract common.Address, sender common.Address, from common.Address, to common.Address, amount uint64) error {
-	params := &ont.TransferFrom{
+	params := &tst.TransferFrom{
 		Sender: sender,
 		From:   from,
 		To:     to,
@@ -175,13 +175,13 @@ func appCallTransferFrom(native *native.NativeService, contract common.Address, 
 	return nil
 }
 
-func getOngBalance(native *native.NativeService, address common.Address) (uint64, error) {
+func getTsgBalance(native *native.NativeService, address common.Address) (uint64, error) {
 	sink := common.ZeroCopySink{}
 	utils.EncodeAddress(&sink, address)
 
-	value, err := native.NativeCall(utils.OngContractAddress, "balanceOf", sink.Bytes())
+	value, err := native.NativeCall(utils.TsgContractAddress, "balanceOf", sink.Bytes())
 	if err != nil {
-		return 0, fmt.Errorf("getOngBalance, appCall error: %v", err)
+		return 0, fmt.Errorf("getTsgBalance, appCall error: %v", err)
 	}
 	balance := common.BigIntFromNeoBytes(value.([]byte)).Uint64()
 	return balance, nil
@@ -629,9 +629,9 @@ func putSplitCurve(native *native.NativeService, contract common.Address, splitC
 	return nil
 }
 
-func appCallInitContractAdmin(native *native.NativeService, adminOntID []byte) error {
+func appCallInitContractAdmin(native *native.NativeService, adminTstID []byte) error {
 	params := &auth.InitContractAdminParam{
-		AdminOntID: adminOntID,
+		AdminTstID: adminTstID,
 	}
 	if _, err := native.NativeCall(utils.AuthContractAddress, "initContractAdmin", common.SerializeToBytes(params)); err != nil {
 		return fmt.Errorf("appCallInitContractAdmin, appCall error: %v", err)
