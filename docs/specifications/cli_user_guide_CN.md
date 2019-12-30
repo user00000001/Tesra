@@ -113,7 +113,7 @@ data-dir 参数用于指定区块数据的存放目录。默认值为"./Chain"�
 wallet 参数用于指定Tesranode节点启动时的钱包文件路径。默认值为"./wallet.dat"。
 
 --account, -a
-account 参数用于指定Ontlogy节点启动时的账户地址。不填则使用钱包默认账户。
+account 参数用于指定Tesranode节点启动时的账户地址。不填则使用钱包默认账户。
 
 --password, -p
 password 参数用于指定Tesranode节点启动的账户密码。因为在命令行中输入的账户密码会被保存在系统的日志中，容易造成密码泄露，因此在生产环境中建议不要使用该参数。

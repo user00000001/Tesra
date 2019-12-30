@@ -32,9 +32,9 @@ import (
 const JSON_RPC_VERSION = "2.0"
 
 const (
-	ERROR_INVALID_PARAMS   = rpcerr.INVALID_PARAMS
-	ERROR_ONTOLOGY_COMMON  = 10000
-	ERROR_ONTOLOGY_SUCCESS = 0
+	ERROR_INVALID_PARAMS    = rpcerr.INVALID_PARAMS
+	ERROR_TESRANODE_COMMON  = 10000
+	ERROR_TESRANODE_SUCCESS = 0
 )
 
 type TesranodeError struct {
@@ -47,10 +47,10 @@ func NewTesranodeError(err error, errCode ...int64) *TesranodeError {
 	if len(errCode) > 0 {
 		ontErr.ErrorCode = errCode[0]
 	} else {
-		ontErr.ErrorCode = ERROR_ONTOLOGY_COMMON
+		ontErr.ErrorCode = ERROR_TESRANODE_COMMON
 	}
 	if err == nil {
-		ontErr.ErrorCode = ERROR_ONTOLOGY_SUCCESS
+		ontErr.ErrorCode = ERROR_TESRANODE_SUCCESS
 	}
 	return ontErr
 }

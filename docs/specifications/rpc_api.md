@@ -8,7 +8,7 @@ English|[中文](rpc_api_CN.md)
 
 ## Introduction
 
-The document description remote process call(RPC) specification in Onchain Ontology.
+The document description remote process call(RPC) specification in Onchain Tesranode.
 
 There are some description of parameter used in rpc:
 
