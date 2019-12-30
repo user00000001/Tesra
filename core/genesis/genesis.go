@@ -188,8 +188,8 @@ func deployAuthContract() *types.Transaction {
 }
 
 func deployOntIDContract() *types.Transaction {
-	mutable, err := utils.NewDeployTransaction(nutils.OntIDContractAddress[:], "OID", "v0.0.1",
-		"Tesra Supernet", "service@tesra.io", "Tesra Supernet ONT ID", payload.NEOVM_TYPE)
+	mutable, err := utils.NewDeployTransaction(nutils.OntIDContractAddress[:], "TID", "v0.0.1",
+		"Tesra Supernet", "service@tesra.io", "Tesra Supernet TST ID", payload.NEOVM_TYPE)
 	if err != nil {
 		panic("[NewDeployTransaction] construct genesis governing token transaction error ")
 	}
