@@ -31,9 +31,9 @@ import (
 )
 
 func TestDeserializeGroup(t *testing.T) {
-	id0 := []byte("did:ont:ARY2ekof1eCSetcimGdjqyzUYaVDDPVWmw")
-	id1 := []byte("did:ont:ASbxtSqrpmydpjqCUGDiQp2mzsfd4zFArs")
-	id2 := []byte("did:ont:AGxc3cdeB6QFvmZXzWhGwzuvohNtqaaaDw")
+	id0 := []byte("did:tst:ARY2ekof1eCSetcimGdjqyzUYaVDDPVWmw")
+	id1 := []byte("did:tst:ASbxtSqrpmydpjqCUGDiQp2mzsfd4zFArs")
+	id2 := []byte("did:tst:AGxc3cdeB6QFvmZXzWhGwzuvohNtqaaaDw")
 	g_ := &Group{
 		Threshold: 1,
 		Members: []interface{}{
@@ -133,9 +133,9 @@ func TestDeserializeGroup2(t *testing.T) {
 }
 
 func TestSigners(t *testing.T) {
-	id0 := []byte("did:ont:ARY2ekof1eCSetcimGdjqyzUYaVDDPVWmw")
-	id1 := []byte("did:ont:ASbxtSqrpmydpjqCUGDiQp2mzsfd4zFArs")
-	id2 := []byte("did:ont:AGxc3cdeB6QFvmZXzWhGwzuvohNtqaaaDw")
+	id0 := []byte("did:tst:ARY2ekof1eCSetcimGdjqyzUYaVDDPVWmw")
+	id1 := []byte("did:tst:ASbxtSqrpmydpjqCUGDiQp2mzsfd4zFArs")
+	id2 := []byte("did:tst:AGxc3cdeB6QFvmZXzWhGwzuvohNtqaaaDw")
 	g := &Group{
 		Threshold: 1,
 		Members: []interface{}{

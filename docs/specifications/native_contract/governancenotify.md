@@ -26,7 +26,7 @@ common event format is as follows, including txhash, state, gasConsumed and noti
       "States":[
         "verifyToken", //method name
         "0700000000000000000000000000000000000000", //governance contract address
-        "ZGlk0m9uddpBVVhDSnM3NmlqWlUzOHNlUEg5MlNuVWFvZDdQNXRVbUV4", //invoker ontid
+        "ZGlk0m9uddpBVVhDSnM3NmlqWlUzOHNlUEg5MlNuVWFvZDdQNXRVbUV4", //invoker tstid
         "registerCandidate",// authorize function name
         true //status
       ]

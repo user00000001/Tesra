@@ -1,4 +1,4 @@
-#Tsg contract
+# Tst contract
 
 common event format is as follows, including txhash, state, gasConsumed and notify, each native contract method have different notifies.
 
@@ -11,7 +11,7 @@ common event format is as follows, including txhash, state, gasConsumed and noti
 
 #### Transfer
 
-* Usage: Transfer ong
+* Usage: Transfer ont
 
 * Event and notify:
 ```
@@ -20,19 +20,19 @@ common event format is as follows, including txhash, state, gasConsumed and noti
   "State":1,
   "GasConsumed":10000000,
   "Notify":[
-    //notify of tsg transfer
+    //notify of tst transfer
     {
-      "ContractAddress": "0200000000000000000000000000000000000000", //ong contract address
+      "ContractAddress": "0100000000000000000000000000000000000000", //tst contract address
       "States":[
         "transfer",// method name
         "AbPRaepcpBAFHz9zCj4619qch4Aq5hJARA", //from address
-        "AFmseVrdL9f9oyCzZefL9tG6UbviEH9ugK", //to address
+        "AbPRaepcpBAFHz9zCj4619qch4Aq5hJARA", //to address
         100 //transfer amount
       ]
     },
     //notify of gas fee transfer
     {
-      "ContractAddress": "0200000000000000000000000000000000000000", //ong contract address
+      "ContractAddress": "0200000000000000000000000000000000000000", //tsg contract address
       "States":[
         "transfer", //method name
         "AbPRaepcpBAFHz9zCj4619qch4Aq5hJARA", //invoker's address (from)
@@ -46,7 +46,7 @@ common event format is as follows, including txhash, state, gasConsumed and noti
 
 #### TransferFrom
 
-* Usage: Transfer from ong
+* Usage: Transfer from tsg
 
 * Event and notify:
 ```
@@ -55,19 +55,19 @@ common event format is as follows, including txhash, state, gasConsumed and noti
   "State":1,
   "GasConsumed":10000000,
   "Notify":[
-    //notify of tsg transfer
+    //notify of tst transfer
     {
-      "ContractAddress": "0200000000000000000000000000000000000000", //ong contract address
+      "ContractAddress": "0100000000000000000000000000000000000000", //tst contract address
       "States":[
         "transfer",// method name
         "AbPRaepcpBAFHz9zCj4619qch4Aq5hJARA", //from address
-        "AFmseVrdL9f9oyCzZefL9tG6UbviEH9ugK", //to address
+        "AbPRaepcpBAFHz9zCj4619qch4Aq5hJARA", //to address
         100 //transfer amount
       ]
     },
     //notify of gas fee transfer
     {
-      "ContractAddress": "0200000000000000000000000000000000000000", //ong contract address
+      "ContractAddress": "0200000000000000000000000000000000000000", //tsg contract address
       "States":[
         "transfer", //method name
         "AbPRaepcpBAFHz9zCj4619qch4Aq5hJARA", //invoker's address (from)

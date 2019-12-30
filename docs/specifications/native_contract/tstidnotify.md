@@ -11,7 +11,7 @@ common event format is as follows, including txhash, state, gasConsumed and noti
 
 #### regIdWithPublicKey
 
-* Usage: Register ontid
+* Usage: Register tstid
 
 * Event and notify:
 ```
@@ -22,15 +22,15 @@ common event format is as follows, including txhash, state, gasConsumed and noti
   "Notify":[
     //notify of the method
     {
-      "ContractAddress": "0300000000000000000000000000000000000000", //contract address of ontid contract
+      "ContractAddress": "0300000000000000000000000000000000000000", //contract address of tstid contract
       "States":[
         "Register", //method name
-        "did:ont:AbPRaepcpBAFHz9zCj4619qch4Aq5hJARA" //ontid to be registered
+        "did:tst:AbPRaepcpBAFHz9zCj4619qch4Aq5hJARA" //tstid to be registered
       ]
     },
     //notify of gas fee transfer
     {
-      "ContractAddress": "0200000000000000000000000000000000000000", //ong contract address
+      "ContractAddress": "0200000000000000000000000000000000000000", //tsg contract address
       "States":[
         "transfer", //method name
         "AbPRaepcpBAFHz9zCj4619qch4Aq5hJARA", //invoker's address (from)
@@ -44,7 +44,7 @@ common event format is as follows, including txhash, state, gasConsumed and noti
 
 #### addKey
 
-* Usage : Add public key to ontid
+* Usage : Add public key to tstid
 
 * Event and notify:
 ```
@@ -55,18 +55,18 @@ common event format is as follows, including txhash, state, gasConsumed and noti
   "Notify":[
     //notify of the method
     {
-      "ContractAddress": "0300000000000000000000000000000000000000", //contract address of ontid contract
+      "ContractAddress": "0300000000000000000000000000000000000000", //contract address of tstid contract
       "States":[
         "PublicKey", //publicKey operation
         "add", //method name
-        "did:ont:AbPRaepcpBAFHz9zCj4619qch4Aq5hJARA", //ontid
+        "did:tst:AbPRaepcpBAFHz9zCj4619qch4Aq5hJARA", //tstid
         "022a06f7a4bfff93d9bbe31dfd70dbfb08263f1ea15db2ee9556688314e20e9dd7", //public key to be added
         2, //public key index
       ]
     },
     //notify of gas fee transfer
     {
-      "ContractAddress": "0200000000000000000000000000000000000000", //ong contract address
+      "ContractAddress": "0200000000000000000000000000000000000000", //tsg contract address
       "States":[
         "transfer", //method name
         "AbPRaepcpBAFHz9zCj4619qch4Aq5hJARA", //invoker's address (from)
@@ -92,18 +92,18 @@ common event format is as follows, including txhash, state, gasConsumed and noti
   "Notify":[
     //notify of the method
     {
-      "ContractAddress": "0300000000000000000000000000000000000000", //contract address of ontid contract
+      "ContractAddress": "0300000000000000000000000000000000000000", //contract address of tstid contract
       "States":[
         "PublicKey", //publicKey operation
         "remove", //method name
-        "did:ont:AbPRaepcpBAFHz9zCj4619qch4Aq5hJARA", //ontid
+        "did:tst:AbPRaepcpBAFHz9zCj4619qch4Aq5hJARA", //tstid
         2, //public key index
         "022a06f7a4bfff93d9bbe31dfd70dbfb08263f1ea15db2ee9556688314e20e9dd7" //public key to be removed
       ]
     },
     //notify of gas fee transfer
     {
-      "ContractAddress": "0200000000000000000000000000000000000000", //ong contract address
+      "ContractAddress": "0200000000000000000000000000000000000000", //tsg contract address
       "States":[
         "transfer", //method name
         "AbPRaepcpBAFHz9zCj4619qch4Aq5hJARA", //invoker's address (from)
@@ -128,17 +128,17 @@ common event format is as follows, including txhash, state, gasConsumed and noti
   "Notify":[
     //notify of the method
     {
-      "ContractAddress": "0300000000000000000000000000000000000000", //contract address of ontid contract
+      "ContractAddress": "0300000000000000000000000000000000000000", //contract address of tstid contract
       "States":[
         "Recovery", //recovery operation
         "add", //method name
-        "did:ont:AbPRaepcpBAFHz9zCj4619qch4Aq5hJARA", //ontid
+        "did:tst:AbPRaepcpBAFHz9zCj4619qch4Aq5hJARA", //tstid
         "d7239affb684c3c224476eb7bd52d9b2cb5e2aab" //recovery address
       ]
     },
     //notify of gas fee transfer
     {
-      "ContractAddress": "0200000000000000000000000000000000000000", //ong contract address
+      "ContractAddress": "0200000000000000000000000000000000000000", //tsg contract address
       "States":[
         "transfer", //method name
         "AbPRaepcpBAFHz9zCj4619qch4Aq5hJARA", //invoker's address (from)
@@ -163,17 +163,17 @@ common event format is as follows, including txhash, state, gasConsumed and noti
   "Notify":[
     //notify of the method
     {
-      "ContractAddress": "0300000000000000000000000000000000000000", //contract address of ontid contract
+      "ContractAddress": "0300000000000000000000000000000000000000", //contract address of tstid contract
       "States":[
         "Recovery", //recovery operation
         "change", //method name
-        "did:ont:AbPRaepcpBAFHz9zCj4619qch4Aq5hJARA", //ontid
+        "did:tst:AbPRaepcpBAFHz9zCj4619qch4Aq5hJARA", //tstid
         "d7239affb684c3c224476eb7bd52d9b2cb5e2aab" //recovery address
       ]
     },
     //notify of gas fee transfer
     {
-      "ContractAddress": "0200000000000000000000000000000000000000", //ong contract address
+      "ContractAddress": "0200000000000000000000000000000000000000", //tsg contract address
       "States":[
         "transfer", //method name
         "AbPRaepcpBAFHz9zCj4619qch4Aq5hJARA", //invoker's address (from)
@@ -187,7 +187,7 @@ common event format is as follows, including txhash, state, gasConsumed and noti
 
 #### regIDWithAttributes
 
-* Usage: Register ontid with attributes
+* Usage: Register tstid with attributes
 
 * Event and notify:
 ```
@@ -198,15 +198,15 @@ common event format is as follows, including txhash, state, gasConsumed and noti
   "Notify":[
     //notify of the method
     {
-      "ContractAddress": "0300000000000000000000000000000000000000", //contract address of ontid contract
+      "ContractAddress": "0300000000000000000000000000000000000000", //contract address of tstid contract
       "States":[
         "Register", //method name
-        "did:ont:AbPRaepcpBAFHz9zCj4619qch4Aq5hJARA" //ontid
+        "did:tst:AbPRaepcpBAFHz9zCj4619qch4Aq5hJARA" //tstid
       ]
     },
     //notify of gas fee transfer
     {
-      "ContractAddress": "0200000000000000000000000000000000000000", //ong contract address
+      "ContractAddress": "0200000000000000000000000000000000000000", //tsg contract address
       "States":[
         "transfer", //method name
         "AbPRaepcpBAFHz9zCj4619qch4Aq5hJARA", //invoker's address (from)
@@ -231,17 +231,17 @@ common event format is as follows, including txhash, state, gasConsumed and noti
   "Notify":[
     //notify of the method
     {
-      "ContractAddress": "0300000000000000000000000000000000000000", //contract address of ontid contract
+      "ContractAddress": "0300000000000000000000000000000000000000", //contract address of tstid contract
       "States":[
         "Attribute", //attribute operation
         "add", //method name
-        "did:ont:AbPRaepcpBAFHz9zCj4619qch4Aq5hJARA", //ontid
+        "did:tst:AbPRaepcpBAFHz9zCj4619qch4Aq5hJARA", //tstid
         "", //attributes added
       ]
     },
     //notify of gas fee transfer
     {
-      "ContractAddress": "0200000000000000000000000000000000000000", //ong contract address
+      "ContractAddress": "0200000000000000000000000000000000000000", //tsg contract address
       "States":[
         "transfer", //method name
         "AbPRaepcpBAFHz9zCj4619qch4Aq5hJARA", //invoker's address (from)
@@ -266,17 +266,17 @@ common event format is as follows, including txhash, state, gasConsumed and noti
   "Notify":[
     //notify of the method
     {
-      "ContractAddress": "0300000000000000000000000000000000000000", //contract address of ontid contract
+      "ContractAddress": "0300000000000000000000000000000000000000", //contract address of tstid contract
       "States":[
         "Attribute", //attribute operation
         "remove", //method name
-        "did:ont:AbPRaepcpBAFHz9zCj4619qch4Aq5hJARA", //ontid
+        "did:tst:AbPRaepcpBAFHz9zCj4619qch4Aq5hJARA", //tstid
         "", //attributes removed
       ]
     },
     //notify of gas fee transfer
     {
-      "ContractAddress": "0200000000000000000000000000000000000000", //ong contract address
+      "ContractAddress": "0200000000000000000000000000000000000000", //tsg contract address
       "States":[
         "transfer", //method name
         "AbPRaepcpBAFHz9zCj4619qch4Aq5hJARA", //invoker's address (from)

@@ -30,18 +30,18 @@ var (
 
 // tst constants
 const (
-	ONT_NAME         = "ONT Token"
-	ONT_SYMBOL       = "ONT"
-	ONT_DECIMALS     = 0
-	ONT_TOTAL_SUPPLY = uint64(1000000000)
+	TST_NAME         = "TST Token"
+	TST_SYMBOL       = "TST"
+	TST_DECIMALS     = 0
+	TST_TOTAL_SUPPLY = uint64(1000000000)
 )
 
 // tsg constants
 const (
-	ONG_NAME         = "ONG Token"
-	ONG_SYMBOL       = "ONG"
-	ONG_DECIMALS     = 9
-	ONG_TOTAL_SUPPLY = uint64(1000000000000000000)
+	TSG_NAME         = "TSG Token"
+	TSG_SYMBOL       = "TSG"
+	TSG_DECIMALS     = 9
+	TSG_TOTAL_SUPPLY = uint64(1000000000000000000)
 )
 
 // ont/ong unbound model constants
@@ -60,11 +60,11 @@ var UNBOUND_DEADLINE = (func() uint32 {
 	numInterval := len(UNBOUND_GENERATION_AMOUNT)
 
 	if UNBOUND_GENERATION_AMOUNT[numInterval-1] != 1 ||
-		!(count-uint64(UNBOUND_TIME_INTERVAL) < ONT_TOTAL_SUPPLY && ONT_TOTAL_SUPPLY <= count) {
+		!(count-uint64(UNBOUND_TIME_INTERVAL) < TST_TOTAL_SUPPLY && TST_TOTAL_SUPPLY <= count) {
 		panic("incompatible constants setting")
 	}
 
-	return UNBOUND_TIME_INTERVAL*uint32(numInterval) - uint32(count-uint64(ONT_TOTAL_SUPPLY))
+	return UNBOUND_TIME_INTERVAL*uint32(numInterval) - uint32(count-uint64(TST_TOTAL_SUPPLY))
 })()
 
 // multi-sig constants

@@ -33,7 +33,7 @@ import (
 var AssetCommand = cli.Command{
 	Name:        "asset",
 	Usage:       "Handle assets",
-	Description: "Asset management commands can check account balance, ONT/ONG transfers, extract ONGs, and view unbound ONGs, and so on.",
+	Description: "Asset management commands can check account balance, TST/TSG transfers, extract TSGs, and view unbound TSGs, and so on.",
 	Subcommands: []cli.Command{
 		{
 			Action:      transfer,
@@ -112,7 +112,7 @@ var AssetCommand = cli.Command{
 		{
 			Action:    unboundTsg,
 			Name:      "unboundong",
-			Usage:     "Show the balance of unbound ONG",
+			Usage:     "Show the balance of unbound TSG",
 			ArgsUsage: "<address|label|index>",
 			Flags: []cli.Flag{
 				utils.RPCPortFlag,
@@ -122,7 +122,7 @@ var AssetCommand = cli.Command{
 		{
 			Action:    withdrawTsg,
 			Name:      "withdrawong",
-			Usage:     "Withdraw ONG",
+			Usage:     "Withdraw TSG",
 			ArgsUsage: "<address|label|index>",
 			Flags: []cli.Flag{
 				utils.RPCPortFlag,
@@ -146,7 +146,7 @@ func transfer(ctx *cli.Context) error {
 
 	asset := ctx.String(utils.GetFlagName(utils.TransactionAssetFlag))
 	if asset == "" {
-		asset = utils.ASSET_ONT
+		asset = utils.ASSET_TST
 	}
 	from := ctx.String(utils.TransactionFromFlag.Name)
 	fromAddr, err := cmdcom.ParseAddress(from, ctx)
@@ -244,8 +244,8 @@ func getBalance(ctx *cli.Context) error {
 		return err
 	}
 	PrintInfoMsg("BalanceOf:%s", accAddr)
-	PrintInfoMsg("  ONT:%s", balance.Tst)
-	PrintInfoMsg("  ONG:%s", utils.FormatTsg(ong))
+	PrintInfoMsg("  TST:%s", balance.Tst)
+	PrintInfoMsg("  TSG:%s", utils.FormatTsg(ong))
 	return nil
 }
 
@@ -260,7 +260,7 @@ func getAllowance(ctx *cli.Context) error {
 	}
 	asset := ctx.String(utils.GetFlagName(utils.ApproveAssetFlag))
 	if asset == "" {
-		asset = utils.ASSET_ONT
+		asset = utils.ASSET_TST
 	}
 	fromAddr, err := cmdcom.ParseAddress(from, ctx)
 	if err != nil {
@@ -483,9 +483,9 @@ func unboundTsg(ctx *cli.Context) error {
 		return err
 	}
 	balanceStr = utils.FormatTsg(balance)
-	PrintInfoMsg("Unbound ONG:")
+	PrintInfoMsg("Unbound TSG:")
 	PrintInfoMsg("  Account:%s", accAddr)
-	PrintInfoMsg("  ONG:%s", balanceStr)
+	PrintInfoMsg("  TSG:%s", balanceStr)
 	return nil
 }
 
@@ -536,7 +536,7 @@ func withdrawTsg(ctx *cli.Context) error {
 		return err
 	}
 
-	PrintInfoMsg("Withdraw ONG:")
+	PrintInfoMsg("Withdraw TSG:")
 	PrintInfoMsg("  Account:%s", accAddr)
 	PrintInfoMsg("  Amount:%s", utils.FormatTsg(amount))
 	PrintInfoMsg("  TxHash:%s", txHash)

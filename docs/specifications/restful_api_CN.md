@@ -458,11 +458,11 @@ curl -i http://server:port/api/v1/contract/0100000000000000000000000000000000000
     "Result": {
         "Code": "0000000000000000000000000000000000000001",
         "NeedStorage": true,
-        "Name": "ONT",
+        "Name": "TST",
         "CodeVersion": "1.0",
         "Author": "Tesranode Team",
         "Email": "contact@ont.io",
-        "Description": "Tesranode Network ONT Token"
+        "Description": "Tesranode Network TST Token"
     }
 }
 ```

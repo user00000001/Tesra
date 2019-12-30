@@ -49,14 +49,14 @@ import (
 
 const (
 	VERSION_TRANSACTION    = byte(0)
-	VERSION_CONTRACT_ONT   = byte(0)
-	VERSION_CONTRACT_ONG   = byte(0)
+	VERSION_CONTRACT_TST   = byte(0)
+	VERSION_CONTRACT_TSG   = byte(0)
 	CONTRACT_TRANSFER      = "transfer"
 	CONTRACT_TRANSFER_FROM = "transferFrom"
 	CONTRACT_APPROVE       = "approve"
 
-	ASSET_ONT = "tst"
-	ASSET_ONG = "tsg"
+	ASSET_TST = "tst"
+	ASSET_TSG = "tsg"
 )
 
 func init() {
@@ -193,11 +193,11 @@ func ApproveTx(gasPrice, gasLimit uint64, asset string, from, to string, amount 
 	var version byte
 	var contractAddr common.Address
 	switch strings.ToLower(asset) {
-	case ASSET_ONT:
-		version = VERSION_CONTRACT_ONT
+	case ASSET_TST:
+		version = VERSION_CONTRACT_TST
 		contractAddr = utils.TstContractAddress
-	case ASSET_ONG:
-		version = VERSION_CONTRACT_ONG
+	case ASSET_TSG:
+		version = VERSION_CONTRACT_TSG
 		contractAddr = utils.TsgContractAddress
 	default:
 		return nil, fmt.Errorf("Unsupport asset:%s", asset)
@@ -228,11 +228,11 @@ func TransferTx(gasPrice, gasLimit uint64, asset, from, to string, amount uint64
 	var version byte
 	var contractAddr common.Address
 	switch strings.ToLower(asset) {
-	case ASSET_ONT:
-		version = VERSION_CONTRACT_ONT
+	case ASSET_TST:
+		version = VERSION_CONTRACT_TST
 		contractAddr = utils.TstContractAddress
-	case ASSET_ONG:
-		version = VERSION_CONTRACT_ONG
+	case ASSET_TSG:
+		version = VERSION_CONTRACT_TSG
 		contractAddr = utils.TsgContractAddress
 	default:
 		return nil, fmt.Errorf("unsupport asset:%s", asset)
@@ -267,11 +267,11 @@ func TransferFromTx(gasPrice, gasLimit uint64, asset, sender, from, to string, a
 	var version byte
 	var contractAddr common.Address
 	switch strings.ToLower(asset) {
-	case ASSET_ONT:
-		version = VERSION_CONTRACT_ONT
+	case ASSET_TST:
+		version = VERSION_CONTRACT_TST
 		contractAddr = utils.TstContractAddress
-	case ASSET_ONG:
-		version = VERSION_CONTRACT_ONG
+	case ASSET_TSG:
+		version = VERSION_CONTRACT_TSG
 		contractAddr = utils.TsgContractAddress
 	default:
 		return nil, fmt.Errorf("unsupport asset:%s", asset)

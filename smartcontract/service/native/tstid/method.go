@@ -23,7 +23,6 @@ import (
 	"errors"
 	"fmt"
 
-	"github.com/TesraSupernet/tesracrypto/keypair"
 	"github.com/TesraSupernet/Tesra/account"
 	"github.com/TesraSupernet/Tesra/common"
 	"github.com/TesraSupernet/Tesra/common/log"
@@ -31,6 +30,7 @@ import (
 	"github.com/TesraSupernet/Tesra/core/types"
 	"github.com/TesraSupernet/Tesra/smartcontract/service/native"
 	"github.com/TesraSupernet/Tesra/smartcontract/service/native/utils"
+	"github.com/TesraSupernet/tesracrypto/keypair"
 )
 
 func regIdWithPublicKey(srvc *native.NativeService) ([]byte, error) {
@@ -41,50 +41,50 @@ func regIdWithPublicKey(srvc *native.NativeService) ([]byte, error) {
 	// arg0: ID
 	arg0, err := utils.DecodeVarBytes(source)
 	if err != nil {
-		return utils.BYTE_FALSE, errors.New("register ONT ID error: parsing argument 0 failed")
+		return utils.BYTE_FALSE, errors.New("register TST ID error: parsing argument 0 failed")
 	} else if len(arg0) == 0 {
-		return utils.BYTE_FALSE, errors.New("register ONT ID error: invalid length of argument 0")
+		return utils.BYTE_FALSE, errors.New("register TST ID error: invalid length of argument 0")
 	}
 	log.Debug("arg 0:", hex.EncodeToString(arg0), string(arg0))
 	// arg1: public key
 	arg1, err := utils.DecodeVarBytes(source)
 	if err != nil {
-		return utils.BYTE_FALSE, errors.New("register ONT ID error: parsing argument 1 failed")
+		return utils.BYTE_FALSE, errors.New("register TST ID error: parsing argument 1 failed")
 	}
 
 	log.Debug("arg 1:", hex.EncodeToString(arg1))
 
 	if len(arg0) == 0 || len(arg1) == 0 {
-		return utils.BYTE_FALSE, errors.New("register ONT ID error: invalid argument")
+		return utils.BYTE_FALSE, errors.New("register TST ID error: invalid argument")
 	}
 
 	if !account.VerifyID(string(arg0)) {
-		return utils.BYTE_FALSE, errors.New("register ONT ID error: invalid ID")
+		return utils.BYTE_FALSE, errors.New("register TST ID error: invalid ID")
 	}
 
 	key, err := encodeID(arg0)
 	if err != nil {
-		return utils.BYTE_FALSE, errors.New("register ONT ID error: " + err.Error())
+		return utils.BYTE_FALSE, errors.New("register TST ID error: " + err.Error())
 	}
 
 	if checkIDState(srvc, key) != flag_not_exist {
-		return utils.BYTE_FALSE, errors.New("register ONT ID error: already registered")
+		return utils.BYTE_FALSE, errors.New("register TST ID error: already registered")
 	}
 
 	public, err := keypair.DeserializePublicKey(arg1)
 	if err != nil {
 		log.Error(err)
-		return utils.BYTE_FALSE, errors.New("register ONT ID error: invalid public key")
+		return utils.BYTE_FALSE, errors.New("register TST ID error: invalid public key")
 	}
 	addr := types.AddressFromPubKey(public)
 	if !srvc.ContextRef.CheckWitness(addr) {
-		return utils.BYTE_FALSE, errors.New("register ONT ID error: checking witness failed")
+		return utils.BYTE_FALSE, errors.New("register TST ID error: checking witness failed")
 	}
 
 	// insert public key
 	_, err = insertPk(srvc, key, arg1)
 	if err != nil {
-		return utils.BYTE_FALSE, errors.New("register ONT ID error: store public key error, " + err.Error())
+		return utils.BYTE_FALSE, errors.New("register TST ID error: store public key error, " + err.Error())
 	}
 	// set flags
 	srvc.CacheDB.Put(key, states.GenRawStorageItem([]byte{flag_valid}))
@@ -106,7 +106,7 @@ func regIdWithAttributes(srvc *native.NativeService) ([]byte, error) {
 		return utils.BYTE_FALSE, errors.New("register ID with attributes error: argument 0 error, invalid length")
 	}
 	if !account.VerifyID(string(arg0)) {
-		return utils.BYTE_FALSE, errors.New("register ONT ID error: invalid ID")
+		return utils.BYTE_FALSE, errors.New("register TST ID error: invalid ID")
 	}
 
 	// arg1: public key

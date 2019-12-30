@@ -225,8 +225,8 @@ var AppHelpFlagGroups = []flagGroup{
 			utils.TransactionPayerFlag,
 			utils.PrepareExecTransactionFlag,
 			utils.TransferFromAmountFlag,
-			utils.WithdrawONGReceiveAccountFlag,
-			utils.WithdrawONGAmountFlag,
+			utils.WithdrawTSGReceiveAccountFlag,
+			utils.WithdrawTSGAmountFlag,
 		},
 	},
 	{

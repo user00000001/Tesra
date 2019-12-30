@@ -45,10 +45,10 @@ const (
 )
 
 var (
-	ONTToken   = newGoverningToken()
-	ONGToken   = newUtilityToken()
-	ONTTokenID = ONTToken.Hash()
-	ONGTokenID = ONGToken.Hash()
+	TSTToken   = newGoverningToken()
+	TSGToken   = newUtilityToken()
+	TSTTokenID = TSTToken.Hash()
+	TSGTokenID = TSGToken.Hash()
 )
 
 var GenBlockTime = (config.DEFAULT_GEN_BLOCK_TIME * time.Second)
@@ -195,7 +195,7 @@ func deployTstIDContract() *types.Transaction {
 	}
 	tx, err := mutable.IntoImmutable()
 	if err != nil {
-		panic("construct genesis ontid transaction error ")
+		panic("construct genesis tstid transaction error ")
 	}
 	return tx
 }
@@ -218,7 +218,7 @@ func newGoverningInit() *types.Transaction {
 	distribute := []struct {
 		addr  common.Address
 		value uint64
-	}{{addr, constants.ONT_TOTAL_SUPPLY}}
+	}{{addr, constants.TST_TOTAL_SUPPLY}}
 
 	args := common.NewZeroCopySink(nil)
 	nutils.EncodeVarUint(args, uint64(len(distribute)))

@@ -82,7 +82,7 @@ var TxCommond = cli.Command{
 		TransferTxCommond,
 		ApproveTxCommond,
 		TransferFromTxCommond,
-		WithdrawONGTxCommond,
+		WithdrawTSGTxCommond,
 	},
 	Description: "Build transaction",
 }
@@ -139,11 +139,11 @@ var TransferFromTxCommond = cli.Command{
 	},
 }
 
-var WithdrawONGTxCommond = cli.Command{
-	Action:      withdrawONGTx,
+var WithdrawTSGTxCommond = cli.Command{
+	Action:      withdrawTSGTx,
 	Name:        "withdrawong",
-	Usage:       "Build Withdraw ONG transaction",
-	Description: "Build Withdraw ONG transaction",
+	Usage:       "Build Withdraw TSG transaction",
+	Description: "Build Withdraw TSG transaction",
 	ArgsUsage:   "<address|label|index>",
 	Flags: []cli.Flag{
 		utils.RPCPortFlag,
@@ -151,8 +151,8 @@ var WithdrawONGTxCommond = cli.Command{
 		utils.TransactionGasPriceFlag,
 		utils.TransactionGasLimitFlag,
 		utils.TransactionPayerFlag,
-		utils.WithdrawONGAmountFlag,
-		utils.WithdrawONGReceiveAccountFlag,
+		utils.WithdrawTSGAmountFlag,
+		utils.WithdrawTSGReceiveAccountFlag,
 	},
 }
 
@@ -170,7 +170,7 @@ func transferTx(ctx *cli.Context) error {
 
 	asset := ctx.String(utils.GetFlagName(utils.TransactionAssetFlag))
 	if asset == "" {
-		asset = utils.ASSET_ONT
+		asset = utils.ASSET_TST
 	}
 	from := ctx.String(utils.GetFlagName(utils.TransactionFromFlag))
 	fromAddr, err := cmdcom.ParseAddress(from, ctx)
@@ -395,7 +395,7 @@ func transferFromTx(ctx *cli.Context) error {
 	return nil
 }
 
-func withdrawONGTx(ctx *cli.Context) error {
+func withdrawTSGTx(ctx *cli.Context) error {
 	SetRpcPort(ctx)
 	if ctx.NArg() < 1 {
 		PrintErrorMsg("Missing account argument.")
@@ -449,7 +449,7 @@ func withdrawONGTx(ctx *cli.Context) error {
 	}
 
 	var receiveAddr string
-	receive := ctx.String(utils.GetFlagName(utils.WithdrawONGReceiveAccountFlag))
+	receive := ctx.String(utils.GetFlagName(utils.WithdrawTSGReceiveAccountFlag))
 	if receive == "" {
 		receiveAddr = accAddr
 	} else {
@@ -464,7 +464,7 @@ func withdrawONGTx(ctx *cli.Context) error {
 
 	PrintInfoMsg("Withdraw account:%s", accAddr)
 	PrintInfoMsg("Receive account:%s", receiveAddr)
-	PrintInfoMsg("Withdraw ONG amount:%v", amount)
+	PrintInfoMsg("Withdraw TSG amount:%v", amount)
 	mutTx, err := utils.TransferFromTx(gasPrice, gasLimit, "tsg", accAddr, fromAddr, receiveAddr, amount)
 	if err != nil {
 		return err

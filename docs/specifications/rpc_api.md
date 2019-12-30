@@ -1,4 +1,4 @@
-# ONT Rpc Api
+# TST Rpc Api
 
 English|[中文](rpc_api_CN.md)
 
@@ -603,11 +603,11 @@ Response:
     "result": {
         "Code": "0000000000000000000000000000000000000001",
         "NeedStorage": true,
-        "Name": "ONT",
+        "Name": "TST",
         "CodeVersion": "1.0",
         "Author": "Tesranode Team",
         "Email": "contact@ont.io",
-        "Description": "Tesranode Network ONT Token"
+        "Description": "Tesranode Network TST Token"
     }
 }
 ```

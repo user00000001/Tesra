@@ -31,8 +31,8 @@ import (
 )
 
 const (
-	PRECISION_ONG = 9
-	PRECISION_ONT = 0
+	PRECISION_TSG = 9
+	PRECISION_TST = 0
 )
 
 //FormatAssetAmount return asset amount multiplied by math.Pow10(precision) to raw float string
@@ -66,30 +66,30 @@ func ParseAssetAmount(rawAmount string, precision byte) uint64 {
 }
 
 func FormatTsg(amount uint64) string {
-	return FormatAssetAmount(amount, PRECISION_ONG)
+	return FormatAssetAmount(amount, PRECISION_TSG)
 }
 
 func ParseTsg(rawAmount string) uint64 {
-	return ParseAssetAmount(rawAmount, PRECISION_ONG)
+	return ParseAssetAmount(rawAmount, PRECISION_TSG)
 }
 
 func FormatTst(amount uint64) string {
-	return FormatAssetAmount(amount, PRECISION_ONT)
+	return FormatAssetAmount(amount, PRECISION_TST)
 }
 
 func ParseTst(rawAmount string) uint64 {
-	return ParseAssetAmount(rawAmount, PRECISION_ONT)
+	return ParseAssetAmount(rawAmount, PRECISION_TST)
 }
 
 func CheckAssetAmount(asset string, amount uint64) error {
 	switch strings.ToLower(asset) {
 	case "tst":
-		if amount > constants.ONT_TOTAL_SUPPLY {
-			return fmt.Errorf("amount:%d larger than ONT total supply:%d", amount, constants.ONT_TOTAL_SUPPLY)
+		if amount > constants.TST_TOTAL_SUPPLY {
+			return fmt.Errorf("amount:%d larger than TST total supply:%d", amount, constants.TST_TOTAL_SUPPLY)
 		}
 	case "tsg":
-		if amount > constants.ONG_TOTAL_SUPPLY {
-			return fmt.Errorf("amount:%d larger than ONG total supply:%d", amount, constants.ONG_TOTAL_SUPPLY)
+		if amount > constants.TSG_TOTAL_SUPPLY {
+			return fmt.Errorf("amount:%d larger than TSG total supply:%d", amount, constants.TSG_TOTAL_SUPPLY)
 		}
 	default:
 		return fmt.Errorf("unknown asset:%s", asset)

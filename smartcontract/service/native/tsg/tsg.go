@@ -59,10 +59,10 @@ func TsgInit(native *native.NativeService) ([]byte, error) {
 		return utils.BYTE_FALSE, errors.NewErr("Init tsg has been completed!")
 	}
 
-	item := utils.GenUInt64StorageItem(constants.ONG_TOTAL_SUPPLY)
+	item := utils.GenUInt64StorageItem(constants.TSG_TOTAL_SUPPLY)
 	native.CacheDB.Put(tst.GenTotalSupplyKey(contract), item.ToArray())
 	native.CacheDB.Put(append(contract[:], utils.TstContractAddress[:]...), item.ToArray())
-	tst.AddNotifications(native, contract, &tst.State{To: utils.TstContractAddress, Value: constants.ONG_TOTAL_SUPPLY})
+	tst.AddNotifications(native, contract, &tst.State{To: utils.TstContractAddress, Value: constants.TSG_TOTAL_SUPPLY})
 	return utils.BYTE_TRUE, nil
 }
 
@@ -77,8 +77,8 @@ func TsgTransfer(native *native.NativeService) ([]byte, error) {
 		if v.Value == 0 {
 			continue
 		}
-		if v.Value > constants.ONG_TOTAL_SUPPLY {
-			return utils.BYTE_FALSE, fmt.Errorf("transfer tsg amount:%d over totalSupply:%d", v.Value, constants.ONG_TOTAL_SUPPLY)
+		if v.Value > constants.TSG_TOTAL_SUPPLY {
+			return utils.BYTE_FALSE, fmt.Errorf("transfer tsg amount:%d over totalSupply:%d", v.Value, constants.TSG_TOTAL_SUPPLY)
 		}
 		if _, _, err := tst.Transfer(native, contract, &v); err != nil {
 			return utils.BYTE_FALSE, err
@@ -94,8 +94,8 @@ func TsgApprove(native *native.NativeService) ([]byte, error) {
 	if err := state.Deserialization(source); err != nil {
 		return utils.BYTE_FALSE, errors.NewDetailErr(err, errors.ErrNoCode, "[TsgApprove] state deserialize error!")
 	}
-	if state.Value > constants.ONG_TOTAL_SUPPLY {
-		return utils.BYTE_FALSE, fmt.Errorf("approve tsg amount:%d over totalSupply:%d", state.Value, constants.ONG_TOTAL_SUPPLY)
+	if state.Value > constants.TSG_TOTAL_SUPPLY {
+		return utils.BYTE_FALSE, fmt.Errorf("approve tsg amount:%d over totalSupply:%d", state.Value, constants.TSG_TOTAL_SUPPLY)
 	}
 	if native.ContextRef.CheckWitness(state.From) == false {
 		return utils.BYTE_FALSE, errors.NewErr("authentication failed!")
@@ -114,8 +114,8 @@ func TsgTransferFrom(native *native.NativeService) ([]byte, error) {
 	if state.Value == 0 {
 		return utils.BYTE_FALSE, nil
 	}
-	if state.Value > constants.ONG_TOTAL_SUPPLY {
-		return utils.BYTE_FALSE, fmt.Errorf("approve tsg amount:%d over totalSupply:%d", state.Value, constants.ONG_TOTAL_SUPPLY)
+	if state.Value > constants.TSG_TOTAL_SUPPLY {
+		return utils.BYTE_FALSE, fmt.Errorf("approve tsg amount:%d over totalSupply:%d", state.Value, constants.TSG_TOTAL_SUPPLY)
 	}
 	contract := native.ContextRef.CurrentContext().ContractAddress
 	if _, _, err := tst.TransferedFrom(native, contract, &state); err != nil {
@@ -126,15 +126,15 @@ func TsgTransferFrom(native *native.NativeService) ([]byte, error) {
 }
 
 func TsgName(native *native.NativeService) ([]byte, error) {
-	return []byte(constants.ONG_NAME), nil
+	return []byte(constants.TSG_NAME), nil
 }
 
 func TsgDecimals(native *native.NativeService) ([]byte, error) {
-	return big.NewInt(int64(constants.ONG_DECIMALS)).Bytes(), nil
+	return big.NewInt(int64(constants.TSG_DECIMALS)).Bytes(), nil
 }
 
 func TsgSymbol(native *native.NativeService) ([]byte, error) {
-	return []byte(constants.ONG_SYMBOL), nil
+	return []byte(constants.TSG_SYMBOL), nil
 }
 
 func TsgTotalSupply(native *native.NativeService) ([]byte, error) {

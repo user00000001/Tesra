@@ -18,7 +18,7 @@ Tesranode签名服务器sigsvr是一个用于对交易进行签名的rpc服务�
 		* [2.5 转账交易签名](#25-转账交易签名)
 		* [2.6 Native合约调用签名](#26-native合约调用签名)
 			* [举例1: 构造普通转账交易](#举例1-构造普通转账交易)
-			* [举例2: 构造提取ONG交易](#举例2-构造提取ong交易)
+			* [举例2: 构造提取TSG交易](#举例2-构造提取ong交易)
 		* [2.7 NeoVM合约调用签名](#27-neovm合约调用签名)
 		* [2.8 NeoVM合约ABI调用签名](#28-neovm合约abi调用签名)
 		* [2.9 创建账户](#29-创建账户)
@@ -69,7 +69,7 @@ walletdir 参数用于设置钱包数据存储目录。默认值为:"./wallet_da
 
 ## 2、签名服务方法
 
-签名服务目前支持对数据签名，对普通交易的签名和多重签名，构造ONT/ONG转账交易并对交易签名，构造Native合约调用交易并对交易签名，构造NeoVM合约调用交易并对交易签名。
+签名服务目前支持对数据签名，对普通交易的签名和多重签名，构造TST/TSG转账交易并对交易签名，构造Native合约调用交易并对交易签名，构造NeoVM合约调用交易并对交易签名。
 
 ### 2.1 签名服务调用方法
 
@@ -446,7 +446,7 @@ signativeinvoketx 方法默认使用签名账户作为手续费支付方，如�
 }
 ```
 
-#### 举例2: 构造提取ONG交易
+#### 举例2: 构造提取TSG交易
 
 ``` json
 {
@@ -462,8 +462,8 @@ signativeinvoketx 方法默认使用签名账户作为手续费支付方，如�
 		"version":0,
 		"params":[
 			"ARVVxBPGySL56CvSSWfjRVVyZYpNZ7zp48",	//提取账户
-			"AFmseVrdL9f9oyCzZefL9tG6UbvhUMqNMV",   //ONT合约地址(base58格式)
-			"ARVVxBPGySL56CvSSWfjRVVyZYpNZ7zp48",  //ONG接受地址，可以于提取地址不一样
+			"AFmseVrdL9f9oyCzZefL9tG6UbvhUMqNMV",   //TST合约地址(base58格式)
+			"ARVVxBPGySL56CvSSWfjRVVyZYpNZ7zp48",  //TSG接受地址，可以于提取地址不一样
 			"310860000000000"												//提取金额(需要在实际金额上乘以10的9次方)
 		]
 	}

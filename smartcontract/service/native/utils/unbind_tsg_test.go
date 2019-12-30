@@ -47,17 +47,17 @@ func TestCumulative(t *testing.T) {
 	}
 }
 
-// test 1 balance will get ONT_TOTAL_SUPPLY eventually
-func TestTotalONG(t *testing.T) {
+// test 1 balance will get TST_TOTAL_SUPPLY eventually
+func TestTotalTSG(t *testing.T) {
 	assert.Equal(t, CalcUnbindTsg(1, 0, constants.UNBOUND_DEADLINE),
-		constants.ONT_TOTAL_SUPPLY)
+		constants.TST_TOTAL_SUPPLY)
 
 	assert.Equal(t, CalcUnbindTsg(1, 0, TIME_INTERVAL*18),
-		constants.ONT_TOTAL_SUPPLY)
+		constants.TST_TOTAL_SUPPLY)
 
 	assert.Equal(t, CalcUnbindTsg(1, 0, TIME_INTERVAL*108),
-		constants.ONT_TOTAL_SUPPLY)
+		constants.TST_TOTAL_SUPPLY)
 
 	assert.Equal(t, CalcUnbindTsg(1, 0, ^uint32(0)),
-		constants.ONT_TOTAL_SUPPLY)
+		constants.TST_TOTAL_SUPPLY)
 }

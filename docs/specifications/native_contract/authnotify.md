@@ -26,7 +26,7 @@ common event format is as follows, including txhash, state, gasConsumed and noti
       "States":[
         "initContractAdmin", //method name
         "ea1e2adf8c19f5a7e877860264ebf326e8c3aa5a", //contract address of contract which want to achieve authentication control
-        "did:ont:AbPRaepcpBAFHz9zCj4619qch4Aq5hJARA" //admin ontid if above contract
+        "did:tst:AbPRaepcpBAFHz9zCj4619qch4Aq5hJARA" //admin tstid if above contract
       ]
     },
     //notify of gas fee transfer
@@ -45,7 +45,7 @@ common event format is as follows, including txhash, state, gasConsumed and noti
 
 #### Transfer
 
-* Usage: Transfer admin to another ontid
+* Usage: Transfer admin to another tstid
 
 * Event and notify:
 ```
@@ -114,7 +114,7 @@ common event format is as follows, including txhash, state, gasConsumed and noti
 
 #### AssignTstIDsToRole
 
-* Usage: Assign a role to a certain ontid
+* Usage: Assign a role to a certain tstid
 
 * Event and notify:
 ```
@@ -148,7 +148,7 @@ common event format is as follows, including txhash, state, gasConsumed and noti
 
 #### Delegate
 
-* Usage: delegate authentication to another ontid
+* Usage: delegate authentication to another tstid
 
 * Event and notify:
 ```
@@ -163,8 +163,8 @@ common event format is as follows, including txhash, state, gasConsumed and noti
       "States":[
         "delegate",// method name
         "ea1e2adf8c19f5a7e877860264ebf326e8c3aa5a", //contract address of contract which want to achieve authentication control
-        "did:ont:AbPRaepcpBAFHz9zCj4619qch4Aq5hJARA", //from ontid
-        "did:ont:AbPRaepcpBAFHz9zCj4619qch4Aq5hJARA", //to ontid
+        "did:tst:AbPRaepcpBAFHz9zCj4619qch4Aq5hJARA", //from tstid
+        "did:tst:AbPRaepcpBAFHz9zCj4619qch4Aq5hJARA", //to tstid
         true //status
       ]
     },
@@ -199,8 +199,8 @@ common event format is as follows, including txhash, state, gasConsumed and noti
       "States":[
         "withdraw",// method name
         "ea1e2adf8c19f5a7e877860264ebf326e8c3aa5a", //contract address of contract which want to achieve authentication control
-        "did:ont:AbPRaepcpBAFHz9zCj4619qch4Aq5hJARA", //from ontid
-        "did:ont:AbPRaepcpBAFHz9zCj4619qch4Aq5hJARA", //to ontid
+        "did:tst:AbPRaepcpBAFHz9zCj4619qch4Aq5hJARA", //from tstid
+        "did:tst:AbPRaepcpBAFHz9zCj4619qch4Aq5hJARA", //to tstid
         true //status
       ]
     },
@@ -220,7 +220,7 @@ common event format is as follows, including txhash, state, gasConsumed and noti
 
 #### VerifyToken
 
-* Usage: Verify authentication of ontid
+* Usage: Verify authentication of tstid
 
 * Event and notify:
 ```
@@ -235,7 +235,7 @@ common event format is as follows, including txhash, state, gasConsumed and noti
       "States":[
         "verifyToken", // method name
         "0700000000000000000000000000000000000000", //contract address of contract which want to achieve authentication control
-        "ZGlk0m9uddpBVVhDSnM3NmlqWlUzOHNlUEg5MlNuVWFvZDdQNXRVbUV4", //invoker ontid
+        "ZGlk0m9uddpBVVhDSnM3NmlqWlUzOHNlUEg5MlNuVWFvZDdQNXRVbUV4", //invoker tstid
         "registerCandidate",// function name want to verify authentication
         true //status
       ]

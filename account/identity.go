@@ -26,9 +26,9 @@ import (
 	"fmt"
 	"math/big"
 
-	base58 "github.com/itchyny/base58-go"
-	"github.com/TesraSupernet/tesracrypto/keypair"
 	"github.com/TesraSupernet/Tesra/core/types"
+	"github.com/TesraSupernet/tesracrypto/keypair"
+	base58 "github.com/itchyny/base58-go"
 	"golang.org/x/crypto/ripemd160"
 )
 
@@ -69,7 +69,7 @@ func VerifyID(id string) bool {
 	if len(id) < 9 {
 		return false
 	}
-	if id[0:8] != "did:ont:" {
+	if id[0:8] != "did:tst:" {
 		return false
 	}
 	buf, err := base58.BitcoinEncoding.Decode([]byte(id[8:]))
@@ -102,7 +102,7 @@ func checksum(data []byte) []byte {
 }
 
 type Identity struct {
-	ID      string       `json:"ontid"`
+	ID      string       `json:"tstid"`
 	Label   string       `json:"label,omitempty"`
 	Lock    bool         `json:"lock"`
 	Control []Controller `json:"controls,omitempty"`

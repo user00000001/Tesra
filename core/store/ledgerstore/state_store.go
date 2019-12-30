@@ -426,7 +426,7 @@ func (self *StateStore) CheckStorage() error {
 		if err == nil && item.Value[0] == tstid.FLAG_VERSION {
 			return nil
 		} else if err == nil {
-			return errors.New("check ontid storage: invalid version flag")
+			return errors.New("check tstid storage: invalid version flag")
 		} else {
 			return err
 		}

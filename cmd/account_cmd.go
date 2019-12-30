@@ -179,18 +179,18 @@ func accountCreate(ctx *cli.Context) error {
 	}
 	defer common.ClearPasswd(pass)
 	if ctx.Bool(utils.IdentityFlag.Name) {
-		// create ONT ID
+		// create TST ID
 		wd := wallet.GetWalletData()
 		id, err := account.NewIdentity(optionLabel, keyType, curve, pass)
 		if err != nil {
-			return fmt.Errorf("error creating ONT ID: %s", err)
+			return fmt.Errorf("error creating TST ID: %s", err)
 		}
 		wd.AddIdentity(id)
 		err = wd.Save(optionFile)
 		if err != nil {
 			return fmt.Errorf("error saving to %s: %s", optionFile, err)
 		}
-		PrintInfoMsg("ONT ID created: %s", id.ID)
+		PrintInfoMsg("TST ID created: %s", id.ID)
 		PrintInfoMsg("Bind public key: %s", id.Control[0].Public)
 		return nil
 	}

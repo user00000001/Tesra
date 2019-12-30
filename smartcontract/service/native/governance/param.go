@@ -549,7 +549,7 @@ func (this *GlobalParam) Deserialization(source *common.ZeroCopySource) error {
 }
 
 type GlobalParam2 struct {
-	MinAuthorizePos      uint32 //min ONT of each authorization, 500 default
+	MinAuthorizePos      uint32 //min TST of each authorization, 500 default
 	CandidateFeeSplitNum uint32 //num of peer can receive motivation(include consensus and candidate)
 	DappFee              uint32 //fee split to dapp bonus
 	Field2               []byte //reserved field

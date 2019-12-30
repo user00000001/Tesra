@@ -20,12 +20,12 @@ import (
 	"encoding/hex"
 	"errors"
 
-	"github.com/TesraSupernet/tesracrypto/keypair"
 	"github.com/TesraSupernet/Tesra/common"
 	"github.com/TesraSupernet/Tesra/core/states"
 	"github.com/TesraSupernet/Tesra/core/types"
 	"github.com/TesraSupernet/Tesra/smartcontract/service/native"
 	"github.com/TesraSupernet/Tesra/smartcontract/service/native/utils"
+	"github.com/TesraSupernet/tesracrypto/keypair"
 )
 
 func isValid(srvc *native.NativeService, encID []byte) bool {
@@ -62,7 +62,7 @@ const (
 func encodeID(id []byte) ([]byte, error) {
 	length := len(id)
 	if length == 0 || length > 255 {
-		return nil, errors.New("encode ONT ID error: invalid ID length")
+		return nil, errors.New("encode TST ID error: invalid ID length")
 	}
 	//enc := []byte{byte(length)}
 	enc := append(utils.TstIDContractAddress[:], byte(length))
@@ -74,7 +74,7 @@ func decodeID(data []byte) ([]byte, error) {
 	prefix := len(utils.TstIDContractAddress)
 	size := len(data)
 	if size < prefix || size != int(data[prefix])+1+prefix {
-		return nil, errors.New("decode ONT ID error: invalid data length")
+		return nil, errors.New("decode TST ID error: invalid data length")
 	}
 	return data[prefix+1:], nil
 }

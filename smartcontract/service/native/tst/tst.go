@@ -94,8 +94,8 @@ func TstInit(native *native.NativeService) ([]byte, error) {
 		}
 		distribute[addr] += value
 	}
-	if sum != constants.ONT_TOTAL_SUPPLY {
-		return utils.BYTE_FALSE, fmt.Errorf("wrong config. total supply %d != %d", sum, constants.ONT_TOTAL_SUPPLY)
+	if sum != constants.TST_TOTAL_SUPPLY {
+		return utils.BYTE_FALSE, fmt.Errorf("wrong config. total supply %d != %d", sum, constants.TST_TOTAL_SUPPLY)
 	}
 
 	for addr, val := range distribute {
@@ -104,7 +104,7 @@ func TstInit(native *native.NativeService) ([]byte, error) {
 		native.CacheDB.Put(balanceKey, item.ToArray())
 		AddNotifications(native, contract, &State{To: addr, Value: val})
 	}
-	native.CacheDB.Put(GenTotalSupplyKey(contract), utils.GenUInt64StorageItem(constants.ONT_TOTAL_SUPPLY).ToArray())
+	native.CacheDB.Put(GenTotalSupplyKey(contract), utils.GenUInt64StorageItem(constants.TST_TOTAL_SUPPLY).ToArray())
 
 	return utils.BYTE_TRUE, nil
 }
@@ -120,8 +120,8 @@ func TstTransfer(native *native.NativeService) ([]byte, error) {
 		if v.Value == 0 {
 			continue
 		}
-		if v.Value > constants.ONT_TOTAL_SUPPLY {
-			return utils.BYTE_FALSE, fmt.Errorf("transfer tst amount:%d over totalSupply:%d", v.Value, constants.ONT_TOTAL_SUPPLY)
+		if v.Value > constants.TST_TOTAL_SUPPLY {
+			return utils.BYTE_FALSE, fmt.Errorf("transfer tst amount:%d over totalSupply:%d", v.Value, constants.TST_TOTAL_SUPPLY)
 		}
 		fromBalance, toBalance, err := Transfer(native, contract, &v)
 		if err != nil {
@@ -150,8 +150,8 @@ func TstTransferFrom(native *native.NativeService) ([]byte, error) {
 	if state.Value == 0 {
 		return utils.BYTE_FALSE, nil
 	}
-	if state.Value > constants.ONT_TOTAL_SUPPLY {
-		return utils.BYTE_FALSE, fmt.Errorf("transferFrom tst amount:%d over totalSupply:%d", state.Value, constants.ONT_TOTAL_SUPPLY)
+	if state.Value > constants.TST_TOTAL_SUPPLY {
+		return utils.BYTE_FALSE, fmt.Errorf("transferFrom tst amount:%d over totalSupply:%d", state.Value, constants.TST_TOTAL_SUPPLY)
 	}
 	contract := native.ContextRef.CurrentContext().ContractAddress
 	fromBalance, toBalance, err := TransferedFrom(native, contract, &state)
@@ -174,8 +174,8 @@ func TstApprove(native *native.NativeService) ([]byte, error) {
 	if err := state.Deserialization(source); err != nil {
 		return utils.BYTE_FALSE, errors.NewDetailErr(err, errors.ErrNoCode, "[TsgApprove] state deserialize error!")
 	}
-	if state.Value > constants.ONT_TOTAL_SUPPLY {
-		return utils.BYTE_FALSE, fmt.Errorf("approve tst amount:%d over totalSupply:%d", state.Value, constants.ONT_TOTAL_SUPPLY)
+	if state.Value > constants.TST_TOTAL_SUPPLY {
+		return utils.BYTE_FALSE, fmt.Errorf("approve tst amount:%d over totalSupply:%d", state.Value, constants.TST_TOTAL_SUPPLY)
 	}
 	if native.ContextRef.CheckWitness(state.From) == false {
 		return utils.BYTE_FALSE, errors.NewErr("authentication failed!")
@@ -186,15 +186,15 @@ func TstApprove(native *native.NativeService) ([]byte, error) {
 }
 
 func TstName(native *native.NativeService) ([]byte, error) {
-	return []byte(constants.ONT_NAME), nil
+	return []byte(constants.TST_NAME), nil
 }
 
 func TstDecimals(native *native.NativeService) ([]byte, error) {
-	return common.BigIntToNeoBytes(big.NewInt(int64(constants.ONT_DECIMALS))), nil
+	return common.BigIntToNeoBytes(big.NewInt(int64(constants.TST_DECIMALS))), nil
 }
 
 func TstSymbol(native *native.NativeService) ([]byte, error) {
-	return []byte(constants.ONT_SYMBOL), nil
+	return []byte(constants.TST_SYMBOL), nil
 }
 
 func TstTotalSupply(native *native.NativeService) ([]byte, error) {

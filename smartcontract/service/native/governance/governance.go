@@ -17,8 +17,8 @@
  */
 
 //Governance contract:
-//Users can apply for a candidate node to join consensus selection, deposit ONT to authorize for candidate nodes, quit selection and unAuthorize for candidate nodes through this contract.
-//ONT deposited in the contract can get ONG bonus which come from transaction fee of the network.
+//Users can apply for a candidate node to join consensus selection, deposit TST to authorize for candidate nodes, quit selection and unAuthorize for candidate nodes through this contract.
+//TST deposited in the contract can get TSG bonus which come from transaction fee of the network.
 package governance
 
 import (
@@ -60,7 +60,7 @@ const (
 	WHITE_NODE                       = "whiteNode"
 	QUIT_NODE                        = "quitNode"
 	WITHDRAW                         = "withdraw"
-	WITHDRAW_ONG                     = "withdrawTsg"
+	WITHDRAW_TSG                     = "withdrawTsg"
 	WITHDRAW_FEE                     = "withdrawFee"
 	COMMIT_DPOS                      = "commitDpos"
 	UPDATE_CONFIG                    = "updateConfig"
@@ -101,8 +101,8 @@ const (
 	NEW_WITHDRAW_BLOCK = 2800000
 )
 
-// candidate fee must >= 1 ONG
-var MIN_CANDIDATE_FEE = uint64(math.Pow(10, constants.ONG_DECIMALS))
+// candidate fee must >= 1 TSG
+var MIN_CANDIDATE_FEE = uint64(math.Pow(10, constants.TSG_DECIMALS))
 var AUTHORIZE_INFO_POOL = []byte{118, 111, 116, 101, 73, 110, 102, 111, 80, 111, 111, 108}
 var Xi = []uint32{
 	0, 100000, 200000, 300000, 400000, 500000, 600000, 700000, 800000, 900000, 1000000, 1100000, 1200000, 1300000, 1400000,
@@ -130,7 +130,7 @@ func RegisterGovernanceContract(native *native.NativeService) {
 	native.Register(UNAUTHORIZE_FOR_PEER, UnAuthorizeForPeer)
 	native.Register(WITHDRAW, Withdraw)
 	native.Register(QUIT_NODE, QuitNode)
-	native.Register(WITHDRAW_ONG, WithdrawTsg)
+	native.Register(WITHDRAW_TSG, WithdrawTsg)
 	native.Register(CHANGE_MAX_AUTHORIZATION, ChangeMaxAuthorization)
 	native.Register(SET_PEER_COST, SetPeerCost)
 	native.Register(WITHDRAW_FEE, WithdrawFee)
@@ -152,7 +152,7 @@ func RegisterGovernanceContract(native *native.NativeService) {
 	native.Register(SET_GAS_ADDRESS, SetGasAddress)
 }
 
-//Init governance contract, include vbft config, global param and ontid admin.
+//Init governance contract, include vbft config, global param and tstid admin.
 func InitConfig(native *native.NativeService) ([]byte, error) {
 	configuration := new(config.VBFTConfig)
 	buf, err := utils.DecodeVarBytes(common.NewZeroCopySource(native.Input))
@@ -306,7 +306,7 @@ func InitConfig(native *native.NativeService) ([]byte, error) {
 }
 
 //Register a candidate node, used by users.
-//Users can register a candidate node with a authorized ontid.
+//Users can register a candidate node with a authorized tstid.
 //Candidate node can be authorized and become consensus node according to their pos.
 //Candidate node can get tsg bonus according to their pos.
 func RegisterCandidate(native *native.NativeService) ([]byte, error) {
@@ -318,7 +318,7 @@ func RegisterCandidate(native *native.NativeService) ([]byte, error) {
 }
 
 //Register a candidate node, used by contracts.
-//Contracts can register a candidate node with a authorized ontid after approving tst to governance contract before invoke this function.
+//Contracts can register a candidate node with a authorized tstid after approving tst to governance contract before invoke this function.
 //Candidate node can be authorized and become consensus node according to their pos.
 //Candidate node can get tsg bonus according to their pos.
 func RegisterCandidateTransferFrom(native *native.NativeService) ([]byte, error) {
@@ -771,7 +771,7 @@ func QuitNode(native *native.NativeService) ([]byte, error) {
 	return utils.BYTE_TRUE, nil
 }
 
-//Authorize for a node by depositing ONT in this governance contract, used by users
+//Authorize for a node by depositing TST in this governance contract, used by users
 func AuthorizeForPeer(native *native.NativeService) ([]byte, error) {
 	err := authorizeForPeer(native, "transfer")
 	if err != nil {
@@ -780,7 +780,7 @@ func AuthorizeForPeer(native *native.NativeService) ([]byte, error) {
 	return utils.BYTE_TRUE, nil
 }
 
-//Authorize for a node by depositing ONT in this governance contract, used by contracts
+//Authorize for a node by depositing TST in this governance contract, used by contracts
 func AuthorizeForPeerTransferFrom(native *native.NativeService) ([]byte, error) {
 	err := authorizeForPeer(native, "transferFrom")
 	if err != nil {
@@ -789,7 +789,7 @@ func AuthorizeForPeerTransferFrom(native *native.NativeService) ([]byte, error) 
 	return utils.BYTE_TRUE, nil
 }
 
-//UnAuthorize for a node by redeeming ONT from this governance contract
+//UnAuthorize for a node by redeeming TST from this governance contract
 func UnAuthorizeForPeer(native *native.NativeService) ([]byte, error) {
 	params := &AuthorizeForPeerParam{
 		PeerPubkeyList: make([]string, 0),
@@ -899,7 +899,7 @@ func UnAuthorizeForPeer(native *native.NativeService) ([]byte, error) {
 	return utils.BYTE_TRUE, nil
 }
 
-//Withdraw unfreezed ONT deposited in this governance contract.
+//Withdraw unfreezed TST deposited in this governance contract.
 func Withdraw(native *native.NativeService) ([]byte, error) {
 	params := &WithdrawParam{
 		PeerPubkeyList: make([]string, 0),
@@ -1222,7 +1222,7 @@ func UpdateSplitCurve(native *native.NativeService) ([]byte, error) {
 	return utils.BYTE_TRUE, nil
 }
 
-//Transfer all punished ONT of a black node to a certain address
+//Transfer all punished TST of a black node to a certain address
 func TransferPenalty(native *native.NativeService) ([]byte, error) {
 	// get admin from database
 	adminAddress, err := global_params.GetStorageRole(native,
@@ -1251,7 +1251,7 @@ func TransferPenalty(native *native.NativeService) ([]byte, error) {
 	return utils.BYTE_TRUE, nil
 }
 
-//Withdraw unbounded ONG according to deposit ONT in this governance contract
+//Withdraw unbounded TSG according to deposit TST in this governance contract
 func WithdrawTsg(native *native.NativeService) ([]byte, error) {
 	params := new(WithdrawTsgParam)
 	if err := params.Deserialization(common.NewZeroCopySource(native.Input)); err != nil {

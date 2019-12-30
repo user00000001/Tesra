@@ -18,7 +18,7 @@ Tesranode Signature Server - sigsvr is a rpc server for signing transactions.
 		* [2.5 Signature of Transfer Transaction](#25-signature-of-transfer-transaction)
 		* [2.6 Native Contract Invokes Signature](#26-native-contract-invokes-signature)
 			* [Example1:  Constructing  transfer transaction](#example1-constructing-transfer-transaction)
-			* [Example2: Constructing  withdraw ONG transaction](#example2-constructing-withdraw-ong-transaction)
+			* [Example2: Constructing  withdraw TSG transaction](#example2-constructing-withdraw-ong-transaction)
 		* [2.7 NeoVM Contract Invokes Signature](#27-neovm-contract-invokes-signature)
 		* [2.8 NeoVM Contract Invokes By ABI Signature](#28-neovm-contract-invokes-by-abi-signature)
 		* [2.9 Create Account](#29-create-account)
@@ -69,7 +69,7 @@ wallet parameter specifies the path of wallet to import. The default value is ".
 
 ## 2. Signature Service Method
 
-The signature service currently supports signature for data, single signature and multi-signatures for raw transactions, constructing ONT/ONG transfer transactions and signing, constructing transactions that Native contracts can invoke and signing, and constructing transactions that NeoVM contracts can invoke and signing, and so on.
+The signature service currently supports signature for data, single signature and multi-signatures for raw transactions, constructing TST/TSG transfer transactions and signing, constructing transactions that Native contracts can invoke and signing, and constructing transactions that NeoVM contracts can invoke and signing, and so on.
 
 ### 2.1  Signature Service Calling Method
 
@@ -435,7 +435,7 @@ Examples:
     ]
 }
 ```
-#### Example2: Constructing withdraw ONG transaction
+#### Example2: Constructing withdraw TSG transaction
 
 ``` json
 {
@@ -451,9 +451,9 @@ Examples:
 		"version":0,
 		"params":[
 			"ARVVxBPGySL56CvSSWfjRVVyZYpNZ7zp48",	//withdraw address
-			"AFmseVrdL9f9oyCzZefL9tG6UbvhUMqNMV",   //ONT contract address (in base58 style)
-			"ARVVxBPGySL56CvSSWfjRVVyZYpNZ7zp48",  //ONG accept address. Note that accept address  can different with withdraw address
-			"310860000000000"												//withdraw tsg amount. Note that ONG has 9 decimals
+			"AFmseVrdL9f9oyCzZefL9tG6UbvhUMqNMV",   //TST contract address (in base58 style)
+			"ARVVxBPGySL56CvSSWfjRVVyZYpNZ7zp48",  //TSG accept address. Note that accept address  can different with withdraw address
+			"310860000000000"												//withdraw tsg amount. Note that TSG has 9 decimals
 		]
 	}
 }

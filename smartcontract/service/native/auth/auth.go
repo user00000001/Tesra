@@ -42,7 +42,7 @@ func Init() {
 /*
  * contract admin management
  */
-func initContractAdmin(native *native.NativeService, contractAddr common.Address, ontID []byte) (bool, error) {
+func initContractAdmin(native *native.NativeService, contractAddr common.Address, tstID []byte) (bool, error) {
 	admin, err := getContractAdmin(native, contractAddr)
 	if err != nil {
 		return false, err
@@ -52,7 +52,7 @@ func initContractAdmin(native *native.NativeService, contractAddr common.Address
 		log.Debugf("admin of contract %s is already set", contractAddr.ToHexString())
 		return false, nil
 	}
-	err = putContractAdmin(native, contractAddr, ontID)
+	err = putContractAdmin(native, contractAddr, tstID)
 	if err != nil {
 		return false, err
 	}
@@ -276,10 +276,10 @@ func AssignTstIDsToRole(native *native.NativeService) ([]byte, error) {
 	if param.Role == nil {
 		return nil, fmt.Errorf("[assignTstIDsToRole] invalid param: role is nil")
 	}
-	for i, ontID := range param.Persons {
-		if !account.VerifyID(string(ontID)) {
+	for i, tstID := range param.Persons {
+		if !account.VerifyID(string(tstID)) {
 			return nil, fmt.Errorf("[assignTstIDsToRole] invalid param: param.Persons[%d]=%s",
-				i, string(ontID))
+				i, string(tstID))
 		}
 	}
 
@@ -300,8 +300,8 @@ func AssignTstIDsToRole(native *native.NativeService) ([]byte, error) {
 	}
 }
 
-func getAuthToken(native *native.NativeService, contractAddr common.Address, ontID, role []byte) (*AuthToken, error) {
-	tokens, err := getTstIDToken(native, contractAddr, ontID)
+func getAuthToken(native *native.NativeService, contractAddr common.Address, tstID, role []byte) (*AuthToken, error) {
+	tokens, err := getTstIDToken(native, contractAddr, tstID)
 	if err != nil {
 		return nil, fmt.Errorf("get token failed, caused by %v", err)
 	}
@@ -312,7 +312,7 @@ func getAuthToken(native *native.NativeService, contractAddr common.Address, ont
 			}
 		}
 	}
-	status, err := getDelegateStatus(native, contractAddr, ontID)
+	status, err := getDelegateStatus(native, contractAddr, tstID)
 	if err != nil {
 		return nil, fmt.Errorf("get delegate status failed, caused by %v", err)
 	}
@@ -330,8 +330,8 @@ func getAuthToken(native *native.NativeService, contractAddr common.Address, ont
 	return nil, nil
 }
 
-func hasRole(native *native.NativeService, contractAddr common.Address, ontID, role []byte) (bool, error) {
-	token, err := getAuthToken(native, contractAddr, ontID, role)
+func hasRole(native *native.NativeService, contractAddr common.Address, tstID, role []byte) (bool, error) {
+	token, err := getAuthToken(native, contractAddr, tstID, role)
 	if err != nil {
 		return false, err
 	}
@@ -341,8 +341,8 @@ func hasRole(native *native.NativeService, contractAddr common.Address, ontID, r
 	return true, nil
 }
 
-func getLevel(native *native.NativeService, contractAddr common.Address, ontID, role []byte) (uint8, error) {
-	token, err := getAuthToken(native, contractAddr, ontID, role)
+func getLevel(native *native.NativeService, contractAddr common.Address, tstID, role []byte) (uint8, error) {
+	token, err := getAuthToken(native, contractAddr, tstID, role)
 	if err != nil {
 		return 0, err
 	}
@@ -637,9 +637,9 @@ func VerifyToken(native *native.NativeService) ([]byte, error) {
 	return utils.BYTE_FALSE, nil
 }
 
-func verifySig(native *native.NativeService, ontID []byte, keyNo uint64) (bool, error) {
+func verifySig(native *native.NativeService, tstID []byte, keyNo uint64) (bool, error) {
 	sink := common.NewZeroCopySink(nil)
-	sink.WriteVarBytes(ontID)
+	sink.WriteVarBytes(tstID)
 	utils.EncodeVarUint(sink, keyNo)
 	args := sink.Bytes()
 	ret, err := native.NativeCall(utils.TstIDContractAddress, "verifySignature", args)

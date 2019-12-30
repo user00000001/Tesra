@@ -27,7 +27,7 @@ New features are still being rapidly developed, therefore the master branch may 
     - [Local PrivateNet](#local-privatenet)
     - [Run with Docker](#run-in-docker)
 - [Examples](#examples)
-    - [ONT transfer sample](#ont-transfer-sample)
+    - [TST transfer sample](#ont-transfer-sample)
     - [Query transfer status sample](#query-transfer-status-sample)
     - [Query account balance sample](#query-account-balance-sample)
 - [Contributions](#contributions)
@@ -161,15 +161,15 @@ start tesranode-windows-amd64.exe --testmode
 
 ## Examples
 
-### ONT transfer sample
- -- from: transfer from； -- to: transfer to； -- amount: ONT amount；
+### TST transfer sample
+ -- from: transfer from； -- to: transfer to； -- amount: TST amount；
 ```shell
  ./tesranode asset transfer  --from=ARVVxBPGySL56CvSSWfjRVVyZYpNZ7zp48 --to=AaCe8nVkMRABnp5YgEjYZ9E5KYCxks2uce --amount=10
 ```
 If the asset transfer is successful, the result will display as follows:
 
 ```shell
-Transfer ONT
+Transfer TST
   From:ARVVxBPGySL56CvSSWfjRVVyZYpNZ7zp48
   To:AaCe8nVkMRABnp5YgEjYZ9E5KYCxks2uce
   Amount:10
@@ -178,9 +178,9 @@ Transfer ONT
 TxHash is the transfer transaction hash, and we can query a transfer result by the TxHash.
 Due to block time, the transfer transaction will not be executed before the block is generated and added.
 
-If you want to transfer ONG, just add --asset=ong flag.
+If you want to transfer TSG, just add --asset=ong flag.
 
-Note that ONT is an integer and has no decimals, whereas ONG has 9 decimals. For detailed info please read [Everything you need to know about ONG](https://medium.com/tesranodenetwork/everything-you-need-to-know-about-ong-582ed216b870).
+Note that TST is an integer and has no decimals, whereas TSG has 9 decimals. For detailed info please read [Everything you need to know about TSG](https://medium.com/tesranodenetwork/everything-you-need-to-know-about-ong-582ed216b870).
 
 ```shell
 ./tesranode asset transfer --from=ARVVxBPGySL56CvSSWfjRVVyZYpNZ7zp48 --to=ARVVxBPGySL56CvSSWfjRVVyZYpNZ7zp48 --amount=95.479777254 --asset=ong
@@ -188,7 +188,7 @@ Note that ONT is an integer and has no decimals, whereas ONG has 9 decimals. For
 If transfer of the asset succeeds, the result will display as follows:
 
 ```shell
-Transfer ONG
+Transfer TSG
   From:ARVVxBPGySL56CvSSWfjRVVyZYpNZ7zp48
   To:AaCe8nVkMRABnp5YgEjYZ9E5KYCxks2uce
   Amount:95.479777254
@@ -242,8 +242,8 @@ or
 Result:
 ```shell
 BalanceOf:ARVVxBPGySL56CvSSWfjRVVyZYpNZ7zp48
-  ONT:989979697
-  ONG:28165900
+  TST:989979697
+  TSG:28165900
 ```
 
 ## Contributions

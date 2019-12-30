@@ -265,8 +265,8 @@ var (
 		Usage: "Pub key list of multi `<addresses>`, separate addreses with comma `,`",
 	}
 	IdentityFlag = cli.BoolFlag{
-		Name:  "ontid",
-		Usage: "create an ONT ID instead of account",
+		Name:  "tstid",
+		Usage: "create an TST ID instead of account",
 	}
 
 	//SmartContract setting
@@ -336,8 +336,8 @@ var (
 	//Transfer setting
 	TransactionAssetFlag = cli.StringFlag{
 		Name:  "asset",
-		Usage: "Asset of ONT or ONG",
-		Value: ASSET_ONT,
+		Usage: "Asset of TST or TSG",
+		Value: ASSET_TST,
 	}
 	TransactionFromFlag = cli.StringFlag{
 		Name:  "from",
@@ -381,7 +381,7 @@ var (
 	}
 	ApproveAssetFlag = cli.StringFlag{
 		Name:  "asset",
-		Usage: "Asset of ONT of ONG to approve",
+		Usage: "Asset of TST of TSG to approve",
 		Value: "tst",
 	}
 	ApproveAmountFlag = cli.StringFlag{
@@ -412,11 +412,11 @@ var (
 		Name:  "prepare,p",
 		Usage: "Prepare execute transaction, without commit to ledger",
 	}
-	WithdrawONGReceiveAccountFlag = cli.StringFlag{
+	WithdrawTSGReceiveAccountFlag = cli.StringFlag{
 		Name:  "receive",
-		Usage: "ONG receive `<address>`，Default the same with owner account",
+		Usage: "TSG receive `<address>`，Default the same with owner account",
 	}
-	WithdrawONGAmountFlag = cli.StringFlag{
+	WithdrawTSGAmountFlag = cli.StringFlag{
 		Name:  "amount",
 		Usage: "Withdraw amount `<number>`, Float number. Default withdraw all",
 	}

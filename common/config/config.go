@@ -153,7 +153,7 @@ var ScorpioConfig = &GenesisConfig{
 		HashMsgDelay:         10000,
 		PeerHandshakeTimeout: 10,
 		MaxBlockChangeView:   3000,
-		AdminTstID:           "did:ont:AMAx993nE6NEqZjwBssUfopxnnvTdob9ij",
+		AdminTstID:           "did:tst:AMAx993nE6NEqZjwBssUfopxnnvTdob9ij",
 		MinInitStake:         10000,
 		VrfValue:             "1c9810aa9822e511d5804a9c4db9dd08497c31087b0daafa34d768a3253441fa20515e2f30f81741102af0ca3cefc4818fef16adb825fbaa8cad78647f3afb590e",
 		VrfProof:             "c57741f934042cb8d8b087b44b161db56fc3ffd4ffb675d36cd09f83935be853d8729f3f5298d12d6fd28d45dde515a4b9d7f67682d182ba5118abf451ff1988",
@@ -225,7 +225,7 @@ var MainNetConfig = &GenesisConfig{
 		HashMsgDelay:         10000,
 		PeerHandshakeTimeout: 10,
 		MaxBlockChangeView:   120000,
-		AdminTstID:           "did:ont:AdjfcJgwru2FD8kotCPvLDXYzRjqFjc9Tb",
+		AdminTstID:           "did:tst:AdjfcJgwru2FD8kotCPvLDXYzRjqFjc9Tb",
 		MinInitStake:         100000,
 		VrfValue:             "1c9810aa9822e511d5804a9c4db9dd08497c31087b0daafa34d768a3253441fa20515e2f30f81741102af0ca3cefc4818fef16adb825fbaa8cad78647f3afb590e",
 		VrfProof:             "c57741f934042cb8d8b087b44b161db56fc3ffd4ffb675d36cd09f83935be853d8729f3f5298d12d6fd28d45dde515a4b9d7f67682d182ba5118abf451ff1988",
@@ -305,7 +305,7 @@ type VBFTConfig struct {
 	PeerHandshakeTimeout uint32               `json:"peer_handshake_timeout"`
 	MaxBlockChangeView   uint32               `json:"max_block_change_view"`
 	MinInitStake         uint32               `json:"min_init_stake"`
-	AdminTstID           string               `json:"admin_ont_id"`
+	AdminTstID           string               `json:"admin_tst_id"`
 	VrfValue             string               `json:"vrf_value"`
 	VrfProof             string               `json:"vrf_proof"`
 	Peers                []*VBFTPeerStakeInfo `json:"peers"`
