@@ -19,8 +19,8 @@ package handlers
 
 import (
 	"encoding/json"
-	"github.com/ontio/ontology-crypto/keypair"
-	s "github.com/ontio/ontology-crypto/signature"
+	"github.com/TesraSupernet/tesracrypto/keypair"
+	s "github.com/TesraSupernet/tesracrypto/signature"
 	clisvrcom "github.com/ontio/ontology/cmd/sigsvr/common"
 	"github.com/ontio/ontology/common/log"
 )

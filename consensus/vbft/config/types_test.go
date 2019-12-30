@@ -22,7 +22,7 @@ import (
 	"encoding/hex"
 	"testing"
 
-	"github.com/ontio/ontology-crypto/keypair"
+	"github.com/TesraSupernet/tesracrypto/keypair"
 )
 
 func TestPubkeyID(t *testing.T) {

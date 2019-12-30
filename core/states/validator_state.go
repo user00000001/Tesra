@@ -19,7 +19,7 @@
 package states
 
 import (
-	"github.com/ontio/ontology-crypto/keypair"
+	"github.com/TesraSupernet/tesracrypto/keypair"
 	"github.com/ontio/ontology/common"
 	"github.com/ontio/ontology/errors"
 	"io"

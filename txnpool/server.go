@@ -23,8 +23,8 @@ package txnpool
 import (
 	"fmt"
 
-	"github.com/ontio/ontology-eventbus/actor"
-	"github.com/ontio/ontology-eventbus/mailbox"
+	"github.com/TesraSupernet/tesraevent/actor"
+	"github.com/TesraSupernet/tesraevent/mailbox"
 	"github.com/ontio/ontology/events"
 	"github.com/ontio/ontology/events/message"
 	tc "github.com/ontio/ontology/txnpool/common"

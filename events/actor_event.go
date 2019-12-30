@@ -21,8 +21,8 @@ package events
 import (
 	"fmt"
 
-	"github.com/ontio/ontology-eventbus/actor"
-	"github.com/ontio/ontology-eventbus/eventhub"
+	"github.com/TesraSupernet/tesraevent/actor"
+	"github.com/TesraSupernet/tesraevent/eventhub"
 )
 
 var DefEvtHub *eventhub.EventHub

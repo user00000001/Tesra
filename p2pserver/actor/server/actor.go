@@ -21,7 +21,7 @@ package server
 import (
 	"reflect"
 
-	"github.com/ontio/ontology-eventbus/actor"
+	"github.com/TesraSupernet/tesraevent/actor"
 	"github.com/ontio/ontology/common/log"
 	"github.com/ontio/ontology/p2pserver"
 	"github.com/ontio/ontology/p2pserver/common"

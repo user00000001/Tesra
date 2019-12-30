@@ -19,8 +19,8 @@
 package signature
 
 import (
-	"github.com/ontio/ontology-crypto/keypair"
-	"github.com/ontio/ontology-crypto/signature"
+	"github.com/TesraSupernet/tesracrypto/keypair"
+	"github.com/TesraSupernet/tesracrypto/signature"
 )
 
 // Signer is the abstract interface of user's information(Keys) for signing data.

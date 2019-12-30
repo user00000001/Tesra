@@ -21,8 +21,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/ontio/ontology-crypto/keypair"
-	"github.com/ontio/ontology-eventbus/actor"
+	"github.com/TesraSupernet/tesracrypto/keypair"
+	"github.com/TesraSupernet/tesraevent/actor"
 	"github.com/ontio/ontology/account"
 	"github.com/ontio/ontology/common/log"
 	"github.com/ontio/ontology/core/payload"

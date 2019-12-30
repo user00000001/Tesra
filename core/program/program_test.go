@@ -19,7 +19,7 @@
 package program
 
 import (
-	"github.com/ontio/ontology-crypto/keypair"
+	"github.com/TesraSupernet/tesracrypto/keypair"
 	"github.com/stretchr/testify/assert"
 	"testing"
 )

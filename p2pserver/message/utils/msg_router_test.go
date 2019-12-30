@@ -21,7 +21,7 @@ package utils
 import (
 	"testing"
 
-	"github.com/ontio/ontology-eventbus/actor"
+	"github.com/TesraSupernet/tesraevent/actor"
 	"github.com/ontio/ontology/common/log"
 	"github.com/ontio/ontology/p2pserver/message/types"
 	"github.com/ontio/ontology/p2pserver/net/netserver"

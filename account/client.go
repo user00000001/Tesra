@@ -26,8 +26,8 @@ import (
 	"sync"
 	"time"
 
-	"github.com/ontio/ontology-crypto/keypair"
-	s "github.com/ontio/ontology-crypto/signature"
+	"github.com/TesraSupernet/tesracrypto/keypair"
+	s "github.com/TesraSupernet/tesracrypto/signature"
 	"github.com/ontio/ontology/common"
 	"github.com/ontio/ontology/core/types"
 )

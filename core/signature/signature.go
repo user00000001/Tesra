@@ -20,8 +20,8 @@ package signature
 
 import (
 	"errors"
-	"github.com/ontio/ontology-crypto/keypair"
-	s "github.com/ontio/ontology-crypto/signature"
+	"github.com/TesraSupernet/tesracrypto/keypair"
+	s "github.com/TesraSupernet/tesracrypto/signature"
 )
 
 // Sign returns the signature of data using privKey

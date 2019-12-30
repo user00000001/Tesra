@@ -19,7 +19,7 @@
 package vote
 
 import (
-	"github.com/ontio/ontology-crypto/keypair"
+	"github.com/TesraSupernet/tesracrypto/keypair"
 	"github.com/ontio/ontology/core/genesis"
 	"github.com/ontio/ontology/core/types"
 )

@@ -31,7 +31,7 @@ import (
 	"sync"
 	"time"
 
-	evtActor "github.com/ontio/ontology-eventbus/actor"
+	evtActor "github.com/TesraSupernet/tesraevent/actor"
 	comm "github.com/ontio/ontology/common"
 	"github.com/ontio/ontology/common/config"
 	"github.com/ontio/ontology/common/log"

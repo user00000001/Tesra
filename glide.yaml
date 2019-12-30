@@ -1,9 +1,9 @@
 package: github.com/ontio/ontology
 import:
-- package: github.com/ontio/ontology-eventbus
-  version: v0.9.1
-- package: github.com/ontio/ontology-crypto
-  version: v1.0.5
+- package: github.com/TesraSupernet/tesraevent
+  version: v0.0.1
+- package: github.com/TesraSupernet/tesracrypto
+  version: v0.0.1
 - package: github.com/howeyc/gopass
 - package: github.com/gorilla/websocket
   version: v1.2.0

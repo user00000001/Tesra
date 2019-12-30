@@ -22,7 +22,7 @@ import (
 	"fmt"
 	"reflect"
 
-	"github.com/ontio/ontology-eventbus/actor"
+	"github.com/TesraSupernet/tesraevent/actor"
 
 	"github.com/ontio/ontology/common"
 	"github.com/ontio/ontology/common/config"

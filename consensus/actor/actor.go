@@ -22,7 +22,7 @@ import (
 	"errors"
 	"time"
 
-	"github.com/ontio/ontology-eventbus/actor"
+	"github.com/TesraSupernet/tesraevent/actor"
 	"github.com/ontio/ontology/core/types"
 	ontErrors "github.com/ontio/ontology/errors"
 	netActor "github.com/ontio/ontology/p2pserver/actor/server"

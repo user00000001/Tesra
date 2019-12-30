@@ -21,8 +21,8 @@ package cmd
 import (
 	"bufio"
 	"fmt"
-	"github.com/ontio/ontology-crypto/keypair"
-	s "github.com/ontio/ontology-crypto/signature"
+	"github.com/TesraSupernet/tesracrypto/keypair"
+	s "github.com/TesraSupernet/tesracrypto/signature"
 	"github.com/ontio/ontology/cmd/common"
 	"github.com/ontio/ontology/cmd/utils"
 	"github.com/ontio/ontology/common/config"

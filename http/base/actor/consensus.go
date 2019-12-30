@@ -19,7 +19,7 @@
 package actor
 
 import (
-	"github.com/ontio/ontology-eventbus/actor"
+	"github.com/TesraSupernet/tesraevent/actor"
 	cactor "github.com/ontio/ontology/consensus/actor"
 )
 

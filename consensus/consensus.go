@@ -19,7 +19,7 @@
 package consensus
 
 import (
-	"github.com/ontio/ontology-eventbus/actor"
+	"github.com/TesraSupernet/tesraevent/actor"
 	"github.com/ontio/ontology/account"
 	"github.com/ontio/ontology/common/log"
 	"github.com/ontio/ontology/consensus/dbft"

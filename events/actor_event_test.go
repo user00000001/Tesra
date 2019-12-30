@@ -23,7 +23,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/ontio/ontology-eventbus/actor"
+	"github.com/TesraSupernet/tesraevent/actor"
 )
 
 const testTopic = "test"

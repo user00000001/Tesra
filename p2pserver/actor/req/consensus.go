@@ -19,7 +19,7 @@
 package req
 
 import (
-	"github.com/ontio/ontology-eventbus/actor"
+	"github.com/TesraSupernet/tesraevent/actor"
 )
 
 var ConsensusPid *actor.PID

@@ -20,8 +20,8 @@ package account
 
 import (
 	"fmt"
-	"github.com/ontio/ontology-crypto/keypair"
-	s "github.com/ontio/ontology-crypto/signature"
+	"github.com/TesraSupernet/tesracrypto/keypair"
+	s "github.com/TesraSupernet/tesracrypto/signature"
 	"github.com/stretchr/testify/assert"
 	"os"
 	"testing"

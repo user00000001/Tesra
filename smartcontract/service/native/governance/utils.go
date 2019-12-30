@@ -23,7 +23,7 @@ import (
 	"encoding/hex"
 	"fmt"
 
-	"github.com/ontio/ontology-crypto/vrf"
+	"github.com/TesraSupernet/tesracrypto/vrf"
 	"github.com/ontio/ontology/common"
 	"github.com/ontio/ontology/common/config"
 	"github.com/ontio/ontology/common/serialization"

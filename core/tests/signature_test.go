@@ -20,7 +20,7 @@ package tests
 import (
 	"testing"
 
-	"github.com/ontio/ontology-crypto/keypair"
+	"github.com/TesraSupernet/tesracrypto/keypair"
 	"github.com/ontio/ontology/account"
 	"github.com/ontio/ontology/core/signature"
 	"github.com/stretchr/testify/assert"
