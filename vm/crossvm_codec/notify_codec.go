@@ -21,8 +21,8 @@ import (
 	"bytes"
 	"encoding/hex"
 	"fmt"
-	"github.com/ontio/ontology/common"
-	"github.com/ontio/ontology/common/log"
+	"github.com/TesraSupernet/Tesra/common"
+	"github.com/TesraSupernet/Tesra/common/log"
 	"math/big"
 	"reflect"
 )

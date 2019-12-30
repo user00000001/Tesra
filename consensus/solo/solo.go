@@ -25,17 +25,17 @@ import (
 
 	"github.com/TesraSupernet/tesracrypto/keypair"
 	"github.com/TesraSupernet/tesraevent/actor"
-	"github.com/ontio/ontology/account"
-	"github.com/ontio/ontology/common"
-	"github.com/ontio/ontology/common/config"
-	"github.com/ontio/ontology/common/log"
-	actorTypes "github.com/ontio/ontology/consensus/actor"
-	"github.com/ontio/ontology/core/ledger"
-	"github.com/ontio/ontology/core/signature"
-	"github.com/ontio/ontology/core/types"
-	"github.com/ontio/ontology/events"
-	"github.com/ontio/ontology/events/message"
-	"github.com/ontio/ontology/validator/increment"
+	"github.com/TesraSupernet/Tesra/account"
+	"github.com/TesraSupernet/Tesra/common"
+	"github.com/TesraSupernet/Tesra/common/config"
+	"github.com/TesraSupernet/Tesra/common/log"
+	actorTypes "github.com/TesraSupernet/Tesra/consensus/actor"
+	"github.com/TesraSupernet/Tesra/core/ledger"
+	"github.com/TesraSupernet/Tesra/core/signature"
+	"github.com/TesraSupernet/Tesra/core/types"
+	"github.com/TesraSupernet/Tesra/events"
+	"github.com/TesraSupernet/Tesra/events/message"
+	"github.com/TesraSupernet/Tesra/validator/increment"
 )
 
 /*

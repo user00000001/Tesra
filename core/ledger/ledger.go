@@ -21,15 +21,15 @@ package ledger
 import (
 	"fmt"
 	"github.com/TesraSupernet/tesracrypto/keypair"
-	"github.com/ontio/ontology/common"
-	"github.com/ontio/ontology/common/log"
-	"github.com/ontio/ontology/core/payload"
-	"github.com/ontio/ontology/core/states"
-	"github.com/ontio/ontology/core/store"
-	"github.com/ontio/ontology/core/store/ledgerstore"
-	"github.com/ontio/ontology/core/types"
-	"github.com/ontio/ontology/smartcontract/event"
-	cstate "github.com/ontio/ontology/smartcontract/states"
+	"github.com/TesraSupernet/Tesra/common"
+	"github.com/TesraSupernet/Tesra/common/log"
+	"github.com/TesraSupernet/Tesra/core/payload"
+	"github.com/TesraSupernet/Tesra/core/states"
+	"github.com/TesraSupernet/Tesra/core/store"
+	"github.com/TesraSupernet/Tesra/core/store/ledgerstore"
+	"github.com/TesraSupernet/Tesra/core/types"
+	"github.com/TesraSupernet/Tesra/smartcontract/event"
+	cstate "github.com/TesraSupernet/Tesra/smartcontract/states"
 )
 
 var DefLedger *Ledger

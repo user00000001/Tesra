@@ -20,7 +20,7 @@ package auth
 
 import (
 	"bytes"
-	"github.com/ontio/ontology/common"
+	"github.com/TesraSupernet/Tesra/common"
 	"testing"
 )
 

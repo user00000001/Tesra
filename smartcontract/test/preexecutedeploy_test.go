@@ -22,10 +22,10 @@ import (
 	"os"
 	"testing"
 
-	"github.com/ontio/ontology/account"
-	"github.com/ontio/ontology/cmd/utils"
-	"github.com/ontio/ontology/core/payload"
-	"github.com/ontio/ontology/core/store/ledgerstore"
+	"github.com/TesraSupernet/Tesra/account"
+	"github.com/TesraSupernet/Tesra/cmd/utils"
+	"github.com/TesraSupernet/Tesra/core/payload"
+	"github.com/TesraSupernet/Tesra/core/store/ledgerstore"
 	"github.com/stretchr/testify/assert"
 )
 

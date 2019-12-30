@@ -18,9 +18,9 @@
 package storage
 
 import (
-	"github.com/ontio/ontology/core/store/common"
-	"github.com/ontio/ontology/core/store/leveldbstore"
-	"github.com/ontio/ontology/core/store/overlaydb"
+	"github.com/TesraSupernet/Tesra/core/store/common"
+	"github.com/TesraSupernet/Tesra/core/store/leveldbstore"
+	"github.com/TesraSupernet/Tesra/core/store/overlaydb"
 	"github.com/stretchr/testify/assert"
 	"math/rand"
 	"testing"

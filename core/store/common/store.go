@@ -20,9 +20,9 @@ package common
 
 import (
 	"errors"
-	"github.com/ontio/ontology/common"
-	"github.com/ontio/ontology/core/states"
-	"github.com/ontio/ontology/smartcontract/event"
+	"github.com/TesraSupernet/Tesra/common"
+	"github.com/TesraSupernet/Tesra/core/states"
+	"github.com/TesraSupernet/Tesra/smartcontract/event"
 )
 
 var ErrNotFound = errors.New("not found")

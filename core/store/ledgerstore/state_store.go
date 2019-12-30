@@ -25,17 +25,17 @@ import (
 	"fmt"
 	"io"
 
-	"github.com/ontio/ontology/common"
-	"github.com/ontio/ontology/common/log"
-	"github.com/ontio/ontology/common/serialization"
-	"github.com/ontio/ontology/core/payload"
-	"github.com/ontio/ontology/core/states"
-	scom "github.com/ontio/ontology/core/store/common"
-	"github.com/ontio/ontology/core/store/leveldbstore"
-	"github.com/ontio/ontology/core/store/overlaydb"
-	"github.com/ontio/ontology/merkle"
-	"github.com/ontio/ontology/smartcontract/service/native/ontid"
-	"github.com/ontio/ontology/smartcontract/service/native/utils"
+	"github.com/TesraSupernet/Tesra/common"
+	"github.com/TesraSupernet/Tesra/common/log"
+	"github.com/TesraSupernet/Tesra/common/serialization"
+	"github.com/TesraSupernet/Tesra/core/payload"
+	"github.com/TesraSupernet/Tesra/core/states"
+	scom "github.com/TesraSupernet/Tesra/core/store/common"
+	"github.com/TesraSupernet/Tesra/core/store/leveldbstore"
+	"github.com/TesraSupernet/Tesra/core/store/overlaydb"
+	"github.com/TesraSupernet/Tesra/merkle"
+	"github.com/TesraSupernet/Tesra/smartcontract/service/native/ontid"
+	"github.com/TesraSupernet/Tesra/smartcontract/service/native/utils"
 )
 
 var (

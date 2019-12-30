@@ -20,7 +20,7 @@
 package restful
 
 import (
-	"github.com/ontio/ontology/http/restful/restful"
+	"github.com/TesraSupernet/Tesra/http/restful/restful"
 )
 
 //start restful

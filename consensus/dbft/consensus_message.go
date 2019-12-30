@@ -22,8 +22,8 @@ import (
 	"errors"
 	"io"
 
-	"github.com/ontio/ontology/common"
-	"github.com/ontio/ontology/common/log"
+	"github.com/TesraSupernet/Tesra/common"
+	"github.com/TesraSupernet/Tesra/common/log"
 )
 
 type ConsensusMessage interface {

@@ -18,14 +18,14 @@
 package main
 
 import (
-	"github.com/ontio/ontology/cmd"
-	"github.com/ontio/ontology/cmd/abi"
-	cmdsvr "github.com/ontio/ontology/cmd/sigsvr"
-	clisvrcom "github.com/ontio/ontology/cmd/sigsvr/common"
-	"github.com/ontio/ontology/cmd/sigsvr/store"
-	"github.com/ontio/ontology/cmd/utils"
-	"github.com/ontio/ontology/common/config"
-	"github.com/ontio/ontology/common/log"
+	"github.com/TesraSupernet/Tesra/cmd"
+	"github.com/TesraSupernet/Tesra/cmd/abi"
+	cmdsvr "github.com/TesraSupernet/Tesra/cmd/sigsvr"
+	clisvrcom "github.com/TesraSupernet/Tesra/cmd/sigsvr/common"
+	"github.com/TesraSupernet/Tesra/cmd/sigsvr/store"
+	"github.com/TesraSupernet/Tesra/cmd/utils"
+	"github.com/TesraSupernet/Tesra/common/config"
+	"github.com/TesraSupernet/Tesra/common/log"
 	"github.com/urfave/cli"
 	"os"
 	"os/signal"

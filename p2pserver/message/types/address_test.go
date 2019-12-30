@@ -22,8 +22,8 @@ import (
 	"net"
 	"testing"
 
-	"github.com/ontio/ontology/common"
-	comm "github.com/ontio/ontology/p2pserver/common"
+	"github.com/TesraSupernet/Tesra/common"
+	comm "github.com/TesraSupernet/Tesra/p2pserver/common"
 	"github.com/stretchr/testify/assert"
 )
 

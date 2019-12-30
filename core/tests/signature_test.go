@@ -21,8 +21,8 @@ import (
 	"testing"
 
 	"github.com/TesraSupernet/tesracrypto/keypair"
-	"github.com/ontio/ontology/account"
-	"github.com/ontio/ontology/core/signature"
+	"github.com/TesraSupernet/Tesra/account"
+	"github.com/TesraSupernet/Tesra/core/signature"
 	"github.com/stretchr/testify/assert"
 )
 

@@ -21,8 +21,8 @@ import (
 	"encoding/json"
 	"github.com/TesraSupernet/tesracrypto/keypair"
 	s "github.com/TesraSupernet/tesracrypto/signature"
-	clisvrcom "github.com/ontio/ontology/cmd/sigsvr/common"
-	"github.com/ontio/ontology/common/log"
+	clisvrcom "github.com/TesraSupernet/Tesra/cmd/sigsvr/common"
+	"github.com/TesraSupernet/Tesra/common/log"
 )
 
 type CreateAccountReq struct {

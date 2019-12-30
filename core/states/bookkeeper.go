@@ -22,7 +22,7 @@ import (
 	"io"
 
 	"github.com/TesraSupernet/tesracrypto/keypair"
-	"github.com/ontio/ontology/common"
+	"github.com/TesraSupernet/Tesra/common"
 )
 
 type BookkeeperState struct {

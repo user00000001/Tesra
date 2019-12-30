@@ -22,15 +22,15 @@ import (
 	"errors"
 	"fmt"
 
-	"github.com/ontio/ontology/common"
-	"github.com/ontio/ontology/common/constants"
-	"github.com/ontio/ontology/common/log"
-	"github.com/ontio/ontology/core/ledger"
-	"github.com/ontio/ontology/core/payload"
-	"github.com/ontio/ontology/core/signature"
-	"github.com/ontio/ontology/core/types"
-	ontErrors "github.com/ontio/ontology/errors"
-	"github.com/ontio/ontology/smartcontract/service/wasmvm"
+	"github.com/TesraSupernet/Tesra/common"
+	"github.com/TesraSupernet/Tesra/common/constants"
+	"github.com/TesraSupernet/Tesra/common/log"
+	"github.com/TesraSupernet/Tesra/core/ledger"
+	"github.com/TesraSupernet/Tesra/core/payload"
+	"github.com/TesraSupernet/Tesra/core/signature"
+	"github.com/TesraSupernet/Tesra/core/types"
+	ontErrors "github.com/TesraSupernet/Tesra/errors"
+	"github.com/TesraSupernet/Tesra/smartcontract/service/wasmvm"
 )
 
 // VerifyTransaction verifys received single transaction

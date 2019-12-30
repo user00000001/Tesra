@@ -23,11 +23,11 @@ import (
 	"testing"
 	"time"
 
-	"github.com/ontio/ontology/account"
-	"github.com/ontio/ontology/common"
-	"github.com/ontio/ontology/consensus/vbft/config"
-	"github.com/ontio/ontology/core/signature"
-	"github.com/ontio/ontology/core/types"
+	"github.com/TesraSupernet/Tesra/account"
+	"github.com/TesraSupernet/Tesra/common"
+	"github.com/TesraSupernet/Tesra/consensus/vbft/config"
+	"github.com/TesraSupernet/Tesra/core/signature"
+	"github.com/TesraSupernet/Tesra/core/types"
 )
 
 func constructProposalMsgTest(acc *account.Account) *blockProposalMsg {

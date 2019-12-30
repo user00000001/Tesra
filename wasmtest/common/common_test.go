@@ -19,7 +19,7 @@ package common
 
 import (
 	"encoding/json"
-	"github.com/ontio/ontology/common"
+	"github.com/TesraSupernet/Tesra/common"
 	"github.com/stretchr/testify/assert"
 	"testing"
 )

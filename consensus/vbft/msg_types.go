@@ -26,9 +26,9 @@ import (
 
 	"github.com/TesraSupernet/tesracrypto/keypair"
 	"github.com/TesraSupernet/tesracrypto/signature"
-	"github.com/ontio/ontology/common"
-	"github.com/ontio/ontology/common/serialization"
-	vconfig "github.com/ontio/ontology/consensus/vbft/config"
+	"github.com/TesraSupernet/Tesra/common"
+	"github.com/TesraSupernet/Tesra/common/serialization"
+	vconfig "github.com/TesraSupernet/Tesra/consensus/vbft/config"
 )
 
 type MsgType uint8

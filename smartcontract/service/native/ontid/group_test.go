@@ -23,11 +23,11 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/ontio/ontology/core/states"
-	"github.com/ontio/ontology/core/store/leveldbstore"
-	"github.com/ontio/ontology/core/store/overlaydb"
-	"github.com/ontio/ontology/smartcontract/service/native"
-	"github.com/ontio/ontology/smartcontract/storage"
+	"github.com/TesraSupernet/Tesra/core/states"
+	"github.com/TesraSupernet/Tesra/core/store/leveldbstore"
+	"github.com/TesraSupernet/Tesra/core/store/overlaydb"
+	"github.com/TesraSupernet/Tesra/smartcontract/service/native"
+	"github.com/TesraSupernet/Tesra/smartcontract/storage"
 )
 
 func TestDeserializeGroup(t *testing.T) {

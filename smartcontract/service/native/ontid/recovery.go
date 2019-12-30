@@ -22,10 +22,10 @@ import (
 	"errors"
 	"fmt"
 
-	"github.com/ontio/ontology/common"
-	"github.com/ontio/ontology/core/states"
-	"github.com/ontio/ontology/smartcontract/service/native"
-	"github.com/ontio/ontology/smartcontract/service/native/utils"
+	"github.com/TesraSupernet/Tesra/common"
+	"github.com/TesraSupernet/Tesra/core/states"
+	"github.com/TesraSupernet/Tesra/smartcontract/service/native"
+	"github.com/TesraSupernet/Tesra/smartcontract/service/native/utils"
 )
 
 func setRecovery(srvc *native.NativeService) ([]byte, error) {

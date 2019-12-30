@@ -25,13 +25,13 @@ import (
 	"os"
 
 	"github.com/gosuri/uiprogress"
-	"github.com/ontio/ontology/cmd/utils"
-	"github.com/ontio/ontology/common/config"
-	"github.com/ontio/ontology/common/log"
-	"github.com/ontio/ontology/common/serialization"
-	"github.com/ontio/ontology/core/genesis"
-	"github.com/ontio/ontology/core/ledger"
-	"github.com/ontio/ontology/core/types"
+	"github.com/TesraSupernet/Tesra/cmd/utils"
+	"github.com/TesraSupernet/Tesra/common/config"
+	"github.com/TesraSupernet/Tesra/common/log"
+	"github.com/TesraSupernet/Tesra/common/serialization"
+	"github.com/TesraSupernet/Tesra/core/genesis"
+	"github.com/TesraSupernet/Tesra/core/ledger"
+	"github.com/TesraSupernet/Tesra/core/types"
 	"github.com/urfave/cli"
 )
 

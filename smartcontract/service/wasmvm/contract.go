@@ -20,9 +20,9 @@ package wasmvm
 
 import (
 	"github.com/go-interpreter/wagon/exec"
-	"github.com/ontio/ontology/common"
-	"github.com/ontio/ontology/core/payload"
-	"github.com/ontio/ontology/errors"
+	"github.com/TesraSupernet/Tesra/common"
+	"github.com/TesraSupernet/Tesra/core/payload"
+	"github.com/TesraSupernet/Tesra/errors"
 )
 
 func ContractCreate(proc *exec.Process,

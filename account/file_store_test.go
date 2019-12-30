@@ -24,7 +24,7 @@ import (
 	"testing"
 
 	"github.com/TesraSupernet/tesracrypto/keypair"
-	"github.com/ontio/ontology/core/types"
+	"github.com/TesraSupernet/Tesra/core/types"
 	"github.com/stretchr/testify/assert"
 )
 

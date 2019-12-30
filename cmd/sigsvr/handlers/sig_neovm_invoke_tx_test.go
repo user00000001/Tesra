@@ -20,8 +20,8 @@ package handlers
 
 import (
 	"encoding/json"
-	clisvrcom "github.com/ontio/ontology/cmd/sigsvr/common"
-	"github.com/ontio/ontology/cmd/utils"
+	clisvrcom "github.com/TesraSupernet/Tesra/cmd/sigsvr/common"
+	"github.com/TesraSupernet/Tesra/cmd/utils"
 	"testing"
 )
 

@@ -22,12 +22,12 @@ import (
 	"fmt"
 	"math"
 
-	"github.com/ontio/ontology/common"
-	"github.com/ontio/ontology/common/log"
-	"github.com/ontio/ontology/consensus/vbft/config"
-	"github.com/ontio/ontology/core/signature"
-	"github.com/ontio/ontology/p2pserver/message/msg_pack"
-	p2pmsg "github.com/ontio/ontology/p2pserver/message/types"
+	"github.com/TesraSupernet/Tesra/common"
+	"github.com/TesraSupernet/Tesra/common/log"
+	"github.com/TesraSupernet/Tesra/consensus/vbft/config"
+	"github.com/TesraSupernet/Tesra/core/signature"
+	"github.com/TesraSupernet/Tesra/p2pserver/message/msg_pack"
+	p2pmsg "github.com/TesraSupernet/Tesra/p2pserver/message/types"
 )
 
 func (self *Server) GetCurrentBlockNo() uint32 {

@@ -22,9 +22,9 @@ import (
 	"fmt"
 	"io"
 
-	"github.com/ontio/ontology/common"
-	ct "github.com/ontio/ontology/core/types"
-	comm "github.com/ontio/ontology/p2pserver/common"
+	"github.com/TesraSupernet/Tesra/common"
+	ct "github.com/TesraSupernet/Tesra/core/types"
+	comm "github.com/TesraSupernet/Tesra/p2pserver/common"
 )
 
 type BlkHeader struct {

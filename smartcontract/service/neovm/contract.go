@@ -21,10 +21,10 @@ package neovm
 import (
 	"fmt"
 
-	"github.com/ontio/ontology/common"
-	"github.com/ontio/ontology/core/payload"
-	"github.com/ontio/ontology/errors"
-	vm "github.com/ontio/ontology/vm/neovm"
+	"github.com/TesraSupernet/Tesra/common"
+	"github.com/TesraSupernet/Tesra/core/payload"
+	"github.com/TesraSupernet/Tesra/errors"
+	vm "github.com/TesraSupernet/Tesra/vm/neovm"
 )
 
 // ContractCreate create a new smart contract on blockchain, and put it to vm stack

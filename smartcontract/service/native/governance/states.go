@@ -23,9 +23,9 @@ import (
 	"io"
 	"sort"
 
-	"github.com/ontio/ontology/common"
-	"github.com/ontio/ontology/common/serialization"
-	"github.com/ontio/ontology/smartcontract/service/native/utils"
+	"github.com/TesraSupernet/Tesra/common"
+	"github.com/TesraSupernet/Tesra/common/serialization"
+	"github.com/TesraSupernet/Tesra/smartcontract/service/native/utils"
 )
 
 type Status uint8

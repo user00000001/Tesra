@@ -19,8 +19,8 @@
 package db
 
 import (
-	"github.com/ontio/ontology/common"
-	"github.com/ontio/ontology/core/types"
+	"github.com/TesraSupernet/Tesra/common"
+	"github.com/TesraSupernet/Tesra/core/types"
 )
 
 type BestBlock struct {

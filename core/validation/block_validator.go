@@ -22,10 +22,10 @@ import (
 	"errors"
 	"fmt"
 
-	"github.com/ontio/ontology/core/ledger"
-	"github.com/ontio/ontology/core/signature"
-	"github.com/ontio/ontology/core/types"
-	ontErrors "github.com/ontio/ontology/errors"
+	"github.com/TesraSupernet/Tesra/core/ledger"
+	"github.com/TesraSupernet/Tesra/core/signature"
+	"github.com/TesraSupernet/Tesra/core/types"
+	ontErrors "github.com/TesraSupernet/Tesra/errors"
 )
 
 // VerifyBlock checks whether the block is valid

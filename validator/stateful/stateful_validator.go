@@ -20,12 +20,12 @@ package stateful
 
 import (
 	"github.com/TesraSupernet/tesraevent/actor"
-	"github.com/ontio/ontology/common/log"
-	"github.com/ontio/ontology/core/ledger"
-	"github.com/ontio/ontology/core/types"
-	"github.com/ontio/ontology/errors"
-	"github.com/ontio/ontology/validator/db"
-	vatypes "github.com/ontio/ontology/validator/types"
+	"github.com/TesraSupernet/Tesra/common/log"
+	"github.com/TesraSupernet/Tesra/core/ledger"
+	"github.com/TesraSupernet/Tesra/core/types"
+	"github.com/TesraSupernet/Tesra/errors"
+	"github.com/TesraSupernet/Tesra/validator/db"
+	vatypes "github.com/TesraSupernet/Tesra/validator/types"
 	"reflect"
 )
 

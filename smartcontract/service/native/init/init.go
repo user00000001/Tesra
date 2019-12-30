@@ -22,16 +22,16 @@ import (
 	"bytes"
 	"math/big"
 
-	"github.com/ontio/ontology/common"
-	"github.com/ontio/ontology/smartcontract/service/native/auth"
-	params "github.com/ontio/ontology/smartcontract/service/native/global_params"
-	"github.com/ontio/ontology/smartcontract/service/native/governance"
-	"github.com/ontio/ontology/smartcontract/service/native/ong"
-	"github.com/ontio/ontology/smartcontract/service/native/ont"
-	"github.com/ontio/ontology/smartcontract/service/native/ontid"
-	"github.com/ontio/ontology/smartcontract/service/native/utils"
-	"github.com/ontio/ontology/smartcontract/service/neovm"
-	vm "github.com/ontio/ontology/vm/neovm"
+	"github.com/TesraSupernet/Tesra/common"
+	"github.com/TesraSupernet/Tesra/smartcontract/service/native/auth"
+	params "github.com/TesraSupernet/Tesra/smartcontract/service/native/global_params"
+	"github.com/TesraSupernet/Tesra/smartcontract/service/native/governance"
+	"github.com/TesraSupernet/Tesra/smartcontract/service/native/ong"
+	"github.com/TesraSupernet/Tesra/smartcontract/service/native/ont"
+	"github.com/TesraSupernet/Tesra/smartcontract/service/native/ontid"
+	"github.com/TesraSupernet/Tesra/smartcontract/service/native/utils"
+	"github.com/TesraSupernet/Tesra/smartcontract/service/neovm"
+	vm "github.com/TesraSupernet/Tesra/vm/neovm"
 )
 
 var (

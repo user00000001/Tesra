@@ -19,8 +19,8 @@ package handlers
 
 import (
 	"encoding/json"
-	"github.com/ontio/ontology/account"
-	clisvrcom "github.com/ontio/ontology/cmd/sigsvr/common"
+	"github.com/TesraSupernet/Tesra/account"
+	clisvrcom "github.com/TesraSupernet/Tesra/cmd/sigsvr/common"
 	"os"
 	"testing"
 )

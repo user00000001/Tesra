@@ -25,10 +25,10 @@ import (
 	"net"
 	"time"
 
-	comm "github.com/ontio/ontology/common"
-	"github.com/ontio/ontology/common/log"
-	"github.com/ontio/ontology/p2pserver/common"
-	"github.com/ontio/ontology/p2pserver/message/types"
+	comm "github.com/TesraSupernet/Tesra/common"
+	"github.com/TesraSupernet/Tesra/common/log"
+	"github.com/TesraSupernet/Tesra/p2pserver/common"
+	"github.com/TesraSupernet/Tesra/p2pserver/message/types"
 )
 
 //Link used to establish

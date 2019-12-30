@@ -24,7 +24,7 @@ import (
 	"time"
 
 	"github.com/TesraSupernet/tesracrypto/keypair"
-	"github.com/ontio/ontology/consensus/vbft/config"
+	"github.com/TesraSupernet/Tesra/consensus/vbft/config"
 )
 
 type Peer struct {

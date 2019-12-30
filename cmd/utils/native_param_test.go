@@ -21,9 +21,9 @@ package utils
 import (
 	"bytes"
 	"encoding/hex"
-	"github.com/ontio/ontology/cmd/abi"
-	"github.com/ontio/ontology/common"
-	"github.com/ontio/ontology/vm/neovm"
+	"github.com/TesraSupernet/Tesra/cmd/abi"
+	"github.com/TesraSupernet/Tesra/common"
+	"github.com/TesraSupernet/Tesra/vm/neovm"
 	"testing"
 )
 

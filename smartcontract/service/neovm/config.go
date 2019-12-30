@@ -19,7 +19,7 @@
 package neovm
 
 import (
-	"github.com/ontio/ontology/common/config"
+	"github.com/TesraSupernet/Tesra/common/config"
 	"sync"
 )
 

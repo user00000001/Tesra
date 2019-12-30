@@ -22,11 +22,11 @@ import (
 	"fmt"
 
 	"github.com/TesraSupernet/tesracrypto/keypair"
-	"github.com/ontio/ontology/account"
-	"github.com/ontio/ontology/common"
-	"github.com/ontio/ontology/core/states"
-	"github.com/ontio/ontology/smartcontract/service/native"
-	"github.com/ontio/ontology/smartcontract/service/native/utils"
+	"github.com/TesraSupernet/Tesra/account"
+	"github.com/TesraSupernet/Tesra/common"
+	"github.com/TesraSupernet/Tesra/core/states"
+	"github.com/TesraSupernet/Tesra/smartcontract/service/native"
+	"github.com/TesraSupernet/Tesra/smartcontract/service/native/utils"
 )
 
 func regIdWithController(srvc *native.NativeService) ([]byte, error) {

@@ -21,9 +21,9 @@ package cmd
 import (
 	"encoding/hex"
 	"fmt"
-	"github.com/ontio/ontology/cmd/utils"
-	"github.com/ontio/ontology/core/types"
-	httpcom "github.com/ontio/ontology/http/base/common"
+	"github.com/TesraSupernet/Tesra/cmd/utils"
+	"github.com/TesraSupernet/Tesra/core/types"
+	httpcom "github.com/TesraSupernet/Tesra/http/base/common"
 	"github.com/urfave/cli"
 	"strconv"
 )

@@ -21,9 +21,9 @@ package vconfig
 import (
 	"testing"
 
-	"github.com/ontio/ontology/common"
-	"github.com/ontio/ontology/common/config"
-	"github.com/ontio/ontology/common/log"
+	"github.com/TesraSupernet/Tesra/common"
+	"github.com/TesraSupernet/Tesra/common/config"
+	"github.com/TesraSupernet/Tesra/common/log"
 )
 
 func constructConfig() (*config.VBFTConfig, error) {

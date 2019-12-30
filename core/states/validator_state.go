@@ -20,8 +20,8 @@ package states
 
 import (
 	"github.com/TesraSupernet/tesracrypto/keypair"
-	"github.com/ontio/ontology/common"
-	"github.com/ontio/ontology/errors"
+	"github.com/TesraSupernet/Tesra/common"
+	"github.com/TesraSupernet/Tesra/errors"
 	"io"
 )
 

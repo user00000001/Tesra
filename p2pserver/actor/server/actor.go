@@ -22,9 +22,9 @@ import (
 	"reflect"
 
 	"github.com/TesraSupernet/tesraevent/actor"
-	"github.com/ontio/ontology/common/log"
-	"github.com/ontio/ontology/p2pserver"
-	"github.com/ontio/ontology/p2pserver/common"
+	"github.com/TesraSupernet/Tesra/common/log"
+	"github.com/TesraSupernet/Tesra/p2pserver"
+	"github.com/TesraSupernet/Tesra/p2pserver/common"
 )
 
 type P2PActor struct {

@@ -22,12 +22,12 @@ import (
 	"time"
 
 	"github.com/TesraSupernet/tesraevent/actor"
-	"github.com/ontio/ontology/common"
-	"github.com/ontio/ontology/common/log"
-	"github.com/ontio/ontology/core/types"
-	"github.com/ontio/ontology/errors"
-	p2pcommon "github.com/ontio/ontology/p2pserver/common"
-	tc "github.com/ontio/ontology/txnpool/common"
+	"github.com/TesraSupernet/Tesra/common"
+	"github.com/TesraSupernet/Tesra/common/log"
+	"github.com/TesraSupernet/Tesra/core/types"
+	"github.com/TesraSupernet/Tesra/errors"
+	p2pcommon "github.com/TesraSupernet/Tesra/p2pserver/common"
+	tc "github.com/TesraSupernet/Tesra/txnpool/common"
 )
 
 const txnPoolReqTimeout = p2pcommon.ACTOR_TIMEOUT * time.Second

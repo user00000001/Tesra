@@ -19,9 +19,9 @@
 package context
 
 import (
-	"github.com/ontio/ontology/common"
-	"github.com/ontio/ontology/core/types"
-	"github.com/ontio/ontology/smartcontract/event"
+	"github.com/TesraSupernet/Tesra/common"
+	"github.com/TesraSupernet/Tesra/core/types"
+	"github.com/TesraSupernet/Tesra/smartcontract/event"
 )
 
 // ContextRef is a interface of smart context

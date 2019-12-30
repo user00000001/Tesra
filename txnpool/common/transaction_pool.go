@@ -23,12 +23,12 @@ import (
 	"sort"
 	"sync"
 
-	"github.com/ontio/ontology/common"
-	"github.com/ontio/ontology/common/config"
-	"github.com/ontio/ontology/common/log"
-	"github.com/ontio/ontology/core/types"
-	"github.com/ontio/ontology/errors"
-	vt "github.com/ontio/ontology/validator/types"
+	"github.com/TesraSupernet/Tesra/common"
+	"github.com/TesraSupernet/Tesra/common/config"
+	"github.com/TesraSupernet/Tesra/common/log"
+	"github.com/TesraSupernet/Tesra/core/types"
+	"github.com/TesraSupernet/Tesra/errors"
+	vt "github.com/TesraSupernet/Tesra/validator/types"
 )
 
 type TXAttr struct {

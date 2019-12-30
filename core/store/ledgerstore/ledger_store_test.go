@@ -21,10 +21,10 @@ package ledgerstore
 import (
 	"fmt"
 	"github.com/TesraSupernet/tesracrypto/keypair"
-	"github.com/ontio/ontology/account"
-	"github.com/ontio/ontology/common/config"
-	"github.com/ontio/ontology/common/log"
-	"github.com/ontio/ontology/core/genesis"
+	"github.com/TesraSupernet/Tesra/account"
+	"github.com/TesraSupernet/Tesra/common/config"
+	"github.com/TesraSupernet/Tesra/common/log"
+	"github.com/TesraSupernet/Tesra/core/genesis"
 	"os"
 	"testing"
 )

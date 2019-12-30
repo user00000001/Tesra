@@ -26,9 +26,9 @@ import (
 	"sort"
 	"strconv"
 
-	"github.com/ontio/ontology/common/config"
-	"github.com/ontio/ontology/core/ledger"
-	p2p "github.com/ontio/ontology/p2pserver/net/protocol"
+	"github.com/TesraSupernet/Tesra/common/config"
+	"github.com/TesraSupernet/Tesra/core/ledger"
+	p2p "github.com/TesraSupernet/Tesra/p2pserver/net/protocol"
 )
 
 type Info struct {

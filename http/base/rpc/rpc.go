@@ -22,9 +22,9 @@ package rpc
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/ontio/ontology/common/log"
-	"github.com/ontio/ontology/http/base/common"
-	berr "github.com/ontio/ontology/http/base/error"
+	"github.com/TesraSupernet/Tesra/common/log"
+	"github.com/TesraSupernet/Tesra/http/base/common"
+	berr "github.com/TesraSupernet/Tesra/http/base/error"
 	"io"
 	"io/ioutil"
 	"net/http"

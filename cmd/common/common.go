@@ -20,11 +20,11 @@ package common
 
 import (
 	"fmt"
-	"github.com/ontio/ontology/account"
-	"github.com/ontio/ontology/cmd/utils"
-	"github.com/ontio/ontology/common"
-	"github.com/ontio/ontology/common/config"
-	"github.com/ontio/ontology/common/password"
+	"github.com/TesraSupernet/Tesra/account"
+	"github.com/TesraSupernet/Tesra/cmd/utils"
+	"github.com/TesraSupernet/Tesra/common"
+	"github.com/TesraSupernet/Tesra/common/config"
+	"github.com/TesraSupernet/Tesra/common/password"
 	"github.com/urfave/cli"
 	"strconv"
 )

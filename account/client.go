@@ -28,8 +28,8 @@ import (
 
 	"github.com/TesraSupernet/tesracrypto/keypair"
 	s "github.com/TesraSupernet/tesracrypto/signature"
-	"github.com/ontio/ontology/common"
-	"github.com/ontio/ontology/core/types"
+	"github.com/TesraSupernet/Tesra/common"
+	"github.com/TesraSupernet/Tesra/core/types"
 )
 
 //Client of wallet

@@ -24,11 +24,11 @@ import (
 	"testing"
 	"time"
 
-	"github.com/ontio/ontology/common"
-	"github.com/ontio/ontology/core/types"
-	"github.com/ontio/ontology/errors"
-	tc "github.com/ontio/ontology/txnpool/common"
-	vt "github.com/ontio/ontology/validator/types"
+	"github.com/TesraSupernet/Tesra/common"
+	"github.com/TesraSupernet/Tesra/core/types"
+	"github.com/TesraSupernet/Tesra/errors"
+	tc "github.com/TesraSupernet/Tesra/txnpool/common"
+	vt "github.com/TesraSupernet/Tesra/validator/types"
 	"github.com/stretchr/testify/assert"
 )
 

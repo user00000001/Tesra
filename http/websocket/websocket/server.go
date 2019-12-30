@@ -30,12 +30,12 @@ import (
 	"time"
 
 	"github.com/gorilla/websocket"
-	"github.com/ontio/ontology/common"
-	cfg "github.com/ontio/ontology/common/config"
-	"github.com/ontio/ontology/common/log"
-	Err "github.com/ontio/ontology/http/base/error"
-	"github.com/ontio/ontology/http/base/rest"
-	"github.com/ontio/ontology/http/websocket/session"
+	"github.com/TesraSupernet/Tesra/common"
+	cfg "github.com/TesraSupernet/Tesra/common/config"
+	"github.com/TesraSupernet/Tesra/common/log"
+	Err "github.com/TesraSupernet/Tesra/http/base/error"
+	"github.com/TesraSupernet/Tesra/http/base/rest"
+	"github.com/TesraSupernet/Tesra/http/websocket/session"
 )
 
 const (

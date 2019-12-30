@@ -2,9 +2,9 @@
 <h1 align="center">Ontology </h1>
 <h4 align="center">Version 1.8.0 </h4>
 
-[![GoDoc](https://godoc.org/github.com/ontio/ontology?status.svg)](https://godoc.org/github.com/ontio/ontology)
-[![Go Report Card](https://goreportcard.com/badge/github.com/ontio/ontology)](https://goreportcard.com/report/github.com/ontio/ontology)
-[![Travis](https://travis-ci.com/ontio/ontology.svg?branch=master)](https://travis-ci.com/ontio/ontology)
+[![GoDoc](https://godoc.org/github.com/TesraSupernet/Tesra?status.svg)](https://godoc.org/github.com/TesraSupernet/Tesra)
+[![Go Report Card](https://goreportcard.com/badge/github.com/TesraSupernet/Tesra)](https://goreportcard.com/report/github.com/TesraSupernet/Tesra)
+[![Travis](https://travis-ci.com/TesraSupernet/Tesra.svg?branch=master)](https://travis-ci.com/TesraSupernet/Tesra)
 [![Discord](https://img.shields.io/discord/102860784329052160.svg)](https://discord.gg/gDkuCAq)
 
 [English](README.md) | 中文
@@ -14,7 +14,7 @@
 Ontology致力于创建一个组件化、可自由配置、跨链支持、高性能、横向可扩展的区块链底层基础设施。 让部署及调用去中心化应用变得更加非常简单。
 
 Ontology MainNet 已经在2018年6月30日成功上线。<br>
-但很多新的功能还处于快速的开发过程中，master分支的代码可能是不稳定的，稳定的版本可以在[releases](https://github.com/ontio/ontology/releases)中下载。
+但很多新的功能还处于快速的开发过程中，master分支的代码可能是不稳定的，稳定的版本可以在[releases](https://github.com/TesraSupernet/Tesra/releases)中下载。
 
 公开的主网和测试网都可以在下面找到，也非常欢迎及希望能有更多的开发者加入到Ontology中来。
 
@@ -61,30 +61,30 @@ Ontology MainNet 已经在2018年6月30日成功上线。<br>
 
 ### 从release获取
 - 你可以通过命令 ` curl https://dev.ont.io/ontology_install | sh ` 获取最新的ontology版本
-- 你也可以从[下载页面](https://github.com/ontio/ontology/releases)获取.
+- 你也可以从[下载页面](https://github.com/TesraSupernet/Tesra/releases)获取.
 
 ### 从源码获取
 克隆ontology仓库到 **$GOPATH/src/github.com/ontio** 目录
 
 ```shell
-$ git clone https://github.com/ontio/ontology.git
+$ git clone https://github.com/TesraSupernet/Tesra.git
 ```
 或者
 ```shell
-$ go get github.com/ontio/ontology
+$ go get github.com/TesraSupernet/Tesra
 ```
 
 用第三方包管理工具glide拉取依赖库
 
 ````shell
-$ cd $GOPATH/src/github.com/ontio/ontology
+$ cd $GOPATH/src/github.com/TesraSupernet/Tesra
 $ glide install
 ````
 
 如果项目有新的第三方依赖包，使用glide更新依赖库
 
 ````shell
-$ cd $GOPATH/src/github.com/ontio/ontology
+$ cd $GOPATH/src/github.com/TesraSupernet/Tesra
 $ glide update
 ````
 
@@ -147,13 +147,13 @@ $ make all
 
 2. 运行ontology镜像
 
-    - 使用命令`docker run ontio/ontology`运行ontology；
+    - 使用命令`docker run TesraSupernet/Tesra`运行ontology；
 
-    - 如果需要使镜像运行时接受交互式键盘输入，则使用`docker run -ti ontio/ontology`命令启动镜像即可；
+    - 如果需要使镜像运行时接受交互式键盘输入，则使用`docker run -ti TesraSupernet/Tesra`命令启动镜像即可；
 
     - 如果需要保留镜像每次运行时的数据，可以参考docker的数据持久化功能（例如 valume）；
 
-    - 如果需要使用ontology参数，则在`docker run ontio/ontology`后面直接加参数即可，例如`docker run ontio/ontology --networkid 2`，具体的ontology命令
+    - 如果需要使用ontology参数，则在`docker run TesraSupernet/Tesra`后面直接加参数即可，例如`docker run TesraSupernet/Tesra --networkid 2`，具体的ontology命令
     行参数可以参考[这里](./docs/specifications/cli_user_guide_CN.md)。
 
 ## 使用示例

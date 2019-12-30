@@ -18,8 +18,8 @@
 package ontid
 
 import (
-	"github.com/ontio/ontology/smartcontract/service/native"
-	"github.com/ontio/ontology/smartcontract/service/native/utils"
+	"github.com/TesraSupernet/Tesra/smartcontract/service/native"
+	"github.com/TesraSupernet/Tesra/smartcontract/service/native/utils"
 )
 
 func Init() {

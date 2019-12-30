@@ -21,16 +21,16 @@ import (
 	"bytes"
 
 	"encoding/json"
-	utils2 "github.com/ontio/ontology/cmd/utils"
-	"github.com/ontio/ontology/core/payload"
-	"github.com/ontio/ontology/core/utils"
-	common2 "github.com/ontio/ontology/http/base/common"
-	"github.com/ontio/ontology/smartcontract/states"
+	utils2 "github.com/TesraSupernet/Tesra/cmd/utils"
+	"github.com/TesraSupernet/Tesra/core/payload"
+	"github.com/TesraSupernet/Tesra/core/utils"
+	common2 "github.com/TesraSupernet/Tesra/http/base/common"
+	"github.com/TesraSupernet/Tesra/smartcontract/states"
 
-	"github.com/ontio/ontology/common"
-	"github.com/ontio/ontology/core/types"
-	// neovms "github.com/ontio/ontology/smartcontract/service/neovm"
-	neovm "github.com/ontio/ontology/vm/neovm"
+	"github.com/TesraSupernet/Tesra/common"
+	"github.com/TesraSupernet/Tesra/core/types"
+	// neovms "github.com/TesraSupernet/Tesra/smartcontract/service/neovm"
+	neovm "github.com/TesraSupernet/Tesra/vm/neovm"
 )
 
 type TestEnv struct {

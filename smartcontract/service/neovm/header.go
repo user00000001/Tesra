@@ -20,9 +20,9 @@ package neovm
 
 import (
 	"fmt"
-	"github.com/ontio/ontology/core/types"
-	"github.com/ontio/ontology/errors"
-	vm "github.com/ontio/ontology/vm/neovm"
+	"github.com/TesraSupernet/Tesra/core/types"
+	"github.com/TesraSupernet/Tesra/errors"
+	vm "github.com/TesraSupernet/Tesra/vm/neovm"
 )
 
 // HeaderGetHash put header's hash to vm stack

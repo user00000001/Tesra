@@ -19,12 +19,12 @@
 package actor
 
 import (
-	"github.com/ontio/ontology/common"
-	"github.com/ontio/ontology/core/ledger"
-	"github.com/ontio/ontology/core/payload"
-	"github.com/ontio/ontology/core/types"
-	"github.com/ontio/ontology/smartcontract/event"
-	cstate "github.com/ontio/ontology/smartcontract/states"
+	"github.com/TesraSupernet/Tesra/common"
+	"github.com/TesraSupernet/Tesra/core/ledger"
+	"github.com/TesraSupernet/Tesra/core/payload"
+	"github.com/TesraSupernet/Tesra/core/types"
+	"github.com/TesraSupernet/Tesra/smartcontract/event"
+	cstate "github.com/TesraSupernet/Tesra/smartcontract/states"
 )
 
 const (

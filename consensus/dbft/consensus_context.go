@@ -22,13 +22,13 @@ import (
 	"fmt"
 
 	"github.com/TesraSupernet/tesracrypto/keypair"
-	"github.com/ontio/ontology/account"
-	"github.com/ontio/ontology/common"
-	"github.com/ontio/ontology/common/log"
-	"github.com/ontio/ontology/core/ledger"
-	"github.com/ontio/ontology/core/types"
-	"github.com/ontio/ontology/core/vote"
-	msg "github.com/ontio/ontology/p2pserver/message/types"
+	"github.com/TesraSupernet/Tesra/account"
+	"github.com/TesraSupernet/Tesra/common"
+	"github.com/TesraSupernet/Tesra/common/log"
+	"github.com/TesraSupernet/Tesra/core/ledger"
+	"github.com/TesraSupernet/Tesra/core/types"
+	"github.com/TesraSupernet/Tesra/core/vote"
+	msg "github.com/TesraSupernet/Tesra/p2pserver/message/types"
 )
 
 const ContextVersion uint32 = 0

@@ -24,9 +24,9 @@ import (
 	"strconv"
 
 	"fmt"
-	cfg "github.com/ontio/ontology/common/config"
-	"github.com/ontio/ontology/common/log"
-	"github.com/ontio/ontology/http/base/rpc"
+	cfg "github.com/TesraSupernet/Tesra/common/config"
+	"github.com/TesraSupernet/Tesra/common/log"
+	"github.com/TesraSupernet/Tesra/http/base/rpc"
 )
 
 const (

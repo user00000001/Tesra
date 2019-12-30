@@ -20,7 +20,7 @@ package actor
 
 import (
 	"github.com/TesraSupernet/tesraevent/actor"
-	cactor "github.com/ontio/ontology/consensus/actor"
+	cactor "github.com/TesraSupernet/Tesra/consensus/actor"
 )
 
 var consensusSrvPid *actor.PID

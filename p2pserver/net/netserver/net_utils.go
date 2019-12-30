@@ -27,9 +27,9 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/ontio/ontology/common/config"
-	"github.com/ontio/ontology/common/log"
-	"github.com/ontio/ontology/p2pserver/common"
+	"github.com/TesraSupernet/Tesra/common/config"
+	"github.com/TesraSupernet/Tesra/common/log"
+	"github.com/TesraSupernet/Tesra/p2pserver/common"
 )
 
 // createListener creates a net listener on the port
