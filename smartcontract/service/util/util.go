@@ -21,12 +21,12 @@ import (
 	"bytes"
 
 	"errors"
-	"github.com/ontio/ontology/common"
-	"github.com/ontio/ontology/core/utils"
-	"github.com/ontio/ontology/smartcontract/context"
-	neovms "github.com/ontio/ontology/smartcontract/service/neovm"
-	"github.com/ontio/ontology/vm/crossvm_codec"
-	"github.com/ontio/ontology/vm/neovm"
+	"github.com/TesraSupernet/Tesra/common"
+	"github.com/TesraSupernet/Tesra/core/utils"
+	"github.com/TesraSupernet/Tesra/smartcontract/context"
+	neovms "github.com/TesraSupernet/Tesra/smartcontract/service/neovm"
+	"github.com/TesraSupernet/Tesra/vm/crossvm_codec"
+	"github.com/TesraSupernet/Tesra/vm/neovm"
 )
 
 func BuildNeoVMParamEvalStack(params []interface{}) (*neovm.ValueStack, error) {

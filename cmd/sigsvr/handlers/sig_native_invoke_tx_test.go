@@ -22,9 +22,9 @@ import (
 	"encoding/json"
 	"github.com/TesraSupernet/tesracrypto/keypair"
 	"github.com/TesraSupernet/tesracrypto/signature"
-	"github.com/ontio/ontology/cmd/abi"
-	clisvrcom "github.com/ontio/ontology/cmd/sigsvr/common"
-	nutils "github.com/ontio/ontology/smartcontract/service/native/utils"
+	"github.com/TesraSupernet/Tesra/cmd/abi"
+	clisvrcom "github.com/TesraSupernet/Tesra/cmd/sigsvr/common"
+	nutils "github.com/TesraSupernet/Tesra/smartcontract/service/native/utils"
 	"testing"
 )
 

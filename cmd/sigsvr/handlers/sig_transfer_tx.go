@@ -21,10 +21,10 @@ package handlers
 import (
 	"encoding/hex"
 	"encoding/json"
-	clisvrcom "github.com/ontio/ontology/cmd/sigsvr/common"
-	cliutil "github.com/ontio/ontology/cmd/utils"
-	"github.com/ontio/ontology/common"
-	"github.com/ontio/ontology/common/log"
+	clisvrcom "github.com/TesraSupernet/Tesra/cmd/sigsvr/common"
+	cliutil "github.com/TesraSupernet/Tesra/cmd/utils"
+	"github.com/TesraSupernet/Tesra/common"
+	"github.com/TesraSupernet/Tesra/common/log"
 	"strconv"
 )
 

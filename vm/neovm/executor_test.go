@@ -19,7 +19,7 @@
 package neovm
 
 import (
-	"github.com/ontio/ontology/vm/neovm/types"
+	"github.com/TesraSupernet/Tesra/vm/neovm/types"
 	"testing"
 )
 

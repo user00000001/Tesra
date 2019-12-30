@@ -22,10 +22,10 @@ import (
 	"fmt"
 	"sort"
 
-	"github.com/ontio/ontology/common"
-	"github.com/ontio/ontology/smartcontract/event"
-	"github.com/ontio/ontology/smartcontract/service/native"
-	"github.com/ontio/ontology/smartcontract/service/native/utils"
+	"github.com/TesraSupernet/Tesra/common"
+	"github.com/TesraSupernet/Tesra/smartcontract/event"
+	"github.com/TesraSupernet/Tesra/smartcontract/service/native"
+	"github.com/TesraSupernet/Tesra/smartcontract/service/native/utils"
 )
 
 var (

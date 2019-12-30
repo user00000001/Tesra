@@ -30,8 +30,8 @@ import (
 	"math/big"
 	"testing"
 
-	"github.com/ontio/ontology/vm/neovm/interfaces"
-	"github.com/ontio/ontology/vm/neovm/types"
+	"github.com/TesraSupernet/Tesra/vm/neovm/interfaces"
+	"github.com/TesraSupernet/Tesra/vm/neovm/types"
 	"github.com/stretchr/testify/assert"
 )
 

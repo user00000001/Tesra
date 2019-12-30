@@ -20,11 +20,11 @@ package consensus
 
 import (
 	"github.com/TesraSupernet/tesraevent/actor"
-	"github.com/ontio/ontology/account"
-	"github.com/ontio/ontology/common/log"
-	"github.com/ontio/ontology/consensus/dbft"
-	"github.com/ontio/ontology/consensus/solo"
-	"github.com/ontio/ontology/consensus/vbft"
+	"github.com/TesraSupernet/Tesra/account"
+	"github.com/TesraSupernet/Tesra/common/log"
+	"github.com/TesraSupernet/Tesra/consensus/dbft"
+	"github.com/TesraSupernet/Tesra/consensus/solo"
+	"github.com/TesraSupernet/Tesra/consensus/vbft"
 )
 
 type ConsensusService interface {

@@ -23,11 +23,11 @@ import (
 	"encoding/binary"
 	"fmt"
 
-	"github.com/ontio/ontology/common"
-	"github.com/ontio/ontology/common/serialization"
-	scom "github.com/ontio/ontology/core/store/common"
-	"github.com/ontio/ontology/core/store/leveldbstore"
-	"github.com/ontio/ontology/core/types"
+	"github.com/TesraSupernet/Tesra/common"
+	"github.com/TesraSupernet/Tesra/common/serialization"
+	scom "github.com/TesraSupernet/Tesra/core/store/common"
+	"github.com/TesraSupernet/Tesra/core/store/leveldbstore"
+	"github.com/TesraSupernet/Tesra/core/types"
 	"io"
 )
 

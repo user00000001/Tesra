@@ -19,9 +19,9 @@ package common
 
 import (
 	"github.com/TesraSupernet/tesracrypto/keypair"
-	"github.com/ontio/ontology/common"
-	"github.com/ontio/ontology/core/payload"
-	"github.com/ontio/ontology/core/types"
+	"github.com/TesraSupernet/Tesra/common"
+	"github.com/TesraSupernet/Tesra/core/payload"
+	"github.com/TesraSupernet/Tesra/core/types"
 )
 
 type PayloadInfo interface{}

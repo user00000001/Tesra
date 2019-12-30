@@ -20,7 +20,7 @@ package types
 
 import (
 	"bytes"
-	"github.com/ontio/ontology/vm/neovm/interfaces"
+	"github.com/TesraSupernet/Tesra/vm/neovm/interfaces"
 )
 
 type InteropValue struct {

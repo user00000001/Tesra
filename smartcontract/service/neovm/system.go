@@ -19,8 +19,8 @@
 package neovm
 
 import (
-	"github.com/ontio/ontology/errors"
-	vm "github.com/ontio/ontology/vm/neovm"
+	"github.com/TesraSupernet/Tesra/errors"
+	vm "github.com/TesraSupernet/Tesra/vm/neovm"
 )
 
 // GetCodeContainer push current transaction to vm stack

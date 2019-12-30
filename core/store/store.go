@@ -20,13 +20,13 @@ package store
 
 import (
 	"github.com/TesraSupernet/tesracrypto/keypair"
-	"github.com/ontio/ontology/common"
-	"github.com/ontio/ontology/core/payload"
-	"github.com/ontio/ontology/core/states"
-	"github.com/ontio/ontology/core/store/overlaydb"
-	"github.com/ontio/ontology/core/types"
-	"github.com/ontio/ontology/smartcontract/event"
-	cstates "github.com/ontio/ontology/smartcontract/states"
+	"github.com/TesraSupernet/Tesra/common"
+	"github.com/TesraSupernet/Tesra/core/payload"
+	"github.com/TesraSupernet/Tesra/core/states"
+	"github.com/TesraSupernet/Tesra/core/store/overlaydb"
+	"github.com/TesraSupernet/Tesra/core/types"
+	"github.com/TesraSupernet/Tesra/smartcontract/event"
+	cstates "github.com/TesraSupernet/Tesra/smartcontract/states"
 )
 
 type ExecuteResult struct {

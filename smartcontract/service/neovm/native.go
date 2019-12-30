@@ -20,10 +20,10 @@ package neovm
 
 import (
 	"fmt"
-	"github.com/ontio/ontology/common"
-	"github.com/ontio/ontology/smartcontract/service/native"
-	"github.com/ontio/ontology/smartcontract/states"
-	vm "github.com/ontio/ontology/vm/neovm"
+	"github.com/TesraSupernet/Tesra/common"
+	"github.com/TesraSupernet/Tesra/smartcontract/service/native"
+	"github.com/TesraSupernet/Tesra/smartcontract/states"
+	vm "github.com/TesraSupernet/Tesra/vm/neovm"
 )
 
 func NativeInvoke(service *NeoVmService, engine *vm.Executor) error {

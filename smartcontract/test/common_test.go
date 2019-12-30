@@ -21,10 +21,10 @@ package test
 import (
 	"testing"
 
-	"github.com/ontio/ontology/common"
-	"github.com/ontio/ontology/core/types"
-	"github.com/ontio/ontology/smartcontract"
-	"github.com/ontio/ontology/vm/neovm"
+	"github.com/TesraSupernet/Tesra/common"
+	"github.com/TesraSupernet/Tesra/core/types"
+	"github.com/TesraSupernet/Tesra/smartcontract"
+	"github.com/TesraSupernet/Tesra/vm/neovm"
 	"github.com/stretchr/testify/assert"
 )
 

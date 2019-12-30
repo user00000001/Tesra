@@ -22,9 +22,9 @@ import (
 	"testing"
 	"time"
 
-	"github.com/ontio/ontology/common/log"
-	"github.com/ontio/ontology/core/payload"
-	"github.com/ontio/ontology/core/types"
+	"github.com/TesraSupernet/Tesra/common/log"
+	"github.com/TesraSupernet/Tesra/core/payload"
+	"github.com/TesraSupernet/Tesra/core/types"
 	"github.com/stretchr/testify/assert"
 )
 

@@ -21,7 +21,7 @@ package db
 import (
 	pool "github.com/valyala/bytebufferpool"
 
-	"github.com/ontio/ontology/common"
+	"github.com/TesraSupernet/Tesra/common"
 )
 
 // DataEntryPrefix

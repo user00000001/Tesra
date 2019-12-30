@@ -23,12 +23,12 @@ package txnpool
 import (
 	"fmt"
 
+	events "github.com/TesraSupernet/Tesra/events"
+	"github.com/TesraSupernet/Tesra/events/message"
+	tc "github.com/TesraSupernet/Tesra/txnpool/common"
+	tp "github.com/TesraSupernet/Tesra/txnpool/pro"
 	"github.com/TesraSupernet/tesraevent/actor"
-	"github.com/TesraSupernet/tesraevent/mailbox"
-	"github.com/ontio/ontology/events"
-	"github.com/ontio/ontology/events/message"
-	tc "github.com/ontio/ontology/txnpool/common"
-	tp "github.com/ontio/ontology/txnpool/proc"
+	"github.com/TesraSupernet/tesraevent/mailboxc"
 )
 
 // startActor starts an actor with the proxy and unique id,

@@ -19,9 +19,9 @@
 package types
 
 import (
-	comm "github.com/ontio/ontology/common"
-	"github.com/ontio/ontology/core/types"
-	"github.com/ontio/ontology/p2pserver/common"
+	comm "github.com/TesraSupernet/Tesra/common"
+	"github.com/TesraSupernet/Tesra/core/types"
+	"github.com/TesraSupernet/Tesra/p2pserver/common"
 )
 
 // Transaction message

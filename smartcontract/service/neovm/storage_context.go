@@ -20,8 +20,8 @@ package neovm
 
 import (
 	"fmt"
-	"github.com/ontio/ontology/common"
-	vm "github.com/ontio/ontology/vm/neovm"
+	"github.com/TesraSupernet/Tesra/common"
+	vm "github.com/TesraSupernet/Tesra/vm/neovm"
 )
 
 // StorageContext store smart contract address

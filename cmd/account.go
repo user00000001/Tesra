@@ -23,9 +23,9 @@ import (
 	"fmt"
 	"github.com/TesraSupernet/tesracrypto/keypair"
 	s "github.com/TesraSupernet/tesracrypto/signature"
-	"github.com/ontio/ontology/cmd/common"
-	"github.com/ontio/ontology/cmd/utils"
-	"github.com/ontio/ontology/common/config"
+	"github.com/TesraSupernet/Tesra/cmd/common"
+	"github.com/TesraSupernet/Tesra/cmd/utils"
+	"github.com/TesraSupernet/Tesra/common/config"
 	"github.com/urfave/cli"
 	"strings"
 )

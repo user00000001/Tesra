@@ -19,8 +19,8 @@
 package neovm
 
 import (
-	"github.com/ontio/ontology/vm/neovm/interfaces"
-	"github.com/ontio/ontology/vm/neovm/types"
+	"github.com/TesraSupernet/Tesra/vm/neovm/interfaces"
+	"github.com/TesraSupernet/Tesra/vm/neovm/types"
 )
 
 func (self *ValueStack) PushBool(val bool) error {

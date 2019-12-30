@@ -21,7 +21,7 @@ package payload
 import (
 	"io"
 
-	"github.com/ontio/ontology/common"
+	"github.com/TesraSupernet/Tesra/common"
 )
 
 // InvokeCode is an implementation of transaction payload for invoke smartcontract

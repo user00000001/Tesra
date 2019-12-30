@@ -25,16 +25,16 @@ import (
 	"time"
 
 	"github.com/TesraSupernet/tesraevent/actor"
-	"github.com/ontio/ontology/common/config"
-	"github.com/ontio/ontology/common/log"
-	"github.com/ontio/ontology/core/genesis"
-	"github.com/ontio/ontology/core/ledger"
-	"github.com/ontio/ontology/core/payload"
-	"github.com/ontio/ontology/core/types"
-	tc "github.com/ontio/ontology/txnpool/common"
-	tp "github.com/ontio/ontology/txnpool/proc"
-	"github.com/ontio/ontology/validator/stateful"
-	"github.com/ontio/ontology/validator/stateless"
+	"github.com/TesraSupernet/Tesra/common/config"
+	"github.com/TesraSupernet/Tesra/common/log"
+	"github.com/TesraSupernet/Tesra/core/genesis"
+	"github.com/TesraSupernet/Tesra/core/ledger"
+	"github.com/TesraSupernet/Tesra/core/payload"
+	"github.com/TesraSupernet/Tesra/core/types"
+	tc "github.com/TesraSupernet/Tesra/txnpool/common"
+	tp "github.com/TesraSupernet/Tesra/txnpool/proc"
+	"github.com/TesraSupernet/Tesra/validator/stateful"
+	"github.com/TesraSupernet/Tesra/validator/stateless"
 )
 
 func TestMain(m *testing.M) {

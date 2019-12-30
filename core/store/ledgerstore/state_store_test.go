@@ -22,8 +22,8 @@ import (
 	"math/rand"
 	"testing"
 
-	"github.com/ontio/ontology/common"
-	"github.com/ontio/ontology/merkle"
+	"github.com/TesraSupernet/Tesra/common"
+	"github.com/TesraSupernet/Tesra/merkle"
 	"github.com/stretchr/testify/assert"
 )
 

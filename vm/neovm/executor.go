@@ -24,11 +24,11 @@ import (
 	"fmt"
 
 	"github.com/TesraSupernet/tesracrypto/keypair"
-	"github.com/ontio/ontology/common"
-	"github.com/ontio/ontology/core/signature"
-	"github.com/ontio/ontology/vm/neovm/constants"
-	"github.com/ontio/ontology/vm/neovm/errors"
-	"github.com/ontio/ontology/vm/neovm/types"
+	"github.com/TesraSupernet/Tesra/common"
+	"github.com/TesraSupernet/Tesra/core/signature"
+	"github.com/TesraSupernet/Tesra/vm/neovm/constants"
+	"github.com/TesraSupernet/Tesra/vm/neovm/errors"
+	"github.com/TesraSupernet/Tesra/vm/neovm/types"
 	"golang.org/x/crypto/ripemd160"
 )
 

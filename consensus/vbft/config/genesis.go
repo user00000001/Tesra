@@ -28,9 +28,9 @@ import (
 	"strings"
 	"time"
 
-	"github.com/ontio/ontology/common"
-	"github.com/ontio/ontology/common/config"
-	"github.com/ontio/ontology/common/log"
+	"github.com/TesraSupernet/Tesra/common"
+	"github.com/TesraSupernet/Tesra/common/config"
+	"github.com/TesraSupernet/Tesra/common/log"
 )
 
 func shuffle_hash(txid common.Uint256, height uint32, id string, idx int) (uint64, error) {

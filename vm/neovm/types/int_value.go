@@ -22,9 +22,9 @@ import (
 	"math/big"
 
 	"github.com/JohnCGriffin/overflow"
-	"github.com/ontio/ontology/common"
-	"github.com/ontio/ontology/vm/neovm/constants"
-	"github.com/ontio/ontology/vm/neovm/errors"
+	"github.com/TesraSupernet/Tesra/common"
+	"github.com/TesraSupernet/Tesra/vm/neovm/constants"
+	"github.com/TesraSupernet/Tesra/vm/neovm/errors"
 	"math"
 )
 

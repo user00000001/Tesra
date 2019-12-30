@@ -21,8 +21,8 @@ package states
 import (
 	"io"
 
-	"github.com/ontio/ontology/common"
-	"github.com/ontio/ontology/errors"
+	"github.com/TesraSupernet/Tesra/common"
+	"github.com/TesraSupernet/Tesra/errors"
 )
 
 type StorageItem struct {

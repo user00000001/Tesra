@@ -20,17 +20,17 @@
 package websocket
 
 import (
-	"github.com/ontio/ontology/common"
-	cfg "github.com/ontio/ontology/common/config"
-	"github.com/ontio/ontology/common/log"
-	"github.com/ontio/ontology/core/types"
-	"github.com/ontio/ontology/events/message"
-	bactor "github.com/ontio/ontology/http/base/actor"
-	bcomn "github.com/ontio/ontology/http/base/common"
-	Err "github.com/ontio/ontology/http/base/error"
-	"github.com/ontio/ontology/http/base/rest"
-	"github.com/ontio/ontology/http/websocket/websocket"
-	"github.com/ontio/ontology/smartcontract/event"
+	"github.com/TesraSupernet/Tesra/common"
+	cfg "github.com/TesraSupernet/Tesra/common/config"
+	"github.com/TesraSupernet/Tesra/common/log"
+	"github.com/TesraSupernet/Tesra/core/types"
+	"github.com/TesraSupernet/Tesra/events/message"
+	bactor "github.com/TesraSupernet/Tesra/http/base/actor"
+	bcomn "github.com/TesraSupernet/Tesra/http/base/common"
+	Err "github.com/TesraSupernet/Tesra/http/base/error"
+	"github.com/TesraSupernet/Tesra/http/base/rest"
+	"github.com/TesraSupernet/Tesra/http/websocket/websocket"
+	"github.com/TesraSupernet/Tesra/smartcontract/event"
 )
 
 var ws *websocket.WsServer

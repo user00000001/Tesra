@@ -21,8 +21,8 @@ package common
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/ontio/ontology/account"
-	"github.com/ontio/ontology/cmd/sigsvr/store"
+	"github.com/TesraSupernet/Tesra/account"
+	"github.com/TesraSupernet/Tesra/cmd/sigsvr/store"
 )
 
 var DefWalletStore *store.WalletStore

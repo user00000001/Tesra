@@ -21,8 +21,8 @@ package sigsvr
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/ontio/ontology/cmd/sigsvr/common"
-	"github.com/ontio/ontology/common/log"
+	"github.com/TesraSupernet/Tesra/cmd/sigsvr/common"
+	"github.com/TesraSupernet/Tesra/common/log"
 	"io/ioutil"
 	"net/http"
 )

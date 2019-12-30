@@ -20,14 +20,14 @@ package wasmvm
 import (
 	"github.com/go-interpreter/wagon/exec"
 	"github.com/hashicorp/golang-lru"
-	"github.com/ontio/ontology/common"
-	"github.com/ontio/ontology/core/store"
-	"github.com/ontio/ontology/core/types"
-	"github.com/ontio/ontology/errors"
-	"github.com/ontio/ontology/smartcontract/context"
-	"github.com/ontio/ontology/smartcontract/event"
-	"github.com/ontio/ontology/smartcontract/states"
-	"github.com/ontio/ontology/smartcontract/storage"
+	"github.com/TesraSupernet/Tesra/common"
+	"github.com/TesraSupernet/Tesra/core/store"
+	"github.com/TesraSupernet/Tesra/core/types"
+	"github.com/TesraSupernet/Tesra/errors"
+	"github.com/TesraSupernet/Tesra/smartcontract/context"
+	"github.com/TesraSupernet/Tesra/smartcontract/event"
+	"github.com/TesraSupernet/Tesra/smartcontract/states"
+	"github.com/TesraSupernet/Tesra/smartcontract/storage"
 )
 
 type WasmVmService struct {

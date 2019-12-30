@@ -22,12 +22,12 @@ import (
 	"sync"
 	"time"
 
-	"github.com/ontio/ontology/common"
-	"github.com/ontio/ontology/common/log"
-	tx "github.com/ontio/ontology/core/types"
-	"github.com/ontio/ontology/errors"
-	tc "github.com/ontio/ontology/txnpool/common"
-	"github.com/ontio/ontology/validator/types"
+	"github.com/TesraSupernet/Tesra/common"
+	"github.com/TesraSupernet/Tesra/common/log"
+	tx "github.com/TesraSupernet/Tesra/core/types"
+	"github.com/TesraSupernet/Tesra/errors"
+	tc "github.com/TesraSupernet/Tesra/txnpool/common"
+	"github.com/TesraSupernet/Tesra/validator/types"
 )
 
 // pendingTx contains the transaction, the time of starting verifying,

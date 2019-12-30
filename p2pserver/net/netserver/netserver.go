@@ -26,15 +26,15 @@ import (
 	"sync"
 	"time"
 
-	"github.com/ontio/ontology/common/config"
-	"github.com/ontio/ontology/common/log"
-	"github.com/ontio/ontology/core/ledger"
-	"github.com/ontio/ontology/p2pserver/common"
-	"github.com/ontio/ontology/p2pserver/common/set"
-	"github.com/ontio/ontology/p2pserver/message/msg_pack"
-	"github.com/ontio/ontology/p2pserver/message/types"
-	"github.com/ontio/ontology/p2pserver/net/protocol"
-	"github.com/ontio/ontology/p2pserver/peer"
+	"github.com/TesraSupernet/Tesra/common/config"
+	"github.com/TesraSupernet/Tesra/common/log"
+	"github.com/TesraSupernet/Tesra/core/ledger"
+	"github.com/TesraSupernet/Tesra/p2pserver/common"
+	"github.com/TesraSupernet/Tesra/p2pserver/common/set"
+	"github.com/TesraSupernet/Tesra/p2pserver/message/msg_pack"
+	"github.com/TesraSupernet/Tesra/p2pserver/message/types"
+	"github.com/TesraSupernet/Tesra/p2pserver/net/protocol"
+	"github.com/TesraSupernet/Tesra/p2pserver/peer"
 )
 
 //NewNetServer return the net object in p2p

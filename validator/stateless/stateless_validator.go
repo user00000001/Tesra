@@ -22,9 +22,9 @@ import (
 	"reflect"
 
 	"github.com/TesraSupernet/tesraevent/actor"
-	"github.com/ontio/ontology/common/log"
-	"github.com/ontio/ontology/core/validation"
-	vatypes "github.com/ontio/ontology/validator/types"
+	"github.com/TesraSupernet/Tesra/common/log"
+	"github.com/TesraSupernet/Tesra/core/validation"
+	vatypes "github.com/TesraSupernet/Tesra/validator/types"
 )
 
 // Validator wraps validator actor's pid

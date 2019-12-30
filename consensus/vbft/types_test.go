@@ -22,9 +22,9 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/ontio/ontology/common"
-	vconfig "github.com/ontio/ontology/consensus/vbft/config"
-	"github.com/ontio/ontology/core/types"
+	"github.com/TesraSupernet/Tesra/common"
+	vconfig "github.com/TesraSupernet/Tesra/consensus/vbft/config"
+	"github.com/TesraSupernet/Tesra/core/types"
 )
 
 func TestBlock_getProposer(t *testing.T) {

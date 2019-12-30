@@ -21,7 +21,7 @@ package ont
 import (
 	"testing"
 
-	"github.com/ontio/ontology/common"
+	"github.com/TesraSupernet/Tesra/common"
 	"github.com/stretchr/testify/assert"
 )
 

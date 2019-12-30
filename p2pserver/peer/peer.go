@@ -26,11 +26,11 @@ import (
 	"sync/atomic"
 	"time"
 
-	comm "github.com/ontio/ontology/common"
-	"github.com/ontio/ontology/common/log"
-	"github.com/ontio/ontology/p2pserver/common"
-	conn "github.com/ontio/ontology/p2pserver/link"
-	"github.com/ontio/ontology/p2pserver/message/types"
+	comm "github.com/TesraSupernet/Tesra/common"
+	"github.com/TesraSupernet/Tesra/common/log"
+	"github.com/TesraSupernet/Tesra/p2pserver/common"
+	conn "github.com/TesraSupernet/Tesra/p2pserver/link"
+	"github.com/TesraSupernet/Tesra/p2pserver/message/types"
 )
 
 // PeerCom provides the basic information of a peer

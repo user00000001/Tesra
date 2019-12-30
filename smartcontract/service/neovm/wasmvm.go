@@ -19,14 +19,14 @@ package neovm
 
 import (
 	"fmt"
-	"github.com/ontio/ontology/core/utils"
+	"github.com/TesraSupernet/Tesra/core/utils"
 	"reflect"
 
-	"github.com/ontio/ontology/common"
-	"github.com/ontio/ontology/core/payload"
-	"github.com/ontio/ontology/core/types"
-	"github.com/ontio/ontology/vm/crossvm_codec"
-	vm "github.com/ontio/ontology/vm/neovm"
+	"github.com/TesraSupernet/Tesra/common"
+	"github.com/TesraSupernet/Tesra/core/payload"
+	"github.com/TesraSupernet/Tesra/core/types"
+	"github.com/TesraSupernet/Tesra/vm/crossvm_codec"
+	vm "github.com/TesraSupernet/Tesra/vm/neovm"
 )
 
 //neovm contract call wasmvm contract

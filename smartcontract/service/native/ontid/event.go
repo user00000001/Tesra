@@ -20,9 +20,9 @@ package ontid
 import (
 	"encoding/hex"
 
-	"github.com/ontio/ontology/common"
-	"github.com/ontio/ontology/smartcontract/event"
-	"github.com/ontio/ontology/smartcontract/service/native"
+	"github.com/TesraSupernet/Tesra/common"
+	"github.com/TesraSupernet/Tesra/smartcontract/event"
+	"github.com/TesraSupernet/Tesra/smartcontract/service/native"
 )
 
 func newEvent(srvc *native.NativeService, st interface{}) {

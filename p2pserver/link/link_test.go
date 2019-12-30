@@ -24,12 +24,12 @@ import (
 	"time"
 
 	"github.com/TesraSupernet/tesracrypto/keypair"
-	"github.com/ontio/ontology/account"
-	comm "github.com/ontio/ontology/common"
-	"github.com/ontio/ontology/common/log"
-	ct "github.com/ontio/ontology/core/types"
-	"github.com/ontio/ontology/p2pserver/common"
-	mt "github.com/ontio/ontology/p2pserver/message/types"
+	"github.com/TesraSupernet/Tesra/account"
+	comm "github.com/TesraSupernet/Tesra/common"
+	"github.com/TesraSupernet/Tesra/common/log"
+	ct "github.com/TesraSupernet/Tesra/core/types"
+	"github.com/TesraSupernet/Tesra/p2pserver/common"
+	mt "github.com/TesraSupernet/Tesra/p2pserver/message/types"
 )
 
 var (

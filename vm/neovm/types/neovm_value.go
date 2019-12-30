@@ -27,11 +27,11 @@ import (
 	"reflect"
 	"sort"
 
-	"github.com/ontio/ontology/common"
-	"github.com/ontio/ontology/common/log"
-	"github.com/ontio/ontology/vm/crossvm_codec"
-	"github.com/ontio/ontology/vm/neovm/constants"
-	"github.com/ontio/ontology/vm/neovm/errors"
+	"github.com/TesraSupernet/Tesra/common"
+	"github.com/TesraSupernet/Tesra/common/log"
+	"github.com/TesraSupernet/Tesra/vm/crossvm_codec"
+	"github.com/TesraSupernet/Tesra/vm/neovm/constants"
+	"github.com/TesraSupernet/Tesra/vm/neovm/errors"
 )
 
 const (

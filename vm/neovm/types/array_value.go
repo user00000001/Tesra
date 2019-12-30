@@ -19,8 +19,8 @@
 package types
 
 import (
-	"github.com/ontio/ontology/vm/neovm/constants"
-	"github.com/ontio/ontology/vm/neovm/errors"
+	"github.com/TesraSupernet/Tesra/vm/neovm/constants"
+	"github.com/TesraSupernet/Tesra/vm/neovm/errors"
 )
 
 type ArrayValue struct {

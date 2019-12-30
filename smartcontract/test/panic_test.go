@@ -25,12 +25,12 @@ import (
 	"os"
 	"testing"
 
-	"github.com/ontio/ontology/common"
-	"github.com/ontio/ontology/common/log"
-	"github.com/ontio/ontology/core/types"
-	. "github.com/ontio/ontology/smartcontract"
-	neovm2 "github.com/ontio/ontology/smartcontract/service/neovm"
-	"github.com/ontio/ontology/vm/neovm"
+	"github.com/TesraSupernet/Tesra/common"
+	"github.com/TesraSupernet/Tesra/common/log"
+	"github.com/TesraSupernet/Tesra/core/types"
+	. "github.com/TesraSupernet/Tesra/smartcontract"
+	neovm2 "github.com/TesraSupernet/Tesra/smartcontract/service/neovm"
+	"github.com/TesraSupernet/Tesra/vm/neovm"
 	"github.com/stretchr/testify/assert"
 )
 

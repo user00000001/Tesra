@@ -22,7 +22,7 @@ import (
 	"errors"
 	"io"
 
-	"github.com/ontio/ontology/common"
+	"github.com/TesraSupernet/Tesra/common"
 )
 
 type Block struct {

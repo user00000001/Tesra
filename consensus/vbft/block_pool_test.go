@@ -22,9 +22,9 @@ import (
 	"testing"
 	"time"
 
-	"github.com/ontio/ontology/common"
-	"github.com/ontio/ontology/core/ledger"
-	"github.com/ontio/ontology/core/types"
+	"github.com/TesraSupernet/Tesra/common"
+	"github.com/TesraSupernet/Tesra/core/ledger"
+	"github.com/TesraSupernet/Tesra/core/types"
 )
 
 func buildTestBlockPool(t *testing.T) (*BlockPool, error) {

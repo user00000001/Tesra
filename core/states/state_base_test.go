@@ -18,7 +18,7 @@
 package states
 
 import (
-	"github.com/ontio/ontology/common"
+	"github.com/TesraSupernet/Tesra/common"
 	"testing"
 )
 

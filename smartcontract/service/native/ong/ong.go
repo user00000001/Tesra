@@ -22,12 +22,12 @@ import (
 	"math/big"
 
 	"fmt"
-	"github.com/ontio/ontology/common"
-	"github.com/ontio/ontology/common/constants"
-	"github.com/ontio/ontology/errors"
-	"github.com/ontio/ontology/smartcontract/service/native"
-	"github.com/ontio/ontology/smartcontract/service/native/ont"
-	"github.com/ontio/ontology/smartcontract/service/native/utils"
+	"github.com/TesraSupernet/Tesra/common"
+	"github.com/TesraSupernet/Tesra/common/constants"
+	"github.com/TesraSupernet/Tesra/errors"
+	"github.com/TesraSupernet/Tesra/smartcontract/service/native"
+	"github.com/TesraSupernet/Tesra/smartcontract/service/native/ont"
+	"github.com/TesraSupernet/Tesra/smartcontract/service/native/utils"
 )
 
 func InitOng() {

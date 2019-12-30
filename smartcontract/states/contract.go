@@ -21,8 +21,8 @@ package states
 import (
 	"io"
 
-	"github.com/ontio/ontology/common"
-	"github.com/ontio/ontology/smartcontract/event"
+	"github.com/TesraSupernet/Tesra/common"
+	"github.com/TesraSupernet/Tesra/smartcontract/event"
 )
 
 // Invoke smart contract struct

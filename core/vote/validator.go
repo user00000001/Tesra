@@ -20,8 +20,8 @@ package vote
 
 import (
 	"github.com/TesraSupernet/tesracrypto/keypair"
-	"github.com/ontio/ontology/core/genesis"
-	"github.com/ontio/ontology/core/types"
+	"github.com/TesraSupernet/Tesra/core/genesis"
+	"github.com/TesraSupernet/Tesra/core/types"
 )
 
 func GetValidators(txs []*types.Transaction) ([]keypair.PublicKey, error) {

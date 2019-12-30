@@ -26,13 +26,13 @@ import (
 	"fmt"
 	"math"
 
-	"github.com/ontio/ontology/common"
-	"github.com/ontio/ontology/common/config"
-	"github.com/ontio/ontology/common/constants"
-	cstates "github.com/ontio/ontology/core/states"
-	"github.com/ontio/ontology/smartcontract/service/native"
-	"github.com/ontio/ontology/smartcontract/service/native/global_params"
-	"github.com/ontio/ontology/smartcontract/service/native/utils"
+	"github.com/TesraSupernet/Tesra/common"
+	"github.com/TesraSupernet/Tesra/common/config"
+	"github.com/TesraSupernet/Tesra/common/constants"
+	cstates "github.com/TesraSupernet/Tesra/core/states"
+	"github.com/TesraSupernet/Tesra/smartcontract/service/native"
+	"github.com/TesraSupernet/Tesra/smartcontract/service/native/global_params"
+	"github.com/TesraSupernet/Tesra/smartcontract/service/native/utils"
 )
 
 const (

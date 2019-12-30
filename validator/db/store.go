@@ -23,10 +23,10 @@ import (
 	"fmt"
 	"sync"
 
-	"github.com/ontio/ontology/common"
-	storcomm "github.com/ontio/ontology/core/store/common"
-	leveldb "github.com/ontio/ontology/core/store/leveldbstore"
-	"github.com/ontio/ontology/core/types"
+	"github.com/TesraSupernet/Tesra/common"
+	storcomm "github.com/TesraSupernet/Tesra/core/store/common"
+	leveldb "github.com/TesraSupernet/Tesra/core/store/leveldbstore"
+	"github.com/TesraSupernet/Tesra/core/types"
 	pool "github.com/valyala/bytebufferpool"
 )
 

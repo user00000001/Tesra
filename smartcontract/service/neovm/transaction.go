@@ -20,9 +20,9 @@ package neovm
 
 import (
 	"fmt"
-	"github.com/ontio/ontology/core/types"
-	vm "github.com/ontio/ontology/vm/neovm"
-	vmtypes "github.com/ontio/ontology/vm/neovm/types"
+	"github.com/TesraSupernet/Tesra/core/types"
+	vm "github.com/TesraSupernet/Tesra/vm/neovm"
+	vmtypes "github.com/TesraSupernet/Tesra/vm/neovm/types"
 )
 
 // GetExecutingAddress push transaction's hash to vm stack

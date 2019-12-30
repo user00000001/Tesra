@@ -26,7 +26,7 @@ import (
 	"os"
 
 	"github.com/TesraSupernet/tesracrypto/keypair"
-	"github.com/ontio/ontology/common"
+	"github.com/TesraSupernet/Tesra/common"
 )
 
 /** AccountData - for wallet read and save, no crypto object included **/

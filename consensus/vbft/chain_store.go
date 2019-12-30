@@ -22,12 +22,12 @@ import (
 	"fmt"
 
 	"github.com/TesraSupernet/tesraevent/actor"
-	"github.com/ontio/ontology/common"
-	"github.com/ontio/ontology/common/log"
-	"github.com/ontio/ontology/core/ledger"
-	"github.com/ontio/ontology/core/store"
-	"github.com/ontio/ontology/core/store/overlaydb"
-	"github.com/ontio/ontology/events/message"
+	"github.com/TesraSupernet/Tesra/common"
+	"github.com/TesraSupernet/Tesra/common/log"
+	"github.com/TesraSupernet/Tesra/core/ledger"
+	"github.com/TesraSupernet/Tesra/core/store"
+	"github.com/TesraSupernet/Tesra/core/store/overlaydb"
+	"github.com/TesraSupernet/Tesra/events/message"
 )
 
 type PendingBlock struct {

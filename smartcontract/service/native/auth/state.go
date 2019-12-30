@@ -22,8 +22,8 @@ import (
 	"io"
 	"strings"
 
-	"github.com/ontio/ontology/common"
-	"github.com/ontio/ontology/smartcontract/service/native/utils"
+	"github.com/TesraSupernet/Tesra/common"
+	"github.com/TesraSupernet/Tesra/smartcontract/service/native/utils"
 )
 
 /*

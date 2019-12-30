@@ -24,9 +24,9 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/ontio/ontology/common"
-	"github.com/ontio/ontology/common/log"
-	vconfig "github.com/ontio/ontology/consensus/vbft/config"
+	"github.com/TesraSupernet/Tesra/common"
+	"github.com/TesraSupernet/Tesra/common/log"
+	vconfig "github.com/TesraSupernet/Tesra/consensus/vbft/config"
 )
 
 func peerPool() *PeerPool {

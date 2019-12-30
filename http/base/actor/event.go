@@ -20,8 +20,8 @@ package actor
 
 import (
 	"github.com/TesraSupernet/tesraevent/actor"
-	"github.com/ontio/ontology/events"
-	"github.com/ontio/ontology/events/message"
+	"github.com/TesraSupernet/Tesra/events"
+	"github.com/TesraSupernet/Tesra/events/message"
 )
 
 type EventActor struct {

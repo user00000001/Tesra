@@ -21,7 +21,7 @@ import (
 	"testing"
 
 	"bytes"
-	ser "github.com/ontio/ontology/common/serialization"
+	ser "github.com/TesraSupernet/Tesra/common/serialization"
 	"github.com/stretchr/testify/assert"
 )
 

@@ -23,9 +23,9 @@ import (
 	"time"
 
 	"github.com/TesraSupernet/tesraevent/actor"
-	"github.com/ontio/ontology/common/log"
-	ac "github.com/ontio/ontology/p2pserver/actor/server"
-	"github.com/ontio/ontology/p2pserver/common"
+	"github.com/TesraSupernet/Tesra/common/log"
+	ac "github.com/TesraSupernet/Tesra/p2pserver/actor/server"
+	"github.com/TesraSupernet/Tesra/p2pserver/common"
 )
 
 var netServerPid *actor.PID

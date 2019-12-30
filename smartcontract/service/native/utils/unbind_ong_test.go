@@ -22,7 +22,7 @@ import (
 	"math/rand"
 	"testing"
 
-	"github.com/ontio/ontology/common/constants"
+	"github.com/TesraSupernet/Tesra/common/constants"
 	"github.com/stretchr/testify/assert"
 )
 

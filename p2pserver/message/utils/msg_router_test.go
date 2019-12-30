@@ -22,10 +22,10 @@ import (
 	"testing"
 
 	"github.com/TesraSupernet/tesraevent/actor"
-	"github.com/ontio/ontology/common/log"
-	"github.com/ontio/ontology/p2pserver/message/types"
-	"github.com/ontio/ontology/p2pserver/net/netserver"
-	"github.com/ontio/ontology/p2pserver/net/protocol"
+	"github.com/TesraSupernet/Tesra/common/log"
+	"github.com/TesraSupernet/Tesra/p2pserver/message/types"
+	"github.com/TesraSupernet/Tesra/p2pserver/net/netserver"
+	"github.com/TesraSupernet/Tesra/p2pserver/net/protocol"
 	"github.com/stretchr/testify/assert"
 )
 

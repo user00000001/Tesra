@@ -19,11 +19,11 @@ package sigsvr
 
 import (
 	"fmt"
-	"github.com/ontio/ontology/account"
-	"github.com/ontio/ontology/cmd"
-	"github.com/ontio/ontology/cmd/sigsvr/store"
-	"github.com/ontio/ontology/cmd/utils"
-	"github.com/ontio/ontology/common"
+	"github.com/TesraSupernet/Tesra/account"
+	"github.com/TesraSupernet/Tesra/cmd"
+	"github.com/TesraSupernet/Tesra/cmd/sigsvr/store"
+	"github.com/TesraSupernet/Tesra/cmd/utils"
+	"github.com/TesraSupernet/Tesra/common"
 	"github.com/urfave/cli"
 )
 

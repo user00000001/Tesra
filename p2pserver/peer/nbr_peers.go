@@ -22,9 +22,9 @@ import (
 	"fmt"
 	"sync"
 
-	comm "github.com/ontio/ontology/common"
-	"github.com/ontio/ontology/p2pserver/common"
-	"github.com/ontio/ontology/p2pserver/message/types"
+	comm "github.com/TesraSupernet/Tesra/common"
+	"github.com/TesraSupernet/Tesra/p2pserver/common"
+	"github.com/TesraSupernet/Tesra/p2pserver/message/types"
 )
 
 //NbrPeers: The neigbor list

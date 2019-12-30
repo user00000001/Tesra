@@ -19,8 +19,8 @@
 package types
 
 import (
-	"github.com/ontio/ontology/common"
-	comm "github.com/ontio/ontology/p2pserver/common"
+	"github.com/TesraSupernet/Tesra/common"
+	comm "github.com/TesraSupernet/Tesra/p2pserver/common"
 )
 
 type AddrReq struct{}
