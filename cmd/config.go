@@ -28,7 +28,7 @@ import (
 	"github.com/urfave/cli"
 )
 
-func SetOntologyConfig(ctx *cli.Context) (*config.OntologyConfig, error) {
+func SetTesranodeConfig(ctx *cli.Context) (*config.TesranodeConfig, error) {
 	cfg := config.DefConfig
 	err := setGenesis(ctx, cfg)
 	if err != nil {
@@ -64,7 +64,7 @@ func SetOntologyConfig(ctx *cli.Context) (*config.OntologyConfig, error) {
 	return cfg, nil
 }
 
-func setGenesis(ctx *cli.Context, cfg *config.OntologyConfig) error {
+func setGenesis(ctx *cli.Context, cfg *config.TesranodeConfig) error {
 	netWorkId := ctx.Int(utils.GetFlagName(utils.NetworkIdFlag))
 	switch netWorkId {
 	case config.NETWORK_ID_MAIN_NET:

@@ -424,7 +424,7 @@ How to build the parameter?
 
 ```
     // get sdk instance
-    sdk := goSdk.NewOntologySdk()
+    sdk := goSdk.NewTesraSdk()
     rpcClient := sdk.Rpc
     // generate invoke native contract transaction; if you want to invoke neo vm contrace,
     // use NewNeoVMSInvokeTransaction

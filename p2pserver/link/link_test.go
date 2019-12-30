@@ -23,13 +23,13 @@ import (
 	"testing"
 	"time"
 
-	"github.com/TesraSupernet/tesracrypto/keypair"
 	"github.com/TesraSupernet/Tesra/account"
 	comm "github.com/TesraSupernet/Tesra/common"
 	"github.com/TesraSupernet/Tesra/common/log"
 	ct "github.com/TesraSupernet/Tesra/core/types"
 	"github.com/TesraSupernet/Tesra/p2pserver/common"
 	mt "github.com/TesraSupernet/Tesra/p2pserver/message/types"
+	"github.com/TesraSupernet/tesracrypto/keypair"
 )
 
 var (
@@ -92,7 +92,7 @@ func TestNewLink(t *testing.T) {
 	msg := &mt.MsgPayload{
 		Id:      cliLink.GetID(),
 		Addr:    cliLink.GetAddr(),
-		Payload: &mt.NotFound{comm.UINT256_EMPTY},
+		Payload: &mt.NotFound{Hash: comm.UINT256_EMPTY},
 	}
 	go func() {
 		time.Sleep(5000000)
@@ -140,7 +140,7 @@ func TestUnpackBufNode(t *testing.T) {
 			payload.Data = append(payload.Data, byte(byteInt))
 		}
 
-		msg = &mt.Consensus{payload}
+		msg = &mt.Consensus{Cons: payload}
 	case "consensus":
 		acct := account.NewAccount("SHA256withECDSA")
 		key := acct.PubKey()

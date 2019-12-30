@@ -64,9 +64,9 @@ import (
 func setupAPP() *cli.App {
 	app := cli.NewApp()
 	app.Usage = "TesraNode"
-	app.Action = startOntology
+	app.Action = startTesranode
 	app.Version = config.Version
-	app.Copyright = "Copyright in 2018 The Tesra  Authors"
+	app.Copyright = "Copyright in 2019 The TesraSupernet Authors"
 	app.Commands = []cli.Command{
 		cmd.AccountCommand,
 		cmd.InfoCommand,
@@ -140,7 +140,7 @@ func main() {
 	}
 }
 
-func startOntology(ctx *cli.Context) {
+func startTesranode(ctx *cli.Context) {
 	initLog(ctx)
 
 	log.Infof("tesranode version %s", config.Version)
@@ -209,9 +209,9 @@ func initLog(ctx *cli.Context) {
 	}
 }
 
-func initConfig(ctx *cli.Context) (*config.OntologyConfig, error) {
+func initConfig(ctx *cli.Context) (*config.TesranodeConfig, error) {
 	//init tesranode config from cli
-	cfg, err := cmd.SetOntologyConfig(ctx)
+	cfg, err := cmd.SetTesranodeConfig(ctx)
 	if err != nil {
 		return nil, err
 	}

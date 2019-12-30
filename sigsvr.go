@@ -38,7 +38,7 @@ func setupSigSvr() *cli.App {
 	app.Usage = "Tesranode Sig server"
 	app.Action = startSigSvr
 	app.Version = config.Version
-	app.Copyright = "Copyright in 2018 The Tesranode Authors"
+	app.Copyright = "Copyright in 2019 The Tesranode Authors"
 	app.Flags = []cli.Flag{
 		utils.LogLevelFlag,
 		utils.CliWalletDirFlag,

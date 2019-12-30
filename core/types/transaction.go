@@ -24,11 +24,11 @@ import (
 	"fmt"
 	"io"
 
-	"github.com/TesraSupernet/tesracrypto/keypair"
 	"github.com/TesraSupernet/Tesra/common"
 	"github.com/TesraSupernet/Tesra/common/constants"
 	"github.com/TesraSupernet/Tesra/core/payload"
 	"github.com/TesraSupernet/Tesra/core/program"
+	"github.com/TesraSupernet/tesracrypto/keypair"
 )
 
 const MAX_TX_SIZE = 1024 * 1024 // The max size of a transaction to prevent DOS attacks
@@ -330,5 +330,4 @@ func (tx *Transaction) Type() common.InventoryType {
 
 func (tx *Transaction) Verify() error {
 	panic("unimplemented ")
-	return nil
 }

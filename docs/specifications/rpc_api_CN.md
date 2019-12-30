@@ -426,7 +426,7 @@ PreExec : 值设置为1则表示此交易为预执行。
 
 ```
     // 得到SDK的实例
-    sdk := goSdk.NewOntologySdk()
+    sdk := goSdk.NewTesraSdk()
     rpcClient := sdk.Rpc
     // 生成native合约调用交易; 如果想调用NEO VM合约，可以使用NewNeoVMSInvokeTransaction方法
     // cversion 为合约的版本, method 是要调用的合约方法名, params 是该方法需要的参数

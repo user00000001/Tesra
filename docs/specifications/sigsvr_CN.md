@@ -746,7 +746,7 @@ signeovminvokeabitx 方法默认使用签名账户作为手续费支付方，如
     "qid": "t",
     "method": "exportaccount",
     "result": {
-        "wallet_file": "./wallet_2018_08_03_23_20_12.dat",
+        "wallet_file": "./wallet_2019_12_31_23_20_12.dat",
         "account_num": 9
     },
     "error_code": 0,

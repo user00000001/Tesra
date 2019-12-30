@@ -1,6 +1,6 @@
 
 <h1 align="center">Tesranode</h1>
-<h4 align="center">Version 1.8.0</h4>
+<h4 align="center">Version 0.0.1</h4>
 
 [![GoDoc](https://godoc.org/github.com/TesraSupernet/Tesra?status.svg)](https://godoc.org/github.com/TesraSupernet/Tesra)
 [![Go Report Card](https://goreportcard.com/badge/github.com/TesraSupernet/Tesra)](https://goreportcard.com/report/github.com/TesraSupernet/Tesra)
@@ -11,7 +11,7 @@ English | [中文](README_CN.md)
 
 Welcome to the official Go implementation of the [Tesranode](https://ont.io) blockchain!
 
-Tesranode is a high-performance public blockchain project and distributed trust collaboration platform. It is highly customizable and suitable for all kinds of business requirements. The Tesranode MainNet was launched on June 30th, 2018.
+Tesranode is a high-performance public blockchain project and distributed trust collaboration platform. It is highly customizable and suitable for all kinds of business requirements. The Tesranode MainNet was launched on December 31th, 2019.
 
 As a public blockchain project, Tesranode is currently maintained by both the Tesranode core tech team and community members who can all support you in development. There are many available tools for use for development - SDKs, the SmartX IDE, Tesranode blockchain explorer and more.
 

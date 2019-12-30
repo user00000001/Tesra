@@ -31,8 +31,8 @@ import (
 
 var SendTxCommand = cli.Command{
 	Name:        "sendtx",
-	Usage:       "Send raw transaction to Ontology",
-	Description: "Send raw transaction to Ontology.",
+	Usage:       "Send raw transaction to Tesranode",
+	Description: "Send raw transaction to Tesranode.",
 	ArgsUsage:   "<rawtx>",
 	Action:      sendTx,
 	Flags: []cli.Flag{

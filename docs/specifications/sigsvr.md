@@ -735,7 +735,7 @@ Response:
     "qid": "t",
     "method": "exportaccount",
     "result": {
-        "wallet_file": "./wallet_2018_08_03_23_20_12.dat",
+        "wallet_file": "./wallet_2019_08_03_23_20_12.dat",
         "account_num": 9
     },
     "error_code": 0,

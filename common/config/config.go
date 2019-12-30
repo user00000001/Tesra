@@ -272,7 +272,7 @@ var MainNetConfig = &GenesisConfig{
 	SOLO: &SOLOConfig{},
 }
 
-var DefConfig = NewOntologyConfig()
+var DefConfig = NewTesranodeConfig()
 
 type GenesisConfig struct {
 	SeedList      []string
@@ -541,7 +541,7 @@ type WebSocketConfig struct {
 	HttpKeyPath  string
 }
 
-type OntologyConfig struct {
+type TesranodeConfig struct {
 	Genesis   *GenesisConfig
 	Common    *CommonConfig
 	Consensus *ConsensusConfig
@@ -551,8 +551,8 @@ type OntologyConfig struct {
 	Ws        *WebSocketConfig
 }
 
-func NewOntologyConfig() *OntologyConfig {
-	return &OntologyConfig{
+func NewTesranodeConfig() *TesranodeConfig {
+	return &TesranodeConfig{
 		Genesis: MainNetConfig,
 		Common: &CommonConfig{
 			LogLevel:       DEFAULT_LOG_LEVEL,
@@ -598,7 +598,7 @@ func NewOntologyConfig() *OntologyConfig {
 	}
 }
 
-func (this *OntologyConfig) GetBookkeepers() ([]keypair.PublicKey, error) {
+func (this *TesranodeConfig) GetBookkeepers() ([]keypair.PublicKey, error) {
 	var bookKeepers []string
 	switch this.Genesis.ConsensusType {
 	case CONSENSUS_TYPE_VBFT:
@@ -626,7 +626,7 @@ func (this *OntologyConfig) GetBookkeepers() ([]keypair.PublicKey, error) {
 	return pubKeys, nil
 }
 
-func (this *OntologyConfig) GetDefaultNetworkId() (uint32, error) {
+func (this *TesranodeConfig) GetDefaultNetworkId() (uint32, error) {
 	defaultNetworkId, err := this.getDefNetworkIDFromGenesisConfig(this.Genesis)
 	if err != nil {
 		return 0, err
@@ -648,7 +648,7 @@ func (this *OntologyConfig) GetDefaultNetworkId() (uint32, error) {
 	return defaultNetworkId, nil
 }
 
-func (this *OntologyConfig) getDefNetworkIDFromGenesisConfig(genCfg *GenesisConfig) (uint32, error) {
+func (this *TesranodeConfig) getDefNetworkIDFromGenesisConfig(genCfg *GenesisConfig) (uint32, error) {
 	var configData []byte
 	var err error
 	switch this.Genesis.ConsensusType {

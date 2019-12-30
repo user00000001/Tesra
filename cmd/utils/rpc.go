@@ -37,13 +37,13 @@ const (
 	ERROR_ONTOLOGY_SUCCESS = 0
 )
 
-type OntologyError struct {
+type TesranodeError struct {
 	ErrorCode int64
 	Error     error
 }
 
-func NewOntologyError(err error, errCode ...int64) *OntologyError {
-	ontErr := &OntologyError{Error: err}
+func NewTesranodeError(err error, errCode ...int64) *TesranodeError {
+	ontErr := &TesranodeError{Error: err}
 	if len(errCode) > 0 {
 		ontErr.ErrorCode = errCode[0]
 	} else {
@@ -70,7 +70,7 @@ type JsonRpcResponse struct {
 	Result json.RawMessage `json:"result"`
 }
 
-func sendRpcRequest(method string, params []interface{}) ([]byte, *OntologyError) {
+func sendRpcRequest(method string, params []interface{}) ([]byte, *TesranodeError) {
 	rpcReq := &JsonRpcRequest{
 		Version: JSON_RPC_VERSION,
 		Id:      "cli",
@@ -79,27 +79,27 @@ func sendRpcRequest(method string, params []interface{}) ([]byte, *OntologyError
 	}
 	data, err := json.Marshal(rpcReq)
 	if err != nil {
-		return nil, NewOntologyError(fmt.Errorf("JsonRpcRequest json.Marshal error:%s", err))
+		return nil, NewTesranodeError(fmt.Errorf("JsonRpcRequest json.Marshal error:%s", err))
 	}
 
 	addr := fmt.Sprintf("http://localhost:%d", config.DefConfig.Rpc.HttpJsonPort)
 	resp, err := http.Post(addr, "application/json", strings.NewReader(string(data)))
 	if err != nil {
-		return nil, NewOntologyError(err)
+		return nil, NewTesranodeError(err)
 	}
 	defer resp.Body.Close()
 
 	body, err := ioutil.ReadAll(resp.Body)
 	if err != nil {
-		return nil, NewOntologyError(fmt.Errorf("read rpc response body error:%s", err))
+		return nil, NewTesranodeError(fmt.Errorf("read rpc response body error:%s", err))
 	}
 	rpcRsp := &JsonRpcResponse{}
 	err = json.Unmarshal(body, rpcRsp)
 	if err != nil {
-		return nil, NewOntologyError(fmt.Errorf("json.Unmarshal JsonRpcResponse:%s error:%s", body, err))
+		return nil, NewTesranodeError(fmt.Errorf("json.Unmarshal JsonRpcResponse:%s error:%s", body, err))
 	}
 	if rpcRsp.Error != 0 {
-		return nil, NewOntologyError(fmt.Errorf("\n %s ", string(body)), rpcRsp.Error)
+		return nil, NewTesranodeError(fmt.Errorf("\n %s ", string(body)), rpcRsp.Error)
 	}
 	return rpcRsp.Result, nil
 }

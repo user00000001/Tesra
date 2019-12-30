@@ -24,7 +24,6 @@ import (
 	"io"
 	"os"
 
-	"github.com/gosuri/uiprogress"
 	"github.com/TesraSupernet/Tesra/cmd/utils"
 	"github.com/TesraSupernet/Tesra/common/config"
 	"github.com/TesraSupernet/Tesra/common/log"
@@ -32,6 +31,7 @@ import (
 	"github.com/TesraSupernet/Tesra/core/genesis"
 	"github.com/TesraSupernet/Tesra/core/ledger"
 	"github.com/TesraSupernet/Tesra/core/types"
+	"github.com/gosuri/uiprogress"
 	"github.com/urfave/cli"
 )
 
@@ -54,9 +54,9 @@ var ImportCommand = cli.Command{
 func importBlocks(ctx *cli.Context) error {
 	log.InitLog(log.InfoLog)
 
-	cfg, err := SetOntologyConfig(ctx)
+	cfg, err := SetTesranodeConfig(ctx)
 	if err != nil {
-		PrintErrorMsg("SetOntologyConfig error:%s", err)
+		PrintErrorMsg("SetTesranodeConfig error:%s", err)
 		cli.ShowSubcommandHelp(ctx)
 		return nil
 	}

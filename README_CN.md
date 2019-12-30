@@ -1,6 +1,6 @@
 
 <h1 align="center">Tesranode </h1>
-<h4 align="center">Version 1.8.0 </h4>
+<h4 align="center">Version 0.0.1 </h4>
 
 [![GoDoc](https://godoc.org/github.com/TesraSupernet/Tesra?status.svg)](https://godoc.org/github.com/TesraSupernet/Tesra)
 [![Go Report Card](https://goreportcard.com/badge/github.com/TesraSupernet/Tesra)](https://goreportcard.com/report/github.com/TesraSupernet/Tesra)
@@ -13,7 +13,7 @@
 
 Tesranode致力于创建一个组件化、可自由配置、跨链支持、高性能、横向可扩展的区块链底层基础设施。 让部署及调用去中心化应用变得更加非常简单。
 
-Tesranode MainNet 已经在2018年6月30日成功上线。<br>
+Tesranode MainNet 已经在2019年12月31日成功上线。<br>
 但很多新的功能还处于快速的开发过程中，master分支的代码可能是不稳定的，稳定的版本可以在[releases](https://github.com/TesraSupernet/Tesra/releases)中下载。
 
 公开的主网和测试网都可以在下面找到，也非常欢迎及希望能有更多的开发者加入到Tesranode中来。
