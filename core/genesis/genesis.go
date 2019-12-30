@@ -123,7 +123,7 @@ func BuildGenesisBlock(defaultBookkeeper []keypair.PublicKey, genesisConfig *con
 
 func newGoverningToken() *types.Transaction {
 	mutable, err := utils.NewDeployTransaction(nutils.TstContractAddress[:], "TST", "v0.0.1",
-		"Tesra Supernet", "service@tesra.io", "Tesra Supernet TST Token：We are building a global AI computing network", payload.NEOVM_TYPE)
+		"Tesra Supernet", "service@tesra.io", "Tesra Supernet TST Token：Building a global decentralized AI computation network.", payload.NEOVM_TYPE)
 	if err != nil {
 		panic("[NewDeployTransaction] construct genesis governing token transaction error ")
 	}
@@ -136,7 +136,7 @@ func newGoverningToken() *types.Transaction {
 
 func newUtilityToken() *types.Transaction {
 	mutable, err := utils.NewDeployTransaction(nutils.TsgContractAddress[:], "TSG", "v0.0.1",
-		"Tesra Supernet", "service@tesra.io", "Tesra Supernet TSG Token：We are building a global AI computing network", payload.NEOVM_TYPE)
+		"Tesra Supernet", "service@tesra.io", "Tesra Supernet TSG Token：Building a global decentralized AI computation network.", payload.NEOVM_TYPE)
 	if err != nil {
 		panic("[NewDeployTransaction] construct genesis governing token transaction error ")
 	}

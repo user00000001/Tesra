@@ -286,7 +286,7 @@ var MainNetConfig = &GenesisConfig{
 		"dapp4.tesra.me:25766",
 		"www.tesra.me:25766",
 		"explorer.tesra.me:25766",
-		"explorer2.tesra.me:25766"},
+		"explorer.tesra.dev:25766"},
 	ConsensusType: CONSENSUS_TYPE_VBFT,
 	VBFT: &VBFTConfig{
 		N:                    7,
