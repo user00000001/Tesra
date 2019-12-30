@@ -5,7 +5,6 @@
 [![GoDoc](https://godoc.org/github.com/TesraSupernet/Tesra?status.svg)](https://godoc.org/github.com/TesraSupernet/Tesra)
 [![Go Report Card](https://goreportcard.com/badge/github.com/TesraSupernet/Tesra)](https://goreportcard.com/report/github.com/TesraSupernet/Tesra)
 [![Travis](https://travis-ci.com/TesraSupernet/Tesra.svg?branch=master)](https://travis-ci.com/TesraSupernet/Tesra)
-[![Discord](https://img.shields.io/discord/102860784329052160.svg)](https://discord.gg/gDkuCAq)
 
 [English](README.md) | 中文
 
@@ -13,7 +12,7 @@
 
 Tesranode致力于创建一个组件化、可自由配置、跨链支持、高性能、横向可扩展的区块链底层基础设施。 让部署及调用去中心化应用变得更加非常简单。
 
-Tesranode MainNet 已经在2019年12月31日成功上线。<br>
+Tesranode MainNet[测试版] 已经在2019年12月31日成功上线。<br>
 但很多新的功能还处于快速的开发过程中，master分支的代码可能是不稳定的，稳定的版本可以在[releases](https://github.com/TesraSupernet/Tesra/releases)中下载。
 
 公开的主网和测试网都可以在下面找到，也非常欢迎及希望能有更多的开发者加入到Tesranode中来。
@@ -60,11 +59,10 @@ Tesranode MainNet 已经在2019年12月31日成功上线。<br>
 ## 获取tesranode
 
 ### 从release获取
-- 你可以通过命令 ` curl https://dev.ont.io/tesranode_install | sh ` 获取最新的tesranode版本
-- 你也可以从[下载页面](https://github.com/TesraSupernet/Tesra/releases)获取.
+- 你可以从[下载页面](https://github.com/TesraSupernet/Tesra/releases)获取.
 
 ### 从源码获取
-克隆tesranode仓库到 **$GOPATH/src/github.com/ontio** 目录
+克隆tesranode仓库到 **$GOPATH/src/github.com/TesraSupernet** 目录
 
 ```shell
 $ git clone https://github.com/TesraSupernet/Tesra.git
@@ -254,8 +252,6 @@ BalanceOf:ARVVxBPGySL56CvSSWfjRVVyZYpNZ7zp48
   ONG:28165900
 ```
 
-进一步的示例可以参考[文档中心](https://ontio.github.io/documentation/)
-
 ## 贡献代码
 
 请您以签过名的commit发送pull request请求，我们期待您的加入！
@@ -286,11 +282,7 @@ BalanceOf:ARVVxBPGySL56CvSSWfjRVVyZYpNZ7zp48
 
 ### 网站
 
-- https://ont.io/
-
-### Discord开发者社区
-
-- https://discord.gg/4TQujHj/
+- https://www.tesra.me/
 
 ## 许可证
 

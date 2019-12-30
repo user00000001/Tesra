@@ -139,10 +139,10 @@ func GetNetworkName(id uint32) string {
 
 var ScorpioConfig = &GenesisConfig{
 	SeedList: []string{
-		"scorpio1.ont.io:28802",
-		"scorpio2.ont.io:28802",
-		"scorpio3.ont.io:28802",
-		"scorpio4.ont.io:28802"},
+		"dapp1.tesra.me:25766",
+		"dapp2.tesra.me:25766",
+		"dapp3.tesra.me:25766",
+		"dapp4.tesra.me:25766"},
 	ConsensusType: CONSENSUS_TYPE_VBFT,
 	VBFT: &VBFTConfig{
 		N:                    7,
@@ -208,13 +208,13 @@ var ScorpioConfig = &GenesisConfig{
 
 var MainNetConfig = &GenesisConfig{
 	SeedList: []string{
-		"207.46.153.221:25766",
-		"52.184.29.110:25766",
-		"52.229.166.46:25766",
-		"52.229.166.6:25766",
-		"121.41.17.61:25766",
-		"121.41.18.5:25766",
-		"65.52.184.46:25766"}, //"seed5.ont.io:28802"},
+		"dapp1.tesra.me:25766",
+		"dapp2.tesra.me:25766",
+		"dapp3.tesra.me:25766",
+		"dapp4.tesra.me:25766",
+		"www.tesra.me:25766",
+		"explore.tesra.me:25766",
+		"explore2.tesra.me:25766"},
 	ConsensusType: CONSENSUS_TYPE_VBFT,
 	VBFT: &VBFTConfig{
 		N:                    7,

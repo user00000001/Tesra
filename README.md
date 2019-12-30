@@ -5,13 +5,12 @@
 [![GoDoc](https://godoc.org/github.com/TesraSupernet/Tesra?status.svg)](https://godoc.org/github.com/TesraSupernet/Tesra)
 [![Go Report Card](https://goreportcard.com/badge/github.com/TesraSupernet/Tesra)](https://goreportcard.com/report/github.com/TesraSupernet/Tesra)
 [![Travis](https://travis-ci.com/TesraSupernet/Tesra.svg?branch=master)](https://travis-ci.com/TesraSupernet/Tesra)
-[![Discord](https://img.shields.io/discord/102860784329052160.svg)](https://discord.gg/gDkuCAq)
 
 English | [中文](README_CN.md)
 
-Welcome to the official Go implementation of the [Tesranode](https://ont.io) blockchain!
+Welcome to the official Go implementation of the [Tesranode](https://www.tesra.me) blockchain!
 
-Tesranode is a high-performance public blockchain project and distributed trust collaboration platform. It is highly customizable and suitable for all kinds of business requirements. The Tesranode MainNet was launched on December 31th, 2019.
+Tesranode is a high-performance public blockchain project and distributed trust collaboration platform. It is highly customizable and suitable for all kinds of business requirements. The Tesranode MainNet[for testing] was launched on December 31th, 2019.
 
 As a public blockchain project, Tesranode is currently maintained by both the Tesranode core tech team and community members who can all support you in development. There are many available tools for use for development - SDKs, the SmartX IDE, Tesranode blockchain explorer and more.
 
@@ -96,7 +95,7 @@ $ make all
 After building the source code successfully, you should see two executable programs:
 
 - `tesranode`: The primary Tesranode node application and CLI.
-- `tools/sigsvr`: The Tesranode Signature Server, `sigsvr` - an RPC server for signing transactions. Detailed documentation can be found [here](https://github.com/ontio/documentation/blob/master/docs/pages/doc_en/Tesranode/sigsvr_en.md).
+- `tools/sigsvr`: The Tesranode Signature Server, `sigsvr` - an RPC server for signing transactions. 
 
 ## Run Tesranode
 
@@ -279,8 +278,6 @@ BalanceOf:ARVVxBPGySL56CvSSWfjRVVyZYpNZ7zp48
   ONT:989979697
   ONG:28165900
 ```
-
-For further examples, please refer to the [CLI User Guide](https://ontio.github.io/documentation/cli_user_guide_en.html).
 
 ## Contributions
 
