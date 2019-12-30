@@ -1,6 +1,6 @@
 GOFMT=gofmt
 GC=go build
-VERSION := $(shell git describe --always --tags --long)
+VERSION := v0.0.1-$(shell git describe --always --tags --long)
 BUILD_NODE_PAR = -ldflags "-X github.com/TesraSupernet/Tesra/common/config.Version=$(VERSION)" #-race
 
 ARCH=$(shell uname -m)
