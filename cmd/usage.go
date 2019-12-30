@@ -1,19 +1,19 @@
 /*
- * Copyright (C) 2018 The ontology Authors
- * This file is part of The ontology library.
+ * Copyright (C) 2018 The Tesra Authors
+ * This file is part of The tesra library.
  *
- * The ontology is free software: you can redistribute it and/or modify
+ * The tesra is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Lesser General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
  *
- * The ontology is distributed in the hope that it will be useful,
+ * The tesra is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Lesser General Public License for more details.
  *
  * You should have received a copy of the GNU Lesser General Public License
- * along with The ontology.  If not, see <http://www.gnu.org/licenses/>.
+ * along with The tesra.  If not, see <http://www.gnu.org/licenses/>.
  */
 package cmd
 
@@ -35,7 +35,7 @@ var (
 	AppHelpTemplate = `NAME:
   {{.App.Name}} - {{.App.Usage}}
 
-	Ontology CLI is an Ontology node command line Client for starting and managing Ontology nodes,
+	TesraNode is an Tesra command line Client for starting and managing Tesra nodes,
 	managing user wallets, sending transactions, deploying and invoking contract, and so on.
 
 USAGE:
@@ -95,7 +95,7 @@ type flagGroup struct {
 
 var AppHelpFlagGroups = []flagGroup{
 	{
-		Name: "ONTOLOGY",
+		Name: "Tesra",
 		Flags: []cli.Flag{
 			utils.ConfigFlag,
 			utils.LogLevelFlag,
