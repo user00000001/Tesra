@@ -82,22 +82,22 @@ const (
 
 const (
 	NETWORK_ID_MAIN_NET      = 1
-	NETWORK_ID_POLARIS_NET   = 2
+	NETWORK_ID_SCORPIO_NET   = 2
 	NETWORK_ID_SOLO_NET      = 3
 	NETWORK_NAME_MAIN_NET    = "tesranode"
-	NETWORK_NAME_POLARIS_NET = "polaris"
+	NETWORK_NAME_SCORPIO_NET = "scorpio"
 	NETWORK_NAME_SOLO_NET    = "testmode"
 )
 
 var NETWORK_MAGIC = map[uint32]uint32{
 	NETWORK_ID_MAIN_NET:    constants.NETWORK_MAGIC_MAINNET, //Network main
-	NETWORK_ID_POLARIS_NET: constants.NETWORK_MAGIC_POLARIS, //Network polaris
+	NETWORK_ID_SCORPIO_NET: constants.NETWORK_MAGIC_SCORPIO, //Network scorpio
 	NETWORK_ID_SOLO_NET:    0,                               //Network solo
 }
 
 var NETWORK_NAME = map[uint32]string{
 	NETWORK_ID_MAIN_NET:    NETWORK_NAME_MAIN_NET,
-	NETWORK_ID_POLARIS_NET: NETWORK_NAME_POLARIS_NET,
+	NETWORK_ID_SCORPIO_NET: NETWORK_NAME_SCORPIO_NET,
 	NETWORK_ID_SOLO_NET:    NETWORK_NAME_SOLO_NET,
 }
 
@@ -111,7 +111,7 @@ func GetNetworkMagic(id uint32) uint32 {
 
 var STATE_HASH_CHECK_HEIGHT = map[uint32]uint32{
 	NETWORK_ID_MAIN_NET:    constants.STATE_HASH_HEIGHT_MAINNET, //Network main
-	NETWORK_ID_POLARIS_NET: constants.STATE_HASH_HEIGHT_POLARIS, //Network polaris
+	NETWORK_ID_SCORPIO_NET: constants.STATE_HASH_HEIGHT_SCORPIO, //Network scorpio
 	NETWORK_ID_SOLO_NET:    0,                                   //Network solo
 }
 
@@ -121,7 +121,7 @@ func GetStateHashCheckHeight(id uint32) uint32 {
 
 var OPCODE_HASKEY_ENABLE_HEIGHT = map[uint32]uint32{
 	NETWORK_ID_MAIN_NET:    constants.OPCODE_HEIGHT_UPDATE_FIRST_MAINNET, //Network main
-	NETWORK_ID_POLARIS_NET: constants.OPCODE_HEIGHT_UPDATE_FIRST_POLARIS, //Network polaris
+	NETWORK_ID_SCORPIO_NET: constants.OPCODE_HEIGHT_UPDATE_FIRST_SCORPIO, //Network scorpio
 	NETWORK_ID_SOLO_NET:    0,                                            //Network solo
 }
 
@@ -137,12 +137,12 @@ func GetNetworkName(id uint32) string {
 	return fmt.Sprintf("%d", id)
 }
 
-var PolarisConfig = &GenesisConfig{
+var ScorpioConfig = &GenesisConfig{
 	SeedList: []string{
-		"polaris1.ont.io:28802",
-		"polaris2.ont.io:28802",
-		"polaris3.ont.io:28802",
-		"polaris4.ont.io:28802"},
+		"scorpio1.ont.io:28802",
+		"scorpio2.ont.io:28802",
+		"scorpio3.ont.io:28802",
+		"scorpio4.ont.io:28802"},
 	ConsensusType: CONSENSUS_TYPE_VBFT,
 	VBFT: &VBFTConfig{
 		N:                    7,
@@ -635,7 +635,7 @@ func (this *TesranodeConfig) GetDefaultNetworkId() (uint32, error) {
 	if err != nil {
 		return 0, err
 	}
-	polaridId, err := this.getDefNetworkIDFromGenesisConfig(PolarisConfig)
+	polaridId, err := this.getDefNetworkIDFromGenesisConfig(ScorpioConfig)
 	if err != nil {
 		return 0, err
 	}
@@ -643,7 +643,7 @@ func (this *TesranodeConfig) GetDefaultNetworkId() (uint32, error) {
 	case mainNetId:
 		return NETWORK_ID_MAIN_NET, nil
 	case polaridId:
-		return NETWORK_ID_POLARIS_NET, nil
+		return NETWORK_ID_SCORPIO_NET, nil
 	}
 	return defaultNetworkId, nil
 }

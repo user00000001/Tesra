@@ -25,7 +25,7 @@ Tesranode MainNet 已经在2019年12月31日成功上线。<br>
     * [从源码获取](#从源码获取)
 * [运行tesranode](#运行tesranode)
     * [主网同步节点](#主网同步节点)
-    * [公开测试网Polaris同步节点](#公开测试网polaris同步节点)
+    * [公开测试网Scorpio同步节点](#公开测试网scorpio同步节点)
     * [测试模式](#测试模式)
     * [使用docker运行](#使用docker运行)
 * [使用示例](#使用示例)
@@ -110,7 +110,7 @@ $ make all
    ```
 然后你可以连接上主网了。
 
-### 公开测试网Polaris同步节点
+### 公开测试网Scorpio同步节点
 
 直接启动Tesranode
 

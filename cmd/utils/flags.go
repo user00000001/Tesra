@@ -117,7 +117,7 @@ var (
 	}
 	NetworkIdFlag = cli.UintFlag{
 		Name:  "networkid",
-		Usage: "Network id `<number>`. 1=tesranode main net, 2=polaris test net, 3=testmode, and other for custom network",
+		Usage: "Network id `<number>`. 1=tesranode main net, 2=scorpio test net, 3=testmode, and other for custom network",
 		Value: config.NETWORK_ID_MAIN_NET,
 	}
 	NodePortFlag = cli.UintFlag{

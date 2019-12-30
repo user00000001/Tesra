@@ -50,7 +50,7 @@ func SetTesranodeConfig(ctx *cli.Context) (*config.TesranodeConfig, error) {
 		cfg.Common.GasPrice = 0
 	}
 	if cfg.P2PNode.NetworkId == config.NETWORK_ID_MAIN_NET ||
-		cfg.P2PNode.NetworkId == config.NETWORK_ID_POLARIS_NET {
+		cfg.P2PNode.NetworkId == config.NETWORK_ID_SCORPIO_NET {
 		defNetworkId, err := cfg.GetDefaultNetworkId()
 		if err != nil {
 			return nil, fmt.Errorf("GetDefaultNetworkId error:%s", err)
@@ -69,8 +69,8 @@ func setGenesis(ctx *cli.Context, cfg *config.TesranodeConfig) error {
 	switch netWorkId {
 	case config.NETWORK_ID_MAIN_NET:
 		cfg.Genesis = config.MainNetConfig
-	case config.NETWORK_ID_POLARIS_NET:
-		cfg.Genesis = config.PolarisConfig
+	case config.NETWORK_ID_SCORPIO_NET:
+		cfg.Genesis = config.ScorpioConfig
 	}
 
 	if ctx.Bool(utils.GetFlagName(utils.EnableTestModeFlag)) {
