@@ -329,7 +329,7 @@ func RegisterCandidateTransferFrom(native *native.NativeService) ([]byte, error)
 	return utils.BYTE_TRUE, nil
 }
 
-//Unregister a registered candidate node, will remove node from pool, and unfreeze deposit ont.
+//Unregister a registered candidate node, will remove node from pool, and unfreeze deposit tst.
 func UnRegisterCandidate(native *native.NativeService) ([]byte, error) {
 	params := new(UnRegisterCandidateParam)
 	if err := params.Deserialization(common.NewZeroCopySource(native.Input)); err != nil {
@@ -521,7 +521,7 @@ func ApproveCandidate(native *native.NativeService) ([]byte, error) {
 	return utils.BYTE_TRUE, nil
 }
 
-//Reject a registered candidate node, remove node from pool and unfreeze deposit ont
+//Reject a registered candidate node, remove node from pool and unfreeze deposit tst
 //Only approved candidate node can participate in consensus selection and get tsg bonus.
 func RejectCandidate(native *native.NativeService) ([]byte, error) {
 	params := new(RejectCandidateParam)
@@ -952,7 +952,7 @@ func Withdraw(native *native.NativeService) ([]byte, error) {
 		}
 	}
 
-	//ont transfer
+	//tst transfer
 	err = appCallTransferTst(native, utils.GovernanceContractAddress, address, total)
 	if err != nil {
 		return utils.BYTE_FALSE, fmt.Errorf("appCallTransferTst, tst transfer error: %v", err)
@@ -1265,7 +1265,7 @@ func WithdrawTsg(native *native.NativeService) ([]byte, error) {
 		return utils.BYTE_FALSE, fmt.Errorf("withdrawTsg, checkWitness error: %v", err)
 	}
 
-	// tst transfer to trigger unboundong
+	// tst transfer to trigger unboundtsg
 	err = appCallTransferTst(native, utils.GovernanceContractAddress, utils.GovernanceContractAddress, 1)
 	if err != nil {
 		return utils.BYTE_FALSE, fmt.Errorf("appCallTransferTst, tst transfer error: %v", err)
@@ -1432,7 +1432,7 @@ func WithdrawFee(native *native.NativeService) ([]byte, error) {
 	}
 	fee := splitFeeAddress.Amount
 
-	//ong transfer
+	//tsg transfer
 	err = appCallTransferTsg(native, utils.GovernanceContractAddress, params.Address, fee)
 	if err != nil {
 		return utils.BYTE_FALSE, fmt.Errorf("appCallTransferTsg, tsg transfer error: %v", err)
@@ -1509,7 +1509,7 @@ func AddInitPos(native *native.NativeService) ([]byte, error) {
 		return utils.BYTE_FALSE, fmt.Errorf("putPeerPoolMap error: %v", err)
 	}
 
-	//ont transfer
+	//tst transfer
 	err = appCallTransferTst(native, params.Address, utils.GovernanceContractAddress, uint64(params.Pos))
 	if err != nil {
 		return utils.BYTE_FALSE, fmt.Errorf("appCallTransferTst, tst transfer error: %v", err)

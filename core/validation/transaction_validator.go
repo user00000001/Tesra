@@ -29,28 +29,28 @@ import (
 	"github.com/TesraSupernet/Tesra/core/payload"
 	"github.com/TesraSupernet/Tesra/core/signature"
 	"github.com/TesraSupernet/Tesra/core/types"
-	ontErrors "github.com/TesraSupernet/Tesra/errors"
+	tstErrors "github.com/TesraSupernet/Tesra/errors"
 	"github.com/TesraSupernet/Tesra/smartcontract/service/wasmvm"
 )
 
 // VerifyTransaction verifys received single transaction
-func VerifyTransaction(tx *types.Transaction) ontErrors.ErrCode {
+func VerifyTransaction(tx *types.Transaction) tstErrors.ErrCode {
 	if err := checkTransactionSignatures(tx); err != nil {
 		log.Info("transaction verify error:", err)
-		return ontErrors.ErrVerifySignature
+		return tstErrors.ErrVerifySignature
 	}
 
 	if err := checkTransactionPayload(tx); err != nil {
 		log.Warn("[VerifyTransaction],", err)
-		return ontErrors.ErrTransactionPayload
+		return tstErrors.ErrTransactionPayload
 	}
 
-	return ontErrors.ErrNoError
+	return tstErrors.ErrNoError
 }
 
-func VerifyTransactionWithLedger(tx *types.Transaction, ledger *ledger.Ledger) ontErrors.ErrCode {
+func VerifyTransactionWithLedger(tx *types.Transaction, ledger *ledger.Ledger) tstErrors.ErrCode {
 	//TODO: replay check
-	return ontErrors.ErrNoError
+	return tstErrors.ErrNoError
 }
 
 func checkTransactionSignatures(tx *types.Transaction) error {

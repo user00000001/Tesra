@@ -272,7 +272,7 @@ func grantTsg(native *native.NativeService, contract, address common.Address, ba
 	return nil
 }
 
-func getApproveArgs(native *native.NativeService, contract, ongContract, address common.Address, value uint64) ([]byte, error) {
+func getApproveArgs(native *native.NativeService, contract, tsgContract, address common.Address, value uint64) ([]byte, error) {
 	bf := common.NewZeroCopySink(nil)
 	approve := State{
 		From:  contract,
@@ -280,7 +280,7 @@ func getApproveArgs(native *native.NativeService, contract, ongContract, address
 		Value: value,
 	}
 
-	stateValue, err := utils.GetStorageUInt64(native, GenApproveKey(ongContract, approve.From, approve.To))
+	stateValue, err := utils.GetStorageUInt64(native, GenApproveKey(tsgContract, approve.From, approve.To))
 	if err != nil {
 		return nil, err
 	}

@@ -65,13 +65,13 @@ func init() {
 
 //Return balance of address in base58 code
 func GetBalance(address string) (*httpcom.BalanceOfRsp, error) {
-	result, ontErr := sendRpcRequest("getbalance", []interface{}{address})
-	if ontErr != nil {
-		switch ontErr.ErrorCode {
+	result, tstErr := sendRpcRequest("getbalance", []interface{}{address})
+	if tstErr != nil {
+		switch tstErr.ErrorCode {
 		case ERROR_INVALID_PARAMS:
 			return nil, fmt.Errorf("invalid address:%s", address)
 		}
-		return nil, ontErr.Error
+		return nil, tstErr.Error
 	}
 	balance := &httpcom.BalanceOfRsp{}
 	err := json.Unmarshal(result, balance)
@@ -102,9 +102,9 @@ func GetAccountBalance(address, asset string) (uint64, error) {
 }
 
 func GetAllowance(asset, from, to string) (string, error) {
-	result, ontErr := sendRpcRequest("getallowance", []interface{}{asset, from, to})
-	if ontErr != nil {
-		return "", ontErr.Error
+	result, tstErr := sendRpcRequest("getallowance", []interface{}{asset, from, to})
+	if tstErr != nil {
+		return "", tstErr.Error
 	}
 	balance := ""
 	err := json.Unmarshal(result, &balance)
@@ -114,7 +114,7 @@ func GetAllowance(asset, from, to string) (string, error) {
 	return balance, nil
 }
 
-//Transfer ont|ong from account to another account
+//Transfer tst|tsg from account to another account
 func Transfer(gasPrice, gasLimit uint64, signer *account.Account, asset, from, to string, amount uint64) (string, error) {
 	mutable, err := TransferTx(gasPrice, gasLimit, asset, signer.Address.ToBase58(), to, amount)
 	if err != nil {
@@ -443,9 +443,9 @@ func SendRawTransaction(tx *types.Transaction) (string, error) {
 }
 
 func SendRawTransactionData(txData string) (string, error) {
-	data, ontErr := sendRpcRequest("sendrawtransaction", []interface{}{txData})
-	if ontErr != nil {
-		return "", ontErr.Error
+	data, tstErr := sendRpcRequest("sendrawtransaction", []interface{}{txData})
+	if tstErr != nil {
+		return "", tstErr.Error
 	}
 	hexHash := ""
 	err := json.Unmarshal(data, &hexHash)
@@ -456,9 +456,9 @@ func SendRawTransactionData(txData string) (string, error) {
 }
 
 func PrepareSendRawTransaction(txData string) (*cstates.PreExecResult, error) {
-	data, ontErr := sendRpcRequest("sendrawtransaction", []interface{}{txData, 1})
-	if ontErr != nil {
-		return nil, ontErr.Error
+	data, tstErr := sendRpcRequest("sendrawtransaction", []interface{}{txData, 1})
+	if tstErr != nil {
+		return nil, tstErr.Error
 	}
 	preResult := &cstates.PreExecResult{}
 	err := json.Unmarshal(data, &preResult)
@@ -470,13 +470,13 @@ func PrepareSendRawTransaction(txData string) (*cstates.PreExecResult, error) {
 
 //GetSmartContractEvent return smart contract event execute by invoke transaction by hex string code
 func GetSmartContractEvent(txHash string) (*rpccommon.ExecuteNotify, error) {
-	data, ontErr := sendRpcRequest("getsmartcodeevent", []interface{}{txHash})
-	if ontErr != nil {
-		switch ontErr.ErrorCode {
+	data, tstErr := sendRpcRequest("getsmartcodeevent", []interface{}{txHash})
+	if tstErr != nil {
+		switch tstErr.ErrorCode {
 		case ERROR_INVALID_PARAMS:
 			return nil, fmt.Errorf("invalid TxHash:%s", txHash)
 		}
-		return nil, ontErr.Error
+		return nil, tstErr.Error
 	}
 	notifies := &rpccommon.ExecuteNotify{}
 	err := json.Unmarshal(data, &notifies)
@@ -487,45 +487,45 @@ func GetSmartContractEvent(txHash string) (*rpccommon.ExecuteNotify, error) {
 }
 
 func GetSmartContractEventInfo(txHash string) ([]byte, error) {
-	data, ontErr := sendRpcRequest("getsmartcodeevent", []interface{}{txHash})
-	if ontErr == nil {
+	data, tstErr := sendRpcRequest("getsmartcodeevent", []interface{}{txHash})
+	if tstErr == nil {
 		return data, nil
 	}
-	switch ontErr.ErrorCode {
+	switch tstErr.ErrorCode {
 	case ERROR_INVALID_PARAMS:
 		return nil, fmt.Errorf("invalid TxHash:%s", txHash)
 	}
-	return nil, ontErr.Error
+	return nil, tstErr.Error
 }
 
 func GetRawTransaction(txHash string) ([]byte, error) {
-	data, ontErr := sendRpcRequest("getrawtransaction", []interface{}{txHash, 1})
-	if ontErr == nil {
+	data, tstErr := sendRpcRequest("getrawtransaction", []interface{}{txHash, 1})
+	if tstErr == nil {
 		return data, nil
 	}
-	switch ontErr.ErrorCode {
+	switch tstErr.ErrorCode {
 	case ERROR_INVALID_PARAMS:
 		return nil, fmt.Errorf("invalid TxHash:%s", txHash)
 	}
-	return nil, ontErr.Error
+	return nil, tstErr.Error
 }
 
 func GetBlock(hashOrHeight interface{}) ([]byte, error) {
-	data, ontErr := sendRpcRequest("getblock", []interface{}{hashOrHeight, 1})
-	if ontErr == nil {
+	data, tstErr := sendRpcRequest("getblock", []interface{}{hashOrHeight, 1})
+	if tstErr == nil {
 		return data, nil
 	}
-	switch ontErr.ErrorCode {
+	switch tstErr.ErrorCode {
 	case ERROR_INVALID_PARAMS:
 		return nil, fmt.Errorf("invalid block hash or block height:%v", hashOrHeight)
 	}
-	return nil, ontErr.Error
+	return nil, tstErr.Error
 }
 
 func GetNetworkId() (uint32, error) {
-	data, ontErr := sendRpcRequest("getnetworkid", []interface{}{})
-	if ontErr != nil {
-		return 0, ontErr.Error
+	data, tstErr := sendRpcRequest("getnetworkid", []interface{}{})
+	if tstErr != nil {
+		return 0, tstErr.Error
 	}
 	var networkId uint32
 	err := json.Unmarshal(data, &networkId)
@@ -536,13 +536,13 @@ func GetNetworkId() (uint32, error) {
 }
 
 func GetBlockData(hashOrHeight interface{}) ([]byte, error) {
-	data, ontErr := sendRpcRequest("getblock", []interface{}{hashOrHeight})
-	if ontErr != nil {
-		switch ontErr.ErrorCode {
+	data, tstErr := sendRpcRequest("getblock", []interface{}{hashOrHeight})
+	if tstErr != nil {
+		switch tstErr.ErrorCode {
 		case ERROR_INVALID_PARAMS:
 			return nil, fmt.Errorf("invalid block hash or block height:%v", hashOrHeight)
 		}
-		return nil, ontErr.Error
+		return nil, tstErr.Error
 	}
 	hexStr := ""
 	err := json.Unmarshal(data, &hexStr)
@@ -557,9 +557,9 @@ func GetBlockData(hashOrHeight interface{}) ([]byte, error) {
 }
 
 func GetBlockCount() (uint32, error) {
-	data, ontErr := sendRpcRequest("getblockcount", []interface{}{})
-	if ontErr != nil {
-		return 0, ontErr.Error
+	data, tstErr := sendRpcRequest("getblockcount", []interface{}{})
+	if tstErr != nil {
+		return 0, tstErr.Error
 	}
 	num := uint32(0)
 	err := json.Unmarshal(data, &num)
@@ -570,13 +570,13 @@ func GetBlockCount() (uint32, error) {
 }
 
 func GetTxHeight(txHash string) (uint32, error) {
-	data, ontErr := sendRpcRequest("getblockheightbytxhash", []interface{}{txHash})
-	if ontErr != nil {
-		switch ontErr.ErrorCode {
+	data, tstErr := sendRpcRequest("getblockheightbytxhash", []interface{}{txHash})
+	if tstErr != nil {
+		switch tstErr.ErrorCode {
 		case ERROR_INVALID_PARAMS:
 			return 0, fmt.Errorf("cannot find tx by:%s", txHash)
 		}
-		return 0, ontErr.Error
+		return 0, tstErr.Error
 	}
 	height := uint32(0)
 	err := json.Unmarshal(data, &height)

@@ -18,7 +18,7 @@ Tesranode签名服务器sigsvr是一个用于对交易进行签名的rpc服务�
 		* [2.5 转账交易签名](#25-转账交易签名)
 		* [2.6 Native合约调用签名](#26-native合约调用签名)
 			* [举例1: 构造普通转账交易](#举例1-构造普通转账交易)
-			* [举例2: 构造提取TSG交易](#举例2-构造提取ong交易)
+			* [举例2: 构造提取TSG交易](#举例2-构造提取tsg交易)
 		* [2.7 NeoVM合约调用签名](#27-neovm合约调用签名)
 		* [2.8 NeoVM合约ABI调用签名](#28-neovm合约abi调用签名)
 		* [2.9 创建账户](#29-创建账户)
@@ -275,10 +275,10 @@ http://localhost:20000/cli
 {
 	"gas_price":XXX,  //gasprice
 	"gas_limit":XXX,  //gaslimit
-	"asset":"tst",    //asset: tst or ong
+	"asset":"tst",    //asset: tst or tsg
 	"from":"XXX",     //付款账户
 	"to":"XXX",       //收款地址
-	"amount":"XXX"      //转账金额。注意，由于ong的精度是9，应该在进行ong转账时，需要在实际的转账金额上乘以1000000000。
+	"amount":"XXX"      //转账金额。注意，由于tsg的精度是9，应该在进行tsg转账时，需要在实际的转账金额上乘以1000000000。
 }
 ```
 应答结果：
@@ -375,7 +375,7 @@ sigsvr启动时，默认会在当前目录下查找"./abi"下的native合约abi�
 }
 ```
 
-以构造ont转账交易举例
+以构造tst转账交易举例
 请求：
 
 ```

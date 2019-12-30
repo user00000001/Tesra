@@ -40,13 +40,13 @@ This document describes the restful api format for the http/https used in the On
 | [get_merkle_proof](#14-get_merkle_proof) | GET /api/v1/merkleproof/:hash| return merkle proof of the transaction |
 | [get_gasprice](#15-get_gasprice) | GET /api/v1/gasprice| return gas price |
 | [get_allowance](#16-get_allowance) | GET /api/v1/allowance/:asset/:from/:to | return the allowance from transfer-from accout to transfer-to account |
-| [get_unboundong](#17-get_unboundong) | GET /api/v1/unboundong/:addr | return the number of unbound tsg of given address |
+| [get_unboundtsg](#17-get_unboundtsg) | GET /api/v1/unboundtsg/:addr | return the number of unbound tsg of given address |
 | [get_mempooltxcount](#18-get_mempooltxcount) | GET /api/v1/mempool/txcount | return the number of transaction locate in memory |
 | [get_mempooltxstate](#19-get_mempooltxstate) | GET /api/v1/mempool/txstate/:hash | return the state of transaction locate in memory |
 | [get_version](#20-get_version) |  GET /api/v1/version | return the version of tesranode |
 | [post_raw_tx](#21-post_raw_tx) | post /api/v1/transaction?preExec=0 | send transaction to tesranode network |
 | [get_networkid](#22-get_networkid) |  GET /api/v1/networkid | return the networkid |
-| [get_grantong](#23-get_grantong) |  GET /api/v1/grantong/:addr | get grant tsg |
+| [get_granttsg](#23-get_granttsg) |  GET /api/v1/granttsg/:addr | get grant tsg |
 
 ### 1 get_conn_count
 
@@ -684,22 +684,22 @@ curl -i http://localhost:20334/api/v1/allowance/:asset/:from/:to
 }
 ```
 
-### 17 get_unboundong
+### 17 get_unboundtsg
 
-Get unbound ong.
+Get unbound tsg.
 
 GET
 ```
-/api/v1/unboundong
+/api/v1/unboundtsg
 ```
 #### Request Example:
 ```
-curl -i http://localhost:20334/api/v1/unboundong/:addr
+curl -i http://localhost:20334/api/v1/unboundtsg/:addr
 ```
 #### Response
 ```
 {
-    "Action": "getunboundong",
+    "Action": "getunboundtsg",
     "Desc": "SUCCESS",
     "Error": 0,
     "Result": "204957950400000",
@@ -849,22 +849,22 @@ curl -i http://localhost:20334/api/v1/networkid
 }
 ```
 
-### 23 get_grantong
+### 23 get_granttsg
 
-get grant ong.
+get grant tsg.
 
 GET
 ```
-/api/v1/grantong/:addr
+/api/v1/granttsg/:addr
 ```
 #### Request Example:
 ```
-curl -i http://localhost:20334/api/v1/grantong/AKDFapcoUhewN9Kaj6XhHusurfHzUiZqUA
+curl -i http://localhost:20334/api/v1/granttsg/AKDFapcoUhewN9Kaj6XhHusurfHzUiZqUA
 ```
 #### Response
 ```
 {
-    "Action": "getgrantong",
+    "Action": "getgranttsg",
     "Desc": "SUCCESS",
     "Error": 0,
     "Version": "1.0.0",

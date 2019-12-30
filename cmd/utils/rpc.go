@@ -43,16 +43,16 @@ type TesranodeError struct {
 }
 
 func NewTesranodeError(err error, errCode ...int64) *TesranodeError {
-	ontErr := &TesranodeError{Error: err}
+	tstErr := &TesranodeError{Error: err}
 	if len(errCode) > 0 {
-		ontErr.ErrorCode = errCode[0]
+		tstErr.ErrorCode = errCode[0]
 	} else {
-		ontErr.ErrorCode = ERROR_TESRANODE_COMMON
+		tstErr.ErrorCode = ERROR_TESRANODE_COMMON
 	}
 	if err == nil {
-		ontErr.ErrorCode = ERROR_TESRANODE_SUCCESS
+		tstErr.ErrorCode = ERROR_TESRANODE_SUCCESS
 	}
-	return ontErr
+	return tstErr
 }
 
 //JsonRpcRequest object in rpc

@@ -93,10 +93,10 @@
 | [getmerkleproof](#16-getmerkleproof) | tx_hash | 返回merkle证明 |  |
 | [getgasprice](#17-getgasprice) |  | 返回gas的价格 |  |
 | [getallowance](#18-getallowance) | asset, from, to | 返回允许从from转出到to账户的额度 |  |
-| [getunboundong](#19-getunboundong) | address | 返回该账户未提取的ong |  |
+| [getunboundtsg](#19-getunboundtsg) | address | 返回该账户未提取的tsg |  |
 | [getblocktxsbyheight](#20-getblocktxsbyheight) | height | 返回该高度对应的区块落账的交易的哈希 |  |
 | [getnetworkid](#21-getnetworkid) |  | 获取 network id |  |
-| [getgrantong](#22-getgrantong) |  | 获取 grant tsg |  |
+| [getgranttsg](#22-getgranttsg) |  | 获取 grant tsg |  |
 
 ### 1. getbestblockhash
 
@@ -981,13 +981,13 @@ Response:
 }
 ```
 
-#### 19. getunboundong
+#### 19. getunboundtsg
 
-返回可以提取的ong。
+返回可以提取的tsg。
 
 #### 参数定义
 
-address：提取ong的账户地址
+address：提取tsg的账户地址
 
 #### Example
 
@@ -996,7 +996,7 @@ Request:
 ```
 {
   "jsonrpc": "2.0",
-  "method": "getunboundong",
+  "method": "getunboundtsg",
   "params": ["address"],
   "id": 1
 }
@@ -1082,9 +1082,9 @@ Response:
 }
 ```
 
-#### 22. getgrantong
+#### 22. getgranttsg
 
-获取 grant ong.
+获取 grant tsg.
 
 #### Example
 
@@ -1093,7 +1093,7 @@ Request:
 ```
 {
   "jsonrpc": "2.0",
-  "method": "getgrantong",
+  "method": "getgranttsg",
   "params": ["AKDFapcoUhewN9Kaj6XhHusurfHzUiZqUA"],
   "id": 3
 }

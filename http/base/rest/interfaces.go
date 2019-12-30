@@ -24,7 +24,7 @@ import (
 	"github.com/TesraSupernet/Tesra/common/log"
 	scom "github.com/TesraSupernet/Tesra/core/store/common"
 	"github.com/TesraSupernet/Tesra/core/types"
-	ontErrors "github.com/TesraSupernet/Tesra/errors"
+	tstErrors "github.com/TesraSupernet/Tesra/errors"
 	bactor "github.com/TesraSupernet/Tesra/http/base/actor"
 	bcomn "github.com/TesraSupernet/Tesra/http/base/common"
 	berr "github.com/TesraSupernet/Tesra/http/base/error"
@@ -273,7 +273,7 @@ func SendRawTransaction(cmd map[string]interface{}) map[string]interface{} {
 		}
 	}
 	log.Debugf("SendRawTransaction send to txpool %s", hash.ToHexString())
-	if errCode, desc := bcomn.SendTxToPool(txn); errCode != ontErrors.ErrNoError {
+	if errCode, desc := bcomn.SendTxToPool(txn); errCode != tstErrors.ErrNoError {
 		resp["Error"] = int64(errCode)
 		resp["Result"] = desc
 		log.Warnf("SendRawTransaction verified %s error: %s", hash.ToHexString(), desc)
@@ -504,7 +504,7 @@ func GetAllowance(cmd map[string]interface{}) map[string]interface{} {
 	return resp
 }
 
-//get unbound ong
+//get unbound tsg
 func GetUnboundTsg(cmd map[string]interface{}) map[string]interface{} {
 	resp := ResponsePack(berr.SUCCESS)
 	toAddrStr, ok := cmd["Addr"].(string)
@@ -525,7 +525,7 @@ func GetUnboundTsg(cmd map[string]interface{}) map[string]interface{} {
 	return resp
 }
 
-//get grant ong
+//get grant tsg
 func GetGrantTsg(cmd map[string]interface{}) map[string]interface{} {
 	resp := ResponsePack(berr.SUCCESS)
 	toAddrStr, ok := cmd["Addr"].(string)

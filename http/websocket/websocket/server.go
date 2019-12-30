@@ -29,13 +29,13 @@ import (
 	"sync"
 	"time"
 
-	"github.com/gorilla/websocket"
 	"github.com/TesraSupernet/Tesra/common"
 	cfg "github.com/TesraSupernet/Tesra/common/config"
 	"github.com/TesraSupernet/Tesra/common/log"
 	Err "github.com/TesraSupernet/Tesra/http/base/error"
 	"github.com/TesraSupernet/Tesra/http/base/rest"
 	"github.com/TesraSupernet/Tesra/http/websocket/session"
+	"github.com/gorilla/websocket"
 )
 
 const (
@@ -197,8 +197,8 @@ func (self *WsServer) registryMethod() {
 		"getmerkleproof":            {handler: rest.GetMerkleProof},
 		"getblocktxsbyheight":       {handler: rest.GetBlockTxsByHeight},
 		"getgasprice":               {handler: rest.GetGasPrice},
-		"getunboundong":             {handler: rest.GetUnboundTsg},
-		"getgrantong":               {handler: rest.GetGrantTsg},
+		"getunboundtsg":             {handler: rest.GetUnboundTsg},
+		"getgranttsg":               {handler: rest.GetGrantTsg},
 		"getmempooltxcount":         {handler: rest.GetMemPoolTxCount},
 		"getmempooltxstate":         {handler: rest.GetMemPoolTxState},
 		"getversion":                {handler: rest.GetNodeVersion},

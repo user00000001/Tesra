@@ -26,7 +26,7 @@ import (
 	"github.com/TesraSupernet/Tesra/core/payload"
 	scom "github.com/TesraSupernet/Tesra/core/store/common"
 	"github.com/TesraSupernet/Tesra/core/types"
-	ontErrors "github.com/TesraSupernet/Tesra/errors"
+	tstErrors "github.com/TesraSupernet/Tesra/errors"
 	bactor "github.com/TesraSupernet/Tesra/http/base/actor"
 	bcomn "github.com/TesraSupernet/Tesra/http/base/common"
 	berr "github.com/TesraSupernet/Tesra/http/base/error"
@@ -290,7 +290,7 @@ func SendRawTransaction(params []interface{}) map[string]interface{} {
 		}
 
 		log.Debugf("SendRawTransaction send to txpool %s", hash.ToHexString())
-		if errCode, desc := bcomn.SendTxToPool(txn); errCode != ontErrors.ErrNoError {
+		if errCode, desc := bcomn.SendTxToPool(txn); errCode != tstErrors.ErrNoError {
 			log.Warnf("SendRawTransaction verified %s error: %s", hash.ToHexString(), desc)
 			return responsePack(int64(errCode), desc)
 		}

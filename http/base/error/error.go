@@ -19,7 +19,7 @@
 // Package error privides error code for http
 package error
 
-import ontErrors "github.com/TesraSupernet/Tesra/errors"
+import tstErrors "github.com/TesraSupernet/Tesra/errors"
 
 const (
 	SUCCESS            int64 = 0
@@ -67,19 +67,19 @@ var ErrMap = map[int64]string{
 	INTERNAL_ERROR:                           "INTERNAL ERROR",
 	SMARTCODE_ERROR:                          "SMARTCODE EXEC ERROR",
 	PRE_EXEC_ERROR:                           "SMARTCODE PREPARE EXEC ERROR",
-	int64(ontErrors.ErrNoCode):               "INTERNAL ERROR, ErrNoCode",
-	int64(ontErrors.ErrUnknown):              "INTERNAL ERROR, ErrUnknown",
-	int64(ontErrors.ErrDuplicatedTx):         "INTERNAL ERROR, ErrDuplicatedTx",
-	int64(ontErrors.ErrDuplicateInput):       "INTERNAL ERROR, ErrDuplicateInput",
-	int64(ontErrors.ErrAssetPrecision):       "INTERNAL ERROR, ErrAssetPrecision",
-	int64(ontErrors.ErrTransactionBalance):   "INTERNAL ERROR, ErrTransactionBalance",
-	int64(ontErrors.ErrAttributeProgram):     "INTERNAL ERROR, ErrAttributeProgram",
-	int64(ontErrors.ErrTransactionContracts): "INTERNAL ERROR, ErrTransactionContracts",
-	int64(ontErrors.ErrTransactionPayload):   "INTERNAL ERROR, ErrTransactionPayload",
-	int64(ontErrors.ErrDoubleSpend):          "INTERNAL ERROR, ErrDoubleSpend",
-	int64(ontErrors.ErrTxHashDuplicate):      "INTERNAL ERROR, ErrTxHashDuplicate",
-	int64(ontErrors.ErrStateUpdaterVaild):    "INTERNAL ERROR, ErrStateUpdaterVaild",
-	int64(ontErrors.ErrSummaryAsset):         "INTERNAL ERROR, ErrSummaryAsset",
-	int64(ontErrors.ErrXmitFail):             "INTERNAL ERROR, ErrXmitFail",
-	int64(ontErrors.ErrNoAccount):            "INTERNAL ERROR, ErrNoAccount",
+	int64(tstErrors.ErrNoCode):               "INTERNAL ERROR, ErrNoCode",
+	int64(tstErrors.ErrUnknown):              "INTERNAL ERROR, ErrUnknown",
+	int64(tstErrors.ErrDuplicatedTx):         "INTERNAL ERROR, ErrDuplicatedTx",
+	int64(tstErrors.ErrDuplicateInput):       "INTERNAL ERROR, ErrDuplicateInput",
+	int64(tstErrors.ErrAssetPrecision):       "INTERNAL ERROR, ErrAssetPrecision",
+	int64(tstErrors.ErrTransactionBalance):   "INTERNAL ERROR, ErrTransactionBalance",
+	int64(tstErrors.ErrAttributeProgram):     "INTERNAL ERROR, ErrAttributeProgram",
+	int64(tstErrors.ErrTransactionContracts): "INTERNAL ERROR, ErrTransactionContracts",
+	int64(tstErrors.ErrTransactionPayload):   "INTERNAL ERROR, ErrTransactionPayload",
+	int64(tstErrors.ErrDoubleSpend):          "INTERNAL ERROR, ErrDoubleSpend",
+	int64(tstErrors.ErrTxHashDuplicate):      "INTERNAL ERROR, ErrTxHashDuplicate",
+	int64(tstErrors.ErrStateUpdaterVaild):    "INTERNAL ERROR, ErrStateUpdaterVaild",
+	int64(tstErrors.ErrSummaryAsset):         "INTERNAL ERROR, ErrSummaryAsset",
+	int64(tstErrors.ErrXmitFail):             "INTERNAL ERROR, ErrXmitFail",
+	int64(tstErrors.ErrNoAccount):            "INTERNAL ERROR, ErrNoAccount",
 }

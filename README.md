@@ -27,7 +27,7 @@ New features are still being rapidly developed, therefore the master branch may 
     - [Local PrivateNet](#local-privatenet)
     - [Run with Docker](#run-in-docker)
 - [Examples](#examples)
-    - [TST transfer sample](#ont-transfer-sample)
+    - [TST transfer sample](#tst-transfer-sample)
     - [Query transfer status sample](#query-transfer-status-sample)
     - [Query account balance sample](#query-account-balance-sample)
 - [Contributions](#contributions)
@@ -178,12 +178,12 @@ Transfer TST
 TxHash is the transfer transaction hash, and we can query a transfer result by the TxHash.
 Due to block time, the transfer transaction will not be executed before the block is generated and added.
 
-If you want to transfer TSG, just add --asset=ong flag.
+If you want to transfer TSG, just add --asset=tsg flag.
 
-Note that TST is an integer and has no decimals, whereas TSG has 9 decimals. For detailed info please read [Everything you need to know about TSG](https://medium.com/tesranodenetwork/everything-you-need-to-know-about-ong-582ed216b870).
+Note that TST is an integer and has no decimals, whereas TSG has 9 decimals. 
 
 ```shell
-./tesranode asset transfer --from=ARVVxBPGySL56CvSSWfjRVVyZYpNZ7zp48 --to=ARVVxBPGySL56CvSSWfjRVVyZYpNZ7zp48 --amount=95.479777254 --asset=ong
+./tesranode asset transfer --from=ARVVxBPGySL56CvSSWfjRVVyZYpNZ7zp48 --to=ARVVxBPGySL56CvSSWfjRVVyZYpNZ7zp48 --amount=95.479777254 --asset=tsg
 ```
 If transfer of the asset succeeds, the result will display as follows:
 

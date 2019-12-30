@@ -11,7 +11,7 @@ common event format is as follows, including txhash, state, gasConsumed and noti
 
 #### Transfer
 
-* Usage: Transfer ont
+* Usage: Transfer tst
 
 * Event and notify:
 ```

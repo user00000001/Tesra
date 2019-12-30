@@ -44,7 +44,7 @@ func NativeInvoke(service *NeoVmService, engine *vm.Executor) error {
 		return err
 	}
 	if len(method) > METHOD_LENGTH_LIMIT {
-		return fmt.Errorf("invoke native contract:%s method:%s too long, over max length 1024 limit", address, method)
+		return fmt.Errorf("invoke native contract:%s method:%s too ltsg, over max length 1024 limit", address, method)
 	}
 	args, err := engine.EvalStack.Pop()
 	if err != nil {

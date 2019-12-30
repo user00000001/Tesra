@@ -111,7 +111,7 @@ var AssetCommand = cli.Command{
 		},
 		{
 			Action:    unboundTsg,
-			Name:      "unboundong",
+			Name:      "unboundtsg",
 			Usage:     "Show the balance of unbound TSG",
 			ArgsUsage: "<address|label|index>",
 			Flags: []cli.Flag{
@@ -121,7 +121,7 @@ var AssetCommand = cli.Command{
 		},
 		{
 			Action:    withdrawTsg,
-			Name:      "withdrawong",
+			Name:      "withdrawtsg",
 			Usage:     "Withdraw TSG",
 			ArgsUsage: "<address|label|index>",
 			Flags: []cli.Flag{
@@ -239,13 +239,13 @@ func getBalance(ctx *cli.Context) error {
 		return err
 	}
 
-	ong, err := strconv.ParseUint(balance.Tsg, 10, 64)
+	tsg, err := strconv.ParseUint(balance.Tsg, 10, 64)
 	if err != nil {
 		return err
 	}
 	PrintInfoMsg("BalanceOf:%s", accAddr)
 	PrintInfoMsg("  TST:%s", balance.Tst)
-	PrintInfoMsg("  TSG:%s", utils.FormatTsg(ong))
+	PrintInfoMsg("  TSG:%s", utils.FormatTsg(tsg))
 	return nil
 }
 
@@ -512,7 +512,7 @@ func withdrawTsg(ctx *cli.Context) error {
 		return err
 	}
 	if amount <= 0 {
-		return fmt.Errorf("haven't unbound ong\n")
+		return fmt.Errorf("haven't unbound tsg\n")
 	}
 
 	var signer *account.Account

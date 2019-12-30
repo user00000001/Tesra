@@ -21,14 +21,14 @@ package ledgerstore
 import (
 	"crypto/sha256"
 	"fmt"
-	"github.com/TesraSupernet/tesracrypto/keypair"
 	"github.com/TesraSupernet/Tesra/account"
 	"github.com/TesraSupernet/Tesra/common"
 	"github.com/TesraSupernet/Tesra/core/payload"
 	"github.com/TesraSupernet/Tesra/core/types"
 	"github.com/TesraSupernet/Tesra/core/utils"
-	"github.com/TesraSupernet/Tesra/smartcontract/service/native/tst"
+	tst "github.com/TesraSupernet/Tesra/smartcontract/service/native/tst"
 	nutils "github.com/TesraSupernet/Tesra/smartcontract/service/native/utils"
+	"github.com/TesraSupernet/tesracrypto/keypair"
 	"github.com/stretchr/testify/assert"
 	"testing"
 	"time"
@@ -365,8 +365,8 @@ func TestBlock(t *testing.T) {
 }
 
 func transferTx(from, to common.Address, amount uint64) (*types.Transaction, error) {
-	var sts []ont.State
-	sts = append(sts, ont.State{
+	var sts []tst.State
+	sts = append(sts, tst.State{
 		From:  from,
 		To:    to,
 		Value: amount,

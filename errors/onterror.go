@@ -18,25 +18,25 @@
 
 package errors
 
-type ontError struct {
+type tstError struct {
 	errmsg    string
 	callstack *CallStack
 	root      error
 	code      ErrCode
 }
 
-func (e ontError) Error() string {
+func (e tstError) Error() string {
 	return e.errmsg
 }
 
-func (e ontError) GetErrCode() ErrCode {
+func (e tstError) GetErrCode() ErrCode {
 	return e.code
 }
 
-func (e ontError) GetRoot() error {
+func (e tstError) GetRoot() error {
 	return e.root
 }
 
-func (e ontError) GetCallStack() *CallStack {
+func (e tstError) GetCallStack() *CallStack {
 	return e.callstack
 }

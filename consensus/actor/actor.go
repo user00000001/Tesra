@@ -22,12 +22,12 @@ import (
 	"errors"
 	"time"
 
-	"github.com/TesraSupernet/tesraevent/actor"
 	"github.com/TesraSupernet/Tesra/core/types"
-	ontErrors "github.com/TesraSupernet/Tesra/errors"
+	tstErrors "github.com/TesraSupernet/Tesra/errors"
 	netActor "github.com/TesraSupernet/Tesra/p2pserver/actor/server"
 	ptypes "github.com/TesraSupernet/Tesra/p2pserver/message/types"
 	txpool "github.com/TesraSupernet/Tesra/txnpool/common"
+	"github.com/TesraSupernet/tesraevent/actor"
 )
 
 type TxPoolActor struct {
@@ -56,7 +56,7 @@ func (self *TxPoolActor) VerifyBlock(txs []*types.Transaction, height uint32) er
 
 	txentry := entry.(*txpool.VerifyBlockRsp).TxnPool
 	for _, entry := range txentry {
-		if entry.ErrCode != ontErrors.ErrNoError {
+		if entry.ErrCode != tstErrors.ErrNoError {
 			return errors.New(entry.ErrCode.Error())
 		}
 	}

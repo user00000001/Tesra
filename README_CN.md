@@ -28,7 +28,7 @@ Tesranode MainNet[测试版] 已经在2019年12月31日成功上线。<br>
     * [测试模式](#测试模式)
     * [使用docker运行](#使用docker运行)
 * [使用示例](#使用示例)
-    * [TST转账调用示例](#ont转账调用示例)
+    * [TST转账调用示例](#tst转账调用示例)
 	* [查询转账结果示例](#查询转账结果示例)
 	* [查询账户余额示例](#查询账户余额示例)
 * [贡献代码](#贡献代码)
@@ -142,10 +142,10 @@ Transfer TST
 其中TxHash是转账交易的交易HASH，可以通过这个HASH查询转账交易的直接结果。
 出于区块链出块时间的限制，提交的转账请求不会马上执行，需要等待至少一个区块时间，等待记账节点打包交易。
 
-如果需要转TSG，可以使用参数 -- asset = ong。注意，TST最少单位是1，而TSG则有9位小数点。
+如果需要转TSG，可以使用参数--asset=tsg。注意，TST最少单位是1，而TSG则有9位小数点。
 
 ```shell
-./tesranode asset transfer --from=ARVVxBPGySL56CvSSWfjRVVyZYpNZ7zp48 --to=ARVVxBPGySL56CvSSWfjRVVyZYpNZ7zp48 --amount=95.479777254 --asset=ong
+./tesranode asset transfer --from=ARVVxBPGySL56CvSSWfjRVVyZYpNZ7zp48 --to=ARVVxBPGySL56CvSSWfjRVVyZYpNZ7zp48 --amount=95.479777254 --asset=tsg
 ```
 执行完后会输出：
 

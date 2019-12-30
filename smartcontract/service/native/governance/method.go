@@ -111,25 +111,25 @@ func registerCandidate(native *native.NativeService, flag string) error {
 
 	switch flag {
 	case "transfer":
-		//ont transfer
+		//tst transfer
 		err = appCallTransferTst(native, params.Address, utils.GovernanceContractAddress, uint64(params.InitPos))
 		if err != nil {
 			return fmt.Errorf("appCallTransferTst, tst transfer error: %v", err)
 		}
 
-		//ong transfer
+		//tsg transfer
 		err = appCallTransferTsg(native, params.Address, utils.GovernanceContractAddress, globalParam.CandidateFee)
 		if err != nil {
 			return fmt.Errorf("appCallTransferTsg, tsg transfer error: %v", err)
 		}
 	case "transferFrom":
-		//ont transfer from
+		//tst transfer from
 		err = appCallTransferFromTst(native, utils.GovernanceContractAddress, params.Address, utils.GovernanceContractAddress, uint64(params.InitPos))
 		if err != nil {
 			return fmt.Errorf("appCallTransferFromTst, tst transfer error: %v", err)
 		}
 
-		//ong transfer from
+		//tsg transfer from
 		err = appCallTransferFromTsg(native, utils.GovernanceContractAddress, params.Address, utils.GovernanceContractAddress, globalParam.CandidateFee)
 		if err != nil {
 			return fmt.Errorf("appCallTransferFromTsg, tsg transfer error: %v", err)
@@ -244,13 +244,13 @@ func authorizeForPeer(native *native.NativeService, flag string) error {
 
 	switch flag {
 	case "transfer":
-		//ont transfer
+		//tst transfer
 		err = appCallTransferTst(native, params.Address, utils.GovernanceContractAddress, total)
 		if err != nil {
 			return fmt.Errorf("appCallTransferTst, tst transfer error: %v", err)
 		}
 	case "transferFrom":
-		//ont transfer from
+		//tst transfer from
 		err = appCallTransferFromTst(native, utils.GovernanceContractAddress, params.Address, utils.GovernanceContractAddress, total)
 		if err != nil {
 			return fmt.Errorf("appCallTransferFromTst, tst transfer error: %v", err)
@@ -319,7 +319,7 @@ func normalQuit(native *native.NativeService, contract common.Address, peerPoolI
 }
 
 func blackQuit(native *native.NativeService, contract common.Address, peerPoolItem *PeerPoolItem) error {
-	// tst transfer to trigger unboundong
+	// tst transfer to trigger unboundtsg
 	err := appCallTransferTst(native, utils.GovernanceContractAddress, utils.GovernanceContractAddress, peerPoolItem.InitPos)
 	if err != nil {
 		return fmt.Errorf("appCallTransferTst, tst transfer error: %v", err)
@@ -658,12 +658,12 @@ func withdrawPenaltyStake(native *native.NativeService, contract common.Address,
 
 	amount := utils.CalcUnbindTsg(preStake, preTimeOffset, timeOffset)
 
-	//ont transfer
+	//tst transfer
 	err = appCallTransferTst(native, utils.GovernanceContractAddress, address, preStake)
 	if err != nil {
 		return fmt.Errorf("appCallTransferTst, tst transfer error: %v", err)
 	}
-	//ong approve
+	//tsg approve
 	err = appCallTransferFromTsg(native, utils.GovernanceContractAddress, utils.TstContractAddress, address, amount+preAmount)
 	if err != nil {
 		return fmt.Errorf("appCallTransferFromTsg, transfer from tsg error: %v", err)

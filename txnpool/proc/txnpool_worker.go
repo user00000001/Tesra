@@ -133,7 +133,7 @@ func (worker *txPoolWorker) handleRsp(rsp *types.CheckResponse) {
 /* Check if the transaction need to be sent to validator to verify
  * when time out.
  * Todo: Going through the list will take time if the list is too
- * long, need to change the algorithm later
+ * ltsg, need to change the algorithm later
  */
 func (worker *txPoolWorker) handleTimeoutEvent() {
 	if len(worker.pendingTxList) <= 0 {

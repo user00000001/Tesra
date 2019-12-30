@@ -141,7 +141,7 @@ var TransferFromTxCommond = cli.Command{
 
 var WithdrawTSGTxCommond = cli.Command{
 	Action:      withdrawTSGTx,
-	Name:        "withdrawong",
+	Name:        "withdrawtsg",
 	Usage:       "Build Withdraw TSG transaction",
 	Description: "Build Withdraw TSG transaction",
 	ArgsUsage:   "<address|label|index>",
@@ -422,13 +422,13 @@ func withdrawTSGTx(ctx *cli.Context) error {
 			return err
 		}
 		if amount <= 0 {
-			return fmt.Errorf("haven't unbound ong")
+			return fmt.Errorf("haven't unbound tsg")
 		}
 		amountStr = utils.FormatTsg(amount)
 	} else {
 		amount = utils.ParseTsg(amountStr)
 		if amount <= 0 {
-			return fmt.Errorf("haven't unbound ong")
+			return fmt.Errorf("haven't unbound tsg")
 		}
 		amountStr = utils.FormatTsg(amount)
 	}

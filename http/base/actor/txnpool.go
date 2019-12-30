@@ -23,12 +23,12 @@ import (
 	"errors"
 	"time"
 
-	"github.com/TesraSupernet/tesraevent/actor"
 	"github.com/TesraSupernet/Tesra/common"
 	"github.com/TesraSupernet/Tesra/common/log"
 	"github.com/TesraSupernet/Tesra/core/types"
-	ontErrors "github.com/TesraSupernet/Tesra/errors"
+	tstErrors "github.com/TesraSupernet/Tesra/errors"
 	tcomn "github.com/TesraSupernet/Tesra/txnpool/common"
+	"github.com/TesraSupernet/tesraevent/actor"
 )
 
 var txnPid *actor.PID
@@ -43,16 +43,16 @@ func SetTxnPoolPid(actr *actor.PID) {
 }
 
 //append transaction to pool to txpool actor
-func AppendTxToPool(txn *types.Transaction) (ontErrors.ErrCode, string) {
+func AppendTxToPool(txn *types.Transaction) (tstErrors.ErrCode, string) {
 	if DisableSyncVerifyTx {
 		txReq := &tcomn.TxReq{txn, tcomn.HttpSender, nil}
 		txnPid.Tell(txReq)
-		return ontErrors.ErrNoError, ""
+		return tstErrors.ErrNoError, ""
 	}
 	//add Pre Execute Contract
 	_, err := PreExecuteContract(txn)
 	if err != nil {
-		return ontErrors.ErrUnknown, err.Error()
+		return tstErrors.ErrUnknown, err.Error()
 	}
 	ch := make(chan *tcomn.TxResult, 1)
 	txReq := &tcomn.TxReq{txn, tcomn.HttpSender, ch}
@@ -60,7 +60,7 @@ func AppendTxToPool(txn *types.Transaction) (ontErrors.ErrCode, string) {
 	if msg, ok := <-ch; ok {
 		return msg.Err, msg.Desc
 	}
-	return ontErrors.ErrUnknown, ""
+	return tstErrors.ErrUnknown, ""
 }
 
 //GetTxsFromPool from txpool actor

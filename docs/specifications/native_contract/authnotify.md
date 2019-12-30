@@ -31,7 +31,7 @@ common event format is as follows, including txhash, state, gasConsumed and noti
     },
     //notify of gas fee transfer
     {
-      "ContractAddress": "0200000000000000000000000000000000000000", //ong contract address
+      "ContractAddress": "0200000000000000000000000000000000000000", //tsg contract address
       "States":[
         "transfer", //method name
         "AbPRaepcpBAFHz9zCj4619qch4Aq5hJARA", //invoker's address (from)
@@ -65,7 +65,7 @@ common event format is as follows, including txhash, state, gasConsumed and noti
     },
     //notify of gas fee transfer
     {
-      "ContractAddress": "0200000000000000000000000000000000000000", //ong contract address
+      "ContractAddress": "0200000000000000000000000000000000000000", //tsg contract address
       "States":[
         "transfer", //method name
         "AbPRaepcpBAFHz9zCj4619qch4Aq5hJARA", //invoker's address (from)
@@ -100,7 +100,7 @@ common event format is as follows, including txhash, state, gasConsumed and noti
     },
      //notify of gas fee transfer
      {
-       "ContractAddress": "0200000000000000000000000000000000000000", //ong contract address
+       "ContractAddress": "0200000000000000000000000000000000000000", //tsg contract address
        "States":[
          "transfer", //method name
          "AbPRaepcpBAFHz9zCj4619qch4Aq5hJARA", //invoker's address (from)
@@ -134,7 +134,7 @@ common event format is as follows, including txhash, state, gasConsumed and noti
     },
      //notify of gas fee transfer
      {
-       "ContractAddress": "0200000000000000000000000000000000000000", //ong contract address
+       "ContractAddress": "0200000000000000000000000000000000000000", //tsg contract address
        "States":[
          "transfer", //method name
          "AbPRaepcpBAFHz9zCj4619qch4Aq5hJARA", //invoker's address (from)
@@ -170,7 +170,7 @@ common event format is as follows, including txhash, state, gasConsumed and noti
     },
      //notify of gas fee transfer
      {
-       "ContractAddress": "0200000000000000000000000000000000000000", //ong contract address
+       "ContractAddress": "0200000000000000000000000000000000000000", //tsg contract address
        "States":[
          "transfer", //method name
          "AbPRaepcpBAFHz9zCj4619qch4Aq5hJARA", //invoker's address (from)
@@ -206,7 +206,7 @@ common event format is as follows, including txhash, state, gasConsumed and noti
     },
      //notify of gas fee transfer
      {
-       "ContractAddress": "0200000000000000000000000000000000000000", //ong contract address
+       "ContractAddress": "0200000000000000000000000000000000000000", //tsg contract address
        "States":[
          "transfer", //method name
          "AbPRaepcpBAFHz9zCj4619qch4Aq5hJARA", //invoker's address (from)
@@ -242,7 +242,7 @@ common event format is as follows, including txhash, state, gasConsumed and noti
     },
     //notify of gas fee transfer
     {
-       "ContractAddress": "0200000000000000000000000000000000000000", //ong contract address
+       "ContractAddress": "0200000000000000000000000000000000000000", //tsg contract address
        "States":[
          "transfer", //method name
          "AbPRaepcpBAFHz9zCj4619qch4Aq5hJARA", //invoker's address (from)

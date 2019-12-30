@@ -45,12 +45,12 @@
 | [getsessioncount](#18-getsessioncount) |  | 得到会话数量 |
 | [getgasprice](#19-getgasprice) |  | 得到gas的价格 |
 | [getallowance](#20-getallowance) | asset, from, to | 返回允许从from账户转出到to账户的额度 |
-| [getunboundong](#21-getunboundong) | address | 返回该账户未提取的ong数量 |
+| [getunboundtsg](#21-getunboundtsg) | address | 返回该账户未提取的tsg数量 |
 | [getmempooltxstate](#22-getmempooltxstate) | hash | 通过交易哈希得到内存中该交易的状态 |
 | [getmempooltxcount](#23-getmempooltxcount) |  | 得到内存中的交易的数量 |
 | [getversion](#24-getversion) |  | 得到版本信息 |
 | [getnetworkid](#25-getnetworkid) |  | 得到network id |
-| [getgrantong](#26-getgrantong) |  | 得到grant tsg |
+| [getgranttsg](#26-getgranttsg) |  | 得到grant tsg |
 
 ###  1. heartbeat
 
@@ -813,14 +813,14 @@ raw：可选参数，默认值为零，不设置时为默认值。当值为1时�
 }
 ```
 
-### 21. getunboundong
+### 21. getunboundtsg
 
-得到该账户未提取的ong数量。
+得到该账户未提取的tsg数量。
 
 #### Request Example:
 ```
 {
-    "Action": "getunboundong",
+    "Action": "getunboundtsg",
     "Id":12345, //optional
     "Addr": "ANH5bHrrt111XwNEnuPZj6u95Dd6u7G4D6",
     "Version": "1.0.0"
@@ -829,7 +829,7 @@ raw：可选参数，默认值为零，不设置时为默认值。当值为1时�
 #### Response Example
 ```
 {
-    "Action": "getunboundong",
+    "Action": "getunboundtsg",
     "Desc": "SUCCESS",
     "Error": 0,
     "Result": "204957950400000",
@@ -941,14 +941,14 @@ raw：可选参数，默认值为零，不设置时为默认值。当值为1时�
 }
 ```
 
-### 26. getgrantong
+### 26. getgranttsg
 
-获取 grant ong
+获取 grant tsg
 
 #### Request Example:
 ```
 {
-    "Action": "getgrantong",
+    "Action": "getgranttsg",
     "Id":12345, //optional
     "Addr":"AKDFapcoUhewN9Kaj6XhHusurfHzUiZqUA",
     "Version": "1.0.0"
@@ -957,7 +957,7 @@ raw：可选参数，默认值为零，不设置时为默认值。当值为1时�
 #### Response Example
 ```
 {
-    "Action": "getgrantong",
+    "Action": "getgranttsg",
     "Desc": "SUCCESS",
     "Error": 0,
     "Version": "1.0.0",

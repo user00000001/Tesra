@@ -318,7 +318,7 @@ type PenaltyStake struct { //table record penalty stake of peer
 	PeerPubkey   string //peer pubKey of penalty stake
 	InitPos      uint64 //initPos penalty
 	AuthorizePos uint64 //authorize pos penalty
-	TimeOffset   uint32 //time used for calculate unbound ong
+	TimeOffset   uint32 //time used for calculate unbound tsg
 	Amount       uint64 //unbound tsg that this penalty unbounded
 }
 
@@ -369,7 +369,7 @@ type CandidateSplitInfo struct {
 
 type PeerAttributes struct {
 	PeerPubkey   string
-	MaxAuthorize uint64 //max authorzie pos this peer can receive(number of ont), set by peer owner
+	MaxAuthorize uint64 //max authorzie pos this peer can receive(number of tst), set by peer owner
 	T2PeerCost   uint64 //candidate or consensus node doesn't share income percent with authorize users, 100 means node will take all incomes, it will take effect in view T + 2
 	T1PeerCost   uint64 //candidate or consensus node doesn't share income percent with authorize users, 100 means node will take all incomes, it will take effect in view T + 1
 	TPeerCost    uint64 //candidate or consensus node doesn't share income percent with authorize users, 100 means node will take all incomes, it will take effect in view T

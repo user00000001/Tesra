@@ -27,7 +27,7 @@ import (
 	"github.com/TesraSupernet/Tesra/common"
 	"github.com/TesraSupernet/Tesra/common/config"
 	"github.com/TesraSupernet/Tesra/common/constants"
-	"github.com/TesraSupernet/Tesra/consensus/vbft/config"
+	vconfig "github.com/TesraSupernet/Tesra/consensus/vbft/config"
 	"github.com/TesraSupernet/Tesra/core/payload"
 	"github.com/TesraSupernet/Tesra/core/types"
 	"github.com/TesraSupernet/Tesra/core/utils"
@@ -95,8 +95,8 @@ func BuildGenesisBlock(defaultBookkeeper []keypair.PublicKey, genesisConfig *con
 	}
 
 	//block
-	ont := newGoverningToken()
-	ong := newUtilityToken()
+	tst := newGoverningToken()
+	tsg := newUtilityToken()
 	param := newParamContract()
 	oid := deployTstIDContract()
 	auth := deployAuthContract()
@@ -105,8 +105,8 @@ func BuildGenesisBlock(defaultBookkeeper []keypair.PublicKey, genesisConfig *con
 	genesisBlock := &types.Block{
 		Header: genesisHeader,
 		Transactions: []*types.Transaction{
-			ont,
-			ong,
+			tst,
+			tsg,
 			param,
 			oid,
 			auth,

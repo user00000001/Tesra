@@ -45,12 +45,12 @@ This document describes the Websocket api format for the ws/wss used in the Onch
 | [getsessioncount](#18-getsessioncount) |  | return gas price |
 | [getgasprice](#19-getgasprice) |  | return the state of transaction locate in memory |
 | [getallowance](#20-getallowance) | asset, from, to | return the allowance from transfer-from accout to transfer-to account |
-| [getunboundong](#21-getunboundong) | address | get unbound tsg of this address |
+| [getunboundtsg](#21-getunboundtsg) | address | get unbound tsg of this address |
 | [getmempooltxstate](#22-getmempooltxstate) | hash | query the transaction state in the memory pool |
 | [getmempooltxcount](#23-getmempooltxcount) |  | query the transaction count in the memory pool |
 | [getversion](#24-getversion) |  | get the version information of the node |
 | [getnetworkid](#25-getnetworkid) |  | get the network id |
-| [getgrantong](#26-getgrantong) |  | get grant tsg |
+| [getgranttsg](#26-getgranttsg) |  | get grant tsg |
 
 ###  1. heartbeat
 If don't send heartbeat, the session expire after 5min.
@@ -809,14 +809,14 @@ Get allowance.
 }
 ```
 
-### 21. getunboundong
+### 21. getunboundtsg
 
-Get unbound ong.
+Get unbound tsg.
 
 #### Request Example:
 ```
 {
-    "Action": "getunboundong",
+    "Action": "getunboundtsg",
     "Id":12345, //optional
     "Addr": "ANH5bHrrt111XwNEnuPZj6u95Dd6u7G4D6",
     "Version": "1.0.0"
@@ -825,7 +825,7 @@ Get unbound ong.
 #### Response Example
 ```
 {
-    "Action": "getunboundong",
+    "Action": "getunboundtsg",
     "Desc": "SUCCESS",
     "Error": 0,
     "Result": "204957950400000",
@@ -936,14 +936,14 @@ Get the network id
 }
 ```
 
-### 26. getgrantong
+### 26. getgranttsg
 
-get grant ong
+get grant tsg
 
 #### Request Example:
 ```
 {
-    "Action": "getgrantong",
+    "Action": "getgranttsg",
     "Id":12345, //optional
     "Addr":"AKDFapcoUhewN9Kaj6XhHusurfHzUiZqUA",
     "Version": "1.0.0"
@@ -952,7 +952,7 @@ get grant ong
 #### Response Example
 ```
 {
-    "Action": "getgrantong",
+    "Action": "getgranttsg",
     "Desc": "SUCCESS",
     "Error": 0,
     "Version": "1.0.0",

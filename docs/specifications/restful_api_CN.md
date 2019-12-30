@@ -40,13 +40,13 @@
 | [get_merkle_proof](#14-get_merkle_proof) | GET /api/v1/merkleproof/:hash| 通过交易哈希得到该交易的merkle证明 |
 | [get_gasprice](#15-get_gasprice) | GET /api/v1/gasprice| 得到gas的价格 |
 | [get_allowance](#16-get_allowance) | GET /api/v1/allowance/:asset/:from/:to | 返回允许从from账户转出到to账户的额度 |
-| [get_unboundong](#17-get_unboundong) | GET /api/v1/unboundong/:addr | 返回该账户未提取的ong数量 |
+| [get_unboundtsg](#17-get_unboundtsg) | GET /api/v1/unboundtsg/:addr | 返回该账户未提取的tsg数量 |
 | [get_mempooltxcount](#18-get_mempooltxcount) | GET /api/v1/mempool/txcount | 得到内存中的交易的数量 |
 | [get_mempooltxstate](#19-get_mempooltxstate) | GET /api/v1/mempool/txstate/:hash | 通过交易哈希得到内存中该交易的状态 |
 | [get_version](#20-get_version) |  GET /api/v1/version | 得到版本信息 |
 | [post_raw_tx](#21-post_raw_tx) | post /api/v1/transaction?preExec=0 | 向tesranode网络发送交易 |
 | [get_networkid](#22-get_networkid) |  GET /api/v1/networkid | 得到network id |
-| [get_grantong](#23-get_grantong) |  GET /api/v1/grantong/:addr | 得到grant tsg |
+| [get_granttsg](#23-get_granttsg) |  GET /api/v1/granttsg/:addr | 得到grant tsg |
 
 ### 1 get_conn_count
 
@@ -681,22 +681,22 @@ curl -i http://localhost:20334/api/v1/allowance/:asset/:from/:to
 }
 ```
 
-### 17 get_unboundong
+### 17 get_unboundtsg
 
-得到该账户未提取的ong数量。
+得到该账户未提取的tsg数量。
 
 GET
 ```
-/api/v1/unboundong
+/api/v1/unboundtsg
 ```
 #### Request Example:
 ```
-curl -i http://localhost:20334/api/v1/unboundong/:addr
+curl -i http://localhost:20334/api/v1/unboundtsg/:addr
 ```
 #### Response
 ```
 {
-    "Action": "getunboundong",
+    "Action": "getunboundtsg",
     "Desc": "SUCCESS",
     "Error": 0,
     "Result": "204957950400000",
@@ -848,22 +848,22 @@ curl -i http://localhost:20334/api/v1/networkid
 }
 ```
 
-### 23 get_grantong
+### 23 get_granttsg
 
-获取 grant ong.
+获取 grant tsg.
 
 GET
 ```
-/api/v1/grantong/:addr
+/api/v1/granttsg/:addr
 ```
 #### Request Example:
 ```
-curl -i http://localhost:20334/api/v1/grantong/AKDFapcoUhewN9Kaj6XhHusurfHzUiZqUA
+curl -i http://localhost:20334/api/v1/granttsg/AKDFapcoUhewN9Kaj6XhHusurfHzUiZqUA
 ```
 #### Response
 ```
 {
-    "Action": "getgrantong",
+    "Action": "getgranttsg",
     "Desc": "SUCCESS",
     "Error": 0,
     "Version": "1.0.0",

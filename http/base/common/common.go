@@ -30,7 +30,7 @@ import (
 	"github.com/TesraSupernet/Tesra/core/payload"
 	"github.com/TesraSupernet/Tesra/core/types"
 	cutils "github.com/TesraSupernet/Tesra/core/utils"
-	ontErrors "github.com/TesraSupernet/Tesra/errors"
+	tstErrors "github.com/TesraSupernet/Tesra/errors"
 	bactor "github.com/TesraSupernet/Tesra/http/base/actor"
 	"github.com/TesraSupernet/Tesra/smartcontract/event"
 	tst "github.com/TesraSupernet/Tesra/smartcontract/service/native/tst"
@@ -225,12 +225,12 @@ func TransArryByteToHexString(ptx *types.Transaction) *Transactions {
 	return trans
 }
 
-func SendTxToPool(txn *types.Transaction) (ontErrors.ErrCode, string) {
-	if errCode, desc := bactor.AppendTxToPool(txn); errCode != ontErrors.ErrNoError {
+func SendTxToPool(txn *types.Transaction) (tstErrors.ErrCode, string) {
+	if errCode, desc := bactor.AppendTxToPool(txn); errCode != tstErrors.ErrNoError {
 		log.Warn("TxnPool verify error:", errCode.Error())
 		return errCode, desc
 	}
-	return ontErrors.ErrNoError, ""
+	return tstErrors.ErrNoError, ""
 }
 
 func GetBlockInfo(block *types.Block) BlockInfo {
@@ -279,17 +279,17 @@ func GetBlockInfo(block *types.Block) BlockInfo {
 }
 
 func GetBalance(address common.Address) (*BalanceOfRsp, error) {
-	ont, err := GetContractBalance(0, utils.TstContractAddress, address)
+	tst, err := GetContractBalance(0, utils.TstContractAddress, address)
 	if err != nil {
 		return nil, fmt.Errorf("get tst balance error:%s", err)
 	}
-	ong, err := GetContractBalance(0, utils.TsgContractAddress, address)
+	tsg, err := GetContractBalance(0, utils.TsgContractAddress, address)
 	if err != nil {
 		return nil, fmt.Errorf("get tst balance error:%s", err)
 	}
 	return &BalanceOfRsp{
-		Tst: fmt.Sprintf("%d", ont),
-		Tsg: fmt.Sprintf("%d", ong),
+		Tst: fmt.Sprintf("%d", tst),
+		Tsg: fmt.Sprintf("%d", tsg),
 	}, nil
 }
 
@@ -304,12 +304,12 @@ func GetGrantTsg(addr common.Address) (string, error) {
 	if eof {
 		return fmt.Sprintf("%v", 0), io.ErrUnexpectedEOF
 	}
-	ont, err := GetContractBalance(0, utils.TstContractAddress, addr)
+	tst, err := GetContractBalance(0, utils.TstContractAddress, addr)
 	if err != nil {
 		return fmt.Sprintf("%v", 0), err
 	}
-	boundong := utils.CalcUnbindTsg(ont, v, uint32(time.Now().Unix())-constants.GENESIS_BLOCK_TIMESTAMP)
-	return fmt.Sprintf("%v", boundong), nil
+	boundtsg := utils.CalcUnbindTsg(tst, v, uint32(time.Now().Unix())-constants.GENESIS_BLOCK_TIMESTAMP)
+	return fmt.Sprintf("%v", boundtsg), nil
 }
 
 func GetAllowance(asset string, from, to common.Address) (string, error) {

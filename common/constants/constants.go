@@ -44,7 +44,7 @@ const (
 	TSG_TOTAL_SUPPLY = uint64(1000000000000000000)
 )
 
-// ont/ong unbound model constants
+// tst/tsg unbound model constants
 const UNBOUND_TIME_INTERVAL = uint32(31536000)
 
 var UNBOUND_GENERATION_AMOUNT = [18]uint64{5, 4, 3, 3, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1}

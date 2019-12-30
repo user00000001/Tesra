@@ -18,7 +18,7 @@ Tesranode Signature Server - sigsvr is a rpc server for signing transactions.
 		* [2.5 Signature of Transfer Transaction](#25-signature-of-transfer-transaction)
 		* [2.6 Native Contract Invokes Signature](#26-native-contract-invokes-signature)
 			* [Example1:  Constructing  transfer transaction](#example1-constructing-transfer-transaction)
-			* [Example2: Constructing  withdraw TSG transaction](#example2-constructing-withdraw-ong-transaction)
+			* [Example2: Constructing  withdraw TSG transaction](#example2-constructing-withdraw-tsg-transaction)
 		* [2.7 NeoVM Contract Invokes Signature](#27-neovm-contract-invokes-signature)
 		* [2.8 NeoVM Contract Invokes By ABI Signature](#28-neovm-contract-invokes-by-abi-signature)
 		* [2.9 Create Account](#29-create-account)
@@ -281,7 +281,7 @@ Request parameters:
 {
     "gas_price":XXX,  //gasprice
     "gas_limit":XXX,  //gaslimit
-    "asset":"tst",    //asset: tst or ong
+    "asset":"tst",    //asset: tst or tsg
     "from":"XXX",     //Payment account
     "to":"XXX",       //Receipt address
     "amount":"XXX"    //transfer amount. Note that since the precision of tsg is 9, it is necessary to multiply the actual transfer amount by 1000000000 when making tsg transfer.
@@ -337,7 +337,7 @@ Examples:
 {
     "gas_price":XXX,  //gasprice
     "gas_limit":XXX,  //gaslimit
-    "asset":"tst",    //asset: tst or ong
+    "asset":"tst",    //asset: tst or tsg
     "from":"XXX",     //Payment account
     "to":"XXX",       //Receipt address
     "payer":"XXX",    //The fee payer's account address

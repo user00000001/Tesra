@@ -25,7 +25,7 @@ import (
 	"github.com/TesraSupernet/Tesra/core/ledger"
 	"github.com/TesraSupernet/Tesra/core/signature"
 	"github.com/TesraSupernet/Tesra/core/types"
-	ontErrors "github.com/TesraSupernet/Tesra/errors"
+	tstErrors "github.com/TesraSupernet/Tesra/errors"
 )
 
 // VerifyBlock checks whether the block is valid
@@ -65,11 +65,11 @@ func VerifyBlock(block *types.Block, ld *ledger.Ledger, completely bool) error {
 			}
 		*/
 		for _, txVerify := range block.Transactions {
-			if errCode := VerifyTransaction(txVerify); errCode != ontErrors.ErrNoError {
+			if errCode := VerifyTransaction(txVerify); errCode != tstErrors.ErrNoError {
 				return errors.New(fmt.Sprintf("VerifyTransaction failed when verifiy block"))
 			}
 
-			if errCode := VerifyTransactionWithLedger(txVerify, ld); errCode != ontErrors.ErrNoError {
+			if errCode := VerifyTransactionWithLedger(txVerify, ld); errCode != tstErrors.ErrNoError {
 				return errors.New(fmt.Sprintf("VerifyTransaction failed when verifiy block"))
 			}
 		}

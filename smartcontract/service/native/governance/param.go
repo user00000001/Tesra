@@ -462,7 +462,7 @@ func (this *PreConfig) Deserialization(source *common.ZeroCopySource) error {
 }
 
 type GlobalParam struct {
-	CandidateFee uint64 //unit: 10^-9 ong
+	CandidateFee uint64 //unit: 10^-9 tsg
 	MinInitStake uint32 //min init pos
 	CandidateNum uint32 //num of candidate and consensus node
 	PosLimit     uint32 //authorize pos limit is initPos*posLimit

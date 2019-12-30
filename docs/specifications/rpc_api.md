@@ -93,10 +93,10 @@ There are some description of parameter used in rpc:
 | [getmerkleproof](#16-getmerkleproof) | tx_hash | return merkle proof |  |
 | [getgasprice](#17-getgasprice) |  | return gasprice |  |
 | [getallowance](#18-getallowance) | asset, from, to | return the allowance from transfer-from accout to transfer-to account |  |
-| [getunboundong](#19-getunboundong) | address | return unbound tsg |  |
+| [getunboundtsg](#19-getunboundtsg) | address | return unbound tsg |  |
 | [getblocktxsbyheight](#20-getblocktxsbyheight) | height | return transaction hashes |  |
 | [getnetworkid](#21-getnetworkid) |  | Get the network id |  |
-| [getgrantong](#22-getgrantong) |  | Get grant tsg |  |
+| [getgranttsg](#22-getgranttsg) |  | Get grant tsg |  |
 
 ### 1. getbestblockhash
 
@@ -975,9 +975,9 @@ Response:
 }
 ```
 
-#### 19. getunboundong
+#### 19. getunboundtsg
 
-return unbound ong.
+return unbound tsg.
 
 
 #### Example
@@ -987,7 +987,7 @@ Request:
 ```
 {
   "jsonrpc": "2.0",
-  "method": "getunboundong",
+  "method": "getunboundtsg",
   "params": ["address"],
   "id": 1
 }
@@ -1070,9 +1070,9 @@ Response:
 }
 ```
 
-#### 22. getgrantong
+#### 22. getgranttsg
 
-get grant ong.
+get grant tsg.
 
 #### Example
 
@@ -1081,7 +1081,7 @@ Request:
 ```
 {
   "jsonrpc": "2.0",
-  "method": "getgrantong",
+  "method": "getgranttsg",
   "params": ["AKDFapcoUhewN9Kaj6XhHusurfHzUiZqUA"],
   "id": 3
 }
