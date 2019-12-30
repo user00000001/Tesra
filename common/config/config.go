@@ -206,6 +206,78 @@ var ScorpioConfig = &GenesisConfig{
 	SOLO: &SOLOConfig{},
 }
 
+// var MainNetConfig = &GenesisConfig{
+// 	SeedList: []string{
+// 		"127.0.0.1:25666",
+// 		"127.0.0.1:25665",
+// 		"127.0.0.1:25664",
+// 		"127.0.0.1:25663",
+// 		"127.0.0.1:25662",
+// 		"127.0.0.1:25661",
+// 		"127.0.0.1:25660"},
+// 	ConsensusType: CONSENSUS_TYPE_VBFT,
+// 	VBFT: &VBFTConfig{
+// 		N:                    7,
+// 		C:                    2,
+// 		K:                    7,
+// 		L:                    112,
+// 		BlockMsgDelay:        10000,
+// 		HashMsgDelay:         10000,
+// 		PeerHandshakeTimeout: 10,
+// 		MaxBlockChangeView:   3000,
+// 		AdminTstID:           "did:tst:TYhUu9bidgc7MbkWeS55sywjct5VYrqxdW",
+// 		MinInitStake:         10000,
+// 		VrfValue:             "1c9810aa9822e511d5804a9c4db9dd08497c31087b0daafa34d768a3253441fa20515e2f30f81741102af0ca3cefc4818fef16adb825fbaa8cad78647f3afb590e",
+// 		VrfProof:             "c57741f934042cb8d8b087b44b161db56fc3ffd4ffb675d36cd09f83935be853d8729f3f5298d12d6fd28d45dde515a4b9d7f67682d182ba5118abf451ff1988",
+// 		Peers: []*VBFTPeerStakeInfo{
+// 			{
+// 				Index:      1,
+// 				PeerPubkey: "03c5e12f54e1104ce5fb9a10c32850776864b03e6bc2ff2285efbb1abb9d9ba36a",
+// 				Address:    "AXKnGhh9WyoB1G5aXHDdzgSq4Zv3CJRNNs",
+// 				InitPos:    10000,
+// 			},
+// 			{
+// 				Index:      2,
+// 				PeerPubkey: "031dadf8fa327b9cc4c03bb8796d32c7048695b574cf37d7d4d30c6647958cddc9",
+// 				Address:    "AbLD3PEEg8ohKX2QP5YUoA8hj4hgnaKH5d",
+// 				InitPos:    20000,
+// 			},
+// 			{
+// 				Index:      3,
+// 				PeerPubkey: "0247cecfbdfb75ed9da031196dde8579d3f0df3f13fca05a82ab708c43b1fa9b5b",
+// 				Address:    "AQ31oFNS9HYtXYk4tAzajrZYCRQQRBBzcr",
+// 				InitPos:    30000,
+// 			},
+// 			{
+// 				Index:      4,
+// 				PeerPubkey: "020a3da2aa5a5ccead145088e60a2897ebf1834a01445ff71fc6dc651b9a078709",
+// 				Address:    "AboGDWUUkP2J6msQh9GhXgPvupdbzmkE2G",
+// 				InitPos:    40000,
+// 			},
+// 			{
+// 				Index:      5,
+// 				PeerPubkey: "02cb0af023e79618fefa1dcc75cce869f67a31c1e316b5b2d6fd98e58984befdec",
+// 				Address:    "Ab6YW8QKuVD3FVi3sUL1vu5fd2ge2KLVjC",
+// 				InitPos:    30000,
+// 			},
+// 			{
+// 				Index:      6,
+// 				PeerPubkey: "027e910e3ae3605307d25617a2cf5b04605d7d7d0e6ad87a92fc8437fe9186e9fc",
+// 				Address:    "ATErqzubJQxVtbHBVJJUfAahtqDmqt8Nkc",
+// 				InitPos:    20000,
+// 			},
+// 			{
+// 				Index:      7,
+// 				PeerPubkey: "02d7c46aaa3badb0f0f36434c6c6c5b823e11266c6d0febd63e0fb097d3eb7d5ac",
+// 				Address:    "Aafm5VJy8eiquJ7cthfvw2fPxsrwjT2Ucq",
+// 				InitPos:    10000,
+// 			},
+// 		},
+// 	},
+// 	DBFT: &DBFTConfig{},
+// 	SOLO: &SOLOConfig{},
+// }
+
 var MainNetConfig = &GenesisConfig{
 	SeedList: []string{
 		"dapp1.tesra.me:25766",
@@ -213,8 +285,8 @@ var MainNetConfig = &GenesisConfig{
 		"dapp3.tesra.me:25766",
 		"dapp4.tesra.me:25766",
 		"www.tesra.me:25766",
-		"explore.tesra.me:25766",
-		"explore2.tesra.me:25766"},
+		"explorer.tesra.me:25766",
+		"explorer2.tesra.me:25766"},
 	ConsensusType: CONSENSUS_TYPE_VBFT,
 	VBFT: &VBFTConfig{
 		N:                    7,

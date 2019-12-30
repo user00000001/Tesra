@@ -33,7 +33,7 @@ import (
 	vm "github.com/TesraSupernet/Tesra/vm/neovm"
 )
 
-const NATIVE_INVOKE_NAME = "Tstology.Native.Invoke" // copy from smartcontract/service/neovm/config.go to avoid cycle dependences
+const NATIVE_INVOKE_NAME = "Tesra.Native.Invoke" // copy from smartcontract/service/neovm/config.go to avoid cycle dependences
 
 // NewDeployTransaction returns a deploy Transaction
 func NewDeployTransaction(code []byte, name, version, author, email, desp string, vmType payload.VmType) (*types.MutableTransaction, error) {
