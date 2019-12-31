@@ -561,123 +561,123 @@ func NewHostModule() *wasm.Module {
 
 	m.Export = &wasm.SectionExports{
 		Entries: map[string]wasm.ExportEntry{
-			"ontio_timestamp": {
-				FieldStr: "ontio_timestamp",
+			"tesra_timestamp": {
+				FieldStr: "tesra_timestamp",
 				Kind:     wasm.ExternalFunction,
 				Index:    0,
 			},
-			"ontio_block_height": {
-				FieldStr: "ontio_block_height",
+			"tesra_block_height": {
+				FieldStr: "tesra_block_height",
 				Kind:     wasm.ExternalFunction,
 				Index:    1,
 			},
-			"ontio_input_length": {
-				FieldStr: "ontio_input_length",
+			"tesra_input_length": {
+				FieldStr: "tesra_input_length",
 				Kind:     wasm.ExternalFunction,
 				Index:    2,
 			},
-			"ontio_call_output_length": {
-				FieldStr: "ontio_call_output_length",
+			"tesra_call_output_length": {
+				FieldStr: "tesra_call_output_length",
 				Kind:     wasm.ExternalFunction,
 				Index:    3,
 			},
-			"ontio_self_address": {
-				FieldStr: "ontio_self_address",
+			"tesra_self_address": {
+				FieldStr: "tesra_self_address",
 				Kind:     wasm.ExternalFunction,
 				Index:    4,
 			},
-			"ontio_caller_address": {
-				FieldStr: "ontio_caller_address",
+			"tesra_caller_address": {
+				FieldStr: "tesra_caller_address",
 				Kind:     wasm.ExternalFunction,
 				Index:    5,
 			},
-			"ontio_entry_address": {
-				FieldStr: "ontio_entry_address",
+			"tesra_entry_address": {
+				FieldStr: "tesra_entry_address",
 				Kind:     wasm.ExternalFunction,
 				Index:    6,
 			},
-			"ontio_get_input": {
-				FieldStr: "ontio_get_input",
+			"tesra_get_input": {
+				FieldStr: "tesra_get_input",
 				Kind:     wasm.ExternalFunction,
 				Index:    7,
 			},
-			"ontio_get_call_output": {
-				FieldStr: "ontio_get_call_output",
+			"tesra_get_call_output": {
+				FieldStr: "tesra_get_call_output",
 				Kind:     wasm.ExternalFunction,
 				Index:    8,
 			},
-			"ontio_check_witness": {
-				FieldStr: "ontio_check_witness",
+			"tesra_check_witness": {
+				FieldStr: "tesra_check_witness",
 				Kind:     wasm.ExternalFunction,
 				Index:    9,
 			},
-			"ontio_current_blockhash": {
-				FieldStr: "ontio_current_blockhash",
+			"tesra_current_blockhash": {
+				FieldStr: "tesra_current_blockhash",
 				Kind:     wasm.ExternalFunction,
 				Index:    10,
 			},
-			"ontio_current_txhash": {
-				FieldStr: "ontio_current_txhash",
+			"tesra_current_txhash": {
+				FieldStr: "tesra_current_txhash",
 				Kind:     wasm.ExternalFunction,
 				Index:    11,
 			},
-			"ontio_return": {
-				FieldStr: "ontio_return",
+			"tesra_return": {
+				FieldStr: "tesra_return",
 				Kind:     wasm.ExternalFunction,
 				Index:    12,
 			},
-			"ontio_notify": {
-				FieldStr: "ontio_notify",
+			"tesra_notify": {
+				FieldStr: "tesra_notify",
 				Kind:     wasm.ExternalFunction,
 				Index:    13,
 			},
-			"ontio_debug": {
-				FieldStr: "ontio_debug",
+			"tesra_debug": {
+				FieldStr: "tesra_debug",
 				Kind:     wasm.ExternalFunction,
 				Index:    14,
 			},
-			"ontio_call_contract": {
-				FieldStr: "ontio_call_contract",
+			"tesra_call_contract": {
+				FieldStr: "tesra_call_contract",
 				Kind:     wasm.ExternalFunction,
 				Index:    15,
 			},
-			"ontio_storage_read": {
-				FieldStr: "ontio_storage_read",
+			"tesra_storage_read": {
+				FieldStr: "tesra_storage_read",
 				Kind:     wasm.ExternalFunction,
 				Index:    16,
 			},
-			"ontio_storage_write": {
-				FieldStr: "ontio_storage_write",
+			"tesra_storage_write": {
+				FieldStr: "tesra_storage_write",
 				Kind:     wasm.ExternalFunction,
 				Index:    17,
 			},
-			"ontio_storage_delete": {
-				FieldStr: "ontio_storage_delete",
+			"tesra_storage_delete": {
+				FieldStr: "tesra_storage_delete",
 				Kind:     wasm.ExternalFunction,
 				Index:    18,
 			},
-			"ontio_contract_create": {
-				FieldStr: "ontio_contract_create",
+			"tesra_contract_create": {
+				FieldStr: "tesra_contract_create",
 				Kind:     wasm.ExternalFunction,
 				Index:    19,
 			},
-			"ontio_contract_migrate": {
-				FieldStr: "ontio_contract_migrate",
+			"tesra_contract_migrate": {
+				FieldStr: "tesra_contract_migrate",
 				Kind:     wasm.ExternalFunction,
 				Index:    20,
 			},
-			"ontio_contract_destroy": {
-				FieldStr: "ontio_contract_destroy",
+			"tesra_contract_destroy": {
+				FieldStr: "tesra_contract_destroy",
 				Kind:     wasm.ExternalFunction,
 				Index:    21,
 			},
-			"ontio_panic": {
-				FieldStr: "ontio_panic",
+			"tesra_panic": {
+				FieldStr: "tesra_panic",
 				Kind:     wasm.ExternalFunction,
 				Index:    22,
 			},
-			"ontio_sha256": {
-				FieldStr: "ontio_sha256",
+			"tesra_sha256": {
+				FieldStr: "tesra_sha256",
 				Kind:     wasm.ExternalFunction,
 				Index:    23,
 			},
